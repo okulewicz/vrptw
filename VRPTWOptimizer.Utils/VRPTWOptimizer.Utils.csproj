@@ -1,0 +1,215 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <VersionPrefix>1.23.4</VersionPrefix>
+	  <Description>Common useful VRPTW objects for handling abstract base objects</Description>
+	  <PackageReleaseNotes>
+		  1.23.4
+		  * Upgraded visits printout
+
+		  1.23.3
+		  * Upgraded date printout
+
+		  1.23.2
+		  * Fixed driver printout
+		  * Added aggregated route start printout
+
+		  1.23.1
+		  * Adding missing vehicles as parameter
+
+		  1.23.0
+		  * Fixer adds missing drivers (HACK)
+		  * Not removing transfers
+
+		  1.22.0
+		  * More summaries
+
+		  1.21.0
+		  * Added route statistics files
+
+		  1.20.0
+		  * Statistics including utilized drivers
+
+		  1.19.4
+		  * VRPTWOptimizer model updated
+
+		  1.19.3
+		  * VRPTWOptimizer model updated
+
+		  1.19.2
+		  * Handling missing timestamp in computations
+
+		  1.19.1
+		  * Dealing with null values in solution and cost function DTOs
+
+		  1.19.0
+		  * VRPVerifier fixes bad request limits for vehicle on the basis of historic solutions
+
+		  1.18.2
+		  * Printing drivers count
+
+		  1.18.1
+		  * Fixed route length for small fill in routes
+
+		  1.18.0
+		  * Added statistics for badly filled in routes and average delivered packages count as absolute numbers
+
+		  1.17.1
+		  * Fixed cost computation in solutions
+
+		  1.17.0
+		  * Deserializing delivery_time_window_start and pickup_time_window_end
+
+		  1.16.6
+		  * Added service delay statistic to log
+
+		  1.16.5
+		  * Fixed calculating delay in VRPValidator from TransportDTO
+
+		  1.16.4
+		  * Fixed missing DriverId in TransportDTO
+
+		  1.16.3
+		  * Filling in Drivers in provider from standard JSON
+
+		  1.16.2
+		  * Inluding Driver availability in time window calculations
+
+		  1.16.1
+		  * Extracted JSON format checker to public method
+
+		  1.16.0
+		  * Moved generating CSV result statistics to VRPTWOptimizer.Utils
+
+		  1.15.0
+		  * Added cost function to VRPDefinition model
+
+		  1.14.3
+		  * Fixed Tractor missing error information
+
+		  1.14.2
+		  * Fixed concurency problem in DictionaryDistanceProviderBase in VRPTWOptimizer:4.2.2
+
+		  1.14.1
+		  * Fixed concurency problem in DictionaryDistanceProviderBase in VRPTWOptimizer:4.2.1
+
+		  1.14.0
+		  * Validating missing distances
+		  * Validating miscalculated time windows and delays
+		  * Validating tavel and distance time
+		  * Moved FileCachedRoutingAPIDistanceProviderTest out of this project
+
+		  1.13.0
+		  * Added time windows transformations to VIA TMS inputs
+		  * Computing max spread in statistics
+		  * Computing latest first arrival of vehicle in statistics
+
+		  1.12.0
+		  * Validating solutions againt incompletness
+		  * Validating routes against loading/unloading at wrong locations
+
+		  1.11.0
+		  * Improved vehicle count statistics with fill in ratio for deserialized solutions
+
+		  1.10.0
+		  * Added new vehicles count statistics for solution
+
+		  1.9.1
+		  * Removed MatrixCalculator dependency
+
+		  1.9.0
+		  * Introduced removing left requests in VIATMSSolution from problem definition
+
+		  1.8.0
+		  * Modified type of errors and fixes for VehicleRoadProperties
+
+		  1.7.0
+		  * Enhanced VIATMS Solution model with VehicleRoutes list
+
+		  1.6.0
+		  * Added FileCachedRoutingAPIDistanceProvider
+
+		  1.5.2
+		  * Fixed VehicleRoadRestrictionProperties deserialization (assuming largest possible vehicle)
+
+		  1.5.1.1
+		  * Merged 1.5.1 into 1.5.0.1
+
+		  1.5.1
+		  * Fixed TransportRequest.Type deserialization (wrong parameter name in constructor of RequestDTO)
+
+		  1.5.0.1
+		  * Merge result statistics into 1.7.x meta version
+
+		  1.5.0
+		  * VRPFixer added to Utils project
+
+		  1.4.1.0
+		  * Fixed looking for errors in definition even if there is no solution
+
+		  1.1.2.4
+		  * Added LeftRequests to VRPResultStatistics
+
+		  1.1.2.3
+		  * Added VRPResultStatistics
+		  * Deserializing TimeEstimator parameters
+
+		  1.1.2.2
+		  * Fixed EP count when deserializing from VIA TMS Jsons
+
+		  1.4.0
+		  * Checking missing vehicles
+		  * Added RouteDTO to library
+
+		  1.3.0
+		  * Checking non-zero package count
+		  * Validating time windows against vehicles availability
+
+		  1.2.3
+		  * Rounding seconds in arrivals and deparatures in VRPValidator
+		  * Fixed typo in validator status
+
+		  1.2.3.1
+		  * Pushing source to nuget packages
+
+		  1.1.2
+		  * Handling IDs as collection in deserializing VIA TMS JSON
+
+		  1.2.2
+		  * Merged 1.1.1 into 1.2.1
+
+		  1.2.1
+		  * Fixed deserialization problems when null values present
+
+		  1.2.0
+		  * CSV summary creator
+
+		  1.1.1
+		  * Fixed TransportRequest seserialization for 0 request Type
+
+		  1.1.0
+		  * CSV summary creator
+
+		  1.0.1
+		  * Namespace updates
+
+		  1.0.0
+		  * Published version including usefull DTOs and distance providers
+	  </PackageReleaseNotes>
+	  <EmbedAllSources>true</EmbedAllSources>
+	  <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VRPTWOptimizer\VRPTWOptimizer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VRPTWOptimizer\VRPTWOptimizer.csproj" />
+  </ItemGroup>
+
+</Project>

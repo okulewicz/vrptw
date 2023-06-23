@@ -1,0 +1,331 @@
+\hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{}\doxysection{Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties Class Reference}
+\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties}\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+
+
+Vehicle profile utilized for find routes and specify restrictions at \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} object  
+
+
+Inheritance diagram for Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_common_g_i_s_1_1_vehicle_road_restriction_properties}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a1538e1ca0f28d4a22bf9708a25f82608}{Vehicle\+Road\+Restriction\+Properties}} (int gross\+Vehicle\+Weight, int height, int width, int ep\+Count, \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a59698c427e27a80aa0c3d9b4fa14a367}{Vehicle\+Type\+Routing}} vehicle\+Type)
+\begin{DoxyCompactList}\small\item\em Creates vehicle profile \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_adf9e12e10e013c65e9f445d557d1ac21}{Vehicle\+Road\+Restriction\+Properties}} (int gross\+Vehicle\+Weight, int height, int width, int ep\+Count, \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a59698c427e27a80aa0c3d9b4fa14a367}{Vehicle\+Type\+Routing}} vehicle\+Type, \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bc}{Tunnel\+Category}} forbidden\+Tunnel\+Category=\mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bcaee5ed84813ccf11b385dfa5b1fea90ed}{Tunnel\+Category.\+No\+Restriction}})
+\item 
+bool \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a1aa35b76ba19d87634f029c9543f891f}{Does\+Vehicle\+Fit\+Into\+Restrictions}} (\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} vehicle\+Properties)
+\begin{DoxyCompactList}\small\item\em Verifies if vehicle with vehicle\+Properties fits into this restrictions \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_ade4797701cfb622b74cd271eeb35d2e1}{Equals}} (\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} other)
+\begin{DoxyCompactList}\small\item\em Verfies is other \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} identical to this one \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a3053a33593350daeca5371e38a5c3a27}{Bound\+Properties}} (\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} road\+Properties)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a50adc8bff31e280f979c182753b1897a}{Max\+EPCount}} = 34
+\begin{DoxyCompactList}\small\item\em Max capacity for truck + trailer duo in europallets \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a39050bdb51269a4ca5897e8e0bfd8dae}{Max\+Gross\+Vehicle\+Weight}} = 40000
+\begin{DoxyCompactList}\small\item\em Max gross weight of the vehicle \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a5f80468b3a0c75749f5e852e307ad6eb}{Max\+Height}} = 400
+\begin{DoxyCompactList}\small\item\em Max height of the vehicle \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_ab9ed1fef8b170b8a02d5fd2ba734e9ab}{Max\+Width}} = 260
+\begin{DoxyCompactList}\small\item\em Max width of the vehicle \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a21daca498983d0da7779d0d031ac3806}{Ep\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Vehicle size given in europallets \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a4c1d465d3831f8466c446161a127600f}{Gross\+Vehicle\+Weight}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Vehicle max gross weight in kilograms \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a62ab671fa005e519395083003f28a1be}{Height}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Vehicle height in centimeters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a59698c427e27a80aa0c3d9b4fa14a367}{Vehicle\+Type\+Routing}} \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a82a21892480283f5f04683c824c0c3fe}{Vehicle\+Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Vehicle type for the purpose of finding route on the map \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a65a850332998b86b49f74c056b43abd6}{Width}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Vehicle width in centimeters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bc}{Tunnel\+Category}} \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a329daa45d95efbf56c7d17269a5a4203}{Forbidden\+Tunnel\+Category}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The highest tunnel category the vehicle is forbidden to pass. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Vehicle profile utilized for find routes and specify restrictions at \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} object 
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a1538e1ca0f28d4a22bf9708a25f82608}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a1538e1ca0f28d4a22bf9708a25f82608}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!VehicleRoadRestrictionProperties@{VehicleRoadRestrictionProperties}}
+\index{VehicleRoadRestrictionProperties@{VehicleRoadRestrictionProperties}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{VehicleRoadRestrictionProperties()}{VehicleRoadRestrictionProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Vehicle\+Road\+Restriction\+Properties (\begin{DoxyParamCaption}\item[{int}]{gross\+Vehicle\+Weight,  }\item[{int}]{height,  }\item[{int}]{width,  }\item[{int}]{ep\+Count,  }\item[{\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a59698c427e27a80aa0c3d9b4fa14a367}{Vehicle\+Type\+Routing}}}]{vehicle\+Type }\end{DoxyParamCaption})}
+
+
+
+Creates vehicle profile 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gross\+Vehicle\+Weight} & \\
+\hline
+{\em height} & \\
+\hline
+{\em width} & \\
+\hline
+{\em ep\+Count} & \\
+\hline
+{\em vehicle\+Type} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_adf9e12e10e013c65e9f445d557d1ac21}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_adf9e12e10e013c65e9f445d557d1ac21}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!VehicleRoadRestrictionProperties@{VehicleRoadRestrictionProperties}}
+\index{VehicleRoadRestrictionProperties@{VehicleRoadRestrictionProperties}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{VehicleRoadRestrictionProperties()}{VehicleRoadRestrictionProperties()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Vehicle\+Road\+Restriction\+Properties (\begin{DoxyParamCaption}\item[{int}]{gross\+Vehicle\+Weight,  }\item[{int}]{height,  }\item[{int}]{width,  }\item[{int}]{ep\+Count,  }\item[{\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a59698c427e27a80aa0c3d9b4fa14a367}{Vehicle\+Type\+Routing}}}]{vehicle\+Type,  }\item[{\mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bc}{Tunnel\+Category}}}]{forbidden\+Tunnel\+Category = {\ttfamily \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bcaee5ed84813ccf11b385dfa5b1fea90ed}{Tunnel\+Category.\+No\+Restriction}}} }\end{DoxyParamCaption})}
+
+
+
+
+
+Creates vehicle profile 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gross\+Vehicle\+Weight} & \\
+\hline
+{\em height} & \\
+\hline
+{\em width} & \\
+\hline
+{\em ep\+Count} & \\
+\hline
+{\em vehicle\+Type} & \\
+\hline
+{\em forbidden\+Tunnel\+Category} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00085}{85}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a3053a33593350daeca5371e38a5c3a27}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a3053a33593350daeca5371e38a5c3a27}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!BoundProperties@{BoundProperties}}
+\index{BoundProperties@{BoundProperties}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{BoundProperties()}{BoundProperties()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Bound\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}}]{road\+Properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00119}{119}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a1aa35b76ba19d87634f029c9543f891f}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a1aa35b76ba19d87634f029c9543f891f}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!DoesVehicleFitIntoRestrictions@{DoesVehicleFitIntoRestrictions}}
+\index{DoesVehicleFitIntoRestrictions@{DoesVehicleFitIntoRestrictions}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{DoesVehicleFitIntoRestrictions()}{DoesVehicleFitIntoRestrictions()}}
+{\footnotesize\ttfamily bool Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Does\+Vehicle\+Fit\+Into\+Restrictions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}}]{vehicle\+Properties }\end{DoxyParamCaption})}
+
+
+
+Verifies if vehicle with vehicle\+Properties fits into this restrictions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vehicle\+Properties} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00136}{136}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_ade4797701cfb622b74cd271eeb35d2e1}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_ade4797701cfb622b74cd271eeb35d2e1}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!Equals@{Equals}}
+\index{Equals@{Equals}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily bool Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}}]{other }\end{DoxyParamCaption})}
+
+
+
+Verfies is other \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} identical to this one 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00156}{156}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a50adc8bff31e280f979c182753b1897a}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a50adc8bff31e280f979c182753b1897a}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!MaxEPCount@{MaxEPCount}}
+\index{MaxEPCount@{MaxEPCount}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{MaxEPCount}{MaxEPCount}}
+{\footnotesize\ttfamily const int Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Max\+EPCount = 34\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Max capacity for truck + trailer duo in europallets 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a39050bdb51269a4ca5897e8e0bfd8dae}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a39050bdb51269a4ca5897e8e0bfd8dae}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!MaxGrossVehicleWeight@{MaxGrossVehicleWeight}}
+\index{MaxGrossVehicleWeight@{MaxGrossVehicleWeight}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{MaxGrossVehicleWeight}{MaxGrossVehicleWeight}}
+{\footnotesize\ttfamily const int Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Max\+Gross\+Vehicle\+Weight = 40000\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Max gross weight of the vehicle 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a5f80468b3a0c75749f5e852e307ad6eb}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a5f80468b3a0c75749f5e852e307ad6eb}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!MaxHeight@{MaxHeight}}
+\index{MaxHeight@{MaxHeight}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{MaxHeight}{MaxHeight}}
+{\footnotesize\ttfamily const int Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Max\+Height = 400\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Max height of the vehicle 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_ab9ed1fef8b170b8a02d5fd2ba734e9ab}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_ab9ed1fef8b170b8a02d5fd2ba734e9ab}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!MaxWidth@{MaxWidth}}
+\index{MaxWidth@{MaxWidth}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{MaxWidth}{MaxWidth}}
+{\footnotesize\ttfamily const int Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Max\+Width = 260\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Max width of the vehicle 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a21daca498983d0da7779d0d031ac3806}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a21daca498983d0da7779d0d031ac3806}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!EpCount@{EpCount}}
+\index{EpCount@{EpCount}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{EpCount}{EpCount}}
+{\footnotesize\ttfamily int Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Ep\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Vehicle size given in europallets 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a329daa45d95efbf56c7d17269a5a4203}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a329daa45d95efbf56c7d17269a5a4203}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!ForbiddenTunnelCategory@{ForbiddenTunnelCategory}}
+\index{ForbiddenTunnelCategory@{ForbiddenTunnelCategory}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{ForbiddenTunnelCategory}{ForbiddenTunnelCategory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bc}{Tunnel\+Category}} Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Forbidden\+Tunnel\+Category\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The highest tunnel category the vehicle is forbidden to pass. 
+
+The value \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca0d61f8370cad1d412f80b84d143e1257}{Tunnel\+Category.\+C}} meant that passing tunnels of categories \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bcaf623e75af30e62bbd73d6df5b50bb7b5}{Tunnel\+Category.\+D}}, \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca0d61f8370cad1d412f80b84d143e1257}{Tunnel\+Category.\+C}}, \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca3a3ea00cfc35332cedf6e5e9a32e94da}{Tunnel\+Category.\+E}} is forbidden. 
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a4c1d465d3831f8466c446161a127600f}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a4c1d465d3831f8466c446161a127600f}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!GrossVehicleWeight@{GrossVehicleWeight}}
+\index{GrossVehicleWeight@{GrossVehicleWeight}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{GrossVehicleWeight}{GrossVehicleWeight}}
+{\footnotesize\ttfamily int Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Gross\+Vehicle\+Weight\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Vehicle max gross weight in kilograms 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a62ab671fa005e519395083003f28a1be}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a62ab671fa005e519395083003f28a1be}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!Height@{Height}}
+\index{Height@{Height}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{Height}{Height}}
+{\footnotesize\ttfamily int Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Height\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Vehicle height in centimeters 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a82a21892480283f5f04683c824c0c3fe}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a82a21892480283f5f04683c824c0c3fe}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!VehicleType@{VehicleType}}
+\index{VehicleType@{VehicleType}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{VehicleType}{VehicleType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a59698c427e27a80aa0c3d9b4fa14a367}{Vehicle\+Type\+Routing}} Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Vehicle\+Type\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Vehicle type for the purpose of finding route on the map 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00044}{44}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a65a850332998b86b49f74c056b43abd6}\label{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a65a850332998b86b49f74c056b43abd6}} 
+\index{CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}!Width@{Width}}
+\index{Width@{Width}!CommonGIS.VehicleRoadRestrictionProperties@{CommonGIS.VehicleRoadRestrictionProperties}}
+\doxysubsubsection{\texorpdfstring{Width}{Width}}
+{\footnotesize\ttfamily int Common\+GIS.\+Vehicle\+Road\+Restriction\+Properties.\+Width\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Vehicle width in centimeters 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_vehicle_road_restriction_properties_8cs_source}{Vehicle\+Road\+Restriction\+Properties.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_vehicle_road_restriction_properties_8cs}{Vehicle\+Road\+Restriction\+Properties.\+cs}}\end{DoxyCompactItemize}

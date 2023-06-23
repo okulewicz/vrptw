@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['filecachedroutingapidistanceprovider_0',['FileCachedRoutingAPIDistanceProvider',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_provider_1_1_file_cached_routing_a_p_i_distance_provider.html#a1ef4065a8b5b599c2a29e91a96468b89',1,'VRPTWOptimizer.Utils.Provider.FileCachedRoutingAPIDistanceProvider.FileCachedRoutingAPIDistanceProvider()'],['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_provider_1_1_file_cached_routing_a_p_i_distance_provider.html',1,'VRPTWOptimizer.Utils.Provider.FileCachedRoutingAPIDistanceProvider']]],
+  ['filecachedroutingapidistanceprovider_2ecs_1',['FileCachedRoutingAPIDistanceProvider.cs',['../_file_cached_routing_a_p_i_distance_provider_8cs.html',1,'']]],
+  ['filewrapper_2',['FileWrapper',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_reader_1_1_file_wrapper.html',1,'VRPTWOptimizer::Utils::Reader']]],
+  ['filewrapper_2ecs_3',['FileWrapper.cs',['../_file_wrapper_8cs.html',1,'']]],
+  ['fillinfactor_4',['FillInFactor',['../class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function.html#ace85ff5ce40d34b5726e719940b2f173',1,'VRPTWOptimizer::VRPCostFunction']]],
+  ['fillinratio_5',['FillInRatio',['../class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item.html#aca525c6bfb980bf9826f11420d0841f2',1,'VRPTWOptimizer.VRPSolution.TransportItem.FillInRatio()'],['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport.html#aa72a822007998d0bb80656dfa06aaaa0',1,'VRPTWOptimizer.Utils.Model.Transport.FillInRatio()']]],
+  ['fillratio_6',['FillRatio',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#ac0504762b687e0f95a94c7efcd2012fa',1,'VRPTWOptimizer::Utils::VrpDefinition::VRPResultStatistics']]],
+  ['finallocation_7',['FinalLocation',['../class_v_r_p_t_w_optimizer_1_1_vehicle.html#aea13b7c7e39530026df3dec330e89fef',1,'VRPTWOptimizer::Vehicle']]],
+  ['findbestinsertionforrequest_8',['FindBestInsertionForRequest',['../class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route.html#aaf81f66364ec072d55448a40d82eee86',1,'VRPTWOptimizer::BL::Meta::Route']]],
+  ['firstrequest_9',['FirstRequest',['../class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge.html#a999cc57595e221b147cfdb79816842c8',1,'VRPTWOptimizer::BL::Meta::Edge']]],
+  ['fixmissingvehicles_10',['FixMissingVehicles',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_fixer.html#a652f2babfc11fba7103a426d5cd39cf9',1,'VRPTWOptimizer::Utils::Validation::VRPFixer']]],
+  ['fixrequestlimits_11',['FixRequestLimits',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_fixer.html#aed91f5c9c2c2f06dc59f2e059a3669dd',1,'VRPTWOptimizer::Utils::Validation::VRPFixer']]],
+  ['fixrequestsize_12',['FixRequestSize',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_fixer.html#ad6fb3e60269ecefcdaecc0e2667314a4',1,'VRPTWOptimizer::Utils::Validation::VRPFixer']]],
+  ['fixrequestsproperties_13',['FixRequestsProperties',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_fixer.html#a38fd265b3570c98f24e0738e57034cf6',1,'VRPTWOptimizer::Utils::Validation::VRPFixer']]],
+  ['fixvehiclesize_14',['FixVehicleSize',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_fixer.html#aa1aecaf09972d995de051d3ba99d4d9f',1,'VRPTWOptimizer::Utils::Validation::VRPFixer']]],
+  ['fixwrongvehicletype_15',['FixWrongVehicleType',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_fixer.html#a7c0b9290b5942b515d1dc0bb31147c90',1,'VRPTWOptimizer::Utils::Validation::VRPFixer']]],
+  ['flushbuffer_16',['FlushBuffer',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_provider_1_1_file_cached_routing_a_p_i_distance_provider.html#a73d79b110698620edfa511f66eda0270',1,'VRPTWOptimizer::Utils::Provider::FileCachedRoutingAPIDistanceProvider']]],
+  ['food_17',['Food',['../namespace_v_r_p_t_w_optimizer_1_1_enums.html#ad51ce9968a6b8ade8d128141a14267eca0a38e7286ebbb560354992b3ce62be67',1,'VRPTWOptimizer::Enums']]],
+  ['forbiddentunnelcategory_18',['ForbiddenTunnelCategory',['../class_common_g_i_s_1_1_vehicle_road_restriction_properties.html#a329daa45d95efbf56c7d17269a5a4203',1,'CommonGIS::VehicleRoadRestrictionProperties']]],
+  ['fromid_19',['FromId',['../class_common_g_i_s_1_1_distance.html#afe206a95e13cc7270e52b9fa68c52a32',1,'CommonGIS.Distance.FromId()'],['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_distance.html#a2728ca8aebfc85b9a7075b539e873023',1,'VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.Distance.FromId()']]]
+];

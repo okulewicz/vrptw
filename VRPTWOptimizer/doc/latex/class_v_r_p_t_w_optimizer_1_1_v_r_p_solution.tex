@@ -1,0 +1,246 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{}\doxysection{VRPTWOptimizer.\+VRPSolution Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+
+
+Definition of structure describing solution to the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} Routing Problem. Includes \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} assignment to \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} schedule  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_schedule_item}{Schedule\+Item}}
+\begin{DoxyCompactList}\small\item\em Single time entry describing planned visit at a given Location \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item}{Transport\+Item}}
+\begin{DoxyCompactList}\small\item\em Entry describing a single loop of the Vehicle/combined \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a720ea24cb414d2de706753dfe1d0ccd5}{Generate\+VRPSolution}} (\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} \+\_\+optimizer, Date\+Time computations\+Start, Date\+Time computations\+End, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ left\+Requests, List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$ routes)
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}} in a standard format on the basis of results and computation properties \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a4bd0e0d0f78ad848a707b3aa1b618e83}{Algorithm}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Name of the algorithm that generated this solution \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aa5d8a86db8bf777f185310f3a69030cc}{Computation\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Computations time it took to generate the solution (problem data is assumed to be loaded to memory) \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a9916d4042113d0e2d2bd4cd70de467ab}{Computation\+Timestamp}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Timestamp when the computations were being performed \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aea9dd7cfc63e67abbe3916d0592c1e72}{Computer\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em NETBIOS computer name that run the computations \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a1e50c5b02dfa8ce18d4ef3e2af5c64f1}{Delays\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Number of transport requests that were late (even 1 second against the prefered time) \end{DoxyCompactList}\item 
+List$<$ int $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_afb2044b12e4658820d94a2ab7d43eb93}{Left\+Requests\+Ids}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Ids of the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects that were not assigned to any \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a343e8d2726df28f098bc076767277858}{Max\+Delay}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Max delay in serving an assigned \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} (against the prefered time) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aed2f4bf233c05f5104bf7de2579826a6}{Total\+Delay}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Sum of all delay in serving \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects (against the prefered time) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a2b4183f20554f324aaa16dbb1751bd6b}{Total\+Length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Length of all routes in meters \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item}{Transport\+Item}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_afbc97702ed26fea0fddeeccb8fa99cd9}{Transports}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of all assigned transports \end{DoxyCompactList}\item 
+Version \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aa93cf5fa5932bb867598ec672b52408b}{Version}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Algorithm library version \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of structure describing solution to the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} Routing Problem. Includes \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} assignment to \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} schedule 
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a720ea24cb414d2de706753dfe1d0ccd5}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a720ea24cb414d2de706753dfe1d0ccd5}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!GenerateVRPSolution@{GenerateVRPSolution}}
+\index{GenerateVRPSolution@{GenerateVRPSolution}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{GenerateVRPSolution()}{GenerateVRPSolution()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}} VRPTWOptimizer.\+VRPSolution.\+Generate\+VRPSolution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}}}]{\+\_\+optimizer,  }\item[{Date\+Time}]{computations\+Start,  }\item[{Date\+Time}]{computations\+End,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{left\+Requests,  }\item[{List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$}]{routes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}} in a standard format on the basis of results and computation properties 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+optimizer} & \\
+\hline
+{\em computations\+Start} & \\
+\hline
+{\em computations\+End} & \\
+\hline
+{\em left\+Requests} & \\
+\hline
+{\em routes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00145}{145}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a4bd0e0d0f78ad848a707b3aa1b618e83}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a4bd0e0d0f78ad848a707b3aa1b618e83}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{Algorithm}{Algorithm}}
+{\footnotesize\ttfamily string VRPTWOptimizer.\+VRPSolution.\+Algorithm\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Name of the algorithm that generated this solution 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00094}{94}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aa5d8a86db8bf777f185310f3a69030cc}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aa5d8a86db8bf777f185310f3a69030cc}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!ComputationTime@{ComputationTime}}
+\index{ComputationTime@{ComputationTime}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{ComputationTime}{ComputationTime}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+VRPSolution.\+Computation\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Computations time it took to generate the solution (problem data is assumed to be loaded to memory) 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00098}{98}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a9916d4042113d0e2d2bd4cd70de467ab}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a9916d4042113d0e2d2bd4cd70de467ab}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!ComputationTimestamp@{ComputationTimestamp}}
+\index{ComputationTimestamp@{ComputationTimestamp}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{ComputationTimestamp}{ComputationTimestamp}}
+{\footnotesize\ttfamily Date\+Time VRPTWOptimizer.\+VRPSolution.\+Computation\+Timestamp\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Timestamp when the computations were being performed 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00102}{102}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aea9dd7cfc63e67abbe3916d0592c1e72}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aea9dd7cfc63e67abbe3916d0592c1e72}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!ComputerId@{ComputerId}}
+\index{ComputerId@{ComputerId}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{ComputerId}{ComputerId}}
+{\footnotesize\ttfamily string VRPTWOptimizer.\+VRPSolution.\+Computer\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+NETBIOS computer name that run the computations 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00106}{106}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a1e50c5b02dfa8ce18d4ef3e2af5c64f1}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a1e50c5b02dfa8ce18d4ef3e2af5c64f1}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!DelaysCount@{DelaysCount}}
+\index{DelaysCount@{DelaysCount}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{DelaysCount}{DelaysCount}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+VRPSolution.\+Delays\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Number of transport requests that were late (even 1 second against the prefered time) 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00110}{110}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_afb2044b12e4658820d94a2ab7d43eb93}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_afb2044b12e4658820d94a2ab7d43eb93}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!LeftRequestsIds@{LeftRequestsIds}}
+\index{LeftRequestsIds@{LeftRequestsIds}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{LeftRequestsIds}{LeftRequestsIds}}
+{\footnotesize\ttfamily List$<$int$>$ VRPTWOptimizer.\+VRPSolution.\+Left\+Requests\+Ids\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Ids of the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects that were not assigned to any \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00114}{114}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a343e8d2726df28f098bc076767277858}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a343e8d2726df28f098bc076767277858}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!MaxDelay@{MaxDelay}}
+\index{MaxDelay@{MaxDelay}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{MaxDelay}{MaxDelay}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+VRPSolution.\+Max\+Delay\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Max delay in serving an assigned \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} (against the prefered time) 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00118}{118}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aed2f4bf233c05f5104bf7de2579826a6}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aed2f4bf233c05f5104bf7de2579826a6}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!TotalDelay@{TotalDelay}}
+\index{TotalDelay@{TotalDelay}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{TotalDelay}{TotalDelay}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+VRPSolution.\+Total\+Delay\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Sum of all delay in serving \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects (against the prefered time) 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00122}{122}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a2b4183f20554f324aaa16dbb1751bd6b}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_a2b4183f20554f324aaa16dbb1751bd6b}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!TotalLength@{TotalLength}}
+\index{TotalLength@{TotalLength}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{TotalLength}{TotalLength}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+VRPSolution.\+Total\+Length\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Length of all routes in meters 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00126}{126}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_afbc97702ed26fea0fddeeccb8fa99cd9}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_afbc97702ed26fea0fddeeccb8fa99cd9}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!Transports@{Transports}}
+\index{Transports@{Transports}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{Transports}{Transports}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item}{Transport\+Item}}$>$ VRPTWOptimizer.\+VRPSolution.\+Transports\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+List of all assigned transports 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00130}{130}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aa93cf5fa5932bb867598ec672b52408b}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_aa93cf5fa5932bb867598ec672b52408b}} 
+\index{VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}!Version@{Version}}
+\index{Version@{Version}!VRPTWOptimizer.VRPSolution@{VRPTWOptimizer.VRPSolution}}
+\doxysubsubsection{\texorpdfstring{Version}{Version}}
+{\footnotesize\ttfamily Version VRPTWOptimizer.\+VRPSolution.\+Version\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Algorithm library version 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00134}{134}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_r_p_solution_8cs}{VRPSolution.\+cs}}\end{DoxyCompactItemize}

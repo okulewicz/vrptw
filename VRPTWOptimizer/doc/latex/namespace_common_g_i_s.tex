@@ -1,0 +1,77 @@
+\hypertarget{namespace_common_g_i_s}{}\doxysection{Common\+GIS Namespace Reference}
+\label{namespace_common_g_i_s}\index{CommonGIS@{CommonGIS}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}
+\item 
+namespace \mbox{\hyperlink{namespace_common_g_i_s_1_1_interfaces}{Interfaces}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_common_g_i_s_1_1_base_location}{Base\+Location}}
+\begin{DoxyCompactList}\small\item\em Basic implementation of abstract \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} class \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}}
+\begin{DoxyCompactList}\small\item\em Represents properties of distance between 2 \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} objects \end{DoxyCompactList}\item 
+class {\bfseries Geo\+Coordinates\+Helper}
+\item 
+class \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}
+\begin{DoxyCompactList}\small\item\em Represents point in two dimensional geographical space with WGS\textquotesingle{}84 assumed as reference system \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_common_g_i_s_1_1_time_length_distance}{Time\+Length\+Distance}}
+\item 
+class \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}
+\begin{DoxyCompactList}\small\item\em Vehicle profile utilized for find routes and specify restrictions at \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} object \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restrictions_comparer}{Vehicle\+Road\+Restrictions\+Comparer}}
+\begin{DoxyCompactList}\small\item\em Compares if 2 vehicle profiles in \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} are identical \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bc}{Tunnel\+Category}} \{ \newline
+\mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bcaee5ed84813ccf11b385dfa5b1fea90ed}{No\+Restriction}} = 0
+, \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca3a3ea00cfc35332cedf6e5e9a32e94da}{E}} = 1
+, \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bcaf623e75af30e62bbd73d6df5b50bb7b5}{D}} = 2
+, \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca0d61f8370cad1d412f80b84d143e1257}{C}} = 3
+, \newline
+\mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca9d5ed678fe57bcca610140957afab571}{B}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Tunnel categories as specified in ADR convention.\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bc}\label{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bc}} 
+\index{CommonGIS@{CommonGIS}!TunnelCategory@{TunnelCategory}}
+\index{TunnelCategory@{TunnelCategory}!CommonGIS@{CommonGIS}}
+\doxysubsubsection{\texorpdfstring{TunnelCategory}{TunnelCategory}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bc}{Common\+GIS.\+Tunnel\+Category}}}
+
+
+
+Tunnel categories as specified in ADR convention.
+
+The \char`\"{}\+A\char`\"{} category is missing as this type is used to mark frobidden tunnel classes for transported goods and an \char`\"{}\+A\char`\"{} tunnel has no restrictions. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoRestriction@{NoRestriction}!CommonGIS@{CommonGIS}}\index{CommonGIS@{CommonGIS}!NoRestriction@{NoRestriction}}}\mbox{\Hypertarget{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bcaee5ed84813ccf11b385dfa5b1fea90ed}\label{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bcaee5ed84813ccf11b385dfa5b1fea90ed}} 
+No\+Restriction&The route can pass any tunnels.\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E@{E}!CommonGIS@{CommonGIS}}\index{CommonGIS@{CommonGIS}!E@{E}}}\mbox{\Hypertarget{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca3a3ea00cfc35332cedf6e5e9a32e94da}\label{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca3a3ea00cfc35332cedf6e5e9a32e94da}} 
+E&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D@{D}!CommonGIS@{CommonGIS}}\index{CommonGIS@{CommonGIS}!D@{D}}}\mbox{\Hypertarget{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bcaf623e75af30e62bbd73d6df5b50bb7b5}\label{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bcaf623e75af30e62bbd73d6df5b50bb7b5}} 
+D&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C@{C}!CommonGIS@{CommonGIS}}\index{CommonGIS@{CommonGIS}!C@{C}}}\mbox{\Hypertarget{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca0d61f8370cad1d412f80b84d143e1257}\label{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca0d61f8370cad1d412f80b84d143e1257}} 
+C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B@{B}!CommonGIS@{CommonGIS}}\index{CommonGIS@{CommonGIS}!B@{B}}}\mbox{\Hypertarget{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca9d5ed678fe57bcca610140957afab571}\label{namespace_common_g_i_s_a4a114ea553d837ff4fa013f6415938bca9d5ed678fe57bcca610140957afab571}} 
+B&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_tunnel_category_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_tunnel_category_8cs_source}{Tunnel\+Category.\+cs}}.
+

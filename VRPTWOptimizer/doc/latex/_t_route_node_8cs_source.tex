@@ -1,0 +1,31 @@
+\hypertarget{_t_route_node_8cs_source}{}\doxysection{TRoute\+Node.\+cs}
+\label{_t_route_node_8cs_source}\index{TRouteNode.cs@{TRouteNode.cs}}
+\mbox{\hyperlink{_t_route_node_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00001}00001 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_classes}{VRPTWOptimizer.BL.SA.Classes}}}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00002}00002 \{}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00003}00003     \textcolor{keyword}{internal} \textcolor{keyword}{class }TRouteNode}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00004}00004     \{}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00005}00005         \textcolor{keyword}{public} \textcolor{keywordtype}{double} ArrivalTime;}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00006}00006         \textcolor{comment}{// czas przybycia do wezla}}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00007}00007         \textcolor{keyword}{public} \textcolor{keywordtype}{double} DepartureTime;}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00008}00008         \textcolor{keyword}{public} \textcolor{keywordtype}{int} NodeID;                             \textcolor{comment}{// identyfikator wezla w wektorze Nodes (patrz "{}Zmienne globalne"{})}}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00009}00009         \textcolor{keyword}{public} \textcolor{keywordtype}{double} ServiceTime;}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00010}00010         \textcolor{keyword}{public} \textcolor{keywordtype}{int} VehicleID;                       \textcolor{comment}{// identyfikator pojazdu, który obsługuje węzeł}}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00011}00011                                                     \textcolor{comment}{// czas opuszczenia wezla}}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00012}00012         \textcolor{keyword}{public} \textcolor{keywordtype}{double} WaitingTime;                     \textcolor{comment}{// czas oczekiwania w wezle}}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00013}00013                                                        \textcolor{comment}{// czas obslugi w wezle}}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00024}00024         \textcolor{keyword}{public} TRouteNode(\textcolor{keywordtype}{int} nodeID, \textcolor{keywordtype}{int} vehicleID, \textcolor{keywordtype}{double} arrivalTime, \textcolor{keywordtype}{double} departureTime, \textcolor{keywordtype}{double} waitingTime, \textcolor{keywordtype}{double} serviceTime)}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00025}00025         \{}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00026}00026             NodeID = nodeID;}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00027}00027             VehicleID = vehicleID;}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00028}00028             ArrivalTime = arrivalTime;}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00029}00029             DepartureTime = departureTime;}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00030}00030             WaitingTime = waitingTime;}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00031}00031             ServiceTime = serviceTime;}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00032}00032         \}}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_t_route_node_8cs_source_l00034}00034 \}}
+
+\end{DoxyCode}

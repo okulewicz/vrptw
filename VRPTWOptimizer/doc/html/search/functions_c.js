@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['removetransfersandloops_0',['RemoveTransfersAndLoops',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_fixer.html#a3033a1900746ef89d3c41b85406c4e0b',1,'VRPTWOptimizer::Utils::Validation::VRPFixer']]],
+  ['requestdto_1',['RequestDTO',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_request_d_t_o.html#acc56cfdddb92f1cb9570fed1801dee88',1,'VRPTWOptimizer::Utils::Model::RequestDTO']]],
+  ['resource_2',['Resource',['../class_v_r_p_t_w_optimizer_1_1_resource.html#ab25db6a49f43ca73b65b485408059a80',1,'VRPTWOptimizer::Resource']]],
+  ['route_3',['Route',['../class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route.html#ac9cc0e4fcae9768d69fc9af7cb2b8c8c',1,'VRPTWOptimizer::BL::Meta::Route']]],
+  ['routedto_4',['RouteDto',['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto.html#add200f2569c9634be83a17286b9d4bc9',1,'VRPTWOptimizer.Utils.Model.RouteDto.RouteDto(List&lt; double &gt; arrivalTimes, List&lt; double &gt; departureTimes, List&lt; Distance &gt; distances, List&lt; List&lt; TransportRequest &gt; &gt; loadedRequests, List&lt; List&lt; TransportRequest &gt; &gt; unloadedRequests, List&lt; double &gt; timeWindowStart, List&lt; double &gt; timeWindowEnd, Vehicle vehicle, Driver vehicleDriver, Vehicle vehicleTractor, List&lt; Location &gt; visitedLocations)'],['../class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto.html#a3acc840a9eda4a267c66ddba5f2cd5f3',1,'VRPTWOptimizer.Utils.Model.RouteDto.RouteDto(Transport definitionDto, List&lt; TransportRequest &gt; requests, List&lt; Vehicle &gt; vehicles, List&lt; Driver &gt; drivers, IDistanceProvider distanceProvider)']]],
+  ['routegenerator_5',['RouteGenerator',['../class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_generator.html#a10b68ff9a28826c293fe61bfa342dc7c',1,'VRPTWOptimizer::BL::Meta::RouteGenerator']]]
+];

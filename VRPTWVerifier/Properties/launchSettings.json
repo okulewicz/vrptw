@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "VRPTWVerifier": {
+      "commandName": "Project",
+      "commandLineArgs": "fix=true thin=true \"C:\\Users\\mokulewicz\\BETACOM S.A\\VIA Dystrybucja - General\\Dane VRP\\2.2.0.0\\20230621\\tasks\\special_tasks\\JMP-DC08-2023-04-14-historic-solution-with-drivers.json\""
+    }
+  }
+}

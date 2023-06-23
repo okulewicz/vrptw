@@ -1,0 +1,203 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{}\doxysection{VRPTWOptimizer.\+Dto.\+Picking\+Schedule Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+
+
+Complete picking schedule for one day  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a226a177206d20e477a9580353ec81d2f}{Try\+Save\+To\+File}} (string filename)
+\begin{DoxyCompactList}\small\item\em Writes picking schedule to designated JSON file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{Picking\+Schedule}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a2bb92926aab867e3e76f6b55393e705f}{Generate\+Picking\+Schedule}} (\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} vrp\+Definition, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}} vrp\+Solution)
+\begin{DoxyCompactList}\small\item\em Creates picking schedule from VRP definition and solution \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{Picking\+Schedule}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a87ecd9ba91d3364b2fef5e3e26e7a8cf}{Generate\+Picking\+Schedule}} (List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$ routes, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ vehicles)
+\begin{DoxyCompactList}\small\item\em Creates picking schedule from VRP routes and available vehicles \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a0f019333d15966453f57ad3969f06ea5}{Callback\+Url}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em URI where updated picking schedule should be sent back \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_acbb3fd88453b36cab8bfa06f73ccffa2}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identifier of picking schedule \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_af37f000ea497fa59f8b66e46cc17b313}{Orders\+Create\+Date}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Date\+Time when picking schedule was generated \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_ace192a5cb49b98841c4dbd524674c85f}{Orders\+Picking\+Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Date\+Time when first shift of picking starts \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists}{Transport\+Picking\+Lists}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a8217713cd0a0206094890e6e61983c18}{Picking\+Lists}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Picking orders divided among transports \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule}{Vehicle\+Schedule}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a6e35727b2cd88f018aad8b3801a964cb}{Vehicles\+Availability}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Schedule of vehicles presence within the warehouse bounds \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Complete picking schedule for one day 
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a87ecd9ba91d3364b2fef5e3e26e7a8cf}\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a87ecd9ba91d3364b2fef5e3e26e7a8cf}} 
+\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}!GeneratePickingSchedule@{GeneratePickingSchedule}}
+\index{GeneratePickingSchedule@{GeneratePickingSchedule}!VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+\doxysubsubsection{\texorpdfstring{GeneratePickingSchedule()}{GeneratePickingSchedule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{Picking\+Schedule}} VRPTWOptimizer.\+Dto.\+Picking\+Schedule.\+Generate\+Picking\+Schedule (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$}]{routes,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$}]{vehicles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates picking schedule from VRP routes and available vehicles 
+
+
+\begin{DoxyParams}{Parameters}
+{\em routes} & \\
+\hline
+{\em vehicles} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00149}{149}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a2bb92926aab867e3e76f6b55393e705f}\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a2bb92926aab867e3e76f6b55393e705f}} 
+\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}!GeneratePickingSchedule@{GeneratePickingSchedule}}
+\index{GeneratePickingSchedule@{GeneratePickingSchedule}!VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+\doxysubsubsection{\texorpdfstring{GeneratePickingSchedule()}{GeneratePickingSchedule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{Picking\+Schedule}} VRPTWOptimizer.\+Dto.\+Picking\+Schedule.\+Generate\+Picking\+Schedule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}}}]{vrp\+Definition,  }\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}}}]{vrp\+Solution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates picking schedule from VRP definition and solution 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vrp\+Definition} & \\
+\hline
+{\em vrp\+Solution} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a226a177206d20e477a9580353ec81d2f}\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a226a177206d20e477a9580353ec81d2f}} 
+\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}!TrySaveToFile@{TrySaveToFile}}
+\index{TrySaveToFile@{TrySaveToFile}!VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+\doxysubsubsection{\texorpdfstring{TrySaveToFile()}{TrySaveToFile()}}
+{\footnotesize\ttfamily void VRPTWOptimizer.\+Dto.\+Picking\+Schedule.\+Try\+Save\+To\+File (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Writes picking schedule to designated JSON file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00158}{158}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a0f019333d15966453f57ad3969f06ea5}\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a0f019333d15966453f57ad3969f06ea5}} 
+\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}!CallbackUrl@{CallbackUrl}}
+\index{CallbackUrl@{CallbackUrl}!VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+\doxysubsubsection{\texorpdfstring{CallbackUrl}{CallbackUrl}}
+{\footnotesize\ttfamily string VRPTWOptimizer.\+Dto.\+Picking\+Schedule.\+Callback\+Url\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+URI where updated picking schedule should be sent back 
+
+
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_acbb3fd88453b36cab8bfa06f73ccffa2}\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_acbb3fd88453b36cab8bfa06f73ccffa2}} 
+\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}!Id@{Id}}
+\index{Id@{Id}!VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+Dto.\+Picking\+Schedule.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Identifier of picking schedule 
+
+
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_af37f000ea497fa59f8b66e46cc17b313}\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_af37f000ea497fa59f8b66e46cc17b313}} 
+\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}!OrdersCreateDate@{OrdersCreateDate}}
+\index{OrdersCreateDate@{OrdersCreateDate}!VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+\doxysubsubsection{\texorpdfstring{OrdersCreateDate}{OrdersCreateDate}}
+{\footnotesize\ttfamily Date\+Time VRPTWOptimizer.\+Dto.\+Picking\+Schedule.\+Orders\+Create\+Date\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Date\+Time when picking schedule was generated 
+
+
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_ace192a5cb49b98841c4dbd524674c85f}\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_ace192a5cb49b98841c4dbd524674c85f}} 
+\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}!OrdersPickingStart@{OrdersPickingStart}}
+\index{OrdersPickingStart@{OrdersPickingStart}!VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+\doxysubsubsection{\texorpdfstring{OrdersPickingStart}{OrdersPickingStart}}
+{\footnotesize\ttfamily Date\+Time VRPTWOptimizer.\+Dto.\+Picking\+Schedule.\+Orders\+Picking\+Start\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Date\+Time when first shift of picking starts 
+
+
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a8217713cd0a0206094890e6e61983c18}\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a8217713cd0a0206094890e6e61983c18}} 
+\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}!PickingLists@{PickingLists}}
+\index{PickingLists@{PickingLists}!VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+\doxysubsubsection{\texorpdfstring{PickingLists}{PickingLists}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists}{Transport\+Picking\+Lists}}$>$ VRPTWOptimizer.\+Dto.\+Picking\+Schedule.\+Picking\+Lists\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Picking orders divided among transports 
+
+
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a6e35727b2cd88f018aad8b3801a964cb}\label{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a6e35727b2cd88f018aad8b3801a964cb}} 
+\index{VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}!VehiclesAvailability@{VehiclesAvailability}}
+\index{VehiclesAvailability@{VehiclesAvailability}!VRPTWOptimizer.Dto.PickingSchedule@{VRPTWOptimizer.Dto.PickingSchedule}}
+\doxysubsubsection{\texorpdfstring{VehiclesAvailability}{VehiclesAvailability}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule}{Vehicle\+Schedule}}$>$ VRPTWOptimizer.\+Dto.\+Picking\+Schedule.\+Vehicles\+Availability\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Schedule of vehicles presence within the warehouse bounds 
+
+
+
+Definition at line \mbox{\hyperlink{_picking_schedule_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_picking_schedule_8cs_source}{Picking\+Schedule.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_picking_schedule_8cs}{Picking\+Schedule.\+cs}}\end{DoxyCompactItemize}

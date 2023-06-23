@@ -1,0 +1,248 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory}{}\doxysection{VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory}\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+
+
+Optimizer running multiple Clustering\+Optimizer with vehicle randomization (uses parallelization)  
+
+
+Inheritance diagram for VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a216c4ead789f98cad75ef3ade4df4762}{Create\+Optimizer}} ()
+\begin{DoxyCompactList}\small\item\em Cretes optimizer with default parameters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a1742957cc7d91a4791ac05586be98c9a}{Create\+Optimizer}} (Dictionary$<$ string, object $>$ configuration)
+\begin{DoxyCompactList}\small\item\em Creates optimizer with parameters based on provided configuration e.\+g. \{ \char`\"{}\+Max\+Computatation\+Seconds\char`\"{}\+: 120, \char`\"{}\+Max\+Iterations\char`\"{}\+: 10000, \char`\"{}\+Max\+Processors\+Count\char`\"{}\+: 100, \char`\"{}\+Initial\+Allowed\+Delay\char`\"{}\+: 0, \char`\"{}\+Max\+Allowed\+Delay\char`\"{}\+: 7200 \} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a3845e1dbbff554950c04f598a444406b}{Initial\+Allowed\+Delay\+Default}} = 0
+\begin{DoxyCompactList}\small\item\em Default value for initial max delay at location allowed in solution \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_aa7d12e5a39232d479ac0e29116ec0b3e}{Initial\+Allowed\+Delay\+Key}} = \char`\"{}Initial\+Allowed\+Delay\char`\"{}
+\begin{DoxyCompactList}\small\item\em Configuration key for specifying allowed seconds of delay (starting value) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_ada5c78653cf0ce97310ecfbfeb2b244a}{Max\+Allowed\+Delay\+Default}} = 7200
+\begin{DoxyCompactList}\small\item\em Default value for max delay at location allowed in solution \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_aae91b537e30d970089d2e95a6aba72e8}{Max\+Allowed\+Delay\+Key}} = \char`\"{}Max\+Allowed\+Delay\char`\"{}
+\begin{DoxyCompactList}\small\item\em Configuration key for specifying allowed seconds of delay (final feasible value) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a84b381e580dab38082f330d3dcecdf4d}{Max\+Computatation\+Seconds\+Default}} = 60
+\begin{DoxyCompactList}\small\item\em Default number of second after which the computations will stop \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a7fc1206a92a194319b5b85981db05c95}{Max\+Computatation\+Seconds\+Key}} = \char`\"{}Max\+Computatation\+Seconds\char`\"{}
+\begin{DoxyCompactList}\small\item\em Configuration key for specifying time limit for computations (either iteration or time limit stops algorithm, whichever runs out first) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a84ecf956b63f2aa508023735a08d0d1b}{Max\+Iterations\+Default}} = 1000
+\begin{DoxyCompactList}\small\item\em Default number of iterations to stop computations \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a6197de8e51792f2af9f3cfef8b54cb05}{Max\+Iterations\+Key}} = \char`\"{}Max\+Iterations\char`\"{}
+\begin{DoxyCompactList}\small\item\em Configuration key specifying iterations limit for computations (either iteration or time limit stops algorithm, whichever runs out first) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_aba262fa8676afc236695160a1b95a565}{Max\+Processors\+Count\+Default}} = int.\+Max\+Value
+\begin{DoxyCompactList}\small\item\em Default number of CPUs the algorithm is going to use (this is capped by Environment.\+Get\+Processor\+Count, so int.\+Max\+Value means all of the available processors) \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_abbb008d3cadae6499563fde7ed150b4b}{Max\+Processors\+Count\+Key}} = \char`\"{}Max\+Processors\+Count\char`\"{}
+\begin{DoxyCompactList}\small\item\em Configuration key for specifying number of CPUs to run algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Optimizer running multiple Clustering\+Optimizer with vehicle randomization (uses parallelization) 
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a216c4ead789f98cad75ef3ade4df4762}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a216c4ead789f98cad75ef3ade4df4762}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!CreateOptimizer@{CreateOptimizer}}
+\index{CreateOptimizer@{CreateOptimizer}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{CreateOptimizer()}{CreateOptimizer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Create\+Optimizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cretes optimizer with default parameters 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer_factory_acd6fa8b5857b0a7bc4c8e1e54ed6ebb7}{VRPTWOptimizer.\+Interfaces.\+IVRPOptimizer\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00056}{56}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a1742957cc7d91a4791ac05586be98c9a}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a1742957cc7d91a4791ac05586be98c9a}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!CreateOptimizer@{CreateOptimizer}}
+\index{CreateOptimizer@{CreateOptimizer}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{CreateOptimizer()}{CreateOptimizer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Create\+Optimizer (\begin{DoxyParamCaption}\item[{Dictionary$<$ string, object $>$}]{configuration }\end{DoxyParamCaption})}
+
+
+
+Creates optimizer with parameters based on provided configuration e.\+g. \{ \char`\"{}\+Max\+Computatation\+Seconds\char`\"{}\+: 120, \char`\"{}\+Max\+Iterations\char`\"{}\+: 10000, \char`\"{}\+Max\+Processors\+Count\char`\"{}\+: 100, \char`\"{}\+Initial\+Allowed\+Delay\char`\"{}\+: 0, \char`\"{}\+Max\+Allowed\+Delay\char`\"{}\+: 7200 \} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em configuration} & Configuration dictionary with properties as seen in the example\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer_factory_a1bed8a3030dd6978dbcf37826634a8e6}{VRPTWOptimizer.\+Interfaces.\+IVRPOptimizer\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00075}{75}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a3845e1dbbff554950c04f598a444406b}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a3845e1dbbff554950c04f598a444406b}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!InitialAllowedDelayDefault@{InitialAllowedDelayDefault}}
+\index{InitialAllowedDelayDefault@{InitialAllowedDelayDefault}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{InitialAllowedDelayDefault}{InitialAllowedDelayDefault}}
+{\footnotesize\ttfamily const int VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Initial\+Allowed\+Delay\+Default = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default value for initial max delay at location allowed in solution 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_aa7d12e5a39232d479ac0e29116ec0b3e}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_aa7d12e5a39232d479ac0e29116ec0b3e}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!InitialAllowedDelayKey@{InitialAllowedDelayKey}}
+\index{InitialAllowedDelayKey@{InitialAllowedDelayKey}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{InitialAllowedDelayKey}{InitialAllowedDelayKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Initial\+Allowed\+Delay\+Key = \char`\"{}Initial\+Allowed\+Delay\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configuration key for specifying allowed seconds of delay (starting value) 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_ada5c78653cf0ce97310ecfbfeb2b244a}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_ada5c78653cf0ce97310ecfbfeb2b244a}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!MaxAllowedDelayDefault@{MaxAllowedDelayDefault}}
+\index{MaxAllowedDelayDefault@{MaxAllowedDelayDefault}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxAllowedDelayDefault}{MaxAllowedDelayDefault}}
+{\footnotesize\ttfamily const int VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Max\+Allowed\+Delay\+Default = 7200\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default value for max delay at location allowed in solution 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_aae91b537e30d970089d2e95a6aba72e8}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_aae91b537e30d970089d2e95a6aba72e8}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!MaxAllowedDelayKey@{MaxAllowedDelayKey}}
+\index{MaxAllowedDelayKey@{MaxAllowedDelayKey}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxAllowedDelayKey}{MaxAllowedDelayKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Max\+Allowed\+Delay\+Key = \char`\"{}Max\+Allowed\+Delay\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configuration key for specifying allowed seconds of delay (final feasible value) 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a84b381e580dab38082f330d3dcecdf4d}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a84b381e580dab38082f330d3dcecdf4d}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!MaxComputatationSecondsDefault@{MaxComputatationSecondsDefault}}
+\index{MaxComputatationSecondsDefault@{MaxComputatationSecondsDefault}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxComputatationSecondsDefault}{MaxComputatationSecondsDefault}}
+{\footnotesize\ttfamily const int VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Max\+Computatation\+Seconds\+Default = 60\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default number of second after which the computations will stop 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a7fc1206a92a194319b5b85981db05c95}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a7fc1206a92a194319b5b85981db05c95}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!MaxComputatationSecondsKey@{MaxComputatationSecondsKey}}
+\index{MaxComputatationSecondsKey@{MaxComputatationSecondsKey}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxComputatationSecondsKey}{MaxComputatationSecondsKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Max\+Computatation\+Seconds\+Key = \char`\"{}Max\+Computatation\+Seconds\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configuration key for specifying time limit for computations (either iteration or time limit stops algorithm, whichever runs out first) 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a84ecf956b63f2aa508023735a08d0d1b}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a84ecf956b63f2aa508023735a08d0d1b}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!MaxIterationsDefault@{MaxIterationsDefault}}
+\index{MaxIterationsDefault@{MaxIterationsDefault}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxIterationsDefault}{MaxIterationsDefault}}
+{\footnotesize\ttfamily const int VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Max\+Iterations\+Default = 1000\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default number of iterations to stop computations 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a6197de8e51792f2af9f3cfef8b54cb05}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_a6197de8e51792f2af9f3cfef8b54cb05}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!MaxIterationsKey@{MaxIterationsKey}}
+\index{MaxIterationsKey@{MaxIterationsKey}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxIterationsKey}{MaxIterationsKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Max\+Iterations\+Key = \char`\"{}Max\+Iterations\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configuration key specifying iterations limit for computations (either iteration or time limit stops algorithm, whichever runs out first) 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_aba262fa8676afc236695160a1b95a565}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_aba262fa8676afc236695160a1b95a565}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!MaxProcessorsCountDefault@{MaxProcessorsCountDefault}}
+\index{MaxProcessorsCountDefault@{MaxProcessorsCountDefault}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxProcessorsCountDefault}{MaxProcessorsCountDefault}}
+{\footnotesize\ttfamily const int VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Max\+Processors\+Count\+Default = int.\+Max\+Value\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default number of CPUs the algorithm is going to use (this is capped by Environment.\+Get\+Processor\+Count, so int.\+Max\+Value means all of the available processors) 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_abbb008d3cadae6499563fde7ed150b4b}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory_abbb008d3cadae6499563fde7ed150b4b}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}!MaxProcessorsCountKey@{MaxProcessorsCountKey}}
+\index{MaxProcessorsCountKey@{MaxProcessorsCountKey}!VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory@{VRPTWOptimizer.BL.Meta.Cluster.MultipleTriesClusterizingVRPOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxProcessorsCountKey}{MaxProcessorsCountKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+Max\+Processors\+Count\+Key = \char`\"{}Max\+Processors\+Count\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configuration key for specifying number of CPUs to run algorithm 
+
+
+
+Definition at line \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs_source}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_multiple_tries_clusterizing_v_r_p_optimizer_factory_8cs}{Multiple\+Tries\+Clusterizing\+VRPOptimizer\+Factory.\+cs}}\end{DoxyCompactItemize}

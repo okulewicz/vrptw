@@ -1,0 +1,4 @@
+var namespace_v_r_p_t_w_optimizer_1_1_distance_providers =
+[
+    [ "DictionaryDistanceProviderBase", "class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base.html", "class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base" ]
+];

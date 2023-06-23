@@ -1,0 +1,394 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Packages}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}VRPTWOptimizer Namespace Reference}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Distance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Providers Namespace Reference}{10}{section.5.2}%
+\contentsline {section}{\numberline {5.3}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dto Namespace Reference}{10}{section.5.3}%
+\contentsline {section}{\numberline {5.4}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enums Namespace Reference}{10}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Enumeration Type Documentation}{10}{subsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}Aggregation}{10}{subsubsection.5.4.1.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.2}CargoType}{11}{subsubsection.5.4.1.2}%
+\contentsline {subsubsection}{\numberline {5.4.1.3}CargoUnitType}{11}{subsubsection.5.4.1.3}%
+\contentsline {subsubsection}{\numberline {5.4.1.4}RequestType}{11}{subsubsection.5.4.1.4}%
+\contentsline {section}{\numberline {5.5}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces Namespace Reference}{12}{section.5.5}%
+\contentsline {section}{\numberline {5.6}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logging Namespace Reference}{12}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cargo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Unit Class Reference}{13}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{13}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Property Documentation}{13}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}CargoGroup}{14}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}CargoUnitType}{14}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}GoodsId}{14}{subsubsection.6.1.2.3}%
+\contentsline {subsubsection}{\numberline {6.1.2.4}GoodsName}{14}{subsubsection.6.1.2.4}%
+\contentsline {subsubsection}{\numberline {6.1.2.5}Priority}{14}{subsubsection.6.1.2.5}%
+\contentsline {subsubsection}{\numberline {6.1.2.6}Size}{15}{subsubsection.6.1.2.6}%
+\contentsline {subsubsection}{\numberline {6.1.2.7}UnitsCount}{15}{subsubsection.6.1.2.7}%
+\contentsline {section}{\numberline {6.2}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Distance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Providers.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dictionary\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Distance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Provider\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Base Class Reference}{15}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{16}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Constructor \& Destructor Documentation}{16}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}DictionaryDistanceProviderBase()}{16}{subsubsection.6.2.2.1}%
+\contentsline {subsection}{\numberline {6.2.3}Member Function Documentation}{16}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}GetDistance()}{16}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}InitializeDistanceDictionary()}{16}{subsubsection.6.2.3.2}%
+\contentsline {subsection}{\numberline {6.2.4}Member Data Documentation}{16}{subsection.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.1}distanceMatrix}{17}{subsubsection.6.2.4.1}%
+\contentsline {subsubsection}{\numberline {6.2.4.2}SelfContain}{17}{subsubsection.6.2.4.2}%
+\contentsline {subsubsection}{\numberline {6.2.4.3}vehicleToProfileMapper}{17}{subsubsection.6.2.4.3}%
+\contentsline {subsection}{\numberline {6.2.5}Property Documentation}{17}{subsection.6.2.5}%
+\contentsline {subsubsection}{\numberline {6.2.5.1}StoredDistances}{17}{subsubsection.6.2.5.1}%
+\contentsline {section}{\numberline {6.3}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Driver Class Reference}{17}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{18}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Constructor \& Destructor Documentation}{18}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}Driver()}{18}{subsubsection.6.3.2.1}%
+\contentsline {subsection}{\numberline {6.3.3}Property Documentation}{18}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}CompatibileVehiclesIds}{19}{subsubsection.6.3.3.1}%
+\contentsline {section}{\numberline {6.4}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Insertion\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result Class Reference}{19}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{19}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Constructor \& Destructor Documentation}{19}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}InsertionResult()}{20}{subsubsection.6.4.2.1}%
+\contentsline {subsection}{\numberline {6.4.3}Property Documentation}{20}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}ExpectedArriveTime}{20}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}MaxDelay}{20}{subsubsection.6.4.3.2}%
+\contentsline {subsubsection}{\numberline {6.4.3.3}NewAddedDistance}{20}{subsubsection.6.4.3.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.4}NewNextArriveTime}{21}{subsubsection.6.4.3.4}%
+\contentsline {subsubsection}{\numberline {6.4.3.5}OldDistanceBetween}{21}{subsubsection.6.4.3.5}%
+\contentsline {subsubsection}{\numberline {6.4.3.6}OldNextArriveTime}{21}{subsubsection.6.4.3.6}%
+\contentsline {subsubsection}{\numberline {6.4.3.7}Success}{21}{subsubsection.6.4.3.7}%
+\contentsline {section}{\numberline {6.5}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IRoute Interface Reference}{21}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{22}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Property Documentation}{22}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}ArrivalTimes}{22}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}DepartureTimes}{23}{subsubsection.6.5.2.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.3}Distances}{23}{subsubsection.6.5.2.3}%
+\contentsline {subsubsection}{\numberline {6.5.2.4}Length}{23}{subsubsection.6.5.2.4}%
+\contentsline {subsubsection}{\numberline {6.5.2.5}LoadedRequests}{23}{subsubsection.6.5.2.5}%
+\contentsline {subsubsection}{\numberline {6.5.2.6}MaxDelay}{23}{subsubsection.6.5.2.6}%
+\contentsline {subsubsection}{\numberline {6.5.2.7}TimeWindowEnd}{24}{subsubsection.6.5.2.7}%
+\contentsline {subsubsection}{\numberline {6.5.2.8}TimeWindowStart}{24}{subsubsection.6.5.2.8}%
+\contentsline {subsubsection}{\numberline {6.5.2.9}TotalDelay}{24}{subsubsection.6.5.2.9}%
+\contentsline {subsubsection}{\numberline {6.5.2.10}TravelTime}{24}{subsubsection.6.5.2.10}%
+\contentsline {subsubsection}{\numberline {6.5.2.11}UnloadedRequests}{24}{subsubsection.6.5.2.11}%
+\contentsline {subsubsection}{\numberline {6.5.2.12}Vehicle}{25}{subsubsection.6.5.2.12}%
+\contentsline {subsubsection}{\numberline {6.5.2.13}VehicleDriver}{25}{subsubsection.6.5.2.13}%
+\contentsline {subsubsection}{\numberline {6.5.2.14}VehicleTractor}{25}{subsubsection.6.5.2.14}%
+\contentsline {subsubsection}{\numberline {6.5.2.15}VisitedLocations}{25}{subsubsection.6.5.2.15}%
+\contentsline {section}{\numberline {6.6}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ITime\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Estimator Interface Reference}{25}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{26}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Member Function Documentation}{26}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}EstimateLoadUnloadTime()}{26}{subsubsection.6.6.2.1}%
+\contentsline {section}{\numberline {6.7}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IVRPOptimizer Interface Reference}{26}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{27}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Member Function Documentation}{27}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}Optimize()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{27}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}Optimize()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{27}{subsubsection.6.7.2.2}%
+\contentsline {section}{\numberline {6.8}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IVRPOptimizer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Interface Reference}{28}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{28}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Member Function Documentation}{28}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}CreateOptimizer()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{28}{subsubsection.6.8.2.1}%
+\contentsline {subsubsection}{\numberline {6.8.2.2}CreateOptimizer()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{29}{subsubsection.6.8.2.2}%
+\contentsline {section}{\numberline {6.9}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IVRPProvider Interface Reference}{29}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{29}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Member Function Documentation}{29}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}LoadData()}{29}{subsubsection.6.9.2.1}%
+\contentsline {subsection}{\numberline {6.9.3}Property Documentation}{30}{subsection.6.9.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.1}Drivers}{30}{subsubsection.6.9.3.1}%
+\contentsline {subsubsection}{\numberline {6.9.3.2}HomeDepot}{30}{subsubsection.6.9.3.2}%
+\contentsline {subsubsection}{\numberline {6.9.3.3}Requests}{30}{subsubsection.6.9.3.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.4}Vehicles}{30}{subsubsection.6.9.3.4}%
+\contentsline {subsubsection}{\numberline {6.9.3.5}ZeroHour}{31}{subsubsection.6.9.3.5}%
+\contentsline {section}{\numberline {6.10}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IVRPSolution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Writer Interface Reference}{31}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{31}{subsection.6.10.1}%
+\contentsline {subsection}{\numberline {6.10.2}Member Function Documentation}{31}{subsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.1}SaveSolution()}{31}{subsubsection.6.10.2.1}%
+\contentsline {section}{\numberline {6.11}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logging.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}JSONDefinition\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Writer Class Reference}{32}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{32}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Constructor \& Destructor Documentation}{32}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}JSONDefinitionWriter()}{32}{subsubsection.6.11.2.1}%
+\contentsline {subsection}{\numberline {6.11.3}Member Function Documentation}{33}{subsection.6.11.3}%
+\contentsline {subsubsection}{\numberline {6.11.3.1}SaveSolution()}{33}{subsubsection.6.11.3.1}%
+\contentsline {section}{\numberline {6.12}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dto.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Picking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Schedule Class Reference}{33}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{34}{subsection.6.12.1}%
+\contentsline {subsection}{\numberline {6.12.2}Member Function Documentation}{34}{subsection.6.12.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.1}GeneratePickingSchedule()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{34}{subsubsection.6.12.2.1}%
+\contentsline {subsubsection}{\numberline {6.12.2.2}GeneratePickingSchedule()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{35}{subsubsection.6.12.2.2}%
+\contentsline {subsubsection}{\numberline {6.12.2.3}TrySaveToFile()}{35}{subsubsection.6.12.2.3}%
+\contentsline {subsection}{\numberline {6.12.3}Property Documentation}{35}{subsection.6.12.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.1}CallbackUrl}{35}{subsubsection.6.12.3.1}%
+\contentsline {subsubsection}{\numberline {6.12.3.2}Id}{36}{subsubsection.6.12.3.2}%
+\contentsline {subsubsection}{\numberline {6.12.3.3}OrdersCreateDate}{36}{subsubsection.6.12.3.3}%
+\contentsline {subsubsection}{\numberline {6.12.3.4}OrdersPickingStart}{36}{subsubsection.6.12.3.4}%
+\contentsline {subsubsection}{\numberline {6.12.3.5}PickingLists}{36}{subsubsection.6.12.3.5}%
+\contentsline {subsubsection}{\numberline {6.12.3.6}VehiclesAvailability}{36}{subsubsection.6.12.3.6}%
+\contentsline {section}{\numberline {6.13}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Resource Class Reference}{37}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{37}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Constructor \& Destructor Documentation}{37}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}Resource()}{37}{subsubsection.6.13.2.1}%
+\contentsline {subsection}{\numberline {6.13.3}Property Documentation}{38}{subsection.6.13.3}%
+\contentsline {subsubsection}{\numberline {6.13.3.1}AvailabilityEnd}{38}{subsubsection.6.13.3.1}%
+\contentsline {subsubsection}{\numberline {6.13.3.2}AvailabilityStart}{38}{subsubsection.6.13.3.2}%
+\contentsline {subsubsection}{\numberline {6.13.3.3}Id}{38}{subsubsection.6.13.3.3}%
+\contentsline {section}{\numberline {6.14}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}VRPSolution.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Schedule\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item Class Reference}{38}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Detailed Description}{39}{subsection.6.14.1}%
+\contentsline {subsection}{\numberline {6.14.2}Property Documentation}{39}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}ArrivalTime}{39}{subsubsection.6.14.2.1}%
+\contentsline {subsubsection}{\numberline {6.14.2.2}Delay}{39}{subsubsection.6.14.2.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.3}DepartureTime}{40}{subsubsection.6.14.2.3}%
+\contentsline {subsubsection}{\numberline {6.14.2.4}LoadedRequestsIds}{40}{subsubsection.6.14.2.4}%
+\contentsline {subsubsection}{\numberline {6.14.2.5}LocationId}{40}{subsubsection.6.14.2.5}%
+\contentsline {subsubsection}{\numberline {6.14.2.6}UnloadedRequestsIds}{40}{subsubsection.6.14.2.6}%
+\contentsline {section}{\numberline {6.15}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dto.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Store\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Picking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List Class Reference}{40}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{41}{subsection.6.15.1}%
+\contentsline {subsection}{\numberline {6.15.2}Property Documentation}{41}{subsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.1}DeliveryLocationId}{41}{subsubsection.6.15.2.1}%
+\contentsline {subsubsection}{\numberline {6.15.2.2}EpCount}{41}{subsubsection.6.15.2.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.3}GoodsList}{41}{subsubsection.6.15.2.3}%
+\contentsline {subsubsection}{\numberline {6.15.2.4}LoadingOrder}{42}{subsubsection.6.15.2.4}%
+\contentsline {section}{\numberline {6.16}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dto.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interval Class Reference}{42}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{42}{subsection.6.16.1}%
+\contentsline {subsection}{\numberline {6.16.2}Property Documentation}{42}{subsection.6.16.2}%
+\contentsline {subsubsection}{\numberline {6.16.2.1}AvailabilityEnd}{42}{subsubsection.6.16.2.1}%
+\contentsline {subsubsection}{\numberline {6.16.2.2}AvailabilityStart}{43}{subsubsection.6.16.2.2}%
+\contentsline {section}{\numberline {6.17}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}VRPSolution.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transport\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item Class Reference}{43}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{43}{subsection.6.17.1}%
+\contentsline {subsection}{\numberline {6.17.2}Property Documentation}{43}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}AvailableForLoadingTime}{44}{subsubsection.6.17.2.1}%
+\contentsline {subsubsection}{\numberline {6.17.2.2}AvailableForNextAssignmentTime}{44}{subsubsection.6.17.2.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.3}DriverId}{44}{subsubsection.6.17.2.3}%
+\contentsline {subsubsection}{\numberline {6.17.2.4}FillInRatio}{44}{subsubsection.6.17.2.4}%
+\contentsline {subsubsection}{\numberline {6.17.2.5}Length}{44}{subsubsection.6.17.2.5}%
+\contentsline {subsubsection}{\numberline {6.17.2.6}Schedule}{45}{subsubsection.6.17.2.6}%
+\contentsline {subsubsection}{\numberline {6.17.2.7}TractorId}{45}{subsubsection.6.17.2.7}%
+\contentsline {subsubsection}{\numberline {6.17.2.8}TrailerTruckId}{45}{subsubsection.6.17.2.8}%
+\contentsline {subsubsection}{\numberline {6.17.2.9}TransportId}{45}{subsubsection.6.17.2.9}%
+\contentsline {section}{\numberline {6.18}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dto.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transport\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Picking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lists Class Reference}{45}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}Detailed Description}{46}{subsection.6.18.1}%
+\contentsline {subsection}{\numberline {6.18.2}Property Documentation}{46}{subsection.6.18.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.1}CapacityVehicleType}{46}{subsubsection.6.18.2.1}%
+\contentsline {subsubsection}{\numberline {6.18.2.2}DesiredDepartureTime}{46}{subsubsection.6.18.2.2}%
+\contentsline {subsubsection}{\numberline {6.18.2.3}EpCapacity}{47}{subsubsection.6.18.2.3}%
+\contentsline {subsubsection}{\numberline {6.18.2.4}MaxEpCapacity}{47}{subsubsection.6.18.2.4}%
+\contentsline {subsubsection}{\numberline {6.18.2.5}SemiTrailerTruckId}{47}{subsubsection.6.18.2.5}%
+\contentsline {subsubsection}{\numberline {6.18.2.6}StoreOrders}{47}{subsubsection.6.18.2.6}%
+\contentsline {subsubsection}{\numberline {6.18.2.7}TransportId}{47}{subsubsection.6.18.2.7}%
+\contentsline {section}{\numberline {6.19}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Transport\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Request Class Reference}{48}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Detailed Description}{49}{subsection.6.19.1}%
+\contentsline {subsection}{\numberline {6.19.2}Constructor \& Destructor Documentation}{49}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}TransportRequest()}{49}{subsubsection.6.19.2.1}%
+\contentsline {subsection}{\numberline {6.19.3}Member Function Documentation}{50}{subsection.6.19.3}%
+\contentsline {subsubsection}{\numberline {6.19.3.1}ExtractBestFitRequests()}{50}{subsubsection.6.19.3.1}%
+\contentsline {subsection}{\numberline {6.19.4}Property Documentation}{51}{subsection.6.19.4}%
+\contentsline {subsubsection}{\numberline {6.19.4.1}CargoType}{51}{subsubsection.6.19.4.1}%
+\contentsline {subsubsection}{\numberline {6.19.4.2}CargoTypes}{51}{subsubsection.6.19.4.2}%
+\contentsline {subsubsection}{\numberline {6.19.4.3}DeliveryAvailableTimeWindowEnd}{51}{subsubsection.6.19.4.3}%
+\contentsline {subsubsection}{\numberline {6.19.4.4}DeliveryAvailableTimeWindowStart}{52}{subsubsection.6.19.4.4}%
+\contentsline {subsubsection}{\numberline {6.19.4.5}DeliveryLocation}{52}{subsubsection.6.19.4.5}%
+\contentsline {subsubsection}{\numberline {6.19.4.6}DeliveryPreferedTimeWindowEnd}{52}{subsubsection.6.19.4.6}%
+\contentsline {subsubsection}{\numberline {6.19.4.7}DeliveryPreferedTimeWindowStart}{52}{subsubsection.6.19.4.7}%
+\contentsline {subsubsection}{\numberline {6.19.4.8}Id}{52}{subsubsection.6.19.4.8}%
+\contentsline {subsubsection}{\numberline {6.19.4.9}MaxVehicleSize}{53}{subsubsection.6.19.4.9}%
+\contentsline {subsubsection}{\numberline {6.19.4.10}MutuallyExclusiveRequestsIdTimeBufferDict}{53}{subsubsection.6.19.4.10}%
+\contentsline {subsubsection}{\numberline {6.19.4.11}Name}{53}{subsubsection.6.19.4.11}%
+\contentsline {subsubsection}{\numberline {6.19.4.12}NecessaryVehicleSpecialProperties}{53}{subsubsection.6.19.4.12}%
+\contentsline {subsubsection}{\numberline {6.19.4.13}PackageCount}{53}{subsubsection.6.19.4.13}%
+\contentsline {subsubsection}{\numberline {6.19.4.14}PackageCountForImediateRetrieval}{54}{subsubsection.6.19.4.14}%
+\contentsline {subsubsection}{\numberline {6.19.4.15}PickupAvailableTimeWindowEnd}{54}{subsubsection.6.19.4.15}%
+\contentsline {subsubsection}{\numberline {6.19.4.16}PickupAvailableTimeWindowStart}{54}{subsubsection.6.19.4.16}%
+\contentsline {subsubsection}{\numberline {6.19.4.17}PickupLocation}{54}{subsubsection.6.19.4.17}%
+\contentsline {subsubsection}{\numberline {6.19.4.18}PickupPreferedTimeWindowEnd}{54}{subsubsection.6.19.4.18}%
+\contentsline {subsubsection}{\numberline {6.19.4.19}PickupPreferedTimeWindowStart}{55}{subsubsection.6.19.4.19}%
+\contentsline {subsubsection}{\numberline {6.19.4.20}RestrictedCargoTypes}{55}{subsubsection.6.19.4.20}%
+\contentsline {subsubsection}{\numberline {6.19.4.21}RevenueValue}{55}{subsubsection.6.19.4.21}%
+\contentsline {subsubsection}{\numberline {6.19.4.22}Size}{55}{subsubsection.6.19.4.22}%
+\contentsline {subsubsection}{\numberline {6.19.4.23}Type}{55}{subsubsection.6.19.4.23}%
+\contentsline {section}{\numberline {6.20}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vehicle Class Reference}{56}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Detailed Description}{57}{subsection.6.20.1}%
+\contentsline {subsection}{\numberline {6.20.2}Constructor \& Destructor Documentation}{57}{subsection.6.20.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.1}Vehicle()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{57}{subsubsection.6.20.2.1}%
+\contentsline {subsubsection}{\numberline {6.20.2.2}Vehicle()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{58}{subsubsection.6.20.2.2}%
+\contentsline {subsection}{\numberline {6.20.3}Member Function Documentation}{59}{subsection.6.20.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.1}CanFitCapacity()}{59}{subsubsection.6.20.3.1}%
+\contentsline {subsubsection}{\numberline {6.20.3.2}CanFitRequests()}{59}{subsubsection.6.20.3.2}%
+\contentsline {subsubsection}{\numberline {6.20.3.3}CanFitRequestsSomewhereInVehicle()}{60}{subsubsection.6.20.3.3}%
+\contentsline {subsubsection}{\numberline {6.20.3.4}CanHandleRequest()}{60}{subsubsection.6.20.3.4}%
+\contentsline {subsection}{\numberline {6.20.4}Property Documentation}{61}{subsection.6.20.4}%
+\contentsline {subsubsection}{\numberline {6.20.4.1}Capacity}{61}{subsubsection.6.20.4.1}%
+\contentsline {subsubsection}{\numberline {6.20.4.2}CapacityAggregationType}{61}{subsubsection.6.20.4.2}%
+\contentsline {subsubsection}{\numberline {6.20.4.3}FinalLocation}{61}{subsubsection.6.20.4.3}%
+\contentsline {subsubsection}{\numberline {6.20.4.4}InitialLocation}{61}{subsubsection.6.20.4.4}%
+\contentsline {subsubsection}{\numberline {6.20.4.5}MaxRideTime}{62}{subsubsection.6.20.4.5}%
+\contentsline {subsubsection}{\numberline {6.20.4.6}OwnerID}{62}{subsubsection.6.20.4.6}%
+\contentsline {subsubsection}{\numberline {6.20.4.7}RoadProperties}{62}{subsubsection.6.20.4.7}%
+\contentsline {subsubsection}{\numberline {6.20.4.8}SpecialProperties}{62}{subsubsection.6.20.4.8}%
+\contentsline {subsubsection}{\numberline {6.20.4.9}Type}{62}{subsubsection.6.20.4.9}%
+\contentsline {subsubsection}{\numberline {6.20.4.10}VehicleCostPerDistanceUnit}{63}{subsubsection.6.20.4.10}%
+\contentsline {subsubsection}{\numberline {6.20.4.11}VehicleCostPerTimeUnit}{63}{subsubsection.6.20.4.11}%
+\contentsline {subsubsection}{\numberline {6.20.4.12}VehicleCostPerUsage}{63}{subsubsection.6.20.4.12}%
+\contentsline {subsubsection}{\numberline {6.20.4.13}VehicleFlatCostForShortRouteLength}{63}{subsubsection.6.20.4.13}%
+\contentsline {subsubsection}{\numberline {6.20.4.14}VehicleMaxRouteLengthForFlatCost}{63}{subsubsection.6.20.4.14}%
+\contentsline {section}{\numberline {6.21}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dto.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vehicle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Schedule Class Reference}{64}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Detailed Description}{64}{subsection.6.21.1}%
+\contentsline {subsection}{\numberline {6.21.2}Property Documentation}{64}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}CapacityVehicleType}{64}{subsubsection.6.21.2.1}%
+\contentsline {subsubsection}{\numberline {6.21.2.2}EpCapacity}{64}{subsubsection.6.21.2.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.3}VehicleId}{65}{subsubsection.6.21.2.3}%
+\contentsline {subsubsection}{\numberline {6.21.2.4}YardAvailabilitySchedule}{65}{subsubsection.6.21.2.4}%
+\contentsline {section}{\numberline {6.22}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}VRPCost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function Class Reference}{65}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Detailed Description}{67}{subsection.6.22.1}%
+\contentsline {subsection}{\numberline {6.22.2}Constructor \& Destructor Documentation}{67}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}VRPCostFunction()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{67}{subsubsection.6.22.2.1}%
+\contentsline {subsubsection}{\numberline {6.22.2.2}VRPCostFunction()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{67}{subsubsection.6.22.2.2}%
+\contentsline {subsection}{\numberline {6.22.3}Member Function Documentation}{68}{subsection.6.22.3}%
+\contentsline {subsubsection}{\numberline {6.22.3.1}ComputeFillInFactor()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{subsubsection.6.22.3.1}%
+\contentsline {subsubsection}{\numberline {6.22.3.2}ComputeFillInFactor()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{69}{subsubsection.6.22.3.2}%
+\contentsline {subsubsection}{\numberline {6.22.3.3}ComputeMaxEarlyArrival()}{69}{subsubsection.6.22.3.3}%
+\contentsline {subsubsection}{\numberline {6.22.3.4}ComputeMaxTimeDiff()}{69}{subsubsection.6.22.3.4}%
+\contentsline {subsubsection}{\numberline {6.22.3.5}ComputeTotalEarlyArrival()}{70}{subsubsection.6.22.3.5}%
+\contentsline {subsubsection}{\numberline {6.22.3.6}ComputeTotalTimeDiff()}{70}{subsubsection.6.22.3.6}%
+\contentsline {subsubsection}{\numberline {6.22.3.7}GetDefaultParametersFunction()}{71}{subsubsection.6.22.3.7}%
+\contentsline {subsubsection}{\numberline {6.22.3.8}SingleRouteValue()}{71}{subsubsection.6.22.3.8}%
+\contentsline {subsubsection}{\numberline {6.22.3.9}Value()}{72}{subsubsection.6.22.3.9}%
+\contentsline {subsection}{\numberline {6.22.4}Property Documentation}{72}{subsection.6.22.4}%
+\contentsline {subsubsection}{\numberline {6.22.4.1}CarrierMinDistanceFactor}{72}{subsubsection.6.22.4.1}%
+\contentsline {subsubsection}{\numberline {6.22.4.2}CarrierMinDistanceThreshold}{72}{subsubsection.6.22.4.2}%
+\contentsline {subsubsection}{\numberline {6.22.4.3}CarrierShareFactor}{72}{subsubsection.6.22.4.3}%
+\contentsline {subsubsection}{\numberline {6.22.4.4}CarrierShareRatio}{73}{subsubsection.6.22.4.4}%
+\contentsline {subsubsection}{\numberline {6.22.4.5}DistanceFactor}{73}{subsubsection.6.22.4.5}%
+\contentsline {subsubsection}{\numberline {6.22.4.6}DriveTimeFactor}{73}{subsubsection.6.22.4.6}%
+\contentsline {subsubsection}{\numberline {6.22.4.7}FillInFactor}{73}{subsubsection.6.22.4.7}%
+\contentsline {subsubsection}{\numberline {6.22.4.8}LeftCargoUnitFactor}{73}{subsubsection.6.22.4.8}%
+\contentsline {subsubsection}{\numberline {6.22.4.9}MaxDelayFactor}{74}{subsubsection.6.22.4.9}%
+\contentsline {subsubsection}{\numberline {6.22.4.10}MaxDelaySquaredFactor}{74}{subsubsection.6.22.4.10}%
+\contentsline {subsubsection}{\numberline {6.22.4.11}MaxEarlyArrivalFactor}{74}{subsubsection.6.22.4.11}%
+\contentsline {subsubsection}{\numberline {6.22.4.12}MaxEarlyArrivalSquaredFactor}{74}{subsubsection.6.22.4.12}%
+\contentsline {subsubsection}{\numberline {6.22.4.13}MaxVehicleSpreadFactor}{74}{subsubsection.6.22.4.13}%
+\contentsline {subsubsection}{\numberline {6.22.4.14}RoutesCountFactor}{75}{subsubsection.6.22.4.14}%
+\contentsline {subsubsection}{\numberline {6.22.4.15}TotalDelayFactor}{75}{subsubsection.6.22.4.15}%
+\contentsline {subsubsection}{\numberline {6.22.4.16}TotalDelaySquaredFactor}{75}{subsubsection.6.22.4.16}%
+\contentsline {subsubsection}{\numberline {6.22.4.17}TotalEarlyArrivalFactor}{75}{subsubsection.6.22.4.17}%
+\contentsline {subsubsection}{\numberline {6.22.4.18}TotalEarlyArrivalSquaredFactor}{75}{subsubsection.6.22.4.18}%
+\contentsline {subsubsection}{\numberline {6.22.4.19}UsageFactor}{76}{subsubsection.6.22.4.19}%
+\contentsline {section}{\numberline {6.23}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}VRPDefinition Class Reference}{76}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{77}{subsection.6.23.1}%
+\contentsline {subsection}{\numberline {6.23.2}Member Function Documentation}{77}{subsection.6.23.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.1}AddSolution()}{77}{subsubsection.6.23.2.1}%
+\contentsline {subsubsection}{\numberline {6.23.2.2}GenerateVRPDefintion()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{77}{subsubsection.6.23.2.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.3}GenerateVRPDefintion()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{78}{subsubsection.6.23.2.3}%
+\contentsline {subsubsection}{\numberline {6.23.2.4}ToPrettyJSONString()}{78}{subsubsection.6.23.2.4}%
+\contentsline {subsubsection}{\numberline {6.23.2.5}TrySaveToFile()}{79}{subsubsection.6.23.2.5}%
+\contentsline {subsection}{\numberline {6.23.3}Property Documentation}{79}{subsection.6.23.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.1}Client}{79}{subsubsection.6.23.3.1}%
+\contentsline {subsubsection}{\numberline {6.23.3.2}CostFunctionFactors}{79}{subsubsection.6.23.3.2}%
+\contentsline {subsubsection}{\numberline {6.23.3.3}DataFormatVersion}{80}{subsubsection.6.23.3.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.4}Date}{80}{subsubsection.6.23.3.4}%
+\contentsline {subsubsection}{\numberline {6.23.3.5}DepotId}{80}{subsubsection.6.23.3.5}%
+\contentsline {subsubsection}{\numberline {6.23.3.6}DistanceData}{80}{subsubsection.6.23.3.6}%
+\contentsline {subsubsection}{\numberline {6.23.3.7}Drivers}{80}{subsubsection.6.23.3.7}%
+\contentsline {subsubsection}{\numberline {6.23.3.8}Requests}{81}{subsubsection.6.23.3.8}%
+\contentsline {subsubsection}{\numberline {6.23.3.9}ServiceTimeEstimator}{81}{subsubsection.6.23.3.9}%
+\contentsline {subsubsection}{\numberline {6.23.3.10}Solutions}{81}{subsubsection.6.23.3.10}%
+\contentsline {subsubsection}{\numberline {6.23.3.11}Vehicles}{81}{subsubsection.6.23.3.11}%
+\contentsline {subsubsection}{\numberline {6.23.3.12}ZeroHour}{81}{subsubsection.6.23.3.12}%
+\contentsline {section}{\numberline {6.24}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}VRPOptimizer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result Class Reference}{82}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Detailed Description}{82}{subsection.6.24.1}%
+\contentsline {subsection}{\numberline {6.24.2}Property Documentation}{82}{subsection.6.24.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.1}LeftRequests}{82}{subsubsection.6.24.2.1}%
+\contentsline {subsubsection}{\numberline {6.24.2.2}Routes}{82}{subsubsection.6.24.2.2}%
+\contentsline {section}{\numberline {6.25}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}VRPResult$<$ R, V, Rt $>$ Class Template Reference}{83}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Detailed Description}{83}{subsection.6.25.1}%
+\contentsline {subsection}{\numberline {6.25.2}Constructor \& Destructor Documentation}{83}{subsection.6.25.2}%
+\contentsline {subsubsection}{\numberline {6.25.2.1}VRPResult()}{84}{subsubsection.6.25.2.1}%
+\contentsline {subsection}{\numberline {6.25.3}Member Function Documentation}{84}{subsection.6.25.3}%
+\contentsline {subsubsection}{\numberline {6.25.3.1}operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$()}{84}{subsubsection.6.25.3.1}%
+\contentsline {subsection}{\numberline {6.25.4}Property Documentation}{84}{subsection.6.25.4}%
+\contentsline {subsubsection}{\numberline {6.25.4.1}LeftRequests}{84}{subsubsection.6.25.4.1}%
+\contentsline {subsubsection}{\numberline {6.25.4.2}Routes}{85}{subsubsection.6.25.4.2}%
+\contentsline {subsubsection}{\numberline {6.25.4.3}TractorRoutes}{85}{subsubsection.6.25.4.3}%
+\contentsline {section}{\numberline {6.26}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}VRPSolution Class Reference}{85}{section.6.26}%
+\contentsline {subsection}{\numberline {6.26.1}Detailed Description}{86}{subsection.6.26.1}%
+\contentsline {subsection}{\numberline {6.26.2}Member Function Documentation}{86}{subsection.6.26.2}%
+\contentsline {subsubsection}{\numberline {6.26.2.1}GenerateVRPSolution()}{86}{subsubsection.6.26.2.1}%
+\contentsline {subsection}{\numberline {6.26.3}Property Documentation}{87}{subsection.6.26.3}%
+\contentsline {subsubsection}{\numberline {6.26.3.1}Algorithm}{87}{subsubsection.6.26.3.1}%
+\contentsline {subsubsection}{\numberline {6.26.3.2}ComputationTime}{87}{subsubsection.6.26.3.2}%
+\contentsline {subsubsection}{\numberline {6.26.3.3}ComputationTimestamp}{87}{subsubsection.6.26.3.3}%
+\contentsline {subsubsection}{\numberline {6.26.3.4}ComputerId}{88}{subsubsection.6.26.3.4}%
+\contentsline {subsubsection}{\numberline {6.26.3.5}DelaysCount}{88}{subsubsection.6.26.3.5}%
+\contentsline {subsubsection}{\numberline {6.26.3.6}LeftRequestsIds}{88}{subsubsection.6.26.3.6}%
+\contentsline {subsubsection}{\numberline {6.26.3.7}MaxDelay}{88}{subsubsection.6.26.3.7}%
+\contentsline {subsubsection}{\numberline {6.26.3.8}TotalDelay}{88}{subsubsection.6.26.3.8}%
+\contentsline {subsubsection}{\numberline {6.26.3.9}TotalLength}{89}{subsubsection.6.26.3.9}%
+\contentsline {subsubsection}{\numberline {6.26.3.10}Transports}{89}{subsubsection.6.26.3.10}%
+\contentsline {subsubsection}{\numberline {6.26.3.11}Version}{89}{subsubsection.6.26.3.11}%
+\contentsline {chapter}{\numberline {7}File Documentation}{91}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Cargo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Unit.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{91}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Cargo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Unit.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{91}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Dictionary\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Distance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Provider\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Base.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{92}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Dictionary\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Distance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Provider\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Base.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{92}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Driver.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{93}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Driver.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{93}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Picking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Schedule.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{93}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Picking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Schedule.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{94}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Store\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Picking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{95}{section.7.9}%
+\contentsline {section}{\numberline {7.10}Store\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Picking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{96}{section.7.10}%
+\contentsline {section}{\numberline {7.11}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interval.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{96}{section.7.11}%
+\contentsline {section}{\numberline {7.12}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interval.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{96}{section.7.12}%
+\contentsline {section}{\numberline {7.13}Transport\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Picking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lists.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{97}{section.7.13}%
+\contentsline {section}{\numberline {7.14}Transport\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Picking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lists.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{97}{section.7.14}%
+\contentsline {section}{\numberline {7.15}Vehicle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Schedule.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{97}{section.7.15}%
+\contentsline {section}{\numberline {7.16}Vehicle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Schedule.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{98}{section.7.16}%
+\contentsline {section}{\numberline {7.17}Aggregation.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{98}{section.7.17}%
+\contentsline {section}{\numberline {7.18}Aggregation.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{98}{section.7.18}%
+\contentsline {section}{\numberline {7.19}Cargo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{98}{section.7.19}%
+\contentsline {section}{\numberline {7.20}Cargo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{99}{section.7.20}%
+\contentsline {section}{\numberline {7.21}Cargo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Unit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{99}{section.7.21}%
+\contentsline {section}{\numberline {7.22}Cargo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Unit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{99}{section.7.22}%
+\contentsline {section}{\numberline {7.23}Request\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{99}{section.7.23}%
+\contentsline {section}{\numberline {7.24}Request\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{100}{section.7.24}%
+\contentsline {section}{\numberline {7.25}Insertion\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{100}{section.7.25}%
+\contentsline {section}{\numberline {7.26}Insertion\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{100}{section.7.26}%
+\contentsline {section}{\numberline {7.27}IRoute.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{101}{section.7.27}%
+\contentsline {section}{\numberline {7.28}IRoute.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{101}{section.7.28}%
+\contentsline {section}{\numberline {7.29}ITime\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Estimator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{101}{section.7.29}%
+\contentsline {section}{\numberline {7.30}ITime\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Estimator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{102}{section.7.30}%
+\contentsline {section}{\numberline {7.31}IVRPOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{102}{section.7.31}%
+\contentsline {section}{\numberline {7.32}IVRPOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{102}{section.7.32}%
+\contentsline {section}{\numberline {7.33}IVRPOptimizer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{102}{section.7.33}%
+\contentsline {section}{\numberline {7.34}IVRPOptimizer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{103}{section.7.34}%
+\contentsline {section}{\numberline {7.35}IVRPProvider.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{103}{section.7.35}%
+\contentsline {section}{\numberline {7.36}IVRPProvider.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{103}{section.7.36}%
+\contentsline {section}{\numberline {7.37}IVRPSolution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Writer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{103}{section.7.37}%
+\contentsline {section}{\numberline {7.38}IVRPSolution\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Writer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{104}{section.7.38}%
+\contentsline {section}{\numberline {7.39}VRPResult.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{104}{section.7.39}%
+\contentsline {section}{\numberline {7.40}VRPResult.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{104}{section.7.40}%
+\contentsline {section}{\numberline {7.41}JSONDefinition\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Writer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{105}{section.7.41}%
+\contentsline {section}{\numberline {7.42}JSONDefinition\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Writer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{105}{section.7.42}%
+\contentsline {section}{\numberline {7.43}.NETCore\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}App,Version=v5.0.Assembly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Attributes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{106}{section.7.43}%
+\contentsline {section}{\numberline {7.44}Debug/net5.0/.NETCore\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}App,Version=v5.0.Assembly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Attributes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{106}{section.7.44}%
+\contentsline {section}{\numberline {7.45}.NETCore\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}App,Version=v5.0.Assembly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Attributes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{107}{section.7.45}%
+\contentsline {section}{\numberline {7.46}Release/net5.0/.NETCore\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}App,Version=v5.0.Assembly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Attributes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{107}{section.7.46}%
+\contentsline {section}{\numberline {7.47}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assembly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Info.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{107}{section.7.47}%
+\contentsline {section}{\numberline {7.48}Debug/net5.0/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}VRPTWOptimizer.Assembly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Info.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{107}{section.7.48}%
+\contentsline {section}{\numberline {7.49}VRPTWOptimizer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assembly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Info.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{107}{section.7.49}%
+\contentsline {section}{\numberline {7.50}Release/net5.0/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}VRPTWOptimizer.Assembly\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Info.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{107}{section.7.50}%
+\contentsline {section}{\numberline {7.51}Resource.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{108}{section.7.51}%
+\contentsline {section}{\numberline {7.52}Resource.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{108}{section.7.52}%
+\contentsline {section}{\numberline {7.53}Transport\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Request.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{108}{section.7.53}%
+\contentsline {section}{\numberline {7.54}Transport\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Request.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{109}{section.7.54}%
+\contentsline {section}{\numberline {7.55}Vehicle.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{111}{section.7.55}%
+\contentsline {section}{\numberline {7.56}Vehicle.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{111}{section.7.56}%
+\contentsline {section}{\numberline {7.57}VRPCost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{114}{section.7.57}%
+\contentsline {section}{\numberline {7.58}VRPCost\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Function.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{114}{section.7.58}%
+\contentsline {section}{\numberline {7.59}VRPDefinition.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{118}{section.7.59}%
+\contentsline {section}{\numberline {7.60}VRPDefinition.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{118}{section.7.60}%
+\contentsline {section}{\numberline {7.61}VRPOptimizer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{120}{section.7.61}%
+\contentsline {section}{\numberline {7.62}VRPOptimizer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Result.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{120}{section.7.62}%
+\contentsline {section}{\numberline {7.63}VRPSolution.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs File Reference}{121}{section.7.63}%
+\contentsline {section}{\numberline {7.64}VRPSolution.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cs}{121}{section.7.64}%
+\contentsline {chapter}{Index}{123}{section*.116}%

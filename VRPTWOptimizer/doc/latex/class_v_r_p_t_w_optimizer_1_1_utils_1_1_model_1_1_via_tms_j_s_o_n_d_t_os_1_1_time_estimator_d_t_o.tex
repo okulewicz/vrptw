@@ -1,0 +1,114 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o}{}\doxysection{VRPTWOptimizer.\+Utils.\+Model.\+Via\+Tms\+JSONDTOs.\+Time\+Estimator\+DTO Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o}\index{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}}
+Inheritance diagram for VRPTWOptimizer.\+Utils.\+Model.\+Via\+Tms\+JSONDTOs.\+Time\+Estimator\+DTO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_af37e6932898372930b8727cb39b41b52}{Estimate\+Load\+Unload\+Time}} (int ep\+Unload\+Count, int ep\+Load\+Only\+Count, int ep\+Immediately\+Retrieved\+Count, int no\+Requests)
+\begin{DoxyCompactList}\small\item\em This method is used to predict time it will take to serve all the loadings and unloadings within the given location \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a917ff14586d0c891a51f3bd1d3504d01}{Stop\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_aaa33872e97d6a91475eaab9ce362533c}{Time\+Per\+Delivered\+Piece}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_ae82dd0f4cd11a14b8ff310d8459c460d}{Time\+Per\+Immediate\+Return\+Piece}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a60a767cb264a85ec0a46b59366b2b5d3}{Time\+Per\+Picked\+Up\+Piece}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source}{Time\+Estimator\+DTO.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_af37e6932898372930b8727cb39b41b52}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_af37e6932898372930b8727cb39b41b52}} 
+\index{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}!EstimateLoadUnloadTime@{EstimateLoadUnloadTime}}
+\index{EstimateLoadUnloadTime@{EstimateLoadUnloadTime}!VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}}
+\doxysubsubsection{\texorpdfstring{EstimateLoadUnloadTime()}{EstimateLoadUnloadTime()}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Model.\+Via\+Tms\+JSONDTOs.\+Time\+Estimator\+DTO.\+Estimate\+Load\+Unload\+Time (\begin{DoxyParamCaption}\item[{int}]{ep\+Unload\+Count,  }\item[{int}]{ep\+Load\+Only\+Count,  }\item[{int}]{ep\+Immediately\+Retrieved\+Count,  }\item[{int}]{handled\+Transport\+Requests\+Count }\end{DoxyParamCaption})}
+
+
+
+This method is used to predict time it will take to serve all the loadings and unloadings within the given location 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ep\+Unload\+Count} & Number of Euro\+Pallets that are being unloaded\\
+\hline
+{\em ep\+Load\+Only\+Count} & Number of Euro\+Pallets that are being loaded, but were not unloaded\\
+\hline
+{\em ep\+Immediately\+Retrieved\+Count} & Number of Euro\+Pallets that are being delivered and immediately retrieved after handling in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_location}{Location}}\\
+\hline
+{\em handled\+Transport\+Requests\+Count} & Number of transport requests loaded and unloaded in the given location\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator_a98bc5e148758116e364366acb432c85c}{VRPTWOptimizer.\+Interfaces.\+ITime\+Estimator}}.
+
+
+
+Definition at line \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source}{Time\+Estimator\+DTO.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a917ff14586d0c891a51f3bd1d3504d01}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a917ff14586d0c891a51f3bd1d3504d01}} 
+\index{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}!StopTime@{StopTime}}
+\index{StopTime@{StopTime}!VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}}
+\doxysubsubsection{\texorpdfstring{StopTime}{StopTime}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Model.\+Via\+Tms\+JSONDTOs.\+Time\+Estimator\+DTO.\+Stop\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source}{Time\+Estimator\+DTO.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_aaa33872e97d6a91475eaab9ce362533c}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_aaa33872e97d6a91475eaab9ce362533c}} 
+\index{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}!TimePerDeliveredPiece@{TimePerDeliveredPiece}}
+\index{TimePerDeliveredPiece@{TimePerDeliveredPiece}!VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}}
+\doxysubsubsection{\texorpdfstring{TimePerDeliveredPiece}{TimePerDeliveredPiece}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Model.\+Via\+Tms\+JSONDTOs.\+Time\+Estimator\+DTO.\+Time\+Per\+Delivered\+Piece\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source}{Time\+Estimator\+DTO.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_ae82dd0f4cd11a14b8ff310d8459c460d}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_ae82dd0f4cd11a14b8ff310d8459c460d}} 
+\index{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}!TimePerImmediateReturnPiece@{TimePerImmediateReturnPiece}}
+\index{TimePerImmediateReturnPiece@{TimePerImmediateReturnPiece}!VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}}
+\doxysubsubsection{\texorpdfstring{TimePerImmediateReturnPiece}{TimePerImmediateReturnPiece}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Model.\+Via\+Tms\+JSONDTOs.\+Time\+Estimator\+DTO.\+Time\+Per\+Immediate\+Return\+Piece\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source}{Time\+Estimator\+DTO.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a60a767cb264a85ec0a46b59366b2b5d3}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a60a767cb264a85ec0a46b59366b2b5d3}} 
+\index{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}!TimePerPickedUpPiece@{TimePerPickedUpPiece}}
+\index{TimePerPickedUpPiece@{TimePerPickedUpPiece}!VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO@{VRPTWOptimizer.Utils.Model.ViaTmsJSONDTOs.TimeEstimatorDTO}}
+\doxysubsubsection{\texorpdfstring{TimePerPickedUpPiece}{TimePerPickedUpPiece}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Model.\+Via\+Tms\+JSONDTOs.\+Time\+Estimator\+DTO.\+Time\+Per\+Picked\+Up\+Piece\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_time_estimator_d_t_o_8cs_source}{Time\+Estimator\+DTO.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_time_estimator_d_t_o_8cs}{Time\+Estimator\+DTO.\+cs}}\end{DoxyCompactItemize}

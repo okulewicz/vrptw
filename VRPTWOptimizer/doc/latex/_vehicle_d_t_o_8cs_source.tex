@@ -1,0 +1,46 @@
+\hypertarget{_vehicle_d_t_o_8cs_source}{}\doxysection{Vehicle\+DTO.\+cs}
+\label{_vehicle_d_t_o_8cs_source}\index{VehicleDTO.cs@{VehicleDTO.cs}}
+\mbox{\hyperlink{_vehicle_d_t_o_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}};}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00002}00002 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}};}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00003}00003 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00004}00004 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00005}00005 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums}{Enums}};}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00007}00007 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_model}{VRPTWOptimizer.Utils.Model}}}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00010}00010     \textcolor{comment}{//TODO we need flat rate here!}}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00011}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_vehicle_d_t_o}{00011}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_vehicle_d_t_o}{VehicleDTO}} : \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00012}00012     \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00013}00013         [JsonConstructor]}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00014}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_vehicle_d_t_o_ae39040baa184366a714cabc46ebe88b2}{00014}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_vehicle_d_t_o_ae39040baa184366a714cabc46ebe88b2}{VehicleDTO}}(}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00015}00015             \textcolor{keywordtype}{int} \textcolor{keywordtype}{id},}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00016}00016             \textcolor{keywordtype}{double}[] capacity,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00017}00017             \textcolor{keywordtype}{int}[] specialProperties,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00018}00018             \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}[] capacityAggregationType,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00019}00019             \mbox{\hyperlink{class_common_g_i_s_1_1_base_location}{BaseLocation}} initialLocation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00020}00020             \textcolor{keywordtype}{double} availabilityStart,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00021}00021             \mbox{\hyperlink{class_common_g_i_s_1_1_base_location}{BaseLocation}} finalLocation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00022}00022             \textcolor{keywordtype}{double} availabilityEnd,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00023}00023             \textcolor{keywordtype}{double} maxRideTime,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00024}00024             \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} roadProperties,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00025}00025             \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{VehicleType}} type,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00026}00026             \textcolor{keywordtype}{double} vehicleCostPerDistanceUnit,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00027}00027             \textcolor{keywordtype}{double} vehicleCostPerTimeUnit,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00028}00028             \textcolor{keywordtype}{double} vehicleCostPerUsage,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00029}00029             \textcolor{keywordtype}{int} ownerID,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00030}00030             \textcolor{keywordtype}{double} vehicleFlatCostForShortRouteLength,}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00031}00031             \textcolor{keywordtype}{double} vehicleMaxRouteLengthForFlatCost) : base(id, capacity, specialProperties, capacityAggregationType, initialLocation, availabilityStart, finalLocation, availabilityEnd, maxRideTime, roadProperties, type, vehicleCostPerDistanceUnit, vehicleCostPerTimeUnit, vehicleCostPerUsage, ownerID, vehicleFlatCostForShortRouteLength, vehicleMaxRouteLengthForFlatCost)}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00032}00032         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00033}00033         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00035}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_vehicle_d_t_o_a14aaeb2e0730983424142abb90520037}{00035}}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_vehicle_d_t_o_a14aaeb2e0730983424142abb90520037}{SetType}}(\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{VehicleType}} vehicleType)}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00036}00036         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00037}00037             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} = vehicleType;}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00038}00038         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_d_t_o_8cs_source_l00040}00040 \}}
+
+\end{DoxyCode}

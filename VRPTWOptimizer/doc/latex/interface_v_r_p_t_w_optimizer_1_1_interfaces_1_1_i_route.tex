@@ -1,0 +1,331 @@
+\hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{}\doxysection{VRPTWOptimizer.\+Interfaces.\+IRoute Interface Reference}
+\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+
+
+Represents route assigned to \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}  
+
+
+Inheritance diagram for VRPTWOptimizer.\+Interfaces.\+IRoute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}
+\end{center}
+\end{figure}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ double $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a5de6573c7eed6c603d918255871032bd}{Arrival\+Times}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Array of arrival times to subsequent Location objects \end{DoxyCompactList}\item 
+List$<$ double $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_addabd6deb2edf001a3dfcd78fd484662}{Departure\+Times}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Array of departure times from subsequent Location objects \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a41319ec8690da4f6fe5c4ff2c733c75c}{Distances}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Distance objects between subsequent location in route \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1dad9fabdde33251567eecefa86407ee}{Length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Total length of route in meters \end{DoxyCompactList}\item 
+List$<$ List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_aeb66938fd3c3746cec633d48fdd978bc}{Loaded\+Requests}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects that are loaded on given location \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0350ae564daf3c4429717a14a745c11b}{Max\+Delay}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Timespan in seconds of largest delay againts Prefered\+Time\+Window\+End \end{DoxyCompactList}\item 
+List$<$ double $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a2d6641b8b7b1d6f99d0d19b09fc9932b}{Time\+Window\+End}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Array of upper time limits for starting visits in subsequent Location objects \end{DoxyCompactList}\item 
+List$<$ double $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a4f458c304d5996933990b9169a4857d6}{Time\+Window\+Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Array of lower time limits for starting visits in subsequent Location objects \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a23a3e144731668c14d8e9f1dffb764f3}{Total\+Delay}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Sum of all delays againts Prefered\+Time\+Window\+End \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8eb2189ee09d476b6946d8d1b0ea92d8}{Travel\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Total duration of drive within route in seconds \end{DoxyCompactList}\item 
+List$<$ List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0b3882b5ce8370da7be73b099b265c87}{Unloaded\+Requests}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects that are unloaded on given location \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} with capacity serving the route \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0d6d70ce7d1a60c6c4f277d979630942}{Vehicle\+Driver}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Tractor serving the route (if necessary) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a9b94599db46afba7bd052ddb5cfd7ab9}{Vehicle\+Tractor}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} (if the problem assumes drivers management) \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8962aaa555bfdd22f08986597b379d12}{Visited\+Locations}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of subsequent Location objects in route \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents route assigned to \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} 
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a5de6573c7eed6c603d918255871032bd}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a5de6573c7eed6c603d918255871032bd}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!ArrivalTimes@{ArrivalTimes}}
+\index{ArrivalTimes@{ArrivalTimes}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{ArrivalTimes}{ArrivalTimes}}
+{\footnotesize\ttfamily List$<$double$>$ VRPTWOptimizer.\+Interfaces.\+IRoute.\+Arrival\+Times\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Array of arrival times to subsequent Location objects 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a09ea6c2152b5afe8e003cf5a12ad1bd6}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a4d280698412c8fd1a82bec876f44d9e9}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_addabd6deb2edf001a3dfcd78fd484662}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_addabd6deb2edf001a3dfcd78fd484662}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!DepartureTimes@{DepartureTimes}}
+\index{DepartureTimes@{DepartureTimes}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{DepartureTimes}{DepartureTimes}}
+{\footnotesize\ttfamily List$<$double$>$ VRPTWOptimizer.\+Interfaces.\+IRoute.\+Departure\+Times\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Array of departure times from subsequent Location objects 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_ad537e352ef4f1a3879eae7132a1e0b3d}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a45a121ada0e6202b8ee5d00490163aac}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a41319ec8690da4f6fe5c4ff2c733c75c}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a41319ec8690da4f6fe5c4ff2c733c75c}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!Distances@{Distances}}
+\index{Distances@{Distances}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{Distances}{Distances}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}}$>$ VRPTWOptimizer.\+Interfaces.\+IRoute.\+Distances\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Distance objects between subsequent location in route 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a046a0696a7fa57a101eb9cbfb3bfb77f}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a222e7def0c0776fcaa415f016b4423bf}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1dad9fabdde33251567eecefa86407ee}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1dad9fabdde33251567eecefa86407ee}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!Length@{Length}}
+\index{Length@{Length}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Interfaces.\+IRoute.\+Length\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Total length of route in meters 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a21b908225c8b867e624a8800d659d9e7}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_ad15c7f0d7bf6a9e0190fa9e3e5634c39}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_aeb66938fd3c3746cec633d48fdd978bc}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_aeb66938fd3c3746cec633d48fdd978bc}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!LoadedRequests@{LoadedRequests}}
+\index{LoadedRequests@{LoadedRequests}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{LoadedRequests}{LoadedRequests}}
+{\footnotesize\ttfamily List$<$List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}}$>$ $>$ VRPTWOptimizer.\+Interfaces.\+IRoute.\+Loaded\+Requests\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects that are loaded on given location 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a4c1a714bed70232dbc49dc99ac6f7b7a}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a11c40c4c6ef7ab361a0c4ef11f31ae0f}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0350ae564daf3c4429717a14a745c11b}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0350ae564daf3c4429717a14a745c11b}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!MaxDelay@{MaxDelay}}
+\index{MaxDelay@{MaxDelay}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{MaxDelay}{MaxDelay}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Interfaces.\+IRoute.\+Max\+Delay\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Timespan in seconds of largest delay againts Prefered\+Time\+Window\+End 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a908d2f441e3eed147fb8fd6ea6efd37b}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a4fb459b5b6d659969f2de165f1157b8d}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a2d6641b8b7b1d6f99d0d19b09fc9932b}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a2d6641b8b7b1d6f99d0d19b09fc9932b}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!TimeWindowEnd@{TimeWindowEnd}}
+\index{TimeWindowEnd@{TimeWindowEnd}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{TimeWindowEnd}{TimeWindowEnd}}
+{\footnotesize\ttfamily List$<$double$>$ VRPTWOptimizer.\+Interfaces.\+IRoute.\+Time\+Window\+End\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Array of upper time limits for starting visits in subsequent Location objects 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a423de2f9f786035b2cda1486be8f4e9f}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a1dc3751b06ab4de5b1b760933ada8317}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a4f458c304d5996933990b9169a4857d6}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a4f458c304d5996933990b9169a4857d6}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!TimeWindowStart@{TimeWindowStart}}
+\index{TimeWindowStart@{TimeWindowStart}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{TimeWindowStart}{TimeWindowStart}}
+{\footnotesize\ttfamily List$<$double$>$ VRPTWOptimizer.\+Interfaces.\+IRoute.\+Time\+Window\+Start\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Array of lower time limits for starting visits in subsequent Location objects 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a0b7bb95e3d2a15d6179872f1a3d5d0fa}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a0064833acf90e0b4826f7347175a3ac5}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a23a3e144731668c14d8e9f1dffb764f3}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a23a3e144731668c14d8e9f1dffb764f3}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!TotalDelay@{TotalDelay}}
+\index{TotalDelay@{TotalDelay}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{TotalDelay}{TotalDelay}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Interfaces.\+IRoute.\+Total\+Delay\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Sum of all delays againts Prefered\+Time\+Window\+End 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a68e51b779a4c24efb92b60262627cc8d}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_ad13f5af7065a2d3c63d14154f76d31ac}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8eb2189ee09d476b6946d8d1b0ea92d8}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8eb2189ee09d476b6946d8d1b0ea92d8}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!TravelTime@{TravelTime}}
+\index{TravelTime@{TravelTime}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{TravelTime}{TravelTime}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Interfaces.\+IRoute.\+Travel\+Time\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Total duration of drive within route in seconds 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a91ff59543d3e7210011eb6c5dcec54fa}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a1ff8e05cd2986719a2d05d144c59395c}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0b3882b5ce8370da7be73b099b265c87}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0b3882b5ce8370da7be73b099b265c87}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!UnloadedRequests@{UnloadedRequests}}
+\index{UnloadedRequests@{UnloadedRequests}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{UnloadedRequests}{UnloadedRequests}}
+{\footnotesize\ttfamily List$<$List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}}$>$ $>$ VRPTWOptimizer.\+Interfaces.\+IRoute.\+Unloaded\+Requests\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects that are unloaded on given location 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_ab4f0952d7384d3cdd149adb8ffc8b1fb}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a21c354eadf2fc2c087f6b791f7efe9c6}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00054}{54}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!Vehicle@{Vehicle}}
+\index{Vehicle@{Vehicle}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{Vehicle}{Vehicle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} VRPTWOptimizer.\+Interfaces.\+IRoute.\+Vehicle\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} with capacity serving the route 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a140570406d3a67e24ee5ad2ca5261abc}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a48331c9c85c852bfebad558c88d883f3}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0d6d70ce7d1a60c6c4f277d979630942}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0d6d70ce7d1a60c6c4f277d979630942}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!VehicleDriver@{VehicleDriver}}
+\index{VehicleDriver@{VehicleDriver}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{VehicleDriver}{VehicleDriver}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} VRPTWOptimizer.\+Interfaces.\+IRoute.\+Vehicle\+Driver\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Tractor serving the route (if necessary) 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a3973b1a8b30be252b9dc3270bb1de11b}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_ae409e110c42b8e66bf983ea852f04a4f}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00062}{62}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a9b94599db46afba7bd052ddb5cfd7ab9}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a9b94599db46afba7bd052ddb5cfd7ab9}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!VehicleTractor@{VehicleTractor}}
+\index{VehicleTractor@{VehicleTractor}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{VehicleTractor}{VehicleTractor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} VRPTWOptimizer.\+Interfaces.\+IRoute.\+Vehicle\+Tractor\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} (if the problem assumes drivers management) 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_af661214282b61c0cf856f8f979022f9b}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_af5b092890d441177782ae6db9d0fa736}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00066}{66}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8962aaa555bfdd22f08986597b379d12}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8962aaa555bfdd22f08986597b379d12}} 
+\index{VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}!VisitedLocations@{VisitedLocations}}
+\index{VisitedLocations@{VisitedLocations}!VRPTWOptimizer.Interfaces.IRoute@{VRPTWOptimizer.Interfaces.IRoute}}
+\doxysubsubsection{\texorpdfstring{VisitedLocations}{VisitedLocations}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}$>$ VRPTWOptimizer.\+Interfaces.\+IRoute.\+Visited\+Locations\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+List of subsequent Location objects in route 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a6695d74ac9a5f5a03f2c8bd3cef06ba0}{VRPTWOptimizer.\+BL.\+Meta.\+Route}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_route_dto_a685c8773f5d2708d4c2a7a593e8f038d}{VRPTWOptimizer.\+Utils.\+Model.\+Route\+Dto}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_8cs_source_l00070}{70}} of file \mbox{\hyperlink{_i_route_8cs_source}{IRoute.\+cs}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_route_8cs}{IRoute.\+cs}}\end{DoxyCompactItemize}

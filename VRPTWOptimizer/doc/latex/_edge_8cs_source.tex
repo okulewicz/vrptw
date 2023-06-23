@@ -1,0 +1,203 @@
+\hypertarget{_edge_8cs_source}{}\doxysection{Edge.\+cs}
+\label{_edge_8cs_source}\index{Edge.cs@{Edge.cs}}
+\mbox{\hyperlink{_edge_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}};}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00002}00002 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00003}00003 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00006}00006 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta}{VRPTWOptimizer.BL.Meta}}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00010}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge}{00010}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge}{Edge}}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00011}00011     \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00012}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a999cc57595e221b147cfdb79816842c8}{00012}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a999cc57595e221b147cfdb79816842c8}{FirstRequest}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00014}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a13fb5bc1f790568cdcb013558f04d2f6}{00014}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a13fb5bc1f790568cdcb013558f04d2f6}{SecondRequest}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00016}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_abd6ca9e3992127385a4573300e8916e9}{00016}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_abd6ca9e3992127385a4573300e8916e9}{Weight}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00018}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a05b2b8ff98a26af4d62a8039996dc87f}{00018}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a05b2b8ff98a26af4d62a8039996dc87f}{Edge}}(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}} firstRequest, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}} secondRequest, \textcolor{keywordtype}{double} weight)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00019}00019         \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00020}00020             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a999cc57595e221b147cfdb79816842c8}{FirstRequest}} = firstRequest;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00021}00021             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a13fb5bc1f790568cdcb013558f04d2f6}{SecondRequest}} = secondRequest;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00022}00022             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_abd6ca9e3992127385a4573300e8916e9}{Weight}} = weight;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00023}00023         \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00025}00025         \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keywordtype}{void} TryCreateEdge(\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider, \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} maxVehicleRoadProperties, \textcolor{keywordtype}{double} maxDelayWithinRoute, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}} \textcolor{keyword}{function}, List<Edge> edges, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}} request1, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}} request2, \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} locationTo, \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} locationFrom, \textcolor{keywordtype}{double} serviceTimeAtLocationFrom, \textcolor{keywordtype}{double} timeWindowStartAtLocationFrom, \textcolor{keywordtype}{double} timeWindowStartAtLocationTo, \textcolor{keywordtype}{double} timeWindowsEndAtLocationTo)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00026}00026         \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00027}00027             var distance = distanceProvider.\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider_a91899eab2f7298972955f9144301b2ed}{GetDistance}}(locationFrom, locationTo, maxVehicleRoadProperties);}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00028}00028             var waitingTimeAtRequest2 = Math.Max(timeWindowStartAtLocationTo -\/ (timeWindowStartAtLocationFrom + serviceTimeAtLocationFrom + distance.Time), 0);}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00029}00029             var lateTimeAtRequest2 = Math.Max(timeWindowStartAtLocationFrom + serviceTimeAtLocationFrom + distance.Time -\/ timeWindowsEndAtLocationTo, 0);}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00030}00030             \textcolor{keywordflow}{if} (lateTimeAtRequest2 <= maxDelayWithinRoute)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00031}00031             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00032}00032                 var edgeCost = \textcolor{keyword}{function}.DistanceFactor * distance.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}{Length}}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00033}00033                     + \textcolor{keyword}{function}.DriveTimeFactor * distance.Time}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00034}00034                     + Math.Max(\textcolor{keyword}{function}.MaxEarlyArrivalFactor, \textcolor{keyword}{function}.TotalEarlyArrivalFactor) * waitingTimeAtRequest2}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00035}00035                     + Math.Max(\textcolor{keyword}{function}.MaxDelaySquaredFactor, \textcolor{keyword}{function}.TotalDelaySquaredFactor) * lateTimeAtRequest2 * lateTimeAtRequest2;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00036}00036                 edges.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a05b2b8ff98a26af4d62a8039996dc87f}{Edge}}(request1, request2, edgeCost));}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00037}00037             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00038}00038         \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00040}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a3a3e326dbee23be4c89da35ce402dc1c}{00040}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<Edge> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_a3a3e326dbee23be4c89da35ce402dc1c}{CreateEdgesBetweenDeliveryNodes}}(}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00041}00041                     List<TransportRequest> requests,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00042}00042             List<Vehicle> vehicles,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00043}00043             \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00044}00044             \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}} timeEstimator,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00045}00045             \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} maxVehicleRoadProperties,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00046}00046             \textcolor{keywordtype}{double} maxDelayWithinRoute,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00047}00047             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}} \textcolor{keyword}{function})}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00048}00048         \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00049}00049             var edges = \textcolor{keyword}{new} List<Edge>();}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00050}00050             \textcolor{keywordflow}{foreach} (var request1 \textcolor{keywordflow}{in} requests)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00051}00051             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00052}00052                 \textcolor{keywordflow}{foreach} (var request2 \textcolor{keywordflow}{in} requests)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00053}00053                 \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00054}00054                     \textcolor{keywordflow}{if} (request1 != request2)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00055}00055                     \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00056}00056                         var requestPair = \textcolor{keyword}{new} List<TransportRequest>(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}}[] \{ request1, request2 \});}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00057}00057                         \textcolor{keywordflow}{if} (vehicles.Any(vh => vh.CanFitRequests(requestPair)))}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00058}00058                         \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00059}00059                             \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} locationFrom;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00060}00060                             \textcolor{keywordtype}{double} serviceTimeAtLocationFrom;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00061}00061                             \textcolor{keywordtype}{double} timeWindowStartAtLocationFrom;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00062}00062                             \textcolor{keywordflow}{if} (request1.Type == Enums.RequestType.GoodsDistribution)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00063}00063                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00064}00064                                 locationFrom = request1.DeliveryLocation;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00065}00065                                 serviceTimeAtLocationFrom = timeEstimator.EstimateLoadUnloadTime(request1.PackageCount, 0, request1.PackageCountForImediateRetrieval, 1);}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00066}00066                                 timeWindowStartAtLocationFrom = request1.DeliveryPreferedTimeWindowStart;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00067}00067                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00068}00068                             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00069}00069                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00070}00070                                 \textcolor{comment}{//TODO This does not handle direct transfers between not DC nodes}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00071}00071                                 locationFrom = request1.PickupLocation;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00072}00072                                 serviceTimeAtLocationFrom = timeEstimator.EstimateLoadUnloadTime(0, request1.PackageCount, 0, 1);}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00073}00073                                 timeWindowStartAtLocationFrom = request1.PickupPreferedTimeWindowStart;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00074}00074                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00075}00075                             \textcolor{comment}{//TODO consider adding timeWindowStartAtLocationFrom = Math.max(0,timeWindowStartAtLocationFrom)?}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00077}00077                             \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} locationTo;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00078}00078                             \textcolor{keywordtype}{double} timeWindowStartAtLocationTo;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00079}00079                             \textcolor{keywordtype}{double} timeWindowsEndAtLocationTo;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00080}00080                             \textcolor{keywordflow}{if} (request2.Type == Enums.RequestType.GoodsDistribution)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00081}00081                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00082}00082                                 locationTo = request2.DeliveryLocation;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00083}00083                                 timeWindowStartAtLocationTo = request2.DeliveryPreferedTimeWindowStart;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00084}00084                                 timeWindowsEndAtLocationTo = request2.DeliveryPreferedTimeWindowEnd;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00085}00085                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00086}00086                             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00087}00087                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00088}00088                                 \textcolor{comment}{//TODO This does not handle direct transfers between not DC nodes}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00089}00089                                 locationTo = request2.PickupLocation;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00090}00090                                 timeWindowStartAtLocationTo = request2.PickupPreferedTimeWindowStart;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00091}00091                                 timeWindowsEndAtLocationTo = request2.PickupPreferedTimeWindowEnd;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00092}00092                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00093}00093                             TryCreateEdge(}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00094}00094                                 distanceProvider,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00095}00095                                 maxVehicleRoadProperties,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00096}00096                                 maxDelayWithinRoute,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00097}00097                                 \textcolor{keyword}{function},}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00098}00098                                 edges,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00099}00099                                 request1,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00100}00100                                 request2,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00101}00101                                 locationTo,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00102}00102                                 locationFrom,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00103}00103                                 serviceTimeAtLocationFrom,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00104}00104                                 timeWindowStartAtLocationFrom,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00105}00105                                 timeWindowStartAtLocationTo,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00106}00106                                 timeWindowsEndAtLocationTo);}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00107}00107                         \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00108}00108                     \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00109}00109                 \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00110}00110             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00111}00111             \textcolor{keywordflow}{return} edges.OrderBy(e => e.Weight).ToList();}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00112}00112         \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00114}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_ae589d0ce8d4e4d5cbc73212f5bb74ab0}{00114}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<Edge> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_edge_ae589d0ce8d4e4d5cbc73212f5bb74ab0}{CreateEdgesBetweenVariousNodes}}(}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00115}00115             List<TransportRequest> requests,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00116}00116             List<Vehicle> vehicles,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00117}00117             \textcolor{keywordtype}{string} homeDepotId,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00118}00118             \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00119}00119             \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}} timeEstimator,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00120}00120             \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} maxVehicleRoadProperties,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00121}00121             \textcolor{keywordtype}{double} maxDelayWithinRoute,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00122}00122             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}} \textcolor{keyword}{function})}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00123}00123         \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00124}00124             var edges = \textcolor{keyword}{new} List<Edge>();}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00125}00125             \textcolor{keywordflow}{foreach} (var request1 \textcolor{keywordflow}{in} requests)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00126}00126             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00127}00127                 \textcolor{keywordflow}{foreach} (var request2 \textcolor{keywordflow}{in} requests)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00128}00128                 \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00129}00129                     \textcolor{keywordflow}{if} (request1 != request2)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00130}00130                     \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00131}00131                         var requestPair = \textcolor{keyword}{new} List<TransportRequest>(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}}[] \{ request1, request2 \});}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00132}00132                         \textcolor{keywordflow}{if} (vehicles.Any(vh => vh.CanFitRequestsSomewhereInVehicle(requestPair)))}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00133}00133                         \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00134}00134                             \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} locationFrom;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00135}00135                             \textcolor{keywordtype}{double} serviceTimeAtLocationFrom;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00136}00136                             \textcolor{keywordtype}{double} timeWindowStartAtLocationFrom;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00137}00137                             \textcolor{keywordflow}{if} (request1.PickupLocation.Id == homeDepotId)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00138}00138                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00139}00139                                 locationFrom = request1.DeliveryLocation;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00140}00140                                 serviceTimeAtLocationFrom = timeEstimator.EstimateLoadUnloadTime(request1.PackageCount, 0, request1.PackageCountForImediateRetrieval, 1);}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00141}00141                                 timeWindowStartAtLocationFrom = request1.DeliveryPreferedTimeWindowStart;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00142}00142                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00143}00143                             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (request1.DeliveryLocation.Id == homeDepotId)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00144}00144                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00145}00145                                 locationFrom = request1.PickupLocation;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00146}00146                                 serviceTimeAtLocationFrom = timeEstimator.EstimateLoadUnloadTime(0, request1.PackageCount, 0, 1);}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00147}00147                                 timeWindowStartAtLocationFrom = request1.PickupPreferedTimeWindowStart;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00148}00148                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00149}00149                             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00150}00150                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00151}00151                                 \textcolor{comment}{//TODO This does not handle direct transfers between not DC nodes}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00152}00152                                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} NotImplementedException(\textcolor{stringliteral}{"{}Does not support transfer between non DC nodes"{}});}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00153}00153                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00154}00154                             \textcolor{comment}{//TODO consider adding timeWindowStartAtLocationFrom = Math.max(0,timeWindowStartAtLocationFrom)?}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00156}00156                             \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} locationTo;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00157}00157                             \textcolor{keywordtype}{double} timeWindowStartAtLocationTo;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00158}00158                             \textcolor{keywordtype}{double} timeWindowsEndAtLocationTo;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00159}00159                             \textcolor{keywordflow}{if} (request2.PickupLocation.Id == homeDepotId)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00160}00160                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00161}00161                                 locationTo = request2.DeliveryLocation;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00162}00162                                 timeWindowStartAtLocationTo = request2.DeliveryPreferedTimeWindowStart;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00163}00163                                 timeWindowsEndAtLocationTo = request2.DeliveryPreferedTimeWindowEnd;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00164}00164                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00165}00165                             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (request2.DeliveryLocation.Id == homeDepotId)}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00166}00166                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00167}00167                                 locationTo = request2.PickupLocation;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00168}00168                                 timeWindowStartAtLocationTo = request2.PickupPreferedTimeWindowStart;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00169}00169                                 timeWindowsEndAtLocationTo = request2.PickupPreferedTimeWindowEnd;}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00170}00170                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00171}00171                             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00172}00172                             \{}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00173}00173                                 \textcolor{comment}{//TODO This does not handle direct transfers between not DC nodes}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00174}00174                                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} NotImplementedException(\textcolor{stringliteral}{"{}Does not support transfer between non DC nodes"{}});}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00175}00175                             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00176}00176                             TryCreateEdge(}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00177}00177                                 distanceProvider,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00178}00178                                 maxVehicleRoadProperties,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00179}00179                                 maxDelayWithinRoute,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00180}00180                                 \textcolor{keyword}{function},}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00181}00181                                 edges,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00182}00182                                 request1,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00183}00183                                 request2,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00184}00184                                 locationTo,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00185}00185                                 locationFrom,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00186}00186                                 serviceTimeAtLocationFrom,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00187}00187                                 timeWindowStartAtLocationFrom,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00188}00188                                 timeWindowStartAtLocationTo,}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00189}00189                                 timeWindowsEndAtLocationTo);}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00190}00190                         \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00191}00191                     \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00192}00192                 \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00193}00193             \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00194}00194             \textcolor{keywordflow}{return} edges.OrderBy(e => e.Weight).ToList();}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00195}00195         \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00196}00196     \}}
+\DoxyCodeLine{\Hypertarget{_edge_8cs_source_l00197}00197 \}}
+
+\end{DoxyCode}

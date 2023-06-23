@@ -1,0 +1,177 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base}{}\doxysection{VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base}\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+Inheritance diagram for VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.374795cm]{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_ae03a336562e582e835d3e7f97f382021}{Create\+Optimizer}} ()
+\begin{DoxyCompactList}\small\item\em Creates new instance of a VRP optimizer with default parameters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a516a6451e699162bd7e62ec00e77bc1d}{Create\+Optimizer}} (Dictionary$<$ string, object $>$ configuration)
+\begin{DoxyCompactList}\small\item\em Creates new instance of a VRP optimizer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_ae2b5da6c5ccd8541fdb461b3a38963b2}{Max\+Delay\+Settings\+Default}} = 3600
+\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a95bfab32d62d603db22636c78eb1ebe2}{Max\+Delay\+Settings\+Key}} = \char`\"{}Max\+Delay\char`\"{}
+\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a7bcea68bf5f2d637dfb3f48682c98303}{Max\+Vehicle\+Delay\+Settings\+Key}} = \char`\"{}Max\+Vehicle\+Delay\char`\"{}
+\item 
+const int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a584aa6245c03c5733de05194c0425424}{Random\+Seed\+Settings\+Default}} = 1
+\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a8643e42b7d144ef342764733e2c2e337}{Random\+Seed\+Settings\+Key}} = \char`\"{}Random\+Seed\char`\"{}
+\item 
+const bool \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a70e6448b172aee185762d74f40c16f3f}{Random\+Vehicles\+Settings\+Default}} = false
+\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a3a1365d85717a7330132907c1a0c042a}{Random\+Vehicles\+Settings\+Key}} = \char`\"{}Random\+Vehicles\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a795c8d4284ccc3eea309aecec86bbfcd}{Get\+Optimizer}} (bool Randomize\+Vehicles, int Random\+Seed, double Max\+Delay, double Max\+Vehicle\+Delay, bool Filter\+Out\+Transfer\+Requests=false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_ae03a336562e582e835d3e7f97f382021}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_ae03a336562e582e835d3e7f97f382021}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!CreateOptimizer@{CreateOptimizer}}
+\index{CreateOptimizer@{CreateOptimizer}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{CreateOptimizer()}{CreateOptimizer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Create\+Optimizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates new instance of a VRP optimizer with default parameters 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer_factory_acd6fa8b5857b0a7bc4c8e1e54ed6ebb7}{VRPTWOptimizer.\+Interfaces.\+IVRPOptimizer\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a516a6451e699162bd7e62ec00e77bc1d}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a516a6451e699162bd7e62ec00e77bc1d}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!CreateOptimizer@{CreateOptimizer}}
+\index{CreateOptimizer@{CreateOptimizer}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{CreateOptimizer()}{CreateOptimizer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Create\+Optimizer (\begin{DoxyParamCaption}\item[{Dictionary$<$ string, object $>$}]{configuration }\end{DoxyParamCaption})}
+
+
+
+Creates new instance of a VRP optimizer 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer_factory_a1bed8a3030dd6978dbcf37826634a8e6}{VRPTWOptimizer.\+Interfaces.\+IVRPOptimizer\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a795c8d4284ccc3eea309aecec86bbfcd}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a795c8d4284ccc3eea309aecec86bbfcd}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!GetOptimizer@{GetOptimizer}}
+\index{GetOptimizer@{GetOptimizer}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{GetOptimizer()}{GetOptimizer()}}
+{\footnotesize\ttfamily abstract \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Get\+Optimizer (\begin{DoxyParamCaption}\item[{bool}]{Randomize\+Vehicles,  }\item[{int}]{Random\+Seed,  }\item[{double}]{Max\+Delay,  }\item[{double}]{Max\+Vehicle\+Delay,  }\item[{bool}]{Filter\+Out\+Transfer\+Requests = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fl4f0ab8b36a68057c8598b523700c1e28_abbc975f97678c121a5bc911eab86fbc0}{VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Distribution\+Clustering\+Integrated\+Fleet.\+Clusterizing\+VRPOptimizer\+Factory}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_generalized_clustering_1_1_clusterizing_v_r_p_optimizer_factory_acf6559e9e913ec9a4f24eef8fcdadf8d}{VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Generalized\+Clustering.\+Clusterizing\+VRPOptimizer\+Factory}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_ae2b5da6c5ccd8541fdb461b3a38963b2}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_ae2b5da6c5ccd8541fdb461b3a38963b2}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!MaxDelaySettingsDefault@{MaxDelaySettingsDefault}}
+\index{MaxDelaySettingsDefault@{MaxDelaySettingsDefault}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{MaxDelaySettingsDefault}{MaxDelaySettingsDefault}}
+{\footnotesize\ttfamily const double VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Max\+Delay\+Settings\+Default = 3600\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a95bfab32d62d603db22636c78eb1ebe2}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a95bfab32d62d603db22636c78eb1ebe2}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!MaxDelaySettingsKey@{MaxDelaySettingsKey}}
+\index{MaxDelaySettingsKey@{MaxDelaySettingsKey}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{MaxDelaySettingsKey}{MaxDelaySettingsKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Max\+Delay\+Settings\+Key = \char`\"{}Max\+Delay\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a7bcea68bf5f2d637dfb3f48682c98303}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a7bcea68bf5f2d637dfb3f48682c98303}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!MaxVehicleDelaySettingsKey@{MaxVehicleDelaySettingsKey}}
+\index{MaxVehicleDelaySettingsKey@{MaxVehicleDelaySettingsKey}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{MaxVehicleDelaySettingsKey}{MaxVehicleDelaySettingsKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Max\+Vehicle\+Delay\+Settings\+Key = \char`\"{}Max\+Vehicle\+Delay\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a584aa6245c03c5733de05194c0425424}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a584aa6245c03c5733de05194c0425424}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!RandomSeedSettingsDefault@{RandomSeedSettingsDefault}}
+\index{RandomSeedSettingsDefault@{RandomSeedSettingsDefault}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{RandomSeedSettingsDefault}{RandomSeedSettingsDefault}}
+{\footnotesize\ttfamily const int VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Random\+Seed\+Settings\+Default = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a8643e42b7d144ef342764733e2c2e337}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a8643e42b7d144ef342764733e2c2e337}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!RandomSeedSettingsKey@{RandomSeedSettingsKey}}
+\index{RandomSeedSettingsKey@{RandomSeedSettingsKey}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{RandomSeedSettingsKey}{RandomSeedSettingsKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Random\+Seed\+Settings\+Key = \char`\"{}Random\+Seed\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a70e6448b172aee185762d74f40c16f3f}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a70e6448b172aee185762d74f40c16f3f}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!RandomVehiclesSettingsDefault@{RandomVehiclesSettingsDefault}}
+\index{RandomVehiclesSettingsDefault@{RandomVehiclesSettingsDefault}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{RandomVehiclesSettingsDefault}{RandomVehiclesSettingsDefault}}
+{\footnotesize\ttfamily const bool VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Random\+Vehicles\+Settings\+Default = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a3a1365d85717a7330132907c1a0c042a}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_clusterizing_v_r_p_optimizer_factory_base_a3a1365d85717a7330132907c1a0c042a}} 
+\index{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}!RandomVehiclesSettingsKey@{RandomVehiclesSettingsKey}}
+\index{RandomVehiclesSettingsKey@{RandomVehiclesSettingsKey}!VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase@{VRPTWOptimizer.BL.Meta.Cluster.ClusterizingVRPOptimizerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{RandomVehiclesSettingsKey}{RandomVehiclesSettingsKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Cluster.\+Clusterizing\+VRPOptimizer\+Factory\+Base.\+Random\+Vehicles\+Settings\+Key = \char`\"{}Random\+Vehicles\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs_source}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_clusterizing_v_r_p_optimizer_factory_base_8cs}{Clusterizing\+VRPOptimizer\+Factory\+Base.\+cs}}\end{DoxyCompactItemize}

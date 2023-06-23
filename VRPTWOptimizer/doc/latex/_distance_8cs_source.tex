@@ -1,0 +1,41 @@
+\hypertarget{_distance_8cs_source}{}\doxysection{Distance.\+cs}
+\label{_distance_8cs_source}\index{Distance.cs@{Distance.cs}}
+\mbox{\hyperlink{_distance_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00001}00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00003}00003 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00004}00004 \{}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00008}\mbox{\hyperlink{class_common_g_i_s_1_1_distance}{00008}}     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \textcolor{keyword}{class }\mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} : IEquatable<Distance>}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00009}00009     \{}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00010}00010         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{double} EPS\_EQUALITY\_TOLERANCE = 1e-\/2;}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00015}\mbox{\hyperlink{class_common_g_i_s_1_1_distance_afe206a95e13cc7270e52b9fa68c52a32}{00015}}         \textcolor{keyword}{public} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_common_g_i_s_1_1_distance_afe206a95e13cc7270e52b9fa68c52a32}{FromId}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00020}\mbox{\hyperlink{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}{00020}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}{Length}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00025}\mbox{\hyperlink{class_common_g_i_s_1_1_distance_a2997c43715a9478b18f41bfaa125775c}{00025}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} \mbox{\hyperlink{class_common_g_i_s_1_1_distance_a2997c43715a9478b18f41bfaa125775c}{Profile}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00029}\mbox{\hyperlink{class_common_g_i_s_1_1_distance_a873fe0d3bc5a3a24c5916d2ea6176a90}{00029}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_common_g_i_s_1_1_distance_a873fe0d3bc5a3a24c5916d2ea6176a90}{Time}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00034}\mbox{\hyperlink{class_common_g_i_s_1_1_distance_adf763646e49cbcb6c4b3e6cac9746a96}{00034}}         \textcolor{keyword}{public} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_common_g_i_s_1_1_distance_adf763646e49cbcb6c4b3e6cac9746a96}{ToId}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00044}\mbox{\hyperlink{class_common_g_i_s_1_1_distance_a9bc0e782a957b6cf90e0f27b822cc2aa}{00044}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_common_g_i_s_1_1_distance_a9bc0e782a957b6cf90e0f27b822cc2aa}{Distance}}(\textcolor{keywordtype}{string} fromId, \textcolor{keywordtype}{string} toId, \textcolor{keywordtype}{double} length, \textcolor{keywordtype}{double} time, \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} profile)}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00045}00045         \{}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00046}00046             \mbox{\hyperlink{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}{Length}} = length;}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00047}00047             \mbox{\hyperlink{class_common_g_i_s_1_1_distance_a873fe0d3bc5a3a24c5916d2ea6176a90}{Time}} = time;}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00048}00048             \mbox{\hyperlink{class_common_g_i_s_1_1_distance_afe206a95e13cc7270e52b9fa68c52a32}{FromId}} = fromId;}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00049}00049             \mbox{\hyperlink{class_common_g_i_s_1_1_distance_adf763646e49cbcb6c4b3e6cac9746a96}{ToId}} = toId;}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00050}00050             \mbox{\hyperlink{class_common_g_i_s_1_1_distance_a2997c43715a9478b18f41bfaa125775c}{Profile}} = profile;}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00051}00051         \}}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00058}\mbox{\hyperlink{class_common_g_i_s_1_1_distance_a8bfbabd410c265a58253fb736b4ee5c5}{00058}}         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_common_g_i_s_1_1_distance_a8bfbabd410c265a58253fb736b4ee5c5}{Equals}}(\mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} other)}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00059}00059         \{}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00060}00060             \textcolor{keywordflow}{return} other.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_afe206a95e13cc7270e52b9fa68c52a32}{FromId}} == this.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_afe206a95e13cc7270e52b9fa68c52a32}{FromId}} \&\&}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00061}00061                 other.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_adf763646e49cbcb6c4b3e6cac9746a96}{ToId}} == this.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_adf763646e49cbcb6c4b3e6cac9746a96}{ToId}} \&\&}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00062}00062                 Math.Abs(this.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}{Length}} -\/ other.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}{Length}}) < EPS\_EQUALITY\_TOLERANCE \&\&}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00063}00063                 Math.Abs(this.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_a873fe0d3bc5a3a24c5916d2ea6176a90}{Time}} -\/ other.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_a873fe0d3bc5a3a24c5916d2ea6176a90}{Time}}) < EPS\_EQUALITY\_TOLERANCE;}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00064}00064         \}}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_distance_8cs_source_l00066}00066 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,61 @@
+\hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{}\doxysection{VRPTWOptimizer.\+Interfaces.\+ITime\+Estimator Interface Reference}
+\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}\index{VRPTWOptimizer.Interfaces.ITimeEstimator@{VRPTWOptimizer.Interfaces.ITimeEstimator}}
+
+
+Predicts time of loading and unloading cargo at Location  
+
+
+Inheritance diagram for VRPTWOptimizer.\+Interfaces.\+ITime\+Estimator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.400000cm]{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator_a98bc5e148758116e364366acb432c85c}{Estimate\+Load\+Unload\+Time}} (int ep\+Unload\+Count, int ep\+Load\+Only\+Count, int ep\+Immediately\+Retrieved\+Count, int handled\+Transport\+Requests\+Count)
+\begin{DoxyCompactList}\small\item\em This method is used to predict time it will take to serve all the loadings and unloadings within the given location \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Predicts time of loading and unloading cargo at Location 
+
+Definition at line \mbox{\hyperlink{_i_time_estimator_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_i_time_estimator_8cs_source}{ITime\+Estimator.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator_a98bc5e148758116e364366acb432c85c}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator_a98bc5e148758116e364366acb432c85c}} 
+\index{VRPTWOptimizer.Interfaces.ITimeEstimator@{VRPTWOptimizer.Interfaces.ITimeEstimator}!EstimateLoadUnloadTime@{EstimateLoadUnloadTime}}
+\index{EstimateLoadUnloadTime@{EstimateLoadUnloadTime}!VRPTWOptimizer.Interfaces.ITimeEstimator@{VRPTWOptimizer.Interfaces.ITimeEstimator}}
+\doxysubsubsection{\texorpdfstring{EstimateLoadUnloadTime()}{EstimateLoadUnloadTime()}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Interfaces.\+ITime\+Estimator.\+Estimate\+Load\+Unload\+Time (\begin{DoxyParamCaption}\item[{int}]{ep\+Unload\+Count,  }\item[{int}]{ep\+Load\+Only\+Count,  }\item[{int}]{ep\+Immediately\+Retrieved\+Count,  }\item[{int}]{handled\+Transport\+Requests\+Count }\end{DoxyParamCaption})}
+
+
+
+This method is used to predict time it will take to serve all the loadings and unloadings within the given location 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ep\+Unload\+Count} & Number of Euro\+Pallets that are being unloaded\\
+\hline
+{\em ep\+Load\+Only\+Count} & Number of Euro\+Pallets that are being loaded, but were not unloaded\\
+\hline
+{\em ep\+Immediately\+Retrieved\+Count} & Number of Euro\+Pallets that are being delivered and immediately retrieved after handling in Location\\
+\hline
+{\em handled\+Transport\+Requests\+Count} & Number of transport requests loaded and unloaded in the given location\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_af37e6932898372930b8727cb39b41b52}{VRPTWOptimizer.\+Utils.\+Model.\+Via\+Tms\+JSONDTOs.\+Time\+Estimator\+DTO}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a936d0d07f36a2d2361963777a5e45939}{VRPTWOptimizer.\+Utils.\+Time\+Estimators.\+Expert\+Service\+Time\+Estimator}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_time_estimator_8cs}{ITime\+Estimator.\+cs}}\end{DoxyCompactItemize}

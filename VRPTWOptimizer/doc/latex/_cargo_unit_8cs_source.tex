@@ -1,0 +1,33 @@
+\hypertarget{_cargo_unit_8cs_source}{}\doxysection{Cargo\+Unit.\+cs}
+\mbox{\hyperlink{_cargo_unit_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00001}00001 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00002}00002 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00006}00006 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00007}00007 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums}{Enums}};}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00009}\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{00009}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00014}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit}{00014}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit}{CargoUnit}}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00015}00015     \{}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00019}00019         [JsonProperty(\textcolor{stringliteral}{"{}zoneId"{}})]}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00020}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a9b5ca4d90e95d400cf3fd46755c9ac30}{00020}}         \textcolor{keyword}{public} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a9b5ca4d90e95d400cf3fd46755c9ac30}{CargoGroup}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00024}00024         [JsonProperty(\textcolor{stringliteral}{"{}cargoUnitType"{}})]}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00025}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a7f1510407d49a8be6b65c4af5479adbc}{00025}}         \textcolor{keyword}{public} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_aa5b83b3c2d024afb52c0132d85ee9c9f}{CargoUnitType}} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_aa5b83b3c2d024afb52c0132d85ee9c9f}{CargoUnitType}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00029}00029         [JsonProperty(\textcolor{stringliteral}{"{}goodId"{}})]}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00030}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a71200c6ab33187e37f3e66ece8600abf}{00030}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a71200c6ab33187e37f3e66ece8600abf}{GoodsId}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00034}00034         [JsonProperty(\textcolor{stringliteral}{"{}goodName"{}})]}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00035}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a42c897e8ca0cf54d4ed38e44c1f6c948}{00035}}         \textcolor{keyword}{public} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a42c897e8ca0cf54d4ed38e44c1f6c948}{GoodsName}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00039}00039         [JsonProperty(\textcolor{stringliteral}{"{}importance"{}})]}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00040}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a7f24f28c3c71adc2038db79c91e135a7}{00040}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a7f24f28c3c71adc2038db79c91e135a7}{Priority}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00044}00044         [JsonProperty(\textcolor{stringliteral}{"{}volume"{}})]}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00045}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a620d1c0a405967eb5d144a2de7de0f17}{00045}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double}[] \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a620d1c0a405967eb5d144a2de7de0f17}{Size}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00049}00049         [JsonProperty(\textcolor{stringliteral}{"{}quantity"{}})]}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00050}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a370c1f02768ba0e6ebec1f09d7a6f65e}{00050}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_cargo_unit_a370c1f02768ba0e6ebec1f09d7a6f65e}{UnitsCount}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00051}00051     \}}
+\DoxyCodeLine{\Hypertarget{_cargo_unit_8cs_source_l00052}00052 \}}
+
+\end{DoxyCode}

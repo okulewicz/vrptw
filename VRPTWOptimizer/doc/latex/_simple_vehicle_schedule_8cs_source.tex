@@ -1,0 +1,110 @@
+\hypertarget{_simple_vehicle_schedule_8cs_source}{}\doxysection{Simple\+Vehicle\+Schedule.\+cs}
+\label{_simple_vehicle_schedule_8cs_source}\index{SimpleVehicleSchedule.cs@{SimpleVehicleSchedule.cs}}
+\mbox{\hyperlink{_simple_vehicle_schedule_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00001}00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00002}00002 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00007}00007 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet}{VRPTWOptimizer.BL.Meta.Cluster.DistributionClusteringIntegratedFleet}}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00009}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule}{00009}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule}{SimpleVehicleSchedule}}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00010}00010     \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00011}00011         \textcolor{keyword}{private} \textcolor{keyword}{class }RouteComparer : IComparer<Route>}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00012}00012         \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00013}00013             \textcolor{keyword}{public} \textcolor{keywordtype}{int} Compare(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route}{Route}} x, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route}{Route}} y)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00014}00014             \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00015}00015                 \textcolor{keywordflow}{if} (x.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a09ea6c2152b5afe8e003cf5a12ad1bd6}{ArrivalTimes}}.Count == 0 \&\& y.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a09ea6c2152b5afe8e003cf5a12ad1bd6}{ArrivalTimes}}.Count == 0)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00016}00016                 \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00017}00017                     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00018}00018                 \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00019}00019                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a09ea6c2152b5afe8e003cf5a12ad1bd6}{ArrivalTimes}}.Count == 0)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00020}00020                 \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00021}00021                     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00022}00022                 \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00023}00023                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (y.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a09ea6c2152b5afe8e003cf5a12ad1bd6}{ArrivalTimes}}.Count == 0)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00024}00024                 \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00025}00025                     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00026}00026                 \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00027}00027                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00028}00028                 \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00029}00029                     \textcolor{keywordflow}{return} x.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a09ea6c2152b5afe8e003cf5a12ad1bd6}{ArrivalTimes}}[0].CompareTo(y.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a09ea6c2152b5afe8e003cf5a12ad1bd6}{ArrivalTimes}}[0]);}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00030}00030                 \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00031}00031             \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00032}00032         \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00034}00034         \textcolor{keyword}{private} \textcolor{keyword}{static} RouteComparer comparerInstance = \textcolor{keyword}{new} RouteComparer();}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00035}00035         \textcolor{keyword}{private} readonly \textcolor{keywordtype}{double} MaxVehicleDelay;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00036}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a6344644e192cf86b1b539344325656eb}{00036}}         \textcolor{keyword}{public} readonly \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a6344644e192cf86b1b539344325656eb}{MaxDelayWithinRoute}};}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00037}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a876d8378c71c0a08528c05ff8974630a}{00037}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a876d8378c71c0a08528c05ff8974630a}{Count}} => \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}}.Count;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00038}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{00038}}         \textcolor{keyword}{public} List<Route> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00039}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a7d206d6ab702a248c84eb5fc471b8fbb}{00039}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00041}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a6e5fe14de4e2883794275f692da32d62}{00041}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a6e5fe14de4e2883794275f692da32d62}{SimpleVehicleSchedule}}(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} vehicle, \textcolor{keywordtype}{double} maxDelayWithinRoute, \textcolor{keywordtype}{double} maxVehicleDelay)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00042}00042         \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00043}00043             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} = vehicle;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00044}00044             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}} = \textcolor{keyword}{new} List<Route>();}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00045}00045             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a6344644e192cf86b1b539344325656eb}{MaxDelayWithinRoute}} = maxDelayWithinRoute;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00046}00046             MaxVehicleDelay = maxVehicleDelay;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00047}00047         \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00049}00049         \textcolor{keyword}{internal} \textcolor{keywordtype}{bool} Add(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route}{Route}} route)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00050}00050         \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00051}00051             \textcolor{keywordflow}{if} (RouteFitsIntoSchedule(route))}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00052}00052             \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00053}00053                 \textcolor{keywordtype}{int} insertIndex = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}}.TakeWhile(rt => rt.ArrivalTimes[0] < route.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route_a09ea6c2152b5afe8e003cf5a12ad1bd6}{ArrivalTimes}}[0]).Count();}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00054}00054                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}}.Insert(insertIndex, route);}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00055}00055                 \textcolor{keywordtype}{double} toBeDelayedTo = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a39dda7959ecbdd196cf88228cc34566c}{AvailabilityStart}};}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00056}00056                 \textcolor{keywordflow}{if} (insertIndex > 0)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00057}00057                 \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00058}00058                     toBeDelayedTo = Math.Max(toBeDelayedTo, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}}[insertIndex -\/ 1].DepartureTimes[\string^1]);}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00059}00059                 \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00060}00060                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = insertIndex; i < \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}}.Count; i++)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00061}00061                 \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00062}00062                     \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}}[i].DelayStartTo(toBeDelayedTo);}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00063}00063                     toBeDelayedTo = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}}[i].DepartureTimes[\string^1];}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00064}00064                 \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00065}00065                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00066}00066             \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00067}00067             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00068}00068         \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00070}00070         \textcolor{keyword}{internal} \textcolor{keywordtype}{void} Remove(Route route)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00071}00071         \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00072}00072             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}}.Remove(route);}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00073}00073         \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00075}00075         \textcolor{keyword}{internal} \textcolor{keywordtype}{bool} RouteFitsIntoSchedule(Route route)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00076}00076         \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00077}00077             \textcolor{keywordtype}{int} insertIndex = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}}.TakeWhile(rt => rt.ArrivalTimes[0] < route.ArrivalTimes[0]).Count();}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00078}00078             var temporaryRoutes = \textcolor{keyword}{new} List<Route>();}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00079}00079             temporaryRoutes.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_ac88e032952e4409281d00e448dace728}{Routes}});}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00080}00080             temporaryRoutes.Insert(insertIndex, route);}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00081}00081             \textcolor{keywordtype}{double} toBeDelayedTo = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a7d206d6ab702a248c84eb5fc471b8fbb}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a39dda7959ecbdd196cf88228cc34566c}{AvailabilityStart}};}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00082}00082             \textcolor{keywordflow}{if} (insertIndex > 0)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00083}00083             \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00084}00084                 toBeDelayedTo = Math.Max(toBeDelayedTo, temporaryRoutes[insertIndex -\/ 1].DepartureTimes[\string^1]);}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00085}00085             \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00086}00086             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = insertIndex; i < temporaryRoutes.Count; i++)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00087}00087             \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00088}00088                 var delayResult = temporaryRoutes[i].CanBeDelayedTo(toBeDelayedTo, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a6344644e192cf86b1b539344325656eb}{MaxDelayWithinRoute}}, MaxVehicleDelay);}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00089}00089                 \textcolor{keywordflow}{if} (delayResult.DelayWithinAcceptableBounds)}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00090}00090                 \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00091}00091                     toBeDelayedTo = delayResult.RouteEndTime;}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00092}00092                 \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00093}00093                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00094}00094                 \{}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00095}00095                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00096}00096                 \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00097}00097             \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00098}00098             \textcolor{keywordflow}{return} route.ArrivalTimes[0] >= \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a7d206d6ab702a248c84eb5fc471b8fbb}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a39dda7959ecbdd196cf88228cc34566c}{AvailabilityStart}}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00099}00099                 \&\& route.DepartureTimes.Last() <= \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a7d206d6ab702a248c84eb5fc471b8fbb}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a1f17ea00a4626b24cfd802f5c10db744}{AvailabilityEnd}} + MaxVehicleDelay}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00100}00100                 \&\& route.TravelTime <= \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a7d206d6ab702a248c84eb5fc471b8fbb}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aab2881047d0af67d65a7ca7240bbf6df}{MaxRideTime}}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00101}00101                 \&\& route.Delays.Max() <= \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet_1_1_simple_vehicle_schedule_a6344644e192cf86b1b539344325656eb}{MaxDelayWithinRoute}};}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00102}00102         \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00103}00103     \}}
+\DoxyCodeLine{\Hypertarget{_simple_vehicle_schedule_8cs_source_l00104}00104 \}}
+
+\end{DoxyCode}

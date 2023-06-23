@@ -1,0 +1,356 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{}\doxysection{VRPTWOptimizer.\+VRPDefinition Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+
+
+Describes data for a generalized \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} Routing Problem  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a355cb57cdd8244aa460f793f452f5976}{Add\+Solution}} (\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}} vrp\+Solution)
+\begin{DoxyCompactList}\small\item\em Adds solution to the collection of problem solutions \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a0c4cc1903bb7251cbcd477f5a866468a}{To\+Pretty\+JSONString}} ()
+\begin{DoxyCompactList}\small\item\em Generates indended JSON definition of VRP \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a8e36bdbf9beed6d0ba7716370793cdcc}{Try\+Save\+To\+File}} (string filename)
+\begin{DoxyCompactList}\small\item\em Writes \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} and VRPSolutions list to a JSON file using pretty formatter \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a109dc32d0d1fd742fd11f9402c9a73a4}{Generate\+VRPDefintion}} (\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}} vrp\+Provider, Date\+Time billing\+Date, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Provider, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} time\+Estimator, string client)
+\begin{DoxyCompactList}\small\item\em Creates VRPProblem\+Definition standard format from problem description \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abc0b75b34b15d814845d8593f864e468}{Generate\+VRPDefintion}} (\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}} vrp\+Provider, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCost\+Function}} cost\+Function\+Factors, Date\+Time billing\+Date, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Provider, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} time\+Estimator, string client)
+\begin{DoxyCompactList}\small\item\em Creates VRPProblem\+Definition standard format from problem description \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ac5ffd6fa81c00e25b25552a65cbd3b90}{Client}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Description of the company seeking solution to VRP problem \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCost\+Function}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a9a745b851c7ee521535bf732e88ef721}{Cost\+Function\+Factors}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Factors to be taken into account while optimizing the problem \end{DoxyCompactList}\item 
+Version \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af2d2b433724f1cee1f026b3fb7b793f6}{Data\+Format\+Version}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Version of the library containg data format definition \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abdacb794459fc98245a1c1a14ef4a2ec}{Date}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Date for which the problem is solved \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a581fc9b90acb00412441234ad975e781}{Depot\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Depot for which the problem is solved \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a86b903da6c8bdcfe47a799ebb7a30bd4}{Distance\+Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Data for computing distances between points (straightforward matrix, formula description, API access information) \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ab31da63233478f21f10516834bd3d2ed}{Drivers}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of drivers \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af769c9bba18c594eb7b2477d94f359a9}{Requests}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of Transport\+Requests from given day in given depot \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a274f812b093e205bc1c92d785c629faa}{Service\+Time\+Estimator}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Object describing parameters of service (loading/unloading) time estimator model \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ad90c7ec1732bd5c1a2586a9bf85ad2a0}{Solutions}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of solutions (vehicles assignments and schedule) \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a89c19805b4bfb840e89d1774ccd925c8}{Vehicles}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of available vehicles \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ae7bd11c4a4d9023b94e1eac284812ed9}{Zero\+Hour}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Real time value to computer relative seconds against to retrieve real timestamps \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describes data for a generalized \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} Routing Problem 
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a355cb57cdd8244aa460f793f452f5976}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a355cb57cdd8244aa460f793f452f5976}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!AddSolution@{AddSolution}}
+\index{AddSolution@{AddSolution}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{AddSolution()}{AddSolution()}}
+{\footnotesize\ttfamily void VRPTWOptimizer.\+VRPDefinition.\+Add\+Solution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}}}]{vrp\+Solution }\end{DoxyParamCaption})}
+
+
+
+Adds solution to the collection of problem solutions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vrp\+Solution} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00173}{173}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a109dc32d0d1fd742fd11f9402c9a73a4}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a109dc32d0d1fd742fd11f9402c9a73a4}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!GenerateVRPDefintion@{GenerateVRPDefintion}}
+\index{GenerateVRPDefintion@{GenerateVRPDefintion}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{GenerateVRPDefintion()}{GenerateVRPDefintion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} VRPTWOptimizer.\+VRPDefinition.\+Generate\+VRPDefintion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}}}]{vrp\+Provider,  }\item[{Date\+Time}]{billing\+Date,  }\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Provider,  }\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}}}]{time\+Estimator,  }\item[{string}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates VRPProblem\+Definition standard format from problem description 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vrp\+Provider} & \\
+\hline
+{\em billing\+Date} & \\
+\hline
+{\em distance\+Provider} & \\
+\hline
+{\em time\+Estimator} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00115}{115}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abc0b75b34b15d814845d8593f864e468}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abc0b75b34b15d814845d8593f864e468}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!GenerateVRPDefintion@{GenerateVRPDefintion}}
+\index{GenerateVRPDefintion@{GenerateVRPDefintion}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{GenerateVRPDefintion()}{GenerateVRPDefintion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} VRPTWOptimizer.\+VRPDefinition.\+Generate\+VRPDefintion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}}}]{vrp\+Provider,  }\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCost\+Function}}}]{cost\+Function\+Factors,  }\item[{Date\+Time}]{billing\+Date,  }\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Provider,  }\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}}}]{time\+Estimator,  }\item[{string}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates VRPProblem\+Definition standard format from problem description 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vrp\+Provider} & \\
+\hline
+{\em cost\+Function\+Factors} & \\
+\hline
+{\em billing\+Date} & \\
+\hline
+{\em distance\+Provider} & \\
+\hline
+{\em time\+Estimator} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00142}{142}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a0c4cc1903bb7251cbcd477f5a866468a}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a0c4cc1903bb7251cbcd477f5a866468a}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!ToPrettyJSONString@{ToPrettyJSONString}}
+\index{ToPrettyJSONString@{ToPrettyJSONString}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{ToPrettyJSONString()}{ToPrettyJSONString()}}
+{\footnotesize\ttfamily string VRPTWOptimizer.\+VRPDefinition.\+To\+Pretty\+JSONString (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates indended JSON definition of VRP 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00186}{186}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a8e36bdbf9beed6d0ba7716370793cdcc}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a8e36bdbf9beed6d0ba7716370793cdcc}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!TrySaveToFile@{TrySaveToFile}}
+\index{TrySaveToFile@{TrySaveToFile}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{TrySaveToFile()}{TrySaveToFile()}}
+{\footnotesize\ttfamily bool VRPTWOptimizer.\+VRPDefinition.\+Try\+Save\+To\+File (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Writes \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} and VRPSolutions list to a JSON file using pretty formatter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00203}{203}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ac5ffd6fa81c00e25b25552a65cbd3b90}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ac5ffd6fa81c00e25b25552a65cbd3b90}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!Client@{Client}}
+\index{Client@{Client}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{Client}{Client}}
+{\footnotesize\ttfamily string VRPTWOptimizer.\+VRPDefinition.\+Client\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Description of the company seeking solution to VRP problem 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a9a745b851c7ee521535bf732e88ef721}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a9a745b851c7ee521535bf732e88ef721}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!CostFunctionFactors@{CostFunctionFactors}}
+\index{CostFunctionFactors@{CostFunctionFactors}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{CostFunctionFactors}{CostFunctionFactors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCost\+Function}} VRPTWOptimizer.\+VRPDefinition.\+Cost\+Function\+Factors\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Factors to be taken into account while optimizing the problem 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00062}{62}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af2d2b433724f1cee1f026b3fb7b793f6}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af2d2b433724f1cee1f026b3fb7b793f6}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!DataFormatVersion@{DataFormatVersion}}
+\index{DataFormatVersion@{DataFormatVersion}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{DataFormatVersion}{DataFormatVersion}}
+{\footnotesize\ttfamily Version VRPTWOptimizer.\+VRPDefinition.\+Data\+Format\+Version\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Version of the library containg data format definition 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00066}{66}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abdacb794459fc98245a1c1a14ef4a2ec}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abdacb794459fc98245a1c1a14ef4a2ec}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!Date@{Date}}
+\index{Date@{Date}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{Date}{Date}}
+{\footnotesize\ttfamily Date\+Time VRPTWOptimizer.\+VRPDefinition.\+Date\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Date for which the problem is solved 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00071}{71}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a581fc9b90acb00412441234ad975e781}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a581fc9b90acb00412441234ad975e781}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!DepotId@{DepotId}}
+\index{DepotId@{DepotId}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{DepotId}{DepotId}}
+{\footnotesize\ttfamily string VRPTWOptimizer.\+VRPDefinition.\+Depot\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Depot for which the problem is solved 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00075}{75}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a86b903da6c8bdcfe47a799ebb7a30bd4}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a86b903da6c8bdcfe47a799ebb7a30bd4}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!DistanceData@{DistanceData}}
+\index{DistanceData@{DistanceData}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{DistanceData}{DistanceData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} VRPTWOptimizer.\+VRPDefinition.\+Distance\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Data for computing distances between points (straightforward matrix, formula description, API access information) 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00079}{79}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ab31da63233478f21f10516834bd3d2ed}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ab31da63233478f21f10516834bd3d2ed}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!Drivers@{Drivers}}
+\index{Drivers@{Drivers}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{Drivers}{Drivers}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}}$>$ VRPTWOptimizer.\+VRPDefinition.\+Drivers\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+List of drivers 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00083}{83}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af769c9bba18c594eb7b2477d94f359a9}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af769c9bba18c594eb7b2477d94f359a9}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!Requests@{Requests}}
+\index{Requests@{Requests}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{Requests}{Requests}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}}$>$ VRPTWOptimizer.\+VRPDefinition.\+Requests\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+List of Transport\+Requests from given day in given depot 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00087}{87}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a274f812b093e205bc1c92d785c629faa}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a274f812b093e205bc1c92d785c629faa}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!ServiceTimeEstimator@{ServiceTimeEstimator}}
+\index{ServiceTimeEstimator@{ServiceTimeEstimator}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{ServiceTimeEstimator}{ServiceTimeEstimator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} VRPTWOptimizer.\+VRPDefinition.\+Service\+Time\+Estimator\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Object describing parameters of service (loading/unloading) time estimator model 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00091}{91}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ad90c7ec1732bd5c1a2586a9bf85ad2a0}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ad90c7ec1732bd5c1a2586a9bf85ad2a0}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!Solutions@{Solutions}}
+\index{Solutions@{Solutions}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{Solutions}{Solutions}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}}$>$ VRPTWOptimizer.\+VRPDefinition.\+Solutions\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+List of solutions (vehicles assignments and schedule) 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00095}{95}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a89c19805b4bfb840e89d1774ccd925c8}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a89c19805b4bfb840e89d1774ccd925c8}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!Vehicles@{Vehicles}}
+\index{Vehicles@{Vehicles}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{Vehicles}{Vehicles}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}$>$ VRPTWOptimizer.\+VRPDefinition.\+Vehicles\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+List of available vehicles 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00099}{99}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ae7bd11c4a4d9023b94e1eac284812ed9}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ae7bd11c4a4d9023b94e1eac284812ed9}} 
+\index{VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}!ZeroHour@{ZeroHour}}
+\index{ZeroHour@{ZeroHour}!VRPTWOptimizer.VRPDefinition@{VRPTWOptimizer.VRPDefinition}}
+\doxysubsubsection{\texorpdfstring{ZeroHour}{ZeroHour}}
+{\footnotesize\ttfamily Date\+Time VRPTWOptimizer.\+VRPDefinition.\+Zero\+Hour\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Real time value to computer relative seconds against to retrieve real timestamps 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_definition_8cs_source_l00103}{103}} of file \mbox{\hyperlink{_v_r_p_definition_8cs_source}{VRPDefinition.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_r_p_definition_8cs}{VRPDefinition.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,28 @@
+var class_v_r_p_t_w_optimizer_1_1_transport_request =
+[
+    [ "TransportRequest", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a849a151f9e67bbf8d9f94ed074a2aee0", null ],
+    [ "ExtractBestFitRequests", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a97649be72f223ecc835c928f74e4d52b", null ],
+    [ "CargoType", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#aac171c36facacfdf511bc26ebbfcab20", null ],
+    [ "CargoTypes", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a5c725eede72d88fbd116cf098452552f", null ],
+    [ "DeliveryAvailableTimeWindowEnd", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a5d26071503ce56dd916b104177a7609f", null ],
+    [ "DeliveryAvailableTimeWindowStart", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a8a06d2f55129c63c267c84cad2e5672e", null ],
+    [ "DeliveryLocation", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a35f1e8d6b1620ccad38d00e015ebcf50", null ],
+    [ "DeliveryPreferedTimeWindowEnd", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a9584447b8565988ef50063687e098e41", null ],
+    [ "DeliveryPreferedTimeWindowStart", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a1f8bfecdc5a92ecd1b83331d4f39dc81", null ],
+    [ "Id", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a32189b723545475fbaef32200a3d4a47", null ],
+    [ "MaxVehicleSize", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#ac6a087105ba0cdde12894eedc7e39ea0", null ],
+    [ "MutuallyExclusiveRequestsIdTimeBufferDict", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a56f40646a4e52ff215aa115ef7349eed", null ],
+    [ "Name", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a6c98b3db35b881fc1c16da6e9f487d59", null ],
+    [ "NecessaryVehicleSpecialProperties", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a3fee3d993c9dbaf0908742c16f789658", null ],
+    [ "PackageCount", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a06c9cb8ce91a2a157ef5aafad417e2c6", null ],
+    [ "PackageCountForImediateRetrieval", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a3289479578b51949225c4c823d62b954", null ],
+    [ "PickupAvailableTimeWindowEnd", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a23eb10ec3f51685cde69ac3260193840", null ],
+    [ "PickupAvailableTimeWindowStart", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a3eac1c563851c6d68887c2817912b039", null ],
+    [ "PickupLocation", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a237c8c9bcfdd77c4e15948276abdb502", null ],
+    [ "PickupPreferedTimeWindowEnd", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#af3321390516fa33422232b3810ea184b", null ],
+    [ "PickupPreferedTimeWindowStart", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a7f0799b141f71f459daf024c5d666f54", null ],
+    [ "RestrictedCargoTypes", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a577b69e6de2c28ad2327f268d78a5ce5", null ],
+    [ "RevenueValue", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#a608a98fd3db46f3e9ca16e8e6bb76bcc", null ],
+    [ "Size", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#aabb57d387dd0e8424f079a9228ed5e29", null ],
+    [ "Type", "class_v_r_p_t_w_optimizer_1_1_transport_request.html#ab16589c2cb1153d708ae7006a1424127", null ]
+];

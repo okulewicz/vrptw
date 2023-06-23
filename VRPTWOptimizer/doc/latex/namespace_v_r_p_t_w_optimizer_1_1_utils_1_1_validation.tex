@@ -1,0 +1,195 @@
+\hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation}{}\doxysection{VRPTWOptimizer.\+Utils.\+Validation Namespace Reference}
+\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}}
+\item 
+class \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_fixer}{VRPFixer}}
+\item 
+class \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator}{VRPValidator}}
+\begin{DoxyCompactList}\small\item\em Class verifying consistency and sensibility of VRP definitions and solutions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{Error\+Code}} \{ \newline
+\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a64f9f6851ed620f44f872791d4ff718e}{Impossible\+Drive\+Time}} = 1
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5ac08799a79b31b87ebdcbfe1b3917cc8b}{Request\+Properties\+Exclude\+All\+Vehicles}} = 2
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5add3ec4d0ab2a96ceb6a2ec30f1827c73}{Impossible\+Preferred\+Time\+Window}} = 4
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a01f804c0f2a14704bce2b81cbc1f1b2e}{Impossible\+Time\+Window}} = 8
+, \newline
+\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5afdf152936dcbf201445440856357f6ac}{Wrong\+Type}} = 16
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a7771b247ed7bc154a81a5fdec22ac804}{Wrong\+Properties}} = 32
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a435270932c9c3714adf540f268a83d8e}{Capacity\+Vehicle\+Missing}} = 64
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a31c6f30794828f187ebfdcbe0463db06}{Tractor\+Assigned\+As\+Capacity\+Vehicle}} = 128
+, \newline
+\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a39ba1da81d8691f343d45732ba73827a}{Exceeded\+Capacity}} = 256
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5ac0f367871aee8c0be49c3ba350d7197d}{Overlapping\+Routes}} = 512
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a363322bf9450d42812e30b69b583e616}{Tractor\+Missing}} = 1024
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a2ea1895f1132daa47eb3d45c8eeac22a}{Identical\+Delivery\+And\+Pickup}} = 2048
+, \newline
+\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a5f124d7e4fab1e122cdfbf40a76bc8d7}{Zero\+Packages}} = 4096
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a4ee11e72939731405733b692a0ea2637}{Too\+Large\+Vehicle\+Size}} = 8192
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a5eca8b3f94ffa150b1ba8f970c0bd59b}{Impossible\+Operation}} = 16384
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5af5744419c54bfc0e9a97acbe0008d0ef}{Leaky\+Routes}} = 32768
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPError\+Type}} \{ \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239aab4814600ca52df29af91145d4cad700}{Improbable\+Value}}
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239a0bcfcc82cb73a8a66d4e76928b430b5b}{Impossible\+Problem}}
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239a6deb9486ce58bffb79ec7e24536d8a79}{Infeasible\+Solution}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObject\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cace5bf551379459c1c61d2a204061c455}{Location}} = 1
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca0aa6f4210bf373c95eda00232e93cd98}{Distance}} = 2
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cad6af9c1eaff2a89ebd3f8d0c542be12b}{Vehicle}} = 3
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cad7f5ad10c24d1351cc898e4656e631fa}{Transport\+Request}} = 4
+, \newline
+\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca9405c3aff9112c3c60d03b94792877dc}{Route}} = 5
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca24f7d22af2c752f4f44704871d1bf8af}{Transport\+DTO}} = 6
+, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca2d312e2e90da2f20fbe2209d74403ebd}{Routes\+Set}} = 7
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}} 
+\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!ErrorCode@{ErrorCode}}
+\index{ErrorCode@{ErrorCode}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}
+\doxysubsubsection{\texorpdfstring{ErrorCode}{ErrorCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{VRPTWOptimizer.\+Utils.\+Validation.\+Error\+Code}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ImpossibleDriveTime@{ImpossibleDriveTime}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!ImpossibleDriveTime@{ImpossibleDriveTime}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a64f9f6851ed620f44f872791d4ff718e}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a64f9f6851ed620f44f872791d4ff718e}} 
+Impossible\+Drive\+Time&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RequestPropertiesExcludeAllVehicles@{RequestPropertiesExcludeAllVehicles}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!RequestPropertiesExcludeAllVehicles@{RequestPropertiesExcludeAllVehicles}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5ac08799a79b31b87ebdcbfe1b3917cc8b}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5ac08799a79b31b87ebdcbfe1b3917cc8b}} 
+Request\+Properties\+Exclude\+All\+Vehicles&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ImpossiblePreferredTimeWindow@{ImpossiblePreferredTimeWindow}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!ImpossiblePreferredTimeWindow@{ImpossiblePreferredTimeWindow}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5add3ec4d0ab2a96ceb6a2ec30f1827c73}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5add3ec4d0ab2a96ceb6a2ec30f1827c73}} 
+Impossible\+Preferred\+Time\+Window&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ImpossibleTimeWindow@{ImpossibleTimeWindow}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!ImpossibleTimeWindow@{ImpossibleTimeWindow}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a01f804c0f2a14704bce2b81cbc1f1b2e}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a01f804c0f2a14704bce2b81cbc1f1b2e}} 
+Impossible\+Time\+Window&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WrongType@{WrongType}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!WrongType@{WrongType}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5afdf152936dcbf201445440856357f6ac}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5afdf152936dcbf201445440856357f6ac}} 
+Wrong\+Type&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WrongProperties@{WrongProperties}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!WrongProperties@{WrongProperties}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a7771b247ed7bc154a81a5fdec22ac804}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a7771b247ed7bc154a81a5fdec22ac804}} 
+Wrong\+Properties&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CapacityVehicleMissing@{CapacityVehicleMissing}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!CapacityVehicleMissing@{CapacityVehicleMissing}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a435270932c9c3714adf540f268a83d8e}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a435270932c9c3714adf540f268a83d8e}} 
+Capacity\+Vehicle\+Missing&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TractorAssignedAsCapacityVehicle@{TractorAssignedAsCapacityVehicle}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!TractorAssignedAsCapacityVehicle@{TractorAssignedAsCapacityVehicle}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a31c6f30794828f187ebfdcbe0463db06}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a31c6f30794828f187ebfdcbe0463db06}} 
+Tractor\+Assigned\+As\+Capacity\+Vehicle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ExceededCapacity@{ExceededCapacity}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!ExceededCapacity@{ExceededCapacity}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a39ba1da81d8691f343d45732ba73827a}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a39ba1da81d8691f343d45732ba73827a}} 
+Exceeded\+Capacity&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OverlappingRoutes@{OverlappingRoutes}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!OverlappingRoutes@{OverlappingRoutes}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5ac0f367871aee8c0be49c3ba350d7197d}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5ac0f367871aee8c0be49c3ba350d7197d}} 
+Overlapping\+Routes&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TractorMissing@{TractorMissing}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!TractorMissing@{TractorMissing}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a363322bf9450d42812e30b69b583e616}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a363322bf9450d42812e30b69b583e616}} 
+Tractor\+Missing&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IdenticalDeliveryAndPickup@{IdenticalDeliveryAndPickup}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!IdenticalDeliveryAndPickup@{IdenticalDeliveryAndPickup}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a2ea1895f1132daa47eb3d45c8eeac22a}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a2ea1895f1132daa47eb3d45c8eeac22a}} 
+Identical\+Delivery\+And\+Pickup&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ZeroPackages@{ZeroPackages}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!ZeroPackages@{ZeroPackages}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a5f124d7e4fab1e122cdfbf40a76bc8d7}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a5f124d7e4fab1e122cdfbf40a76bc8d7}} 
+Zero\+Packages&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TooLargeVehicleSize@{TooLargeVehicleSize}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!TooLargeVehicleSize@{TooLargeVehicleSize}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a4ee11e72939731405733b692a0ea2637}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a4ee11e72939731405733b692a0ea2637}} 
+Too\+Large\+Vehicle\+Size&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ImpossibleOperation@{ImpossibleOperation}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!ImpossibleOperation@{ImpossibleOperation}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a5eca8b3f94ffa150b1ba8f970c0bd59b}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a5eca8b3f94ffa150b1ba8f970c0bd59b}} 
+Impossible\+Operation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LeakyRoutes@{LeakyRoutes}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!LeakyRoutes@{LeakyRoutes}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5af5744419c54bfc0e9a97acbe0008d0ef}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5af5744419c54bfc0e9a97acbe0008d0ef}} 
+Leaky\+Routes&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_error_code_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_error_code_8cs_source}{Error\+Code.\+cs}}.
+
+\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}} 
+\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!VRPErrorType@{VRPErrorType}}
+\index{VRPErrorType@{VRPErrorType}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}
+\doxysubsubsection{\texorpdfstring{VRPErrorType}{VRPErrorType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPTWOptimizer.\+Utils.\+Validation.\+VRPError\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ImprobableValue@{ImprobableValue}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!ImprobableValue@{ImprobableValue}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239aab4814600ca52df29af91145d4cad700}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239aab4814600ca52df29af91145d4cad700}} 
+Improbable\+Value&When one of object properties does not match the other or its logical bounds \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ImpossibleProblem@{ImpossibleProblem}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!ImpossibleProblem@{ImpossibleProblem}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239a0bcfcc82cb73a8a66d4e76928b430b5b}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239a0bcfcc82cb73a8a66d4e76928b430b5b}} 
+Impossible\+Problem&When one of object properties makes it impossible to be part of solution \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InfeasibleSolution@{InfeasibleSolution}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!InfeasibleSolution@{InfeasibleSolution}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239a6deb9486ce58bffb79ec7e24536d8a79}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239a6deb9486ce58bffb79ec7e24536d8a79}} 
+Infeasible\+Solution&When solution is physically impossible or violates strict constraints \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_error_type_8cs_source_l00003}{3}} of file \mbox{\hyperlink{_v_r_p_error_type_8cs_source}{VRPError\+Type.\+cs}}.
+
+\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}} 
+\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!VRPObjectType@{VRPObjectType}}
+\index{VRPObjectType@{VRPObjectType}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}
+\doxysubsubsection{\texorpdfstring{VRPObjectType}{VRPObjectType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPTWOptimizer.\+Utils.\+Validation.\+VRPObject\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Location@{Location}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!Location@{Location}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cace5bf551379459c1c61d2a204061c455}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cace5bf551379459c1c61d2a204061c455}} 
+Location&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Distance@{Distance}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!Distance@{Distance}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca0aa6f4210bf373c95eda00232e93cd98}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca0aa6f4210bf373c95eda00232e93cd98}} 
+Distance&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vehicle@{Vehicle}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!Vehicle@{Vehicle}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cad6af9c1eaff2a89ebd3f8d0c542be12b}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cad6af9c1eaff2a89ebd3f8d0c542be12b}} 
+Vehicle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TransportRequest@{TransportRequest}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!TransportRequest@{TransportRequest}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cad7f5ad10c24d1351cc898e4656e631fa}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cad7f5ad10c24d1351cc898e4656e631fa}} 
+Transport\+Request&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Route@{Route}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!Route@{Route}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca9405c3aff9112c3c60d03b94792877dc}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca9405c3aff9112c3c60d03b94792877dc}} 
+Route&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TransportDTO@{TransportDTO}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!TransportDTO@{TransportDTO}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca24f7d22af2c752f4f44704871d1bf8af}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca24f7d22af2c752f4f44704871d1bf8af}} 
+Transport\+DTO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RoutesSet@{RoutesSet}!VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}}\index{VRPTWOptimizer.Utils.Validation@{VRPTWOptimizer.Utils.Validation}!RoutesSet@{RoutesSet}}}\mbox{\Hypertarget{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca2d312e2e90da2f20fbe2209d74403ebd}\label{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80ca2d312e2e90da2f20fbe2209d74403ebd}} 
+Routes\+Set&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_object_type_8cs_source_l00003}{3}} of file \mbox{\hyperlink{_v_r_p_object_type_8cs_source}{VRPObject\+Type.\+cs}}.
+

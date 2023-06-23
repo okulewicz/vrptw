@@ -1,0 +1,349 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator}{}\doxysection{VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator}\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+
+
+Class verifying consistency and sensibility of VRP definitions and solutions  
+
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a1a713cf4225eaf5175b6e9249d956a41}{Validate\+All}} (List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$ routes, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ left\+Requests, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ requests, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ vehicles, List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ distances)
+\begin{DoxyCompactList}\small\item\em Method for running complete validation against a solution and definition \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a401accdfef8604dfc637d7522d429cd0}{Validate\+All}} (List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$ routes, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ left\+Requests, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ requests, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ vehicles, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Provider)
+\begin{DoxyCompactList}\small\item\em Method for running complete validation against a solution and definition \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a2ca432a611981b4eee01677eb9d67a8f}{Validate\+All}} (List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$ routes, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ left\+Requests, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ requests, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ vehicles)
+\begin{DoxyCompactList}\small\item\em Obsolete method for running complete validation against a solution and definition \end{DoxyCompactList}\item 
+static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ac6a8536236c3a7a39478a21e3b409bbb}{Validate\+Deserialized\+Routes\+Against\+Vehicles\+And\+Drivers\+Existence}} (\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport}{Transport}} transport\+DTO, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ vehicles, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} $>$ drivers)
+\begin{DoxyCompactList}\small\item\em Verifying consistency of routes against existence of resources \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ae35b86a581ef3de0c06ea12f80521147}{Validate\+Distances}} (List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ distances)
+\begin{DoxyCompactList}\small\item\em Checks distances for consistency between distance and time \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_adf894bf7795aab0888580aa870f4c25f}{Validate\+Problem\+Data}} (List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ requests, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ vehicles, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Provider)
+\begin{DoxyCompactList}\small\item\em Method aggregating methods verifying VRP problem definition data consistency \end{DoxyCompactList}\item 
+static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aaeb5a8c2820752d139f5d6941bc78277}{Validate\+Request\+Against\+Vehicles\+Properties}} (\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} request, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ vehicles, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Provider)
+\begin{DoxyCompactList}\small\item\em Method verifying if it is possible to serve every request with existing set of vehicles \end{DoxyCompactList}\item 
+static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_acc117a2a8cd2f3fbdf79e9f96c939613}{Validate\+Request\+Properties}} (\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} request)
+\begin{DoxyCompactList}\small\item\em Checks request for improbable data values \end{DoxyCompactList}\item 
+static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a4c47c53ede359fd665b343230a64d292}{Validate\+Route\+Assignment\+Completness}} (\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} route)
+\begin{DoxyCompactList}\small\item\em Checks if route vehicles are assigned properly \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aeee9c9f4d765e7264636923edf08666c}{Validate\+Route\+Capacity\+Constraints}} (\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} route)
+\begin{DoxyCompactList}\small\item\em Checks if vehicle capacity is not exceeded at any point within route \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aa14dc529773344e64d67cde031dfb2d2}{Validate\+Routes\+Time\+Overlap}} (IEnumerable$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$ routes, bool arrivals\+Can\+Overlap\+Departures)
+\begin{DoxyCompactList}\small\item\em Checks if routes served by the same vehicle do not overlap \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_af9facb4aa7d26fc71b1cc16c6634c3b9}{Validate\+Solution\+Data}} (List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$ routes, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ left\+Requests, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ requests)
+\begin{DoxyCompactList}\small\item\em Checks the solution for feasibility and consistency \end{DoxyCompactList}\item 
+static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a11092249bd48343c3a2e65a5a609a355}{Validate\+Vehicle\+Properties}} (\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} vehicle)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class verifying consistency and sensibility of VRP definitions and solutions 
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a2ca432a611981b4eee01677eb9d67a8f}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a2ca432a611981b4eee01677eb9d67a8f}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateAll@{ValidateAll}}
+\index{ValidateAll@{ValidateAll}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateAll()}{ValidateAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+All (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$}]{routes,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{left\+Requests,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{requests,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$}]{vehicles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obsolete method for running complete validation against a solution and definition 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00170}{170}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a401accdfef8604dfc637d7522d429cd0}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a401accdfef8604dfc637d7522d429cd0}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateAll@{ValidateAll}}
+\index{ValidateAll@{ValidateAll}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateAll()}{ValidateAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+All (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$}]{routes,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{left\+Requests,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{requests,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$}]{vehicles,  }\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Provider }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method for running complete validation against a solution and definition 
+
+
+\begin{DoxyParams}{Parameters}
+{\em routes} & \\
+\hline
+{\em left\+Requests} & \\
+\hline
+{\em requests} & \\
+\hline
+{\em vehicles} & \\
+\hline
+{\em distance\+Provider} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00158}{158}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a1a713cf4225eaf5175b6e9249d956a41}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a1a713cf4225eaf5175b6e9249d956a41}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateAll@{ValidateAll}}
+\index{ValidateAll@{ValidateAll}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateAll()}{ValidateAll()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+All (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$}]{routes,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{left\+Requests,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{requests,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$}]{vehicles,  }\item[{List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$}]{distances }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method for running complete validation against a solution and definition 
+
+
+\begin{DoxyParams}{Parameters}
+{\em routes} & \\
+\hline
+{\em left\+Requests} & \\
+\hline
+{\em requests} & \\
+\hline
+{\em vehicles} & \\
+\hline
+{\em distances} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00137}{137}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ac6a8536236c3a7a39478a21e3b409bbb}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ac6a8536236c3a7a39478a21e3b409bbb}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateDeserializedRoutesAgainstVehiclesAndDriversExistence@{ValidateDeserializedRoutesAgainstVehiclesAndDriversExistence}}
+\index{ValidateDeserializedRoutesAgainstVehiclesAndDriversExistence@{ValidateDeserializedRoutesAgainstVehiclesAndDriversExistence}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateDeserializedRoutesAgainstVehiclesAndDriversExistence()}{ValidateDeserializedRoutesAgainstVehiclesAndDriversExistence()}}
+{\footnotesize\ttfamily static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Deserialized\+Routes\+Against\+Vehicles\+And\+Drivers\+Existence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport}{Transport}}}]{transport\+DTO,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$}]{vehicles,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} $>$}]{drivers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Verifying consistency of routes against existence of resources 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transport\+DTO} & \\
+\hline
+{\em vehicles} & \\
+\hline
+{\em drivers} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00182}{182}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ae35b86a581ef3de0c06ea12f80521147}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ae35b86a581ef3de0c06ea12f80521147}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateDistances@{ValidateDistances}}
+\index{ValidateDistances@{ValidateDistances}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateDistances()}{ValidateDistances()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Distances (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$}]{distances }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks distances for consistency between distance and time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distances} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00218}{218}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_adf894bf7795aab0888580aa870f4c25f}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_adf894bf7795aab0888580aa870f4c25f}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateProblemData@{ValidateProblemData}}
+\index{ValidateProblemData@{ValidateProblemData}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateProblemData()}{ValidateProblemData()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Problem\+Data (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{requests,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$}]{vehicles,  }\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Provider }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method aggregating methods verifying VRP problem definition data consistency 
+
+
+\begin{DoxyParams}{Parameters}
+{\em requests} & \\
+\hline
+{\em vehicles} & \\
+\hline
+{\em distance\+Provider} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00235}{235}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aaeb5a8c2820752d139f5d6941bc78277}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aaeb5a8c2820752d139f5d6941bc78277}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateRequestAgainstVehiclesProperties@{ValidateRequestAgainstVehiclesProperties}}
+\index{ValidateRequestAgainstVehiclesProperties@{ValidateRequestAgainstVehiclesProperties}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateRequestAgainstVehiclesProperties()}{ValidateRequestAgainstVehiclesProperties()}}
+{\footnotesize\ttfamily static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Request\+Against\+Vehicles\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}}}]{request,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$}]{vehicles,  }\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Provider }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Method verifying if it is possible to serve every request with existing set of vehicles 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & \\
+\hline
+{\em vehicles} & \\
+\hline
+{\em distance\+Provider} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00261}{261}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_acc117a2a8cd2f3fbdf79e9f96c939613}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_acc117a2a8cd2f3fbdf79e9f96c939613}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateRequestProperties@{ValidateRequestProperties}}
+\index{ValidateRequestProperties@{ValidateRequestProperties}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateRequestProperties()}{ValidateRequestProperties()}}
+{\footnotesize\ttfamily static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Request\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}}}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks request for improbable data values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00363}{363}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a4c47c53ede359fd665b343230a64d292}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a4c47c53ede359fd665b343230a64d292}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateRouteAssignmentCompletness@{ValidateRouteAssignmentCompletness}}
+\index{ValidateRouteAssignmentCompletness@{ValidateRouteAssignmentCompletness}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateRouteAssignmentCompletness()}{ValidateRouteAssignmentCompletness()}}
+{\footnotesize\ttfamily static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Route\+Assignment\+Completness (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}}}]{route }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if route vehicles are assigned properly 
+
+
+\begin{DoxyParams}{Parameters}
+{\em route} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00410}{410}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aeee9c9f4d765e7264636923edf08666c}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aeee9c9f4d765e7264636923edf08666c}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateRouteCapacityConstraints@{ValidateRouteCapacityConstraints}}
+\index{ValidateRouteCapacityConstraints@{ValidateRouteCapacityConstraints}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateRouteCapacityConstraints()}{ValidateRouteCapacityConstraints()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Route\+Capacity\+Constraints (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}}}]{route }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if vehicle capacity is not exceeded at any point within route 
+
+
+\begin{DoxyParams}{Parameters}
+{\em route} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00443}{443}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aa14dc529773344e64d67cde031dfb2d2}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aa14dc529773344e64d67cde031dfb2d2}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateRoutesTimeOverlap@{ValidateRoutesTimeOverlap}}
+\index{ValidateRoutesTimeOverlap@{ValidateRoutesTimeOverlap}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateRoutesTimeOverlap()}{ValidateRoutesTimeOverlap()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Routes\+Time\+Overlap (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$}]{routes,  }\item[{bool}]{arrivals\+Can\+Overlap\+Departures }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if routes served by the same vehicle do not overlap 
+
+
+\begin{DoxyParams}{Parameters}
+{\em routes} & \\
+\hline
+{\em arrivals\+Can\+Overlap\+Departures} & In case of tractor vehicle it may be allowed to switch trailers before/after unloading/loading finishes/starts\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00502}{502}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_af9facb4aa7d26fc71b1cc16c6634c3b9}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_af9facb4aa7d26fc71b1cc16c6634c3b9}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateSolutionData@{ValidateSolutionData}}
+\index{ValidateSolutionData@{ValidateSolutionData}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateSolutionData()}{ValidateSolutionData()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Solution\+Data (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$}]{routes,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{left\+Requests,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{requests }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks the solution for feasibility and consistency 
+
+
+\begin{DoxyParams}{Parameters}
+{\em routes} & \\
+\hline
+{\em left\+Requests} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00553}{553}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a11092249bd48343c3a2e65a5a609a355}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a11092249bd48343c3a2e65a5a609a355}} 
+\index{VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}!ValidateVehicleProperties@{ValidateVehicleProperties}}
+\index{ValidateVehicleProperties@{ValidateVehicleProperties}!VRPTWOptimizer.Utils.Validation.VRPValidator@{VRPTWOptimizer.Utils.Validation.VRPValidator}}
+\doxysubsubsection{\texorpdfstring{ValidateVehicleProperties()}{ValidateVehicleProperties()}}
+{\footnotesize\ttfamily static IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{Validation\+Error}} $>$ VRPTWOptimizer.\+Utils.\+Validation.\+VRPValidator.\+Validate\+Vehicle\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}}]{vehicle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_validator_8cs_source_l00578}{578}} of file \mbox{\hyperlink{_v_r_p_validator_8cs_source}{VRPValidator.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_r_p_validator_8cs}{VRPValidator.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,191 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<VersionPrefix>4.9.0</VersionPrefix>
+		<RepositoryUrl>https://bitbucket.org/control-system/autonomicznyspedytor.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Description>Library with basic Vehicle Routing Problem data types and interfaces</Description>
+		<PackageReleaseNotes>
+			4.9.0
+			* Added driver count factor
+
+			4.8.1
+			* Fixed drivers computations
+
+			4.8.0
+			* Added drivers count to cost function
+
+			4.7.0
+			* Added visual attractiveness parameter and convex hull count computations to cost function
+			* Added route cost to cost and vehicle model
+
+			4.6.0.1
+			* Version update to generate package
+
+			4.6.0
+			* ITimeEstimator extended with methods with more parameters
+
+			4.5.7
+			* Handling missing timestamp in computations
+
+			4.5.6
+			* Fixed delays computation
+
+			4.5.5
+			* Fixed no profile found problem in distances
+
+			4.5.4
+			* Minor case speedup
+
+			4.5.3
+			* Fixed usage cost computation in VRPCostFunction
+
+			4.5.2
+			* Added VRPCostFunction cloning
+
+			4.5.1
+			* Added helper function ComputeMaxServiceDelay
+
+			4.5.0
+			* Added fill in factor in VRPCostFunction
+
+			4.4.0
+			* Added ResourceSwitchingFactor in VRPCostFunction
+
+			4.3.1
+			* Including Driver availability in time window calculations
+
+			4.3.0
+			* Edit VehicleOwnership class of values
+
+			4.2.2
+			* Fixed concurency problem in DictionaryDistanceProviderBase with lock
+
+			4.2.1
+			* Fixed concurency problem in DictionaryDistanceProviderBase
+
+			4.2.0
+			* Introduced MaxVehicleLateStartFactor
+			* Introduced MaxVehicleLateStartThreshold
+			* Introduced MaxVehicleSpreadThreshold
+			* Introduced MaxEarlyArrivalThreshold
+
+			4.1.0
+			* Refactored computation of max vehicle breaktime in depot into a function ComputeMaxVehicleSpread
+
+			4.0.1
+			* Merged DictionaryDistanceProviderBase fix into 4.0.0
+
+			4.0.0
+			* Special properties and necessary vehicle properties changed from bool[] to int[]
+
+			3.2.1
+			* Fixed DictionaryDistanceProviderBase when no distance available
+
+			3.2.0
+			* Added time related penalty factors to cost function
+
+			3.1.10
+			* Enlarged MaxEpCount to 34 due to existance of truck+trailer duos
+
+			3.1.9.2
+			* Merged warehouse schedule data model
+
+			3.1.9.1
+			* Pushing source to nuget packages
+
+			3.1.6
+			* Fixed no routes fitness function computations problem
+
+			3.1.8
+			* Included flat rate in cost function calculations
+
+
+			3.1.0
+			* Data model extended with detailed cargo unit description
+			* Data model extended with warehouse view of the schedule
+
+			3.0.8
+			* More abstract vehicle can fit requests
+
+			3.0.7
+			* Fixing vehicle can fit requests
+
+			3.0.6
+			* Fixing vehicle can fit requests
+
+			3.0.5
+			* Remodelled cost function (max computations moved to summary)
+			* Allowing cost function deserialization
+			* Additional RoutesCountFactor in cost function
+			* Fill in factor moved to aggregate
+			3.0.4
+			* Added cost function to the problem definition and optimizer signature (with backwards compatibility)
+			* Refactored namespaces
+
+			3.0.3
+			* IVRPOptimizerFactory with algorithm configuration option
+
+			3.0.2
+			* IVRPOptimizerFactory reorganized
+			* IRouteGenerator removed
+
+			3.0.1
+			* Merged 2.3.1 with 3.0.0
+			* IRoute streamlined further
+
+			3.0.0
+			* Changed signature of the IVRPOptimizer
+			* Added Drivers and generalized Vehicle and Driver as Resource
+			* Added flate rate for small route to Vehicle
+			* IRoute streamlined and extended with Tractor and Driver
+
+			2.3.1
+			* VRPCostFunction object extended with fill in ratio factor
+
+			2.3.0
+			* VRPCostFunction object created
+
+			2.2.3
+			* Classes needed only by OptimizationManager moved out of this project
+
+			2.2.2
+			* IRoute enhanced with new properties
+
+			2.2.1
+			* Updated code organization after merge with application project
+
+			2.2.0
+			* Added Distance data to VRPDefinition
+			* ServiceTime object changed to ITimeEstimator
+
+			2.1.1
+			* IVRPSolutionWriter interface moved to common project
+
+			2.1.0
+			* Model extended with multiple cargo types in TransportRequest
+			* Model extended with multiple cargo types changed to int from enum (enum is too much domain specific and no logic relies on it being an enum)
+			* Special properties added to Vehicle and matching necessary vehicle properties added to TransportRequest
+
+			2.0.0
+			* Basic definition of the problem model
+		</PackageReleaseNotes>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<EmbedAllSources>true</EmbedAllSources>
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="geometry3Sharp" Version="1.0.324" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="Microsoft.SourceLink.Bitbucket.Git" Version="1.1.1" PrivateAssets="All" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommonGIS\CommonGIS.csproj" />
+  </ItemGroup>
+
+</Project>

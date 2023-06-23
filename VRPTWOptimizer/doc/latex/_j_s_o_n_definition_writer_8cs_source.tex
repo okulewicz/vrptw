@@ -1,0 +1,117 @@
+\hypertarget{_j_s_o_n_definition_writer_8cs_source}{}\doxysection{JSONDefinition\+Writer.\+cs}
+\label{_j_s_o_n_definition_writer_8cs_source}\index{JSONDefinitionWriter.cs@{JSONDefinitionWriter.cs}}
+\mbox{\hyperlink{_j_s_o_n_definition_writer_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00002}00002 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00004}00004 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00006}00006 \textcolor{keyword}{using} System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00007}00007 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00009}\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_logging}{00009}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_logging}{VRPTWOptimizer.Logging}}}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00014}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer}{00014}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer}{JSONDefinitionWriter}} : \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_solution_writer}{IVRPSolutionWriter}}}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00016}00016     \{}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00017}00017         \textcolor{keyword}{private} readonly \textcolor{keywordtype}{string} \_clientName;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00018}00018         \textcolor{keyword}{private} readonly DateTime \_computationsEnd;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00019}00019         \textcolor{keyword}{private} readonly DateTime \_computationsStart;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00020}00020         \textcolor{keyword}{private} readonly \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} \_distanceData;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00021}00021         \textcolor{keyword}{private} readonly \textcolor{keywordtype}{string} \_filename;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00022}00022         \textcolor{keyword}{private} readonly \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} \_optimizer;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00023}00023         \textcolor{keyword}{private} readonly List<TransportRequest> \_requests;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00024}00024         \textcolor{keyword}{private} readonly \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}} \_timeEstimator;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00025}00025         \textcolor{keyword}{private} readonly List<Vehicle> \_vehicles;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00026}00026         \textcolor{keyword}{private} readonly DateTime \_zeroHour;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00028}00028         [Obsolete(\textcolor{stringliteral}{"{}Serialization of result should be done with serializing VRPDefinition with VRPSolutions collection"{}})]}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00029}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_a6c826abcf54d5575373441e5ff6b4064}{00029}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_a6c826abcf54d5575373441e5ff6b4064}{JSONDefinitionWriter}}(List<TransportRequest> requests,}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00030}00030                                     List<Vehicle> vehicles,}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00031}00031                                     \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} optimizer,}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00032}00032                                     DateTime zeroHour,}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00033}00033                                     DateTime computationsEnd,}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00034}00034                                     DateTime computationsStart,}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00035}00035                                     \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceData,}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00036}00036                                     \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}} timeEstimator,}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00037}00037                                     \textcolor{keywordtype}{string} filename,}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00038}00038                                     \textcolor{keywordtype}{string} clientName)}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00039}00039         \{}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00040}00040             \_requests = requests;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00041}00041             \_vehicles = vehicles;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00042}00042             \_optimizer = optimizer;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00043}00043             \_zeroHour = zeroHour;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00044}00044             \_computationsEnd = computationsEnd;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00045}00045             \_computationsStart = computationsStart;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00046}00046             \_distanceData = distanceData;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00047}00047             \_timeEstimator = timeEstimator;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00048}00048             \_filename = filename;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00049}00049             \_clientName = clientName;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00050}00050         \}}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00060}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_adaeff3ef12bc6c00ae8cb1cc763cb63b}{00060}}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_adaeff3ef12bc6c00ae8cb1cc763cb63b}{SaveSolution}}(List<IRoute> routes, List<TransportRequest> unassignedRequests, DateTime billingDate, \textcolor{keywordtype}{string} homeDepotId, \textcolor{keywordtype}{string} algorithmName)}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00061}00061         \{}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00062}00062             var vrpDefinition = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}}();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00063}00063             vrpDefinition.Requests = \_requests;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00064}00064             vrpDefinition.ServiceTimeEstimator = \_timeEstimator;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00065}00065             vrpDefinition.Vehicles = \_vehicles;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00066}00066             var vrpSolution = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}}();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00067}00067             vrpDefinition.Solutions = \textcolor{keyword}{new} List<VRPSolution>();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00068}00068             vrpDefinition.Date = billingDate.Date;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00069}00069             vrpDefinition.DepotId = homeDepotId;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00070}00070             vrpDefinition.Client = \_clientName;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00071}00071             vrpDefinition.ZeroHour = \_zeroHour;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00072}00072             vrpDefinition.Solutions.Add(vrpSolution);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00073}00073             vrpDefinition.DistanceData = \_distanceData;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00075}00075             vrpSolution.LeftRequestsIds = unassignedRequests.Select(req => req.Id).ToList();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00076}00076             vrpSolution.ComputationTimestamp = \_computationsEnd;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00077}00077             vrpSolution.ComputationTime = (\_computationsEnd -\/ \_computationsStart).TotalSeconds;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00078}00078             vrpSolution.ComputerId = Environment.MachineName;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00079}00079             vrpSolution.Version = Assembly.GetAssembly(\_optimizer.GetType()).GetName().Version;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00080}00080             var orderedTrailerAssignment = routes}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00081}00081                 .OrderBy(rt => rt.ArrivalTimes[0]);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00082}00082             \textcolor{keywordtype}{int} transportId = 1;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00083}00083             vrpSolution.DelaysCount = routes.Count(rt => rt.TotalDelay >= 0);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00084}00084             vrpSolution.MaxDelay = routes.Max(rt => rt.MaxDelay);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00085}00085             vrpSolution.TotalDelay = routes.Sum(rt => rt.TotalDelay);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00086}00086             vrpSolution.TotalLength = routes.Sum(rt => rt.Length);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00087}00087             vrpSolution.Transports = \textcolor{keyword}{new} List<\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item}{TransportItem}}>();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00088}00088             vrpSolution.Algorithm = \_optimizer.GetType().FullName;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00089}00089             \textcolor{keywordflow}{foreach} (var assignment \textcolor{keywordflow}{in} orderedTrailerAssignment)}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00090}00090             \{}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00091}00091                 \textcolor{keywordtype}{double} fillInRatio = assignment.Vehicle.Capacity}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00092}00092                         .Select((capacity, index) => index)}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00093}00093                         .Max(index => assignment.LoadedRequests[0].Sum(rq => rq.Size[index]) / assignment.Vehicle.Capacity[index])}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00094}00094                         ;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00095}00095                 var transport = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item}{TransportItem}}();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00096}00096                 transport.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a63afedd0f5fc3a1cc2e77ade84c18a5a}{TransportId}} = transportId;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00097}00097                 transport.TractorId = -\/1;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00098}00098                 transport.TrailerTruckId = assignment.Vehicle.Id;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00099}00099                 transport.Length = assignment.Length;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00100}00100                 transport.Schedule = \textcolor{keyword}{new} List<\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_schedule_item}{ScheduleItem}}>();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00101}00101                 transport.AvailableForLoadingTime = assignment.ArrivalTimes[0];}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00102}00102                 transport.AvailableForNextAssignmentTime = assignment.DepartureTimes[assignment.DepartureTimes.Count -\/ 1];}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00103}00103                 transport.FillInRatio = Math.Round(fillInRatio, 2);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00104}00104                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < assignment.VisitedLocations.Count; i++)}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00105}00105                 \{}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00106}00106                     var scheduleItem = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_schedule_item}{ScheduleItem}}();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00107}00107                     scheduleItem.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_schedule_item_a7002e15997b0656b1a5495739f003c71}{LocationId}} = assignment.VisitedLocations[i].Id;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00108}00108                     scheduleItem.ArrivalTime = assignment.ArrivalTimes[i];}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00109}00109                     scheduleItem.DepartureTime = assignment.DepartureTimes[i];}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00110}00110                     scheduleItem.Delay = Math.Max(assignment.ArrivalTimes[i] -\/ assignment.TimeWindowEnd[i], 0);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00111}00111                     scheduleItem.LoadedRequestsIds = assignment.LoadedRequests[i].Select(rq => rq.Id).ToList();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00112}00112                     scheduleItem.UnloadedRequestsIds = assignment.UnloadedRequests[i].Select(rq => rq.Id).ToList();}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00113}00113                     transport.Schedule.Add(scheduleItem);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00114}00114                 \}}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00115}00115                 vrpSolution.Transports.Add(transport);}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00116}00116                 transportId++;}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00117}00117             \}}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00119}00119             File.WriteAllText(\_filename, vrpDefinition.ToPrettyJSONString());}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00120}00120         \}}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00121}00121     \}}
+\DoxyCodeLine{\Hypertarget{_j_s_o_n_definition_writer_8cs_source_l00122}00122 \}}
+
+\end{DoxyCode}

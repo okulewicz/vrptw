@@ -1,0 +1,238 @@
+\hypertarget{_oracle_v_r_p_optimizer_8cs_source}{}\doxysection{Oracle\+VRPOptimizer.\+cs}
+\label{_oracle_v_r_p_optimizer_8cs_source}\index{OracleVRPOptimizer.cs@{OracleVRPOptimizer.cs}}
+\mbox{\hyperlink{_oracle_v_r_p_optimizer_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00002}00002 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00004}00004 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00006}00006 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00007}00007 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00008}00008 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00010}\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle}{00010}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle}{VRPTWOptimizer.BL.Meta.Oracle}}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00012}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer}{00012}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer}{OracleVRPOptimizer}} : \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00013}00013     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00014}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment}{00014}}         \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment}{RouteAssignment}}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00015}00015         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00016}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment_a5787417bdcd9cb6df26123154fecf93d}{00016}}             \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment_a5787417bdcd9cb6df26123154fecf93d}{LocationId}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00017}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment_ad130a75feb1f335995744a34731b92c3}{00017}}             \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment_ad130a75feb1f335995744a34731b92c3}{RequestId}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00018}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment_a1728da4988f3ffaf5c4efeadc1fddf54}{00018}}             \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment_a1728da4988f3ffaf5c4efeadc1fddf54}{RouteId}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00019}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment_a13abf39d0fb0bef4d16a8dc47b3517d2}{00019}}             \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_1_1_route_assignment_a13abf39d0fb0bef4d16a8dc47b3517d2}{VehicleId}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00020}00020         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00022}00022         \textcolor{keyword}{private} readonly \textcolor{keywordtype}{bool} DIAGNOSE = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00023}00023         \textcolor{keyword}{private} readonly \textcolor{keywordtype}{bool} orderLocationsByTimeWindow;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00024}00024         \textcolor{keyword}{private} readonly List<RouteAssignment> routeLocationVehicleAssignments;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00026}00026         \textcolor{keyword}{internal} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer}{OracleVRPOptimizer}}(\textcolor{keywordtype}{string} oracleAssignmentFileName, \textcolor{keywordtype}{bool} orderLocationsByTimeWindow)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00027}00027         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00028}00028             \textcolor{keywordtype}{string}[] assignmentLines = File.ReadAllLines(oracleAssignmentFileName);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00029}00029             routeLocationVehicleAssignments = \textcolor{keyword}{new} List<RouteAssignment>();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00030}00030             FillInRouteLocationVehicleAssignments(assignmentLines);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00031}00031             this.orderLocationsByTimeWindow = orderLocationsByTimeWindow;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00032}00032         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00034}00034         \textcolor{keyword}{internal} OracleVRPOptimizer(\textcolor{keywordtype}{string}[] assignmentLines)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00035}00035         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00036}00036             routeLocationVehicleAssignments = \textcolor{keyword}{new} List<RouteAssignment>();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00037}00037             FillInRouteLocationVehicleAssignments(assignmentLines);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00038}00038         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00040}00040         \textcolor{keyword}{private} \textcolor{keywordtype}{void} FillInRouteLocationVehicleAssignments(\textcolor{keywordtype}{string}[] assignmentLines)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00041}00041         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00042}00042             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < assignmentLines.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00043}00043             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00044}00044                 var trimmedLine = assignmentLines[i].Trim();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00045}00045                 \textcolor{keywordflow}{if} (!\textcolor{keywordtype}{string}.IsNullOrEmpty(trimmedLine))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00046}00046                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00047}00047                     \textcolor{keywordtype}{int}[] routeLocationVehicleAssignmentInt = trimmedLine.Split(\textcolor{charliteral}{';'}, StringSplitOptions.None).Select(arg => \textcolor{keywordtype}{int}.Parse(arg)).ToArray();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00048}00048                     RouteAssignment routeLocationVehicleAssignment = \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00049}00049                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00050}00050                         RouteId = routeLocationVehicleAssignmentInt[0],}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00051}00051                         LocationId = routeLocationVehicleAssignmentInt[1],}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00052}00052                         VehicleId = routeLocationVehicleAssignmentInt[2],}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00053}00053                     \};}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00054}00054                     routeLocationVehicleAssignments.Add(routeLocationVehicleAssignment);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00055}00055                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00056}00056             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00057}00057         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00059}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_aeb0e88a07897603db0b05de3d77e76e3}{00059}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_optimizer_result}{VRPOptimizerResult}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_aeb0e88a07897603db0b05de3d77e76e3}{Optimize}}(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}} problemDataProvider, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}} serviceTimeEstimator, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00060}00060         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00061}00061             \textcolor{keywordflow}{if} (DIAGNOSE)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00062}00062             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00063}00063                 \textcolor{keywordflow}{foreach} (var request \textcolor{keywordflow}{in} problemDataProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}})}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00064}00064                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00065}00065                     Console.WriteLine(\$\textcolor{stringliteral}{"{}\{request.Id\};\{request.DeliveryLocation.Id\};\{request.Size[0]\};\{request.Size[1]\};\{request.DeliveryPreferedTimeWindowStart / 3600\};\{request.DeliveryPreferedTimeWindowEnd / 3600\}"{}});}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00066}00066                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00067}00067             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00068}00068             \textcolor{keywordflow}{if} (DIAGNOSE)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00069}00069             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00070}00070                 \textcolor{keywordflow}{foreach} (var item \textcolor{keywordflow}{in} routeLocationVehicleAssignments)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00071}00071                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00072}00072                     \textcolor{keywordtype}{int} locationOccurencies = problemDataProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}.Count(rq => rq.DeliveryLocation.Id == item.LocationId.ToString());}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00073}00073                     \textcolor{comment}{//Debug.Assert(locationOccurencies == 1);}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00074}00074                     \textcolor{keywordflow}{if} (locationOccurencies != 1)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00075}00075                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00076}00076                         Console.Error.WriteLine(\$\textcolor{stringliteral}{"{}Location \{item.LocationId\} from route \{item.RouteId\} occurs \{locationOccurencies\} times in requests"{}});}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00077}00077                     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00078}00078                     \textcolor{keywordtype}{int} locationOccurenciesInAssignemnt = routeLocationVehicleAssignments.Count(a => a.LocationId == item.LocationId);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00079}00079                     \textcolor{keywordflow}{if} (locationOccurenciesInAssignemnt != 1)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00080}00080                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00081}00081                         Console.Error.WriteLine(\$\textcolor{stringliteral}{"{}Location \{item.LocationId\} from route \{item.RouteId\} occurs \{locationOccurenciesInAssignemnt\} routes"{}});}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00082}00082                     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00083}00083                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00084}00084             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00085}00085             List<TransportRequest> requestListCopy = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00086}00086             requestListCopy.AddRange(problemDataProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}});}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00087}00087             \textcolor{keywordflow}{foreach} (var routeGroup \textcolor{keywordflow}{in} routeLocationVehicleAssignments.GroupBy(i => i.RouteId))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00088}00088             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00089}00089                 var locationsEnRoute = routeGroup.ToList();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00090}00090                 List<TransportRequest> requestsEnRoute = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00091}00091                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < locationsEnRoute.Count; ++i)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00092}00092                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00093}00093                     var selectedRequests = requestListCopy.Where(rq => rq.DeliveryLocation.Id == locationsEnRoute[i].LocationId.ToString());}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00094}00094                     \textcolor{keywordflow}{if} (selectedRequests.Count() == 0)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00095}00095                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00096}00096                         Console.WriteLine(\$\textcolor{stringliteral}{"{}No transport request corresponding to the one in group \{locationsEnRoute[i].RouteId\} for \{locationsEnRoute[i].LocationId\} location served by vehicle \{locationsEnRoute[i].VehicleId\}"{}});}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00097}00097                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00098}00098                     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00099}00099                     \textcolor{keywordflow}{if} (selectedRequests.Count() > 1)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00100}00100                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00101}00101                     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00102}00102                     var request = selectedRequests.First();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00103}00103                     requestListCopy.Remove(request);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00104}00104                     requestsEnRoute.Add(request);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00105}00105                     var locationAssigned = routeGroup.First(loc => loc.LocationId.ToString() == request.DeliveryLocation.Id);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00106}00106                     locationAssigned.RequestId = request.Id;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00107}00107                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00108}00108                 var vehicle = problemDataProvider.Vehicles.First(vh => vh.Id == locationsEnRoute.First().VehicleId);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00109}00109                 \textcolor{keywordflow}{if} (!vehicle.CanFitRequests(requestsEnRoute))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00110}00110                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00111}00111                     \textcolor{keywordflow}{if} (DIAGNOSE)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00112}00112                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00113}00113                         \textcolor{keywordflow}{foreach} (var requestEnRoute \textcolor{keywordflow}{in} requestsEnRoute)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00114}00114                         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00115}00115                             \textcolor{keywordflow}{if} (vehicle.RoadProperties.EpCount > requestEnRoute.MaxVehicleSize.EpCount)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00116}00116                             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00117}00117                                 Console.Error.Write(\$\textcolor{stringliteral}{"{}Vehicle \{vehicle.Id\} en route \{routeGroup.Key\} is too large to serve request at location \{requestEnRoute.DeliveryLocation.Id\}, "{}});}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00118}00118                                 Console.Error.WriteLine(\$\textcolor{stringliteral}{"{}because vehicle size \{vehicle.RoadProperties.EpCount\} is larger than driveway limit \{requestEnRoute.MaxVehicleSize.EpCount\}"{}});}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00119}00119                             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00120}00120                         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00121}00121                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vehicle.Capacity.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00122}00122                         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00123}00123                             \textcolor{keywordflow}{if} (vehicle.Capacity[i] < requestsEnRoute.Sum(rq => rq.Size[i]))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00124}00124                             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00125}00125                                 Console.Error.WriteLine(\$\textcolor{stringliteral}{"{}Vehicle \{vehicle.Id\} en route \{routeGroup.Key\} cannot fit \{requestsEnRoute.Sum(rq => rq.Size[i])\} into \{vehicle.Capacity[i]\}"{}});}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00126}00126                             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00127}00127                         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00128}00128                     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00129}00129                     Dictionary<int, int> removedEps = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00130}00130                     \textcolor{keywordflow}{while} (vehicle.Capacity[0] < requestsEnRoute.Sum(rq => rq.Size[0]))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00131}00131                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00132}00132                         \textcolor{comment}{//removing EPs by one starting from largest request until they fit in vehicle}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00133}00133                         var orderedRequests = requestsEnRoute.OrderByDescending(rq => rq.Size[0]);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00134}00134                         \textcolor{keywordflow}{foreach} (var orderedRequest \textcolor{keywordflow}{in} orderedRequests)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00135}00135                         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00136}00136                             \textcolor{keywordflow}{if} (!removedEps.ContainsKey(orderedRequest.Id))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00137}00137                             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00138}00138                                 removedEps.Add(orderedRequest.Id, 0);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00139}00139                             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00140}00140                             orderedRequest.Size[0] -\/= 1;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00141}00141                             removedEps[orderedRequest.Id] += 1;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00142}00142                             \textcolor{keywordflow}{if} (vehicle.Capacity[0] >= requestsEnRoute.Sum(rq => rq.Size[0]))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00143}00143                             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00144}00144                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00145}00145                             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00146}00146                         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00147}00147                     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00148}00148                     Dictionary<int, double> removedMassDict = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00149}00149                     \textcolor{keywordflow}{if} (vehicle.Capacity[1] < requestsEnRoute.Sum(rq => rq.Size[1]))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00150}00150                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00151}00151                         \textcolor{comment}{//removing proportional amount of kg from each request when weight is exceeded}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00152}00152                         var massToBeRemoved = requestsEnRoute.Sum(rq => rq.Size[1]) -\/ vehicle.Capacity[1];}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00153}00153                         var totalMass = requestsEnRoute.Sum(rq => rq.Size[1]);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00154}00154                         \textcolor{keywordflow}{foreach} (var orderedRequest \textcolor{keywordflow}{in} requestsEnRoute)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00155}00155                         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00156}00156                             \textcolor{keywordtype}{double} removedMass = Math.Ceiling(massToBeRemoved * (orderedRequest.Size[1] / totalMass));}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00157}00157                             orderedRequest.Size[1] -\/= removedMass;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00158}00158                             removedMassDict.Add(orderedRequest.Id, removedMass);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00159}00159                         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00160}00160                     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00161}00161                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00162}00162             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00164}00164             List<IRoute> routes = \textcolor{keyword}{new} List<IRoute>();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00165}00165             Dictionary<Vehicle, VehicleSchedule> vehicleSchedules = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00166}00166             Dictionary<Route, ISet<Route>> subsequentRoutes = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00167}00167             List<TransportRequest> leftRequests = \textcolor{keyword}{new} List<TransportRequest>();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00168}00168             leftRequests.AddRange(problemDataProvider.Requests);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00169}00169             \textcolor{keywordflow}{if} (DIAGNOSE)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00170}00170             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00171}00171                 \textcolor{keywordflow}{foreach} (var request \textcolor{keywordflow}{in} problemDataProvider.Requests)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00172}00172                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00173}00173                     Console.WriteLine(\$\textcolor{stringliteral}{"{}\{request.Id\};\{request.DeliveryLocation.Id\};\{request.Size[0]\};\{request.Size[1]\};\{request.DeliveryPreferedTimeWindowStart / 3600\};\{request.DeliveryPreferedTimeWindowEnd / 3600\}"{}});}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00174}00174                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00175}00175             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00176}00176             \textcolor{keywordflow}{foreach} (var routeGroup \textcolor{keywordflow}{in} routeLocationVehicleAssignments.GroupBy(i => i.RouteId))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00177}00177             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00178}00178                 var locationsEnRoute = routeGroup.ToList();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00179}00179                 List<TransportRequest> requestsEnRoute = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00180}00180                 var vehicle = problemDataProvider.Vehicles.First(vh => vh.Id == locationsEnRoute.First().VehicleId);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00181}00181                 var route = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_route}{Route}}(vehicle, \textcolor{keyword}{null}, \textcolor{keyword}{null}, distanceProvider, serviceTimeEstimator);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00182}00182                 subsequentRoutes.Add(route, \textcolor{keyword}{new} HashSet<Route>());}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00183}00183                 \textcolor{keywordflow}{foreach} (var locationEnRoute \textcolor{keywordflow}{in} locationsEnRoute)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00184}00184                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00185}00185                     var request = problemDataProvider.Requests.FirstOrDefault(rq => rq.Id == locationEnRoute.RequestId);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00186}00186                     \textcolor{keywordflow}{if} (request != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00187}00187                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00188}00188                         requestsEnRoute.Add(request);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00189}00189                     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00190}00190                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00191}00191                 IEnumerable<TransportRequest> requestList = requestsEnRoute;}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00192}00192                 \textcolor{keywordflow}{if} (orderLocationsByTimeWindow)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00193}00193                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00194}00194                     requestList = requestsEnRoute.OrderBy(rq => rq.DeliveryPreferedTimeWindowStart);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00195}00195                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00196}00196                 \textcolor{keywordflow}{foreach} (var orderedRequest \textcolor{keywordflow}{in} requestList)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00197}00197                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00198}00198                     var result = route.ComputeInsertionCost(route.VisitedLocations.Count -\/ 1, orderedRequest);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00199}00199                     \textcolor{keywordflow}{if} (result.Success)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00200}00200                     \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00201}00201                         route.Insert(route.VisitedLocations.Count -\/ 1, orderedRequest);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00202}00202                         leftRequests.Remove(orderedRequest);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00203}00203                     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00204}00204                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00205}00205 }
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00206}00206                 \textcolor{keywordflow}{if} (!vehicleSchedules.ContainsKey(vehicle))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00207}00207                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00208}00208                     vehicleSchedules.Add(vehicle, \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_vehicle_schedule}{VehicleSchedule}}(vehicle, \textcolor{keywordtype}{double}.MaxValue, \textcolor{keywordtype}{double}.MaxValue));}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00209}00209                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00210}00210                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_vehicle_schedule}{VehicleSchedule}} schedule = vehicleSchedules[vehicle];}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00211}00211                 \textcolor{keywordflow}{if} (schedule.Add(route, vehicleSchedules, subsequentRoutes))}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00212}00212                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00213}00213                     routes.Add(route);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00214}00214                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00215}00215                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00216}00216                 \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00217}00217                     leftRequests.AddRange(requestsEnRoute);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00218}00218                 \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00219}00219             \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00220}00220             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_optimizer_result}{VRPOptimizerResult}}()}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00221}00221             \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00222}00222                 LeftRequests = leftRequests,}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00223}00223                 Routes = routes}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00224}00224             \};}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00225}00225         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00227}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_a33a773441eaa3368ae565708119b5a6c}{00227}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_optimizer_result}{VRPOptimizerResult}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_a33a773441eaa3368ae565708119b5a6c}{Optimize}}(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}} problemDataProvider, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}} costFunctionFactors, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}} serviceTimeEstimator, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider)}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00228}00228         \{}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00229}00229             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_aeb0e88a07897603db0b05de3d77e76e3}{Optimize}}(problemDataProvider, serviceTimeEstimator, distanceProvider);}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00230}00230         \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00231}00231     \}}
+\DoxyCodeLine{\Hypertarget{_oracle_v_r_p_optimizer_8cs_source_l00232}00232 \}}
+
+\end{DoxyCode}

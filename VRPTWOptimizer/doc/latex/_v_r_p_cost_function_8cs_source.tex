@@ -1,0 +1,301 @@
+\hypertarget{_v_r_p_cost_function_8cs_source}{}\doxysection{VRPCost\+Function.\+cs}
+\mbox{\hyperlink{_v_r_p_cost_function_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00001}00001 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00002}00002 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00005}00005 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00007}00007 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00012}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{00012}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00013}00013     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00014}00014         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultDistanceFactor = 1e-\/6;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00015}00015         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultLateEarlyFactor = 1e-\/5;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00016}00016         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultLeftCargoFactor = 1e8;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00017}00017         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{double} DefaultRoutesCountFactor = 1e4;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00018}00018         \textcolor{keyword}{private} \textcolor{keyword}{static} readonly Dictionary<int, double> DefaultCarrierFactor = \textcolor{keyword}{new} Dictionary<int, double>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00022}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ab157d46cd79c9e81a2f1b595671c4ad7}{00022}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ab157d46cd79c9e81a2f1b595671c4ad7}{CarrierMinDistanceFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00026}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ac7b47e029f96a4e060df01299afa784e}{00026}}         \textcolor{keyword}{public} Dictionary<int, double> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ac7b47e029f96a4e060df01299afa784e}{CarrierMinDistanceThreshold}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00030}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a2a058d50aa66685727ef6d0cc742ec67}{00030}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a2a058d50aa66685727ef6d0cc742ec67}{CarrierShareFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00034}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a21a8b5a4a9c9755067dfd9ec61d11ab3}{00034}}         \textcolor{keyword}{public} Dictionary<int, double> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a21a8b5a4a9c9755067dfd9ec61d11ab3}{CarrierShareRatio}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00038}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a964f5604f4ccedbfbaf804c3296ff947}{00038}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a964f5604f4ccedbfbaf804c3296ff947}{DistanceFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00042}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_abf00b31b4e418ac9b98e8de4ec359d66}{00042}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_abf00b31b4e418ac9b98e8de4ec359d66}{DriveTimeFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00046}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ace85ff5ce40d34b5726e719940b2f173}{00046}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ace85ff5ce40d34b5726e719940b2f173}{FillInFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00050}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1830d2968204615bffd79ff606ed56d8}{00050}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1830d2968204615bffd79ff606ed56d8}{LeftCargoUnitFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00054}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a51d377e9c19fb58d96bad1d5f6199b7c}{00054}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a51d377e9c19fb58d96bad1d5f6199b7c}{MaxDelayFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00058}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1caef0d78c1676d0e329a7ba78af2ecd}{00058}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1caef0d78c1676d0e329a7ba78af2ecd}{MaxDelaySquaredFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00062}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a638b8eaa2bdc827927798318d98b58f3}{00062}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a638b8eaa2bdc827927798318d98b58f3}{MaxEarlyArrivalFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00066}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a0ab2ee19f021f545fce50bdee89b8b01}{00066}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a0ab2ee19f021f545fce50bdee89b8b01}{MaxEarlyArrivalSquaredFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00070}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af07dcba3a6f6aeb60fe3e56345f1c975}{00070}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af07dcba3a6f6aeb60fe3e56345f1c975}{MaxVehicleSpreadFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00074}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ae35517921faafef51b87e473bac7dae8}{00074}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ae35517921faafef51b87e473bac7dae8}{RoutesCountFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00078}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ae3df0dbf2df1d4e4a91ac4a364faf552}{00078}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ae3df0dbf2df1d4e4a91ac4a364faf552}{TotalDelayFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00082}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af10fd145d0e01f55b80bece5c10cc92c}{00082}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af10fd145d0e01f55b80bece5c10cc92c}{TotalDelaySquaredFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00086}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a0d4f1856c9137eddabad2fd984376a5d}{00086}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a0d4f1856c9137eddabad2fd984376a5d}{TotalEarlyArrivalFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00090}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1d23fddffab51f265530fe43788f2faf}{00090}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1d23fddffab51f265530fe43788f2faf}{TotalEarlyArrivalSquaredFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00094}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af9560d79a0ab029b3be12965a8c9a4bd}{00094}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af9560d79a0ab029b3be12965a8c9a4bd}{UsageFactor}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00099}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a8ae84aa8512bd38ba22653ba03f119da}{00099}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a8ae84aa8512bd38ba22653ba03f119da}{VRPCostFunction}}()}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00100}00100         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00101}00101             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ac7b47e029f96a4e060df01299afa784e}{CarrierMinDistanceThreshold}} = DefaultCarrierFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00102}00102             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a21a8b5a4a9c9755067dfd9ec61d11ab3}{CarrierShareRatio}} = DefaultCarrierFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00103}00103             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a964f5604f4ccedbfbaf804c3296ff947}{DistanceFactor}} = DefaultDistanceFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00104}00104             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1830d2968204615bffd79ff606ed56d8}{LeftCargoUnitFactor}} = DefaultLeftCargoFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00105}00105             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1caef0d78c1676d0e329a7ba78af2ecd}{MaxDelaySquaredFactor}} = DefaultLateEarlyFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00106}00106             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a638b8eaa2bdc827927798318d98b58f3}{MaxEarlyArrivalFactor}} = DefaultLateEarlyFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00107}00107             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ae35517921faafef51b87e473bac7dae8}{RoutesCountFactor}} = DefaultRoutesCountFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00108}00108         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00132}00132         [JsonConstructor]}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00133}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a2bb66443865c96772fa7c0ce4e4351d3}{00133}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a2bb66443865c96772fa7c0ce4e4351d3}{VRPCostFunction}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00134}00134             \textcolor{keywordtype}{double} distanceFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00135}00135             \textcolor{keywordtype}{double} usageFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00136}00136             \textcolor{keywordtype}{double} driveTimeFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00137}00137             \textcolor{keywordtype}{double} leftUnitFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00138}00138             \textcolor{keywordtype}{double} maxDelaySquaredFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00139}00139             \textcolor{keywordtype}{double} maxEarlyArrivalFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00140}00140             \textcolor{keywordtype}{double} totalDelaySquaredFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00141}00141             \textcolor{keywordtype}{double} totalEarlyArrivalFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00142}00142             \textcolor{keywordtype}{double} carrierMinDistanceFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00143}00143             \textcolor{keywordtype}{double} carrierShareFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00144}00144             \textcolor{keywordtype}{double} fillInFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00145}00145             Dictionary<int, double> carrierMinDistanceThreshold,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00146}00146             Dictionary<int, double> carrierShareRatio,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00147}00147             \textcolor{keywordtype}{double} routesCountFactor = 0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00148}00148             \textcolor{keywordtype}{double} totalEarlyArrivalSquaredFactor = 0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00149}00149             \textcolor{keywordtype}{double} totalDelayFactor = 0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00150}00150             \textcolor{keywordtype}{double} maxVehicleSpreadFactor = 0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00151}00151             \textcolor{keywordtype}{double} maxEarlyArrivalSquaredFactor = 0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00152}00152             \textcolor{keywordtype}{double} maxDelayFactor = 0)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00153}00153         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00154}00154             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a964f5604f4ccedbfbaf804c3296ff947}{DistanceFactor}} = distanceFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00155}00155             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af9560d79a0ab029b3be12965a8c9a4bd}{UsageFactor}} = usageFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00156}00156             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_abf00b31b4e418ac9b98e8de4ec359d66}{DriveTimeFactor}} = driveTimeFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00157}00157             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1830d2968204615bffd79ff606ed56d8}{LeftCargoUnitFactor}} = leftUnitFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00158}00158             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1caef0d78c1676d0e329a7ba78af2ecd}{MaxDelaySquaredFactor}} = maxDelaySquaredFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00159}00159             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a638b8eaa2bdc827927798318d98b58f3}{MaxEarlyArrivalFactor}} = maxEarlyArrivalFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00160}00160             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af10fd145d0e01f55b80bece5c10cc92c}{TotalDelaySquaredFactor}} = totalDelaySquaredFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00161}00161             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a0d4f1856c9137eddabad2fd984376a5d}{TotalEarlyArrivalFactor}} = totalEarlyArrivalFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00162}00162             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ab157d46cd79c9e81a2f1b595671c4ad7}{CarrierMinDistanceFactor}} = carrierMinDistanceFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00163}00163             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ac7b47e029f96a4e060df01299afa784e}{CarrierMinDistanceThreshold}} = carrierMinDistanceThreshold;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00164}00164             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a2a058d50aa66685727ef6d0cc742ec67}{CarrierShareFactor}} = carrierShareFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00165}00165             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a21a8b5a4a9c9755067dfd9ec61d11ab3}{CarrierShareRatio}} = carrierShareRatio;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00166}00166             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ace85ff5ce40d34b5726e719940b2f173}{FillInFactor}} = fillInFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00167}00167             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ae35517921faafef51b87e473bac7dae8}{RoutesCountFactor}} = routesCountFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00168}00168             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1d23fddffab51f265530fe43788f2faf}{TotalEarlyArrivalSquaredFactor}} = totalEarlyArrivalSquaredFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00169}00169             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ae3df0dbf2df1d4e4a91ac4a364faf552}{TotalDelayFactor}} = totalDelayFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00170}00170             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af07dcba3a6f6aeb60fe3e56345f1c975}{MaxVehicleSpreadFactor}} = maxVehicleSpreadFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00171}00171             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a0ab2ee19f021f545fce50bdee89b8b01}{MaxEarlyArrivalSquaredFactor}} = maxEarlyArrivalSquaredFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00172}00172             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a51d377e9c19fb58d96bad1d5f6199b7c}{MaxDelayFactor}} = maxDelayFactor;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00173}00173         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00181}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_aeaf2915ac4b0c7ae96e37363dc57e869}{00181}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_aeaf2915ac4b0c7ae96e37363dc57e869}{ComputeFillInFactor}}(List<\textcolor{keywordtype}{double}[]> cargoOnRouteStart, \textcolor{keywordtype}{double}[] vehicleCapacity, Enums.Aggregation[] aggregationType)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00182}00182         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00183}00183             \textcolor{keywordtype}{double} maxFillIn = 0.0;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00184}00184             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vehicleCapacity.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00185}00185             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00186}00186                 \textcolor{keywordtype}{double} cargoSumI = 0.0;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00187}00187                 \textcolor{keywordflow}{if} (aggregationType[i] == Enums.Aggregation.Sum)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00188}00188                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00189}00189                     cargoSumI = cargoOnRouteStart.Sum(c => c[i]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00190}00190                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00191}00191                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (aggregationType[i] == Enums.Aggregation.Max)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00192}00192                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00193}00193                     \textcolor{keywordflow}{if} (cargoOnRouteStart.Any())}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00194}00194                     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00195}00195                         cargoSumI = cargoOnRouteStart.Max(c => c[i]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00196}00196                     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00197}00197                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00198}00198                 maxFillIn = Math.Max(maxFillIn, cargoSumI / vehicleCapacity[i]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00199}00199             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00200}00200             \textcolor{keywordflow}{return} maxFillIn;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00201}00201         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00208}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_aca6ebd397b29d41b527dc551f816282f}{00208}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_aca6ebd397b29d41b527dc551f816282f}{ComputeFillInFactor}}(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} route)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00209}00209         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00210}00210             List<double[]> cargoOnRouteStart = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_aeb66938fd3c3746cec633d48fdd978bc}{LoadedRequests}}[0].Select(rq => rq.Size).ToList();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00211}00211             \textcolor{keywordtype}{double}[] vehicleCapacity = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00212}00212             var aggregationType = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}{CapacityAggregationType}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00213}00213             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_aeaf2915ac4b0c7ae96e37363dc57e869}{ComputeFillInFactor}}(cargoOnRouteStart, vehicleCapacity, aggregationType);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00214}00214         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00221}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a8a2f9b90022494e68c97fe888aa5827a}{00221}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a8a2f9b90022494e68c97fe888aa5827a}{ComputeMaxEarlyArrival}}(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} route)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00222}00222         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00223}00223             \textcolor{keywordtype}{double}[] timeWindowsStart = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a4f458c304d5996933990b9169a4857d6}{TimeWindowStart}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00224}00224                 .Select(tws => tws).ToArray();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00225}00225             \textcolor{keywordtype}{double}[] arrivalTimes = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a5de6573c7eed6c603d918255871032bd}{ArrivalTimes}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00226}00226                 .Select(art => art).ToArray();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00227}00227             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a276ef6ee94bd27c3154d2077db91b624}{ComputeMaxTimeDiff}}(timeWindowsStart, arrivalTimes, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00228}00228         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00229}00229 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00237}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a276ef6ee94bd27c3154d2077db91b624}{00237}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a276ef6ee94bd27c3154d2077db91b624}{ComputeMaxTimeDiff}}(\textcolor{keywordtype}{double}[] referenceValues, \textcolor{keywordtype}{double}[] trueValues, \textcolor{keywordtype}{bool} referenceIsLowerBound)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00238}00238         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00239}00239             \textcolor{keywordtype}{double} timeDiff = 0.0;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00240}00240             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < referenceValues.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00241}00241             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00242}00242                 \textcolor{keywordflow}{if} (referenceIsLowerBound)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00243}00243                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00244}00244                     timeDiff = Math.Max(timeDiff, referenceValues[i] -\/ trueValues[i]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00245}00245                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00246}00246                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00247}00247                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00248}00248                     timeDiff = Math.Max(timeDiff, trueValues[i] -\/ referenceValues[i]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00249}00249                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00250}00250             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00251}00251             \textcolor{keywordflow}{return} timeDiff;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00252}00252         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00259}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a7db65b26ea2c6509c7429bb93d5cdf13}{00259}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a7db65b26ea2c6509c7429bb93d5cdf13}{ComputeTotalEarlyArrival}}(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} route)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00260}00260         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00261}00261             \textcolor{keywordtype}{double}[] timeWindowsStart = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a4f458c304d5996933990b9169a4857d6}{TimeWindowStart}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00262}00262                 .Select(tws => tws).ToArray();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00263}00263             \textcolor{keywordtype}{double}[] arrivalTimes = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a5de6573c7eed6c603d918255871032bd}{ArrivalTimes}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00264}00264                 .Select(art => art).ToArray();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00265}00265             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a02471c08a95fcbcaef63c2140a461ed9}{ComputeTotalTimeDiff}}(timeWindowsStart, arrivalTimes, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00266}00266         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00275}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a02471c08a95fcbcaef63c2140a461ed9}{00275}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a02471c08a95fcbcaef63c2140a461ed9}{ComputeTotalTimeDiff}}(\textcolor{keywordtype}{double}[] referenceValues, \textcolor{keywordtype}{double}[] trueValues, \textcolor{keywordtype}{bool} referenceIsLowerBound)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00276}00276         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00277}00277             \textcolor{keywordtype}{double} timeDiff = 0.0;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00278}00278             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < referenceValues.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00279}00279             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00280}00280                 \textcolor{keywordflow}{if} (referenceIsLowerBound)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00281}00281                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00282}00282                     timeDiff += Math.Max(0, referenceValues[i] -\/ trueValues[i]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00283}00283                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00284}00284                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00285}00285                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00286}00286                     timeDiff += Math.Max(0, trueValues[i] -\/ referenceValues[i]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00287}00287                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00288}00288             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00289}00289             \textcolor{keywordflow}{return} timeDiff;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00290}00290         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00291}00291 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00299}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a79565414d578890a651795ea4404ed5c}{00299}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a79565414d578890a651795ea4404ed5c}{GetDefaultParametersFunction}}()}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00300}00300         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00301}00301             \textcolor{keywordflow}{return} \textcolor{keyword}{new}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00302}00302                 carrierMinDistanceFactor: 0.0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00303}00303                 carrierMinDistanceThreshold: DefaultCarrierFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00304}00304                 carrierShareFactor: 0.0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00305}00305                 carrierShareRatio: DefaultCarrierFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00306}00306                 distanceFactor: DefaultDistanceFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00307}00307                 driveTimeFactor: 0.0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00308}00308                 fillInFactor: 0.0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00309}00309                 leftUnitFactor: DefaultLeftCargoFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00310}00310                 maxDelaySquaredFactor: DefaultLateEarlyFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00311}00311                 maxEarlyArrivalFactor: DefaultLateEarlyFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00312}00312                 totalDelaySquaredFactor: 0.0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00313}00313                 totalEarlyArrivalFactor: 0.0,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00314}00314                 routesCountFactor: DefaultRoutesCountFactor,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00315}00315                 usageFactor: 0.0}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00316}00316                 );}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00317}00317         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00318}00318 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00324}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ab687155779308920db83315231b5a837}{00324}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ab687155779308920db83315231b5a837}{SingleRouteValue}}(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} route)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00325}00325         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00326}00326             \textcolor{keywordtype}{double} length = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1dad9fabdde33251567eecefa86407ee}{Length}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00327}00327             \textcolor{keywordtype}{double} travelTime = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8eb2189ee09d476b6946d8d1b0ea92d8}{TravelTime}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00328}00328             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} vehicle = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00329}00329             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} vehicleTractor = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a9b94599db46afba7bd052ddb5cfd7ab9}{VehicleTractor}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00330}00330             IEnumerable<double> revenueValues = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_aeb66938fd3c3746cec633d48fdd978bc}{LoadedRequests}}.SelectMany(rq => rq.Select(rq => rq.RevenueValue));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00331}00331             \textcolor{keywordtype}{double}[] timeWindowsStart = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a4f458c304d5996933990b9169a4857d6}{TimeWindowStart}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00332}00332                 .Select(tws => tws).ToArray();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00333}00333             \textcolor{keywordtype}{double}[] arrivalTimes = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a5de6573c7eed6c603d918255871032bd}{ArrivalTimes}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00334}00334                 .Select(art => art).ToArray();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00335}00335             \textcolor{keywordtype}{double} vehicleDistanceCost = vehicle.ComputeDistanceCost(length);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00336}00336             \textcolor{keywordtype}{double} vehicleTimeCost = vehicle.ComputeTimeCost(travelTime);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00337}00337             \textcolor{keywordflow}{if} (vehicleTractor != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00338}00338             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00339}00339                 vehicleDistanceCost += route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a9b94599db46afba7bd052ddb5cfd7ab9}{VehicleTractor}}.ComputeDistanceCost(length);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00340}00340                 vehicleTimeCost += route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a9b94599db46afba7bd052ddb5cfd7ab9}{VehicleTractor}}.ComputeTimeCost(travelTime);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00341}00341             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00342}00342             \textcolor{comment}{//cost of being too early}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00343}00343             \textcolor{keywordtype}{double} routeTotalEarly = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a02471c08a95fcbcaef63c2140a461ed9}{ComputeTotalTimeDiff}}(timeWindowsStart, arrivalTimes, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00344}00344             \textcolor{keywordtype}{double} earlyArrivalsCost = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a0d4f1856c9137eddabad2fd984376a5d}{TotalEarlyArrivalFactor}} * routeTotalEarly + \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1d23fddffab51f265530fe43788f2faf}{TotalEarlyArrivalSquaredFactor}} * routeTotalEarly * routeTotalEarly;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00345}00345             \textcolor{comment}{//cost of delay}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00346}00346             \textcolor{keywordtype}{double} routeTotalDelay = route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a23a3e144731668c14d8e9f1dffb764f3}{TotalDelay}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00347}00347             \textcolor{keywordtype}{double} lateArrivalsCost = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ae3df0dbf2df1d4e4a91ac4a364faf552}{TotalDelayFactor}} * routeTotalDelay + \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af10fd145d0e01f55b80bece5c10cc92c}{TotalDelaySquaredFactor}} * routeTotalDelay * routeTotalDelay;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00348}00348             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00349}00349                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a964f5604f4ccedbfbaf804c3296ff947}{DistanceFactor}} * vehicleDistanceCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00350}00350                 \textcolor{comment}{//cost of cargo cooling}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00351}00351                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_abf00b31b4e418ac9b98e8de4ec359d66}{DriveTimeFactor}} * vehicleTimeCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00352}00352                 \textcolor{comment}{//cost of using vehicle at all}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00353}00353                 lateArrivalsCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00354}00354                 earlyArrivalsCost -\/}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00355}00355                 \textcolor{comment}{//gain of serving profit generating requests}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00356}00356                 revenueValues.Sum(val => val);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00357}00357             ;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00358}00358         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00359}00359 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00366}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ad5232bfc7d6ef1d0ad9c3251f9a0fb41}{00366}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ad5232bfc7d6ef1d0ad9c3251f9a0fb41}{Value}}(List<IRoute> routes, List<TransportRequest> leftRequests)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00367}00367         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00368}00368             \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00369}00369 \textcolor{comment}{             *             double vehicleUsageCost = route.Vehicle.VehicleCostPerUsage;}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00370}00370 \textcolor{comment}{            vehicleUsageCost += route.VehicleTractor.VehicleCostPerUsage;}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00371}00371 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00372}00372 \textcolor{comment}{             */}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00373}00373             var orderedRoutes = routes.OrderBy(rt => rt.VehicleTractor != \textcolor{keyword}{null} ? rt.VehicleTractor.Id : rt.Vehicle.Id)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00374}00374                 .ThenBy(rt => rt.ArrivalTimes[0]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00375}00375             \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} previousRoute = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00376}00376             \textcolor{keywordtype}{double} maxVehicleSpread = 0.0;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00377}00377             \textcolor{keywordflow}{foreach} (var currentRoute \textcolor{keywordflow}{in} orderedRoutes)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00378}00378             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00379}00379                 \textcolor{keywordflow}{if} (previousRoute != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00380}00380                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00381}00381                     \textcolor{keywordflow}{if} (currentRoute.VehicleTractor != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00382}00382                     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00383}00383                         \textcolor{keywordflow}{if} (previousRoute.VehicleTractor != \textcolor{keyword}{null} \&\& currentRoute.VehicleTractor.Id == previousRoute.VehicleTractor.Id)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00384}00384                         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00385}00385                             maxVehicleSpread = Math.Max(maxVehicleSpread, currentRoute.DepartureTimes[0] -\/ previousRoute.ArrivalTimes[\string^1]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00386}00386                         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00387}00387                     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00388}00388                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (currentRoute.Vehicle.Id == previousRoute.Vehicle.Id)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00389}00389                     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00390}00390                         maxVehicleSpread = Math.Max(maxVehicleSpread, currentRoute.ArrivalTimes[0] -\/ previousRoute.DepartureTimes[\string^1]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00391}00391                     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00392}00392                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00393}00393                 previousRoute = currentRoute;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00394}00394             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00395}00395             \textcolor{keywordtype}{double} maxVehicleSpreadCost = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_af07dcba3a6f6aeb60fe3e56345f1c975}{MaxVehicleSpreadFactor}} * maxVehicleSpread;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00396}00396 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00397}00397             var realDistanceDict = routes}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00398}00398                 .GroupBy(rt => rt.Vehicle.OwnerID)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00399}00399                 .ToDictionary(gr => gr.Key, gr => gr.Sum(rt => rt.Length));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00400}00400             var totalDistance = routes.Sum(rt => rt.Length);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00401}00401             var lowFillInCost = routes.Any() ? \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ace85ff5ce40d34b5726e719940b2f173}{FillInFactor}} * routes.Average(route => (1 -\/ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_aeaf2915ac4b0c7ae96e37363dc57e869}{ComputeFillInFactor}}(route))) : 0.0;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00402}00402             var maxEarlyArrivalCost = routes.Any() ? routes.Max(route =>}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00403}00403             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00404}00404                 \textcolor{keywordtype}{double} routeMaxEarlyArrival = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a8a2f9b90022494e68c97fe888aa5827a}{ComputeMaxEarlyArrival}}(route);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00405}00405                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a638b8eaa2bdc827927798318d98b58f3}{MaxEarlyArrivalFactor}} * routeMaxEarlyArrival + \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a0ab2ee19f021f545fce50bdee89b8b01}{MaxEarlyArrivalSquaredFactor}} * routeMaxEarlyArrival * routeMaxEarlyArrival;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00406}00406             \}) : 0.0;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00407}00407             var maxLaterArrivalCost = routes.Any() ? routes.Max(route =>}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00408}00408             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00409}00409                 \textcolor{keywordtype}{double} maxDelay = route.MaxDelay;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00410}00410                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a51d377e9c19fb58d96bad1d5f6199b7c}{MaxDelayFactor}} * maxDelay + \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1caef0d78c1676d0e329a7ba78af2ecd}{MaxDelaySquaredFactor}} * maxDelay * maxDelay;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00411}00411             \}) : 0.0;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00412}00412             var routesCost = routes.Sum(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00413}00413                             \textcolor{comment}{//cost of routes}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00414}00414                             rt => \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ab687155779308920db83315231b5a837}{SingleRouteValue}}(rt));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00415}00415             \textcolor{comment}{//cost of not delivering certain amount of cargo}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00416}00416             var leftCargoCost = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a1830d2968204615bffd79ff606ed56d8}{LeftCargoUnitFactor}} * leftRequests.Sum(lr => lr.PackageCount);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00417}00417             var carrierCost =  \textcolor{comment}{//cost of not getting equal routes distance share between car owners}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00418}00418                 routes.Any() ? \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a2a058d50aa66685727ef6d0cc742ec67}{CarrierShareFactor}} * \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a21a8b5a4a9c9755067dfd9ec61d11ab3}{CarrierShareRatio}}.Keys.Sum(csrDictKey =>}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00419}00419                     Math.Abs(totalDistance * \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a21a8b5a4a9c9755067dfd9ec61d11ab3}{CarrierShareRatio}}[csrDictKey] -\/ realDistanceDict[csrDictKey]) / 2.0) +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00420}00420                 \textcolor{comment}{//cost of not providing enough kilometers per car owner}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00421}00421                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ab157d46cd79c9e81a2f1b595671c4ad7}{CarrierMinDistanceFactor}} * \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ac7b47e029f96a4e060df01299afa784e}{CarrierMinDistanceThreshold}}.Keys.Sum(cmdtDictKey =>}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00422}00422                     Math.Abs(Math.Max(0, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ac7b47e029f96a4e060df01299afa784e}{CarrierMinDistanceThreshold}}[cmdtDictKey] -\/ realDistanceDict[cmdtDictKey]))) : 0.0;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00423}00423             \textcolor{keywordtype}{double} routeCountCost = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_ae35517921faafef51b87e473bac7dae8}{RoutesCountFactor}} * routes.Count;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00424}00424             \textcolor{keywordflow}{return} routesCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00425}00425                 lowFillInCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00426}00426                 routeCountCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00427}00427                 maxVehicleSpreadCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00428}00428                 maxEarlyArrivalCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00429}00429                 maxLaterArrivalCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00430}00430                 carrierCost +}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00431}00431                 leftCargoCost;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00432}00432         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00433}00433     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_cost_function_8cs_source_l00434}00434 \}}
+
+\end{DoxyCode}

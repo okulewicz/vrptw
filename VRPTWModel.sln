@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRPTWOptimizer.Utils", "VRPTWOptimizer.Utils\VRPTWOptimizer.Utils.csproj", "{A154EE4C-B904-48A9-92F6-472EF07227A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonGIS", "CommonGIS\CommonGIS.csproj", "{EE6E83AE-F00D-4F0C-85FB-993708B92484}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRPTWOptimizer", "VRPTWOptimizer\VRPTWOptimizer.csproj", "{3AD3944A-8A59-439D-BD2B-87A1DCF00277}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRPTWVerifier", "VRPTWVerifier\VRPTWVerifier.csproj", "{E457AE67-B094-4C56-A589-A4FC0438A1AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRPTWOptimizer.Utils.Test", "VRPTWOptimizer.Utils.Test\VRPTWOptimizer.Utils.Test.csproj", "{3368917D-71E8-456E-94DE-CB2470F2F982}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A154EE4C-B904-48A9-92F6-472EF07227A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A154EE4C-B904-48A9-92F6-472EF07227A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A154EE4C-B904-48A9-92F6-472EF07227A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A154EE4C-B904-48A9-92F6-472EF07227A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE6E83AE-F00D-4F0C-85FB-993708B92484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6E83AE-F00D-4F0C-85FB-993708B92484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6E83AE-F00D-4F0C-85FB-993708B92484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6E83AE-F00D-4F0C-85FB-993708B92484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD3944A-8A59-439D-BD2B-87A1DCF00277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD3944A-8A59-439D-BD2B-87A1DCF00277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD3944A-8A59-439D-BD2B-87A1DCF00277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD3944A-8A59-439D-BD2B-87A1DCF00277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E457AE67-B094-4C56-A589-A4FC0438A1AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E457AE67-B094-4C56-A589-A4FC0438A1AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E457AE67-B094-4C56-A589-A4FC0438A1AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E457AE67-B094-4C56-A589-A4FC0438A1AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3368917D-71E8-456E-94DE-CB2470F2F982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3368917D-71E8-456E-94DE-CB2470F2F982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3368917D-71E8-456E-94DE-CB2470F2F982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3368917D-71E8-456E-94DE-CB2470F2F982}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {468E433A-5799-478F-98EC-5C9B2D0AD922}
+	EndGlobalSection
+EndGlobal

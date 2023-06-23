@@ -1,0 +1,30 @@
+\hypertarget{_resource_8cs_source}{}\doxysection{Resource.\+cs}
+\mbox{\hyperlink{_resource_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00001}00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00003}00003 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00004}00004 \{}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00008}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource}{00008}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource}{Resource}}}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00009}00009     \{}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00010}00010         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{string} FINITE\_AVAILABILITY\_ERROR = \textcolor{stringliteral}{"{}Vehicle must have finite availability"{}};}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00014}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a1f17ea00a4626b24cfd802f5c10db744}{00014}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a1f17ea00a4626b24cfd802f5c10db744}{AvailabilityEnd}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00019}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a39dda7959ecbdd196cf88228cc34566c}{00019}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a39dda7959ecbdd196cf88228cc34566c}{AvailabilityStart}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00024}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{00024}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{Id}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00032}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_ab25db6a49f43ca73b65b485408059a80}{00032}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_ab25db6a49f43ca73b65b485408059a80}{Resource}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{double} availabilityStart, \textcolor{keywordtype}{double} availabilityEnd)}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00033}00033         \{}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00034}00034             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a1f17ea00a4626b24cfd802f5c10db744}{AvailabilityEnd}} = availabilityEnd;}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00035}00035             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a39dda7959ecbdd196cf88228cc34566c}{AvailabilityStart}} = availabilityStart;}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00036}00036             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{Id}} = id;}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00037}00037             \textcolor{keywordflow}{if} (!\textcolor{keywordtype}{double}.IsFinite(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a39dda7959ecbdd196cf88228cc34566c}{AvailabilityStart}}))}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00038}00038                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(FINITE\_AVAILABILITY\_ERROR);}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00039}00039             \textcolor{keywordflow}{if} (!\textcolor{keywordtype}{double}.IsFinite(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_a1f17ea00a4626b24cfd802f5c10db744}{AvailabilityEnd}}))}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00040}00040                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(FINITE\_AVAILABILITY\_ERROR);}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{_resource_8cs_source_l00043}00043 \}}
+
+\end{DoxyCode}

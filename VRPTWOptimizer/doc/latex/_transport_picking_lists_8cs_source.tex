@@ -1,0 +1,35 @@
+\hypertarget{_transport_picking_lists_8cs_source}{}\doxysection{Transport\+Picking\+Lists.\+cs}
+\label{_transport_picking_lists_8cs_source}\index{TransportPickingLists.cs@{TransportPickingLists.cs}}
+\mbox{\hyperlink{_transport_picking_lists_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}};}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00002}00002 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00003}00003 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00006}00006 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00007}00007 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_dto}{VRPTWOptimizer.Dto}}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00014}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists}{00014}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists}{TransportPickingLists}}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00015}00015     \{}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00019}00019         [JsonProperty(\textcolor{stringliteral}{"{}capacityVehicleType"{}})]}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00020}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a8318f564183b5b8447ac411f7be1be31}{00020}}         \textcolor{keyword}{public} \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{VehicleType}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a8318f564183b5b8447ac411f7be1be31}{CapacityVehicleType}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00021}00021         \textcolor{comment}{//TODO MO drukować datę bez strefy czasowej}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00025}00025 \textcolor{comment}{}        [JsonProperty(\textcolor{stringliteral}{"{}desiredDepartureTime"{}})]}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00026}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a2d70cd13d86b01771aa6c096ccbb1c93}{00026}}         \textcolor{keyword}{public} DateTime \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a2d70cd13d86b01771aa6c096ccbb1c93}{DesiredDepartureTime}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00030}00030         [JsonProperty(\textcolor{stringliteral}{"{}epCapacity"{}})]}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00031}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_ab107ecf21c34a1c0db8e107df4f9b6b5}{00031}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_ab107ecf21c34a1c0db8e107df4f9b6b5}{EpCapacity}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00035}00035         [JsonProperty(\textcolor{stringliteral}{"{}maxEpCapacity"{}})]}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00036}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a333a40943ed638e6c9122005a660a305}{00036}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a333a40943ed638e6c9122005a660a305}{MaxEpCapacity}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00040}00040         [JsonProperty(\textcolor{stringliteral}{"{}semiTrailerTruckId"{}})]}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00041}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a4e6639adf1e321f227f263b2bf0482d1}{00041}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a4e6639adf1e321f227f263b2bf0482d1}{SemiTrailerTruckId}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00045}00045         [JsonProperty(\textcolor{stringliteral}{"{}vdPickingListStores"{}})]}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00046}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_ad2185c2fc42c7a3513eb74dd7f34bbb0}{00046}}         \textcolor{keyword}{public} List<StorePickingList> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_ad2185c2fc42c7a3513eb74dd7f34bbb0}{StoreOrders}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00050}00050         [JsonProperty(\textcolor{stringliteral}{"{}transportId"{}})]}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00051}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a4b3d69dc71076c3b41753babf2b009f7}{00051}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a4b3d69dc71076c3b41753babf2b009f7}{TransportId}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{_transport_picking_lists_8cs_source_l00053}00053 \}}
+
+\end{DoxyCode}

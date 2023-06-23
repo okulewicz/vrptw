@@ -1,0 +1,5 @@
+var namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle =
+[
+    [ "OracleVRPOptimizer", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer.html", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer" ],
+    [ "OracleVRPOptimizerFactory", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_factory.html", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle_1_1_oracle_v_r_p_optimizer_factory" ]
+];

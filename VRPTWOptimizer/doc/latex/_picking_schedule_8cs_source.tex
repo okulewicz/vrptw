@@ -1,0 +1,144 @@
+\hypertarget{_picking_schedule_8cs_source}{}\doxysection{Picking\+Schedule.\+cs}
+\label{_picking_schedule_8cs_source}\index{PickingSchedule.cs@{PickingSchedule.cs}}
+\mbox{\hyperlink{_picking_schedule_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00001}00001 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00002}00002 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00004}00004 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00006}00006 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00007}00007 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00008}00008 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00010}\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_dto}{00010}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_dto}{VRPTWOptimizer.Dto}}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00015}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{00015}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{PickingSchedule}}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00016}00016     \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00017}00017         \textcolor{keyword}{private} List<VehicleSchedule> vehicleSchedules = \textcolor{keyword}{new} List<VehicleSchedule>();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00021}00021         [JsonProperty(\textcolor{stringliteral}{"{}callbackUrl"{}})]}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00022}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a0f019333d15966453f57ad3969f06ea5}{00022}}         \textcolor{keyword}{public} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a0f019333d15966453f57ad3969f06ea5}{CallbackUrl}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00026}00026         [JsonProperty(\textcolor{stringliteral}{"{}ordersId"{}})]}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00027}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_acbb3fd88453b36cab8bfa06f73ccffa2}{00027}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_acbb3fd88453b36cab8bfa06f73ccffa2}{Id}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00031}00031         [JsonProperty(\textcolor{stringliteral}{"{}ordersCreateDate"{}})]}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00032}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_af37f000ea497fa59f8b66e46cc17b313}{00032}}         \textcolor{keyword}{public} DateTime \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_af37f000ea497fa59f8b66e46cc17b313}{OrdersCreateDate}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00036}00036         [JsonProperty(\textcolor{stringliteral}{"{}ordersPickingStart"{}})]}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00037}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_ace192a5cb49b98841c4dbd524674c85f}{00037}}         \textcolor{keyword}{public} DateTime \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_ace192a5cb49b98841c4dbd524674c85f}{OrdersPickingStart}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00041}00041         [JsonProperty(\textcolor{stringliteral}{"{}vdPickingLists"{}})]}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00042}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a8217713cd0a0206094890e6e61983c18}{00042}}         \textcolor{keyword}{public} List<TransportPickingLists> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a8217713cd0a0206094890e6e61983c18}{PickingLists}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00046}00046         [JsonProperty(\textcolor{stringliteral}{"{}vehiclesAvailability"{}})]}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00047}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a6e35727b2cd88f018aad8b3801a964cb}{00047}}         \textcolor{keyword}{public} List<VehicleSchedule> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a6e35727b2cd88f018aad8b3801a964cb}{VehiclesAvailability}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00055}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a2bb92926aab867e3e76f6b55393e705f}{00055}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{PickingSchedule}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a2bb92926aab867e3e76f6b55393e705f}{GeneratePickingSchedule}}(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} vrpDefinition, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}} vrpSolution)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00056}00056         \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00057}00057             List<TransportPickingLists> transportPickingLists = \textcolor{keyword}{new} List<TransportPickingLists>();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00058}00058             List<VehicleSchedule> vehicleSchedules = \textcolor{keyword}{new} List<VehicleSchedule>();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00059}00059             \textcolor{keywordflow}{foreach} (var vehicle \textcolor{keywordflow}{in} vrpDefinition.Vehicles)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00060}00060             \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00061}00061                 var vehicleSchedule = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule}{VehicleSchedule}}();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00062}00062                 vehicleSchedule.CapacityVehicleType = vehicle.Type;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00063}00063                 vehicleSchedule.VehicleId = vehicle.Id;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00064}00064                 \textcolor{comment}{//HACK: this is not right -\/ better to extend the model with informative variables}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00065}00065                 vehicleSchedule.EpCapacity = vehicle.RoadProperties.EpCount;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00066}00066                 vehicleSchedule.YardAvailabilitySchedule = \textcolor{keyword}{new} List<TimeInterval>();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00067}00067                 \textcolor{keywordtype}{double} availabilityStart = vehicle.AvailabilityStart;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00068}00068                 \textcolor{keywordtype}{double} availabilityEnd = vehicle.AvailabilityEnd;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00069}00069                 \textcolor{keywordflow}{foreach} (var route \textcolor{keywordflow}{in} vrpSolution.Transports.Where(tr => tr.TractorId == vehicleSchedule.VehicleId || tr.TrailerTruckId == vehicleSchedule.VehicleId).OrderBy(tr => tr.AvailableForLoadingTime))}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00070}00070                 \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00071}00071                     availabilityEnd = route.AvailableForLoadingTime;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00072}00072                     vehicleSchedule.YardAvailabilitySchedule.Add(}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00073}00073                         \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_time_interval}{TimeInterval}}()}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00074}00074                         \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00075}00075                             AvailabilityStart = vrpDefinition.ZeroHour.AddSeconds(availabilityStart),}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00076}00076                             AvailabilityEnd = vrpDefinition.ZeroHour.AddSeconds(availabilityEnd)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00077}00077                         \});}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00078}00078                     availabilityStart = route.AvailableForNextAssignmentTime;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00079}00079                 \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00080}00080                 availabilityEnd = vehicle.AvailabilityEnd;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00081}00081                 vehicleSchedule.YardAvailabilitySchedule.Add(}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00082}00082                     \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_time_interval}{TimeInterval}}()}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00083}00083                     \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00084}00084                         AvailabilityStart = vrpDefinition.ZeroHour.AddSeconds(availabilityStart),}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00085}00085                         AvailabilityEnd = vrpDefinition.ZeroHour.AddSeconds(availabilityEnd)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00086}00086                     \});}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00087}00087                 vehicleSchedules.Add(vehicleSchedule);}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00088}00088             \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00089}00089             \textcolor{keywordflow}{foreach} (var route \textcolor{keywordflow}{in} vrpSolution.Transports)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00090}00090             \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00091}00091                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} vehicle = vrpDefinition.Vehicles.First(v => v.Id == route.TrailerTruckId);}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00092}00092                 List<StorePickingList> storePickingLists = \textcolor{keyword}{new} List<StorePickingList>();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00093}00093                 var maxAllowedVehicleCapacityForTransport = \textcolor{keywordtype}{int}.MaxValue;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00094}00094                 \textcolor{keywordflow}{foreach} (var requestId \textcolor{keywordflow}{in} route.Schedule[0].LoadedRequestsIds)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00095}00095                 \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00096}00096                     var request = vrpDefinition.Requests.First(rq => rq.Id == requestId);}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00097}00097                     maxAllowedVehicleCapacityForTransport = Math.Min(maxAllowedVehicleCapacityForTransport, request.MaxVehicleSize.EpCount);}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00098}00098                     var visitsDictionary = route.Schedule}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00099}00099                         .Select((sch, idx) => \textcolor{keyword}{new} KeyValuePair<int, string>(idx, sch.LocationId))}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00100}00100                         .ToList();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00102}00102                     \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_store_picking_list}{StorePickingList}} storePickingList = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_store_picking_list}{StorePickingList}}()}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00103}00103                     \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00104}00104                         DeliveryLocationId = request.DeliveryLocation.Id,}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00105}00105                         EpCount = request.Size[0],}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00106}00106                         LoadingOrder = visitsDictionary.Count -\/ visitsDictionary.First(vd => vd.Value == request.DeliveryLocation.Id).Key -\/ 1,}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00107}00107                         GoodsList = \textcolor{keyword}{new} List<CargoUnit>()}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00108}00108                     \};}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00109}00109                     storePickingLists.Add(storePickingList);}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00110}00110                 \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00111}00111                 storePickingLists = storePickingLists.OrderBy(st => st.LoadingOrder).ToList();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00112}00112                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < storePickingLists.Count; i++)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00113}00113                 \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00114}00114                     storePickingLists[i].\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_store_picking_list_a536b353abb1ce4d99f78efacf86a89d8}{LoadingOrder}} = i + 1;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00115}00115                 \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00116}00116                 \textcolor{keywordflow}{if} (storePickingLists.Count > 0)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00117}00117                 \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00118}00118                     var transport = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists}{TransportPickingLists}}()}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00119}00119                     \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00120}00120                         TransportId = route.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_transport_picking_lists_a4b3d69dc71076c3b41753babf2b009f7}{TransportId}},}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00121}00121                         CapacityVehicleType = vehicle.Type,}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00122}00122                         DesiredDepartureTime = vrpDefinition.ZeroHour.AddSeconds(route.Schedule[0].DepartureTime),}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00123}00123                         EpCapacity = (int)vehicle.Capacity[0],}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00124}00124                         MaxEpCapacity = maxAllowedVehicleCapacityForTransport,}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00125}00125                         SemiTrailerTruckId = vehicle.Id,}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00126}00126                         StoreOrders = storePickingLists}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00127}00127                     \};}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00128}00128                     transportPickingLists.Add(transport);}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00129}00129                 \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00130}00130             \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00132}00132             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{PickingSchedule}}()}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00133}00133             \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00134}00134                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a0f019333d15966453f57ad3969f06ea5}{CallbackUrl}} = \textcolor{stringliteral}{"{}http://fakeurl.com:5050/loadSchedule"{}},}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00135}00135                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_acbb3fd88453b36cab8bfa06f73ccffa2}{Id}} = 1,}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00136}00136                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_af37f000ea497fa59f8b66e46cc17b313}{OrdersCreateDate}} = vrpDefinition.Date.AddDays(-\/2),}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00137}00137                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_ace192a5cb49b98841c4dbd524674c85f}{OrdersPickingStart}} = vrpDefinition.ZeroHour,}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00138}00138                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a8217713cd0a0206094890e6e61983c18}{PickingLists}} = transportPickingLists,}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00139}00139                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a6e35727b2cd88f018aad8b3801a964cb}{VehiclesAvailability}} = vehicleSchedules}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00140}00140             \};}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00141}00141         \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00149}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a87ecd9ba91d3364b2fef5e3e26e7a8cf}{00149}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule}{PickingSchedule}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a87ecd9ba91d3364b2fef5e3e26e7a8cf}{GeneratePickingSchedule}}(List<IRoute> routes, List<Vehicle> vehicles)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00150}00150         \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00151}00151             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} NotImplementedException();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00152}00152         \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00158}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a226a177206d20e477a9580353ec81d2f}{00158}}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_picking_schedule_a226a177206d20e477a9580353ec81d2f}{TrySaveToFile}}(\textcolor{keywordtype}{string} filename)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00159}00159         \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00160}00160             var settings = \textcolor{keyword}{new} JsonSerializerSettings();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00161}00161             settings.Formatting = Formatting.Indented;}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00162}00162             var serializer = JsonSerializer.Create(settings);}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00163}00163             var writer = \textcolor{keyword}{new} StringWriter();}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00164}00164             serializer.Serialize(writer, \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00165}00165             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00166}00166             \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00167}00167                 File.WriteAllText(filename, writer.ToString());}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00168}00168             \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00169}00169             \textcolor{keywordflow}{catch} (IOException)}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00170}00170             \{}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00171}00171                 Console.Write(writer.ToString());}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00172}00172             \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00173}00173         \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00174}00174     \}}
+\DoxyCodeLine{\Hypertarget{_picking_schedule_8cs_source_l00175}00175 \}}
+
+\end{DoxyCode}

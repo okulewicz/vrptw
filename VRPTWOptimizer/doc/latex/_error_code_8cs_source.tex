@@ -1,0 +1,35 @@
+\hypertarget{_error_code_8cs_source}{}\doxysection{Error\+Code.\+cs}
+\label{_error_code_8cs_source}\index{ErrorCode.cs@{ErrorCode.cs}}
+\mbox{\hyperlink{_error_code_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00001}00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00002}00002 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00007}\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation}{00007}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation}{VRPTWOptimizer.Utils.Validation}}}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00009}00009     [Flags]}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00010}\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{00010}}     \textcolor{keyword}{public} \textcolor{keyword}{enum} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00011}00011     \{}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00012}00012         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a64f9f6851ed620f44f872791d4ff718e}{ImpossibleDriveTime}} = 1,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00013}00013         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5ac08799a79b31b87ebdcbfe1b3917cc8b}{RequestPropertiesExcludeAllVehicles}} = 2,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00014}00014         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5add3ec4d0ab2a96ceb6a2ec30f1827c73}{ImpossiblePreferredTimeWindow}} = 4,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00015}00015         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a01f804c0f2a14704bce2b81cbc1f1b2e}{ImpossibleTimeWindow}} = 8,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00016}00016         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5afdf152936dcbf201445440856357f6ac}{WrongType}} = 16,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00017}00017         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a7771b247ed7bc154a81a5fdec22ac804}{WrongProperties}} = 32,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00018}00018         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a435270932c9c3714adf540f268a83d8e}{CapacityVehicleMissing}} = 64,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00019}00019         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a31c6f30794828f187ebfdcbe0463db06}{TractorAssignedAsCapacityVehicle}} = 128,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00020}00020         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a39ba1da81d8691f343d45732ba73827a}{ExceededCapacity}} = 256,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00021}00021         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5ac0f367871aee8c0be49c3ba350d7197d}{OverlappingRoutes}} = 512,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00022}00022         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a363322bf9450d42812e30b69b583e616}{TractorMissing}} = 1024,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00023}00023         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a2ea1895f1132daa47eb3d45c8eeac22a}{IdenticalDeliveryAndPickup}} = 2048,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00024}00024         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a5f124d7e4fab1e122cdfbf40a76bc8d7}{ZeroPackages}} = 4096,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00025}00025         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a4ee11e72939731405733b692a0ea2637}{TooLargeVehicleSize}} = 8192,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00026}00026         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5a5eca8b3f94ffa150b1ba8f970c0bd59b}{ImpossibleOperation}} = 16384,}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00027}00027         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5af5744419c54bfc0e9a97acbe0008d0ef}{LeakyRoutes}} = 32768}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{_error_code_8cs_source_l00029}00029 \}}
+
+\end{DoxyCode}

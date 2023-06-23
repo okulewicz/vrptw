@@ -1,0 +1,127 @@
+\hypertarget{_v_vehicle_8cs_source}{}\doxysection{VVehicle.\+cs}
+\label{_v_vehicle_8cs_source}\index{VVehicle.cs@{VVehicle.cs}}
+\mbox{\hyperlink{_v_vehicle_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}};}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00002}00002 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00005}00005 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_classes}{VRPTWOptimizer.BL.SA.Classes}}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00007}00007     \textcolor{keyword}{internal} \textcolor{keyword}{class }VVehicle}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00008}00008     \{}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00009}00009         \textcolor{keyword}{public} readonly \textcolor{keywordtype}{double} vehicleCostFlatRate;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00010}00010         \textcolor{keyword}{public} readonly \textcolor{keywordtype}{double} vehicleFlatCostThreshold;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00011}00011         \textcolor{keyword}{public} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums}{Enums}}.Aggregation[] AggregationType;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00012}00012         \textcolor{keyword}{public} \textcolor{keywordtype}{double} AvailabilityEnd;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00013}00013         \textcolor{keyword}{public} \textcolor{keywordtype}{double} AvailabilityStart;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00014}00014         \textcolor{comment}{// tablica opisujaca typ agregacji dla każdego z wymiarów capacity}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00015}00015         \textcolor{keyword}{public} \textcolor{keywordtype}{double}[] Capacity;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00016}00016         \textcolor{keyword}{public} \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} FinalLocation;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00017}00017         \textcolor{keyword}{public} \textcolor{keywordtype}{int} ID;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00018}00018         \textcolor{keyword}{public} \textcolor{keywordtype}{double} MaxRideLength;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00019}00019         \textcolor{keyword}{public} \textcolor{keywordtype}{double} MaxRideTime;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00020}00020         \textcolor{keyword}{public} \textcolor{keywordtype}{string} OwnerID;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00021}00021         \textcolor{keyword}{public} \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} roadProperties;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00022}00022         \textcolor{keyword}{public} \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} StartLocation;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00023}00023         \textcolor{keyword}{public} \textcolor{keywordtype}{double} vehicleCostPerDistanceUnit;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00024}00024         \textcolor{keyword}{public} \textcolor{keywordtype}{double} vehicleCostPerTimeUnit;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00025}00025         \textcolor{keyword}{public} \textcolor{keywordtype}{double} vehicleCostPerUsage;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00026}00026         \textcolor{keyword}{public} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType vehicleType;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00027}00027        \textcolor{comment}{// public bool[] SpecialProperties = new bool[10]; // !!!!!!!!!! HACK TO TRZEBA ZMIENIC. NIE MOŻE BYĆ NA SZTYWNO}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00028}00028         \textcolor{comment}{// public MaxVehicleSize VehicleLimitation;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00030}00030         \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00035}00035 \textcolor{comment}{        public VVehicle()}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00036}00036 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00037}00037 \textcolor{comment}{            ID = 0;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00038}00038 \textcolor{comment}{            OwnerID = "{}0"{};}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00039}00039 \textcolor{comment}{            MaxRideTime = 0;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00040}00040 \textcolor{comment}{            MaxRideLength = 0;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00041}00041 \textcolor{comment}{            AvailabilityStart = 0;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00042}00042 \textcolor{comment}{            AvailabilityEnd = 0;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00043}00043 \textcolor{comment}{            // VehicleLimitation = new MaxVehicleSize();}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00044}00044 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00045}00045 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00059}00059         \textcolor{keyword}{public} VVehicle(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id},}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00060}00060                         \textcolor{keywordtype}{string} ownerID,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00061}00061                         \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} ILocation,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00062}00062                         \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} FLocation,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00063}00063                         \textcolor{keywordtype}{double}[] cap,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00064}00064                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums}{Enums}}.Aggregation[] AggT,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00065}00065                         \textcolor{keywordtype}{double} maxRideTime,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00066}00066                         \textcolor{keywordtype}{double} maxRideLength,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00067}00067                         \textcolor{keywordtype}{double} availabilityStart,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00068}00068                         \textcolor{keywordtype}{double} availabilityEnd,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00069}00069                         \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} roadProp,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00070}00070                         \textcolor{keywordtype}{double} vehicleCostPDU,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00071}00071                         \textcolor{keywordtype}{double} vehicleCostPTU,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00072}00072                         \textcolor{keywordtype}{double} vehicleCostPU,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00073}00073                         \textcolor{keywordtype}{double} vehicleCostFlatRate,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00074}00074                         \textcolor{keywordtype}{double} vehicleFlatCostThreshold,}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00075}00075                         \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType vehicleType)}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00076}00076         \{}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00077}00077             ID = id;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00078}00078             OwnerID = ownerID;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00079}00079             StartLocation = ILocation;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00080}00080             FinalLocation = FLocation;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00081}00081             MaxRideTime = maxRideTime;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00082}00082             MaxRideLength = maxRideLength;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00083}00083             Capacity = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[cap.Length];}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00084}00084             AggregationType = \textcolor{keyword}{new} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums}{Enums}}.Aggregation[AggT.Length];}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00085}00085             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cap.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00086}00086             \{}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00087}00087                 Capacity[i] = cap[i];}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00088}00088                 AggregationType[i] = AggT[i];}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00089}00089             \}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00091}00091             AvailabilityStart = availabilityStart;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00092}00092             AvailabilityEnd = availabilityEnd;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00093}00093             roadProperties = roadProp;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00094}00094             this.vehicleCostPerDistanceUnit = vehicleCostPDU;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00095}00095             this.vehicleCostPerTimeUnit = vehicleCostPTU;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00096}00096             this.vehicleCostPerUsage = vehicleCostPU;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00097}00097             this.vehicleCostFlatRate = vehicleCostFlatRate;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00098}00098             this.vehicleFlatCostThreshold = vehicleFlatCostThreshold;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00099}00099             this.vehicleType = vehicleType;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00100}00100             \textcolor{comment}{// VehicleLimitation = vehicleLimitation;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00101}00101         \}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00107}00107         \textcolor{keyword}{public} VVehicle Clone()}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00108}00108         \{}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00109}00109             VVehicle vCopy = \textcolor{keyword}{new} VVehicle(ID, OwnerID, StartLocation, FinalLocation, Capacity, AggregationType, MaxRideTime, MaxRideLength, AvailabilityStart, AvailabilityEnd, roadProperties, vehicleCostPerDistanceUnit, vehicleCostPerTimeUnit, vehicleCostPerUsage, vehicleCostFlatRate, vehicleFlatCostThreshold, vehicleType);}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00110}00110             \textcolor{keywordflow}{return} vCopy;}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00111}00111         \}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00112}00112         \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00118}00118 \textcolor{comment}{        public Vehicle MapVVehicle(List<VVehicle> vehicles)}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00119}00119 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00120}00120 \textcolor{comment}{          //  double[] capacity = new double[2];   // w Stokrotce mamy tylko wagę i liczbę palet }}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00121}00121 \textcolor{comment}{          //  capacity[0] = this.VehicleLimitation.GrossVehicleWeight;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00122}00122 \textcolor{comment}{          //  capacity[1] = this.VehicleLimitation.EpCount;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00123}00123 \textcolor{comment}{            bool[] special = new bool[0];   // w Stokrotce nie mamy żadnych specjalnych właściwości}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00124}00124 \textcolor{comment}{            //Enums.Aggregation[] aggregation = new VRPTWOptimizer.Enums.Aggregation[] \{ VRPTWOptimizer.Enums.Aggregation.Sum, VRPTWOptimizer.Enums.Aggregation.Sum \};}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00125}00125 \textcolor{comment}{            SAVehicle v = null;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00126}00126 \textcolor{comment}{            }}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00127}00127 \textcolor{comment}{            VVehicle v\_temp = null;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00128}00128 \textcolor{comment}{            foreach (var veh in vehicles)   // potrzebujemy informację o Aviability Start i End pojazdu o danym ID}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00129}00129 \textcolor{comment}{            \{                               // ale pełna dostępność z oryginalnych danych, a nie dostępność podzielona}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00130}00130 \textcolor{comment}{                if (veh.ID == this.ID)      // na potrzeby SA}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00131}00131 \textcolor{comment}{                \{}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00132}00132 \textcolor{comment}{                    v\_temp = veh.Clone();}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00133}00133 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00134}00134 \textcolor{comment}{                \}}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00135}00135 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00136}00136 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00137}00137 \textcolor{comment}{            v = new SAVehicle((int)this.ID, Capacity, special, AggregationType, StartLocation, v\_temp.AvailabilityStart,}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00138}00138 \textcolor{comment}{                FinalLocation, v\_temp.AvailabilityEnd, MaxRideTime, roadProperties, this.VehicleType,}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00139}00139 \textcolor{comment}{                1.0, 0.0,0.0,Int16.Parse(OwnerID));}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00140}00140 \textcolor{comment}{            }}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00141}00141 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00142}00142 \textcolor{comment}{            return v;}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00143}00143 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00144}00144 \textcolor{comment}{        */}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00145}00145     \}}
+\DoxyCodeLine{\Hypertarget{_v_vehicle_8cs_source_l00146}00146 \}}
+
+\end{DoxyCode}

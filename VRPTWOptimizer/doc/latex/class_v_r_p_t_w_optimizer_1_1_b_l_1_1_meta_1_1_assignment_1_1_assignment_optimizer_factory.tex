@@ -1,0 +1,174 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory}{}\doxysection{VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory}\index{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}}
+Inheritance diagram for VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a44ca523629613143a3d021269344c99f}{Create\+Optimizer}} ()
+\begin{DoxyCompactList}\small\item\em Creates new instance of a VRP optimizer with default parameters \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a90a749a76b6f12f8347eb438c0012346}{Create\+Optimizer}} (Dictionary$<$ string, object $>$ configuration)
+\begin{DoxyCompactList}\small\item\em Creates new instance of a VRP optimizer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_adae546bd44277344250edf2cb998967d}{Max\+Computatation\+Seconds\+Default}} = 60
+\begin{DoxyCompactList}\small\item\em Default number of second after which the computations will stop \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_acb5b47077a3aa55d27ec2bc269910a0a}{Max\+Computatation\+Seconds\+Key}} = \char`\"{}Max\+Computatation\+Seconds\char`\"{}
+\begin{DoxyCompactList}\small\item\em Configuration key for specifying time limit for computations (either iteration or time limit stops algorithm, whichever runs out first) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_af67bf4e495b3a2e5c968074605df49c1}{Max\+Iterations\+Default}} = 1000
+\begin{DoxyCompactList}\small\item\em Default number of iterations to stop computations \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_aa2c0ee6fe85ad2821b5d47c691b721a3}{Max\+Iterations\+Key}} = \char`\"{}Max\+Iterations\char`\"{}
+\begin{DoxyCompactList}\small\item\em Configuration key specifying iterations limit for computations (either iteration or time limit stops algorithm, whichever runs out first) \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a8b110a7bda2986debc632d75045b7ec5}{Max\+Processors\+Count\+Default}} = int.\+Max\+Value
+\begin{DoxyCompactList}\small\item\em Default number of CPUs the algorithm is going to use (this is capped by Environment.\+Get\+Processor\+Count, so int.\+Max\+Value means all of the available processors) \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a55b86f8b7ebf4e76634980df16b4e099}{Max\+Processors\+Count\+Key}} = \char`\"{}Max\+Processors\+Count\char`\"{}
+\begin{DoxyCompactList}\small\item\em Configuration key for specifying number of CPUs to run algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source}{Assignment\+Optimizer\+Factory.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a44ca523629613143a3d021269344c99f}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a44ca523629613143a3d021269344c99f}} 
+\index{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}!CreateOptimizer@{CreateOptimizer}}
+\index{CreateOptimizer@{CreateOptimizer}!VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{CreateOptimizer()}{CreateOptimizer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory.\+Create\+Optimizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates new instance of a VRP optimizer with default parameters 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer_factory_acd6fa8b5857b0a7bc4c8e1e54ed6ebb7}{VRPTWOptimizer.\+Interfaces.\+IVRPOptimizer\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source}{Assignment\+Optimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a90a749a76b6f12f8347eb438c0012346}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a90a749a76b6f12f8347eb438c0012346}} 
+\index{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}!CreateOptimizer@{CreateOptimizer}}
+\index{CreateOptimizer@{CreateOptimizer}!VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{CreateOptimizer()}{CreateOptimizer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory.\+Create\+Optimizer (\begin{DoxyParamCaption}\item[{Dictionary$<$ string, object $>$}]{configuration }\end{DoxyParamCaption})}
+
+
+
+Creates new instance of a VRP optimizer 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer_factory_a1bed8a3030dd6978dbcf37826634a8e6}{VRPTWOptimizer.\+Interfaces.\+IVRPOptimizer\+Factory}}.
+
+
+
+Definition at line \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source}{Assignment\+Optimizer\+Factory.\+cs}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_adae546bd44277344250edf2cb998967d}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_adae546bd44277344250edf2cb998967d}} 
+\index{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}!MaxComputatationSecondsDefault@{MaxComputatationSecondsDefault}}
+\index{MaxComputatationSecondsDefault@{MaxComputatationSecondsDefault}!VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxComputatationSecondsDefault}{MaxComputatationSecondsDefault}}
+{\footnotesize\ttfamily const int VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory.\+Max\+Computatation\+Seconds\+Default = 60\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default number of second after which the computations will stop 
+
+
+
+Definition at line \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source}{Assignment\+Optimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_acb5b47077a3aa55d27ec2bc269910a0a}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_acb5b47077a3aa55d27ec2bc269910a0a}} 
+\index{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}!MaxComputatationSecondsKey@{MaxComputatationSecondsKey}}
+\index{MaxComputatationSecondsKey@{MaxComputatationSecondsKey}!VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxComputatationSecondsKey}{MaxComputatationSecondsKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory.\+Max\+Computatation\+Seconds\+Key = \char`\"{}Max\+Computatation\+Seconds\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configuration key for specifying time limit for computations (either iteration or time limit stops algorithm, whichever runs out first) 
+
+
+
+Definition at line \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source}{Assignment\+Optimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_af67bf4e495b3a2e5c968074605df49c1}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_af67bf4e495b3a2e5c968074605df49c1}} 
+\index{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}!MaxIterationsDefault@{MaxIterationsDefault}}
+\index{MaxIterationsDefault@{MaxIterationsDefault}!VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxIterationsDefault}{MaxIterationsDefault}}
+{\footnotesize\ttfamily const int VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory.\+Max\+Iterations\+Default = 1000\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default number of iterations to stop computations 
+
+
+
+Definition at line \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source}{Assignment\+Optimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_aa2c0ee6fe85ad2821b5d47c691b721a3}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_aa2c0ee6fe85ad2821b5d47c691b721a3}} 
+\index{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}!MaxIterationsKey@{MaxIterationsKey}}
+\index{MaxIterationsKey@{MaxIterationsKey}!VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxIterationsKey}{MaxIterationsKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory.\+Max\+Iterations\+Key = \char`\"{}Max\+Iterations\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configuration key specifying iterations limit for computations (either iteration or time limit stops algorithm, whichever runs out first) 
+
+
+
+Definition at line \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source}{Assignment\+Optimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a8b110a7bda2986debc632d75045b7ec5}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a8b110a7bda2986debc632d75045b7ec5}} 
+\index{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}!MaxProcessorsCountDefault@{MaxProcessorsCountDefault}}
+\index{MaxProcessorsCountDefault@{MaxProcessorsCountDefault}!VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxProcessorsCountDefault}{MaxProcessorsCountDefault}}
+{\footnotesize\ttfamily const int VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory.\+Max\+Processors\+Count\+Default = int.\+Max\+Value\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Default number of CPUs the algorithm is going to use (this is capped by Environment.\+Get\+Processor\+Count, so int.\+Max\+Value means all of the available processors) 
+
+
+
+Definition at line \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source}{Assignment\+Optimizer\+Factory.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a55b86f8b7ebf4e76634980df16b4e099}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment_1_1_assignment_optimizer_factory_a55b86f8b7ebf4e76634980df16b4e099}} 
+\index{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}!MaxProcessorsCountKey@{MaxProcessorsCountKey}}
+\index{MaxProcessorsCountKey@{MaxProcessorsCountKey}!VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory@{VRPTWOptimizer.BL.Meta.Assignment.AssignmentOptimizerFactory}}
+\doxysubsubsection{\texorpdfstring{MaxProcessorsCountKey}{MaxProcessorsCountKey}}
+{\footnotesize\ttfamily const string VRPTWOptimizer.\+BL.\+Meta.\+Assignment.\+Assignment\+Optimizer\+Factory.\+Max\+Processors\+Count\+Key = \char`\"{}Max\+Processors\+Count\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configuration key for specifying number of CPUs to run algorithm 
+
+
+
+Definition at line \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_assignment_optimizer_factory_8cs_source}{Assignment\+Optimizer\+Factory.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_assignment_optimizer_factory_8cs}{Assignment\+Optimizer\+Factory.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+var namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators =
+[
+    [ "ExpertServiceTimeEstimator", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator.html", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator" ]
+];

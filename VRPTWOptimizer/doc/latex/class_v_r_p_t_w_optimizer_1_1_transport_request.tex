@@ -1,0 +1,499 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request}{}\doxysection{VRPTWOptimizer.\+Transport\+Request Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_transport_request}\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+
+
+Description of the request to move cargo from pickup to delivery Location  
+
+
+Inheritance diagram for VRPTWOptimizer.\+Transport\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_r_p_t_w_optimizer_1_1_transport_request}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a849a151f9e67bbf8d9f94ed074a2aee0}{Transport\+Request}} (int id, double\mbox{[}$\,$\mbox{]} size, int\mbox{[}$\,$\mbox{]} necessary\+Vehicle\+Special\+Properties, int package\+Count, int package\+Count\+For\+Imediate\+Retrieval, \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} start\+Location, double pickup\+Available\+Time\+Window\+Start, double pickup\+Prefered\+Time\+Window\+Start, double pickup\+Prefered\+Time\+Window\+End, double pickup\+Available\+Time\+Window\+End, \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} end\+Location, double delivery\+Available\+Time\+Window\+Start, double delivery\+Prefered\+Time\+Window\+Start, double delivery\+Prefered\+Time\+Window\+End, double delivery\+Available\+Time\+Window\+End, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_acef88cc2214a76baf375f78f1383f290}{Request\+Type}} request\+Type, int\mbox{[}$\,$\mbox{]} cargo\+Types, \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} max\+Vehicle\+Size, int\mbox{[}$\,$\mbox{]} restricted\+Goods\+Types, Dictionary$<$ int, double $>$ mutually\+Exclusive\+Requests\+Id\+Time\+Buffer\+Dict, double revenue\+Value, string name)
+\begin{DoxyCompactList}\small\item\em Creates generic \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} when class is inherited from it will have to use this to define problem \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a97649be72f223ecc835c928f74e4d52b}{Extract\+Best\+Fit\+Requests}} (List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ requests, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} time\+Estimator, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Provider)
+\begin{DoxyCompactList}\small\item\em Find requests that should be paired with this \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_aac171c36facacfdf511bc26ebbfcab20}{Cargo\+Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Main cargo type \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a5c725eede72d88fbd116cf098452552f}{Cargo\+Types}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em All cargo types within request \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a5d26071503ce56dd916b104177a7609f}{Delivery\+Available\+Time\+Window\+End}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time window end while request can still be delivered \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a8a06d2f55129c63c267c84cad2e5672e}{Delivery\+Available\+Time\+Window\+Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Earlies time window start when request can be delivered \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a35f1e8d6b1620ccad38d00e015ebcf50}{Delivery\+Location}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Cargo destination \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a9584447b8565988ef50063687e098e41}{Delivery\+Prefered\+Time\+Window\+End}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Delivery time window end \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a1f8bfecdc5a92ecd1b83331d4f39dc81}{Delivery\+Prefered\+Time\+Window\+Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Delivery time window start \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a32189b723545475fbaef32200a3d4a47}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Numeric request identifier \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_ac6a087105ba0cdde12894eedc7e39ea0}{Max\+Vehicle\+Size}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Upper bound restrictions of vehicle parameters \end{DoxyCompactList}\item 
+Dictionary$<$ int, double $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a56f40646a4e52ff215aa115ef7349eed}{Mutually\+Exclusive\+Requests\+Id\+Time\+Buffer\+Dict}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dictionary of requests that can be visited only after certain time of departure from end location or must be served certain time before arrival to end location \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a6c98b3db35b881fc1c16da6e9f487d59}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Custom request identifier \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a3fee3d993c9dbaf0908742c16f789658}{Necessary\+Vehicle\+Special\+Properties}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of domain specific features that the vehicle needs to have to serve this request (e.\+g. freezer, lift) vector needs to conform to \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}{Vehicle.\+Special\+Properties}} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a06c9cb8ce91a2a157ef5aafad417e2c6}{Package\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Total count of items to be delivered (e.\+g. Euro Pallet and DHP pallet are both a single item) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a3289479578b51949225c4c823d62b954}{Package\+Count\+For\+Imediate\+Retrieval}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Subgroup of Package\+Count property which are to be retrieved just after delivery \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a23eb10ec3f51685cde69ac3260193840}{Pickup\+Available\+Time\+Window\+End}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time window end while request can still be picked up \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a3eac1c563851c6d68887c2817912b039}{Pickup\+Available\+Time\+Window\+Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Earlies time window start when request can be picked up \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a237c8c9bcfdd77c4e15948276abdb502}{Pickup\+Location}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Location where the cargo is picked up \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_af3321390516fa33422232b3810ea184b}{Pickup\+Prefered\+Time\+Window\+End}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time window end when request should be picked up \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a7f0799b141f71f459daf024c5d666f54}{Pickup\+Prefered\+Time\+Window\+Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time window start when request should be picked up \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a577b69e6de2c28ad2327f268d78a5ce5}{Restricted\+Cargo\+Types}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Cargo types identifiers that could not be transported together with this request \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a608a98fd3db46f3e9ca16e8e6bb76bcc}{Revenue\+Value}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Additional value gained if request is completed \end{DoxyCompactList}\item 
+double\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_aabb57d387dd0e8424f079a9228ed5e29}{Size}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Total cargo size (Euro pallets count, mass, cubic meters etc.) Must conform to \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} capacity definition \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_acef88cc2214a76baf375f78f1383f290}{Request\+Type}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_ab16589c2cb1153d708ae7006a1424127}{Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Type of request\+: distribution, backhauling etc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Description of the request to move cargo from pickup to delivery Location 
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a849a151f9e67bbf8d9f94ed074a2aee0}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a849a151f9e67bbf8d9f94ed074a2aee0}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!TransportRequest@{TransportRequest}}
+\index{TransportRequest@{TransportRequest}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{TransportRequest()}{TransportRequest()}}
+{\footnotesize\ttfamily VRPTWOptimizer.\+Transport\+Request.\+Transport\+Request (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{double\mbox{[}$\,$\mbox{]}}]{size,  }\item[{int\mbox{[}$\,$\mbox{]}}]{necessary\+Vehicle\+Special\+Properties,  }\item[{int}]{package\+Count,  }\item[{int}]{package\+Count\+For\+Imediate\+Retrieval,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}}]{start\+Location,  }\item[{double}]{pickup\+Available\+Time\+Window\+Start,  }\item[{double}]{pickup\+Prefered\+Time\+Window\+Start,  }\item[{double}]{pickup\+Prefered\+Time\+Window\+End,  }\item[{double}]{pickup\+Available\+Time\+Window\+End,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}}]{end\+Location,  }\item[{double}]{delivery\+Available\+Time\+Window\+Start,  }\item[{double}]{delivery\+Prefered\+Time\+Window\+Start,  }\item[{double}]{delivery\+Prefered\+Time\+Window\+End,  }\item[{double}]{delivery\+Available\+Time\+Window\+End,  }\item[{\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_acef88cc2214a76baf375f78f1383f290}{Request\+Type}}}]{request\+Type,  }\item[{int\mbox{[}$\,$\mbox{]}}]{cargo\+Types,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}}]{max\+Vehicle\+Size,  }\item[{int\mbox{[}$\,$\mbox{]}}]{restricted\+Goods\+Types,  }\item[{Dictionary$<$ int, double $>$}]{mutually\+Exclusive\+Requests\+Id\+Time\+Buffer\+Dict,  }\item[{double}]{revenue\+Value,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Creates generic \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} when class is inherited from it will have to use this to define problem 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em size} & \\
+\hline
+{\em necessary\+Vehicle\+Special\+Properties} & \\
+\hline
+{\em package\+Count} & \\
+\hline
+{\em package\+Count\+For\+Imediate\+Retrieval} & \\
+\hline
+{\em start\+Location} & \\
+\hline
+{\em pickup\+Available\+Time\+Window\+Start} & \\
+\hline
+{\em pickup\+Prefered\+Time\+Window\+Start} & \\
+\hline
+{\em pickup\+Prefered\+Time\+Window\+End} & \\
+\hline
+{\em pickup\+Available\+Time\+Window\+End} & \\
+\hline
+{\em end\+Location} & \\
+\hline
+{\em delivery\+Available\+Time\+Window\+Start} & \\
+\hline
+{\em delivery\+Prefered\+Time\+Window\+Start} & \\
+\hline
+{\em delivery\+Prefered\+Time\+Window\+End} & \\
+\hline
+{\em delivery\+Available\+Time\+Window\+End} & \\
+\hline
+{\em request\+Type} & \\
+\hline
+{\em cargo\+Types} & \\
+\hline
+{\em max\+Vehicle\+Size} & \\
+\hline
+{\em restricted\+Goods\+Types} & \\
+\hline
+{\em mutually\+Exclusive\+Requests\+Id\+Time\+Buffer\+Dict} & \\
+\hline
+{\em revenue\+Value} & \\
+\hline
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00150}{150}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a97649be72f223ecc835c928f74e4d52b}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a97649be72f223ecc835c928f74e4d52b}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!ExtractBestFitRequests@{ExtractBestFitRequests}}
+\index{ExtractBestFitRequests@{ExtractBestFitRequests}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{ExtractBestFitRequests()}{ExtractBestFitRequests()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ VRPTWOptimizer.\+Transport\+Request.\+Extract\+Best\+Fit\+Requests (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{requests,  }\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}}}]{time\+Estimator,  }\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Provider }\end{DoxyParamCaption})}
+
+
+
+Find requests that should be paired with this \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em requests} & \\
+\hline
+{\em time\+Estimator} & \\
+\hline
+{\em distance\+Provider} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00213}{213}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_aac171c36facacfdf511bc26ebbfcab20}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_aac171c36facacfdf511bc26ebbfcab20}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!CargoType@{CargoType}}
+\index{CargoType@{CargoType}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{CargoType}{CargoType}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+Transport\+Request.\+Cargo\+Type\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Main cargo type 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a5c725eede72d88fbd116cf098452552f}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a5c725eede72d88fbd116cf098452552f}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!CargoTypes@{CargoTypes}}
+\index{CargoTypes@{CargoTypes}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{CargoTypes}{CargoTypes}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} VRPTWOptimizer.\+Transport\+Request.\+Cargo\+Types\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+All cargo types within request 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a5d26071503ce56dd916b104177a7609f}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a5d26071503ce56dd916b104177a7609f}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!DeliveryAvailableTimeWindowEnd@{DeliveryAvailableTimeWindowEnd}}
+\index{DeliveryAvailableTimeWindowEnd@{DeliveryAvailableTimeWindowEnd}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{DeliveryAvailableTimeWindowEnd}{DeliveryAvailableTimeWindowEnd}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Transport\+Request.\+Delivery\+Available\+Time\+Window\+End\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Time window end while request can still be delivered 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a8a06d2f55129c63c267c84cad2e5672e}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a8a06d2f55129c63c267c84cad2e5672e}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!DeliveryAvailableTimeWindowStart@{DeliveryAvailableTimeWindowStart}}
+\index{DeliveryAvailableTimeWindowStart@{DeliveryAvailableTimeWindowStart}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{DeliveryAvailableTimeWindowStart}{DeliveryAvailableTimeWindowStart}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Transport\+Request.\+Delivery\+Available\+Time\+Window\+Start\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Earlies time window start when request can be delivered 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a35f1e8d6b1620ccad38d00e015ebcf50}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a35f1e8d6b1620ccad38d00e015ebcf50}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!DeliveryLocation@{DeliveryLocation}}
+\index{DeliveryLocation@{DeliveryLocation}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{DeliveryLocation}{DeliveryLocation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} VRPTWOptimizer.\+Transport\+Request.\+Delivery\+Location\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Cargo destination 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a9584447b8565988ef50063687e098e41}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a9584447b8565988ef50063687e098e41}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!DeliveryPreferedTimeWindowEnd@{DeliveryPreferedTimeWindowEnd}}
+\index{DeliveryPreferedTimeWindowEnd@{DeliveryPreferedTimeWindowEnd}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{DeliveryPreferedTimeWindowEnd}{DeliveryPreferedTimeWindowEnd}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Transport\+Request.\+Delivery\+Prefered\+Time\+Window\+End\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Delivery time window end 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a1f8bfecdc5a92ecd1b83331d4f39dc81}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a1f8bfecdc5a92ecd1b83331d4f39dc81}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!DeliveryPreferedTimeWindowStart@{DeliveryPreferedTimeWindowStart}}
+\index{DeliveryPreferedTimeWindowStart@{DeliveryPreferedTimeWindowStart}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{DeliveryPreferedTimeWindowStart}{DeliveryPreferedTimeWindowStart}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Transport\+Request.\+Delivery\+Prefered\+Time\+Window\+Start\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Delivery time window start 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a32189b723545475fbaef32200a3d4a47}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a32189b723545475fbaef32200a3d4a47}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!Id@{Id}}
+\index{Id@{Id}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+Transport\+Request.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Numeric request identifier 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_ac6a087105ba0cdde12894eedc7e39ea0}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_ac6a087105ba0cdde12894eedc7e39ea0}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!MaxVehicleSize@{MaxVehicleSize}}
+\index{MaxVehicleSize@{MaxVehicleSize}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{MaxVehicleSize}{MaxVehicleSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} VRPTWOptimizer.\+Transport\+Request.\+Max\+Vehicle\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Upper bound restrictions of vehicle parameters 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00054}{54}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a56f40646a4e52ff215aa115ef7349eed}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a56f40646a4e52ff215aa115ef7349eed}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!MutuallyExclusiveRequestsIdTimeBufferDict@{MutuallyExclusiveRequestsIdTimeBufferDict}}
+\index{MutuallyExclusiveRequestsIdTimeBufferDict@{MutuallyExclusiveRequestsIdTimeBufferDict}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{MutuallyExclusiveRequestsIdTimeBufferDict}{MutuallyExclusiveRequestsIdTimeBufferDict}}
+{\footnotesize\ttfamily Dictionary$<$int, double$>$ VRPTWOptimizer.\+Transport\+Request.\+Mutually\+Exclusive\+Requests\+Id\+Time\+Buffer\+Dict\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Dictionary of requests that can be visited only after certain time of departure from end location or must be served certain time before arrival to end location 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a6c98b3db35b881fc1c16da6e9f487d59}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a6c98b3db35b881fc1c16da6e9f487d59}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!Name@{Name}}
+\index{Name@{Name}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily string VRPTWOptimizer.\+Transport\+Request.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Custom request identifier 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00063}{63}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a3fee3d993c9dbaf0908742c16f789658}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a3fee3d993c9dbaf0908742c16f789658}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!NecessaryVehicleSpecialProperties@{NecessaryVehicleSpecialProperties}}
+\index{NecessaryVehicleSpecialProperties@{NecessaryVehicleSpecialProperties}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{NecessaryVehicleSpecialProperties}{NecessaryVehicleSpecialProperties}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} VRPTWOptimizer.\+Transport\+Request.\+Necessary\+Vehicle\+Special\+Properties\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+List of domain specific features that the vehicle needs to have to serve this request (e.\+g. freezer, lift) vector needs to conform to \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}{Vehicle.\+Special\+Properties}} 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00068}{68}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a06c9cb8ce91a2a157ef5aafad417e2c6}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a06c9cb8ce91a2a157ef5aafad417e2c6}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!PackageCount@{PackageCount}}
+\index{PackageCount@{PackageCount}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{PackageCount}{PackageCount}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+Transport\+Request.\+Package\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Total count of items to be delivered (e.\+g. Euro Pallet and DHP pallet are both a single item) 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00073}{73}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a3289479578b51949225c4c823d62b954}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a3289479578b51949225c4c823d62b954}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!PackageCountForImediateRetrieval@{PackageCountForImediateRetrieval}}
+\index{PackageCountForImediateRetrieval@{PackageCountForImediateRetrieval}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{PackageCountForImediateRetrieval}{PackageCountForImediateRetrieval}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+Transport\+Request.\+Package\+Count\+For\+Imediate\+Retrieval\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Subgroup of Package\+Count property which are to be retrieved just after delivery 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00078}{78}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a23eb10ec3f51685cde69ac3260193840}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a23eb10ec3f51685cde69ac3260193840}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!PickupAvailableTimeWindowEnd@{PickupAvailableTimeWindowEnd}}
+\index{PickupAvailableTimeWindowEnd@{PickupAvailableTimeWindowEnd}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{PickupAvailableTimeWindowEnd}{PickupAvailableTimeWindowEnd}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Transport\+Request.\+Pickup\+Available\+Time\+Window\+End\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Time window end while request can still be picked up 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00083}{83}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a3eac1c563851c6d68887c2817912b039}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a3eac1c563851c6d68887c2817912b039}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!PickupAvailableTimeWindowStart@{PickupAvailableTimeWindowStart}}
+\index{PickupAvailableTimeWindowStart@{PickupAvailableTimeWindowStart}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{PickupAvailableTimeWindowStart}{PickupAvailableTimeWindowStart}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Transport\+Request.\+Pickup\+Available\+Time\+Window\+Start\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Earlies time window start when request can be picked up 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a237c8c9bcfdd77c4e15948276abdb502}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a237c8c9bcfdd77c4e15948276abdb502}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!PickupLocation@{PickupLocation}}
+\index{PickupLocation@{PickupLocation}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{PickupLocation}{PickupLocation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} VRPTWOptimizer.\+Transport\+Request.\+Pickup\+Location\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Location where the cargo is picked up 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00093}{93}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_af3321390516fa33422232b3810ea184b}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_af3321390516fa33422232b3810ea184b}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!PickupPreferedTimeWindowEnd@{PickupPreferedTimeWindowEnd}}
+\index{PickupPreferedTimeWindowEnd@{PickupPreferedTimeWindowEnd}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{PickupPreferedTimeWindowEnd}{PickupPreferedTimeWindowEnd}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Transport\+Request.\+Pickup\+Prefered\+Time\+Window\+End\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Time window end when request should be picked up 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00098}{98}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a7f0799b141f71f459daf024c5d666f54}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a7f0799b141f71f459daf024c5d666f54}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!PickupPreferedTimeWindowStart@{PickupPreferedTimeWindowStart}}
+\index{PickupPreferedTimeWindowStart@{PickupPreferedTimeWindowStart}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{PickupPreferedTimeWindowStart}{PickupPreferedTimeWindowStart}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Transport\+Request.\+Pickup\+Prefered\+Time\+Window\+Start\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Time window start when request should be picked up 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00103}{103}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a577b69e6de2c28ad2327f268d78a5ce5}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a577b69e6de2c28ad2327f268d78a5ce5}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!RestrictedCargoTypes@{RestrictedCargoTypes}}
+\index{RestrictedCargoTypes@{RestrictedCargoTypes}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{RestrictedCargoTypes}{RestrictedCargoTypes}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} VRPTWOptimizer.\+Transport\+Request.\+Restricted\+Cargo\+Types\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Cargo types identifiers that could not be transported together with this request 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00108}{108}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_a608a98fd3db46f3e9ca16e8e6bb76bcc}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_a608a98fd3db46f3e9ca16e8e6bb76bcc}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!RevenueValue@{RevenueValue}}
+\index{RevenueValue@{RevenueValue}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{RevenueValue}{RevenueValue}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Transport\+Request.\+Revenue\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Additional value gained if request is completed 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00113}{113}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_aabb57d387dd0e8424f079a9228ed5e29}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_aabb57d387dd0e8424f079a9228ed5e29}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!Size@{Size}}
+\index{Size@{Size}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily double \mbox{[}$\,$\mbox{]} VRPTWOptimizer.\+Transport\+Request.\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Total cargo size (Euro pallets count, mass, cubic meters etc.) Must conform to \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} capacity definition 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00119}{119}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_transport_request_ab16589c2cb1153d708ae7006a1424127}\label{class_v_r_p_t_w_optimizer_1_1_transport_request_ab16589c2cb1153d708ae7006a1424127}} 
+\index{VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}!Type@{Type}}
+\index{Type@{Type}!VRPTWOptimizer.TransportRequest@{VRPTWOptimizer.TransportRequest}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_acef88cc2214a76baf375f78f1383f290}{Request\+Type}} VRPTWOptimizer.\+Transport\+Request.\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Type of request\+: distribution, backhauling etc. 
+
+
+
+Definition at line \mbox{\hyperlink{_transport_request_8cs_source_l00123}{123}} of file \mbox{\hyperlink{_transport_request_8cs_source}{Transport\+Request.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_transport_request_8cs}{Transport\+Request.\+cs}}\end{DoxyCompactItemize}

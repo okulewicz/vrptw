@@ -1,0 +1,103 @@
+\hypertarget{class_common_g_i_s_1_1_distance_matrix_calculator}{}\doxysection{Common\+GIS.\+Distance\+Matrix\+Calculator Class Reference}
+\label{class_common_g_i_s_1_1_distance_matrix_calculator}\index{CommonGIS.DistanceMatrixCalculator@{CommonGIS.DistanceMatrixCalculator}}
+
+
+Object supporting computations of \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} matrix  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_distance_matrix_calculator_aca88a72865a82dc48348bb928cc82e55}{Distance\+Matrix\+Calculator}} (\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Provider)
+\begin{DoxyCompactList}\small\item\em Provider supporting the matrix calaculator \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance_matrix_calculator_af8b77edeb9192de313eefa6b38d28a31}{Compute\+Distances}} (List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} $>$ locations\+Collection, List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} $>$ vehicle\+Profiles)
+\begin{DoxyCompactList}\small\item\em Computes distances between each pair of \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} objects for vehicle\+Profile \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance_matrix_calculator_a48dabd95f25620211249126864e99cc9}{Compute\+Missing\+Distances}} (List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} $>$ locations\+Collection, List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} $>$ vehicle\+Profiles, List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ existing\+Distances)
+\begin{DoxyCompactList}\small\item\em Computes distances between each missing pair of \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} objects for vehicle\+Profile \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Object supporting computations of \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} matrix 
+
+Definition at line \mbox{\hyperlink{_distance_matrix_calculator_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_distance_matrix_calculator_8cs_source}{Distance\+Matrix\+Calculator.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_matrix_calculator_aca88a72865a82dc48348bb928cc82e55}\label{class_common_g_i_s_1_1_distance_matrix_calculator_aca88a72865a82dc48348bb928cc82e55}} 
+\index{CommonGIS.DistanceMatrixCalculator@{CommonGIS.DistanceMatrixCalculator}!DistanceMatrixCalculator@{DistanceMatrixCalculator}}
+\index{DistanceMatrixCalculator@{DistanceMatrixCalculator}!CommonGIS.DistanceMatrixCalculator@{CommonGIS.DistanceMatrixCalculator}}
+\doxysubsubsection{\texorpdfstring{DistanceMatrixCalculator()}{DistanceMatrixCalculator()}}
+{\footnotesize\ttfamily Common\+GIS.\+Distance\+Matrix\+Calculator.\+Distance\+Matrix\+Calculator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Provider }\end{DoxyParamCaption})}
+
+
+
+Provider supporting the matrix calaculator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance\+Provider} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_distance_matrix_calculator_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_distance_matrix_calculator_8cs_source}{Distance\+Matrix\+Calculator.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_matrix_calculator_af8b77edeb9192de313eefa6b38d28a31}\label{class_common_g_i_s_1_1_distance_matrix_calculator_af8b77edeb9192de313eefa6b38d28a31}} 
+\index{CommonGIS.DistanceMatrixCalculator@{CommonGIS.DistanceMatrixCalculator}!ComputeDistances@{ComputeDistances}}
+\index{ComputeDistances@{ComputeDistances}!CommonGIS.DistanceMatrixCalculator@{CommonGIS.DistanceMatrixCalculator}}
+\doxysubsubsection{\texorpdfstring{ComputeDistances()}{ComputeDistances()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ Common\+GIS.\+Distance\+Matrix\+Calculator.\+Compute\+Distances (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} $>$}]{locations\+Collection,  }\item[{List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} $>$}]{vehicle\+Profiles }\end{DoxyParamCaption})}
+
+
+
+Computes distances between each pair of \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} objects for vehicle\+Profile 
+
+
+\begin{DoxyParams}{Parameters}
+{\em locations\+Collection} & \\
+\hline
+{\em vehicle\+Profiles} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_distance_matrix_calculator_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_distance_matrix_calculator_8cs_source}{Distance\+Matrix\+Calculator.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_matrix_calculator_a48dabd95f25620211249126864e99cc9}\label{class_common_g_i_s_1_1_distance_matrix_calculator_a48dabd95f25620211249126864e99cc9}} 
+\index{CommonGIS.DistanceMatrixCalculator@{CommonGIS.DistanceMatrixCalculator}!ComputeMissingDistances@{ComputeMissingDistances}}
+\index{ComputeMissingDistances@{ComputeMissingDistances}!CommonGIS.DistanceMatrixCalculator@{CommonGIS.DistanceMatrixCalculator}}
+\doxysubsubsection{\texorpdfstring{ComputeMissingDistances()}{ComputeMissingDistances()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ Common\+GIS.\+Distance\+Matrix\+Calculator.\+Compute\+Missing\+Distances (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} $>$}]{locations\+Collection,  }\item[{List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} $>$}]{vehicle\+Profiles,  }\item[{List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$}]{existing\+Distances }\end{DoxyParamCaption})}
+
+
+
+Computes distances between each missing pair of \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} objects for vehicle\+Profile 
+
+
+\begin{DoxyParams}{Parameters}
+{\em locations\+Collection} & \\
+\hline
+{\em vehicle\+Profiles} & \\
+\hline
+{\em existing\+Distances} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_distance_matrix_calculator_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_distance_matrix_calculator_8cs_source}{Distance\+Matrix\+Calculator.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_distance_matrix_calculator_8cs}{Distance\+Matrix\+Calculator.\+cs}}\end{DoxyCompactItemize}

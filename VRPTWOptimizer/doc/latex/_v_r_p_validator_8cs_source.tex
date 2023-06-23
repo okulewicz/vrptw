@@ -1,0 +1,592 @@
+\hypertarget{_v_r_p_validator_8cs_source}{}\doxysection{VRPValidator.\+cs}
+\label{_v_r_p_validator_8cs_source}\index{VRPValidator.cs@{VRPValidator.cs}}
+\mbox{\hyperlink{_v_r_p_validator_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00002}00002 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00003}00003 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Globalization;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00006}00006 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00007}00007 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00008}00008 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils}{Utils}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_model}{Model}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00009}00009 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils}{Utils}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_provider}{Provider}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00011}00011 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation}{VRPTWOptimizer.Utils.Validation}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00016}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator}{00016}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator}{VRPValidator}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00017}00017     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00018}00018         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{int} MaxSpeedValue = 200;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00020}00020         \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keywordtype}{void} ValidateDistance(\mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} distance, ref List<ValidationError> errors)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00021}00021         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00022}00022             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_provider_1_1_straight_line_distance_provider}{StraightLineDistanceProvider}} straightLineDistanceProvider = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00023}00023             \textcolor{keywordflow}{if} (distance.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}{Length}} / distance.\mbox{\hyperlink{class_common_g_i_s_1_1_distance_a873fe0d3bc5a3a24c5916d2ea6176a90}{Time}} >= MaxSpeedValue)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00024}00024             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00025}00025                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00026}00026                                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Distance,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00027}00027                                                \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{distance.FromId\}-\/\{distance.ToId\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00028}00028                                                \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Distance from \{distance.FromId\} to \{distance.ToId\} seems to have nonconformat units with time=\{distance.Time\} and distance=\{distance.Length\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00029}00029                                                distance,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00030}00030                                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ImpossibleDriveTime}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00031}00031                                                ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00032}00032             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00033}00033         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00035}00035         \textcolor{keyword}{private} \textcolor{keyword}{static} IEnumerable<ValidationError> ValidateRouteLoadUnloadLocationCompliance(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} route)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00036}00036         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00037}00037             List<ValidationError> errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00038}00038             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8962aaa555bfdd22f08986597b379d12}{VisitedLocations}}.Count; i++)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00039}00039             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00040}00040                 \textcolor{keywordflow}{foreach} (var loadedRequest \textcolor{keywordflow}{in} route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_aeb66938fd3c3746cec633d48fdd978bc}{LoadedRequests}}[i])}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00041}00041                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00042}00042                     \textcolor{keywordflow}{if} (loadedRequest.PickupLocation.Id != route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8962aaa555bfdd22f08986597b379d12}{VisitedLocations}}[i].Id)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00043}00043                     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00044}00044                         errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00045}00045                                                        \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00046}00046                                                        \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{route.Vehicle.Id\}-\/\{Math.Round(route.ArrivalTimes[i])\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00047}00047                                                        \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Route of vehicle \{route.Vehicle.Id\} starting on \{Math.Round(route.ArrivalTimes[i])\} incorrectly loads request \{loadedRequest.Id\} at location \{route.VisitedLocations[i].Id\} instead of \{loadedRequest.PickupLocation.Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00048}00048                                                        route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00049}00049                                                        \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ImpossibleOperation}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00050}00050                                                        ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00051}00051                     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00052}00052                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00053}00053                 \textcolor{keywordflow}{foreach} (var unloadedRequest \textcolor{keywordflow}{in} route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0b3882b5ce8370da7be73b099b265c87}{UnloadedRequests}}[i])}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00054}00054                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00055}00055                     \textcolor{keywordflow}{if} (unloadedRequest.DeliveryLocation.Id != route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8962aaa555bfdd22f08986597b379d12}{VisitedLocations}}[i].Id)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00056}00056                     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00057}00057                         errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00058}00058                                                        \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00059}00059                                                        \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{route.Vehicle.Id\}-\/\{Math.Round(route.ArrivalTimes[i])\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00060}00060                                                        \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Route of vehicle \{route.Vehicle.Id\} starting on \{Math.Round(route.ArrivalTimes[i])\} incorrectly unloads request \{unloadedRequest.Id\} at location \{route.VisitedLocations[i].Id\} instead of \{unloadedRequest.DeliveryLocation.Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00061}00061                                                        route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00062}00062                                                        \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ImpossibleOperation}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00063}00063                                                        ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00064}00064                     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00065}00065                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00066}00066             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00067}00067             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00068}00068         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00070}00070         \textcolor{keyword}{private} \textcolor{keyword}{static} IEnumerable<ValidationError> ValidateSolutionCompletness(List<IRoute> routes, List<TransportRequest> leftRequests, List<TransportRequest> requests)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00071}00071         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00072}00072             List<ValidationError> errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00073}00073             var loadedIds = routes.SelectMany(rt => rt.LoadedRequests.SelectMany(lr => lr.Select(r => r.Id))).OrderBy(\textcolor{keywordtype}{id} => \textcolor{keywordtype}{id}).ToList();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00074}00074             var unloadedIds = routes.SelectMany(rt => rt.UnloadedRequests.SelectMany(lr => lr.Select(r => r.Id))).OrderBy(\textcolor{keywordtype}{id} => \textcolor{keywordtype}{id}).ToList();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00075}00075             \textcolor{keywordflow}{if} (loadedIds.Count != unloadedIds.Count)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00076}00076             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00077}00077                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00078}00078                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00079}00079                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.RoutesSet,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00080}00080                     \textcolor{stringliteral}{"{}routes"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00081}00081                     \$\textcolor{stringliteral}{"{}Different number of requests has been loaded \{loadedIds.Count\} than unloaded \{unloadedIds.Count\}"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00082}00082                     routes,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00083}00083                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.LeakyRoutes}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00084}00084                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00085}00085             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00086}00086             \textcolor{keywordflow}{foreach} (var request \textcolor{keywordflow}{in} leftRequests)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00087}00087             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00088}00088                 \textcolor{keywordflow}{if} (loadedIds.Contains(request.Id) || unloadedIds.Contains(request.Id))}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00089}00089                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00090}00090                     errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00091}00091                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00092}00092                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00093}00093                         request.Id.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00094}00094                         \$\textcolor{stringliteral}{"{}Request \{request.Id\} is contained both in left requests and somewhere in the routes"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00095}00095                         request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00096}00096                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.LeakyRoutes}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00097}00097                         ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00098}00098                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00099}00099             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00100}00100             \textcolor{keywordflow}{foreach} (var request \textcolor{keywordflow}{in} requests)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00101}00101             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00102}00102                 \textcolor{keywordflow}{if} (!loadedIds.Contains(request.Id) \&\& leftRequests.Count(rq => rq.Id == request.Id) != 1)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00103}00103                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00104}00104                     errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00105}00105                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00106}00106                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00107}00107                         request.Id.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00108}00108                         \$\textcolor{stringliteral}{"{}Request \{request.Id\} is never loaded or in left requests"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00109}00109                         request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00110}00110                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.LeakyRoutes}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00111}00111                         ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00112}00112                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00113}00113                 \textcolor{keywordflow}{if} (!unloadedIds.Contains(request.Id) \&\& leftRequests.Count(rq => rq.Id == request.Id) != 1)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00114}00114                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00115}00115                     errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00116}00116                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00117}00117                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00118}00118                         request.Id.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00119}00119                         \$\textcolor{stringliteral}{"{}Request \{request.Id\} is never unloaded or in left requests"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00120}00120                         request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00121}00121                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.LeakyRoutes}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00122}00122                         ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00123}00123                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00124}00124             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00125}00125             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00126}00126         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00137}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a1a713cf4225eaf5175b6e9249d956a41}{00137}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a1a713cf4225eaf5175b6e9249d956a41}{ValidateAll}}(List<IRoute> routes, List<TransportRequest> leftRequests, List<TransportRequest> requests, List<Vehicle> vehicles, List<Distance> distances)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00138}00138         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00139}00139             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_provider_1_1_distance_matrix_provider}{DistanceMatrixProvider}} distanceProvider = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_provider_1_1_distance_matrix_provider}{DistanceMatrixProvider}}(distances);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00140}00140             var errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00141}00141             errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a1a713cf4225eaf5175b6e9249d956a41}{ValidateAll}}(routes, leftRequests, requests, vehicles, distanceProvider));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00142}00142             \textcolor{keywordflow}{if} (distances != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00143}00143             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00144}00144                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ae35b86a581ef3de0c06ea12f80521147}{ValidateDistances}}(distances));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00145}00145             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00146}00146             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00147}00147         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00158}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a401accdfef8604dfc637d7522d429cd0}{00158}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a401accdfef8604dfc637d7522d429cd0}{ValidateAll}}(List<IRoute> routes, List<TransportRequest> leftRequests, List<TransportRequest> requests, List<Vehicle> vehicles, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00159}00159         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00160}00160             var errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00161}00161             errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_adf894bf7795aab0888580aa870f4c25f}{ValidateProblemData}}(requests, vehicles, distanceProvider));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00162}00162             errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_af9facb4aa7d26fc71b1cc16c6634c3b9}{ValidateSolutionData}}(routes, leftRequests, requests));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00163}00163             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00164}00164         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00169}00169         [Obsolete]}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00170}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a2ca432a611981b4eee01677eb9d67a8f}{00170}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a2ca432a611981b4eee01677eb9d67a8f}{ValidateAll}}(List<IRoute> routes, List<TransportRequest> leftRequests, List<TransportRequest> requests, List<Vehicle> vehicles)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00171}00171         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00172}00172             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a1a713cf4225eaf5175b6e9249d956a41}{ValidateAll}}(routes, leftRequests, requests, vehicles, \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_provider_1_1_straight_line_distance_provider}{StraightLineDistanceProvider}}());}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00173}00173         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00182}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ac6a8536236c3a7a39478a21e3b409bbb}{00182}}         \textcolor{keyword}{public} \textcolor{keyword}{static} IEnumerable<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ac6a8536236c3a7a39478a21e3b409bbb}{ValidateDeserializedRoutesAgainstVehiclesAndDriversExistence}}(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport}{Transport}} transportDTO, List<Vehicle> vehicles, List<Driver> drivers)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00183}00183         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00184}00184             List<ValidationError> errors = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00185}00185             \textcolor{keywordflow}{if} (!vehicles.Any(v => v.Id == transportDTO.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport_a1d815b0fef30ee89a0a00485ec50f833}{TrailerTruckId}} \&\& (v.Type == \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.StraightTruck || v.Type == \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.SemiTrailer)))}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00186}00186             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00187}00187                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00188}00188                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00189}00189                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportDTO,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00190}00190                     transportDTO.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport_ac3968e4af51d17230d4b1b4c673a51b7}{TransportId}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00191}00191                     \$\textcolor{stringliteral}{"{}There is no trailer or truck with \{transportDTO.TrailerTruckId\} in the vehicles collection"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00192}00192                     transportDTO,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00193}00193                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.CapacityVehicleMissing}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00194}00194                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00195}00195             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00196}00196             \textcolor{keywordflow}{if} (transportDTO.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport_a4315524638429841c949cb9618f8e836}{TractorId}} != -\/1 \&\& transportDTO.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport_a4315524638429841c949cb9618f8e836}{TractorId}} != 0)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00197}00197             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00198}00198                 \textcolor{keywordflow}{if} (!vehicles.Any(v => v.Id == transportDTO.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport_a4315524638429841c949cb9618f8e836}{TractorId}} \&\& v.Type == \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.Tractor))}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00199}00199                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00200}00200                     errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00201}00201                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00202}00202                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportDTO,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00203}00203                         transportDTO.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_transport_ac3968e4af51d17230d4b1b4c673a51b7}{TransportId}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00204}00204                         \$\textcolor{stringliteral}{"{}There is no tractor with \{transportDTO.TractorId\} in the vehicles collection"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00205}00205                         transportDTO,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00206}00206                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.TractorMissing}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00207}00207                         ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00208}00208                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00209}00209             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00210}00210             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00211}00211         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00212}00212 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00218}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ae35b86a581ef3de0c06ea12f80521147}{00218}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ae35b86a581ef3de0c06ea12f80521147}{ValidateDistances}}(List<Distance> distances)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00219}00219         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00220}00220             List<ValidationError> errors = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00221}00221             \textcolor{keywordflow}{foreach} (var distance \textcolor{keywordflow}{in} distances)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00222}00222             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00223}00223                 ValidateDistance(distance, ref errors);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00224}00224             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00225}00225             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00226}00226         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00235}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_adf894bf7795aab0888580aa870f4c25f}{00235}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_adf894bf7795aab0888580aa870f4c25f}{ValidateProblemData}}(List<TransportRequest> requests, List<Vehicle> vehicles, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00236}00236         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00237}00237             List<ValidationError> errors = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00238}00238             \textcolor{keywordflow}{foreach} (var vehicle \textcolor{keywordflow}{in} vehicles)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00239}00239             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00240}00240                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a11092249bd48343c3a2e65a5a609a355}{ValidateVehicleProperties}}(vehicle));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00241}00241             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00242}00242             \textcolor{keywordflow}{if} (distanceProvider is \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_provider_1_1_distance_matrix_provider}{DistanceMatrixProvider}})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00243}00243             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00244}00244                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_ae35b86a581ef3de0c06ea12f80521147}{ValidateDistances}}((distanceProvider as \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_provider_1_1_distance_matrix_provider}{DistanceMatrixProvider}}).StoredDistances));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00245}00245             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00246}00246             \textcolor{keywordflow}{foreach} (var request \textcolor{keywordflow}{in} requests)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00247}00247             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00248}00248                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_acc117a2a8cd2f3fbdf79e9f96c939613}{ValidateRequestProperties}}(request));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00249}00249                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aaeb5a8c2820752d139f5d6941bc78277}{ValidateRequestAgainstVehiclesProperties}}(request, vehicles, distanceProvider));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00250}00250             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00251}00251             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00252}00252         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00261}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aaeb5a8c2820752d139f5d6941bc78277}{00261}}         \textcolor{keyword}{public} \textcolor{keyword}{static} IEnumerable<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aaeb5a8c2820752d139f5d6941bc78277}{ValidateRequestAgainstVehiclesProperties}}(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}} request, List<Vehicle> vehicles, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00262}00262         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00263}00263             var errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00264}00264             \textcolor{keywordflow}{if} (!vehicles.Any(v => request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_ac6a087105ba0cdde12894eedc7e39ea0}{MaxVehicleSize}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a1aa35b76ba19d87634f029c9543f891f}{DoesVehicleFitIntoRestrictions}}(v.RoadProperties) \&\& v.CanHandleRequest(request)))}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00265}00265             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00266}00266                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00267}00267                                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00268}00268                                                \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{request.Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00269}00269                                                \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}No vehicle can serve request \{request.Id\} with \{string.Join(',', request.Size.Select(s => s.ToString(CultureInfo.InvariantCulture)))\} size and vehicle limit of \{request.MaxVehicleSize.EpCount\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00270}00270                                                request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00271}00271                                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.RequestPropertiesExcludeAllVehicles}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00272}00272                                                ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00273}00273             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00274}00274             \textcolor{keywordtype}{bool} impossiblePreferredPickupTime = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00275}00275             \textcolor{keywordtype}{bool} impossiblePreferredDeliveryTime = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00276}00276             \textcolor{keywordtype}{bool} impossiblePickupTime = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00277}00277             \textcolor{keywordtype}{bool} impossibleDeliveryTime = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00278}00278             \textcolor{keywordtype}{bool} impossibleReturnTime = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00279}00279             \textcolor{keywordflow}{foreach} (var vehicle \textcolor{keywordflow}{in} vehicles)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00280}00280             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00281}00281                 \textcolor{keywordtype}{double} earliestArrival = vehicle.AvailabilityStart + distanceProvider.GetDistance(vehicle.InitialLocation, request.PickupLocation, vehicle.RoadProperties).Time;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00282}00282                 \textcolor{keywordtype}{double} earliestArrivalAtDelivery = Math.Max(earliestArrival, request.PickupAvailableTimeWindowStart) + distanceProvider.GetDistance(request.PickupLocation, request.DeliveryLocation, vehicle.RoadProperties).Time;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00283}00283                 \textcolor{keywordtype}{double} earliestReturnTime = Math.Max(earliestArrivalAtDelivery, request.DeliveryAvailableTimeWindowStart) + distanceProvider.GetDistance(request.DeliveryLocation, vehicle.FinalLocation, vehicle.RoadProperties).Time;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00284}00284                 \textcolor{keywordflow}{if} (earliestArrival <= request.PickupPreferedTimeWindowEnd)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00285}00285                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00286}00286                     impossiblePreferredPickupTime = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00287}00287                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00288}00288                 \textcolor{keywordflow}{if} (earliestArrivalAtDelivery <= request.DeliveryPreferedTimeWindowEnd)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00289}00289                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00290}00290                     impossiblePreferredDeliveryTime = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00291}00291                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00292}00292                 \textcolor{keywordflow}{if} (earliestArrival <= request.PickupAvailableTimeWindowEnd)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00293}00293                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00294}00294                     impossiblePickupTime = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00295}00295                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00296}00296                 \textcolor{keywordflow}{if} (earliestArrivalAtDelivery <= request.DeliveryAvailableTimeWindowEnd)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00297}00297                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00298}00298                     impossibleDeliveryTime = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00299}00299                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00300}00300                 \textcolor{keywordflow}{if} (earliestReturnTime <= vehicle.AvailabilityEnd)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00301}00301                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00302}00302                     impossibleReturnTime = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00303}00303                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00304}00304                 \textcolor{keywordflow}{if} (!impossiblePreferredPickupTime \&\& !impossiblePreferredDeliveryTime \&\& !impossibleReturnTime \&\& !impossiblePickupTime \&\& !impossibleDeliveryTime)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00305}00305                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00306}00306                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00307}00307                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00308}00308             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00309}00309             \textcolor{keywordflow}{if} (impossiblePreferredPickupTime)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00310}00310             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00311}00311                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00312}00312                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00313}00313                                \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{request.Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00314}00314                                \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}No vehicle can get to request \{request.Id\} pickup location \{request.PickupLocation.Id\} before preffered \{request.PickupPreferedTimeWindowEnd\} time"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00315}00315                                request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00316}00316                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ImpossiblePreferredTimeWindow}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00317}00317                                ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00318}00318             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00319}00319             \textcolor{keywordflow}{if} (impossiblePreferredDeliveryTime)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00320}00320             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00321}00321                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00322}00322                                            \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00323}00323                                            \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{request.Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00324}00324                                            \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}No vehicle can get to request \{request.Id\} delivery location \{request.DeliveryLocation.Id\} before preffered \{request.DeliveryPreferedTimeWindowEnd\} time"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00325}00325                                request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00326}00326                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ImpossiblePreferredTimeWindow));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00327}00327             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00328}00328             \textcolor{keywordflow}{if} (impossiblePickupTime)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00329}00329             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00330}00330                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImpossibleProblem,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00331}00331                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00332}00332                                \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{request.Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00333}00333                                \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}No vehicle can get to request \{request.Id\} pickup location \{request.PickupLocation.Id\} before \{request.PickupPreferedTimeWindowEnd\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00334}00334                                request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00335}00335                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ImpossibleTimeWindow));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00336}00336             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00337}00337             \textcolor{keywordflow}{if} (impossibleDeliveryTime)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00338}00338             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00339}00339                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImpossibleProblem,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00340}00340                                            \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00341}00341                                            \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{request.Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00342}00342                                            \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}No vehicle can get to request \{request.Id\} delivery location \{request.DeliveryLocation.Id\} before \{request.DeliveryPreferedTimeWindowEnd\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00343}00343                                request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00344}00344                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ImpossibleTimeWindow));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00345}00345             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00346}00346             \textcolor{keywordflow}{if} (impossibleReturnTime)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00347}00347             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00348}00348                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImpossibleProblem,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00349}00349                                            \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00350}00350                                            \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{request.Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00351}00351                                            \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}No vehicle can serve request \{request.Id\} and get back to its final location on time"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00352}00352                                request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00353}00353                                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ImpossibleTimeWindow));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00354}00354             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00355}00355             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00356}00356         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00357}00357 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00363}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_acc117a2a8cd2f3fbdf79e9f96c939613}{00363}}         \textcolor{keyword}{public} \textcolor{keyword}{static} IEnumerable<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_acc117a2a8cd2f3fbdf79e9f96c939613}{ValidateRequestProperties}}(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}} request)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00364}00364         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00365}00365             List<ValidationError> errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00366}00366             \textcolor{keywordflow}{if} (request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_ab16589c2cb1153d708ae7006a1424127}{Type}} != Enums.RequestType.GoodsDistribution \&\&}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00367}00367                 request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_ab16589c2cb1153d708ae7006a1424127}{Type}} != Enums.RequestType.Backhauling \&\&}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00368}00368                 request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_ab16589c2cb1153d708ae7006a1424127}{Type}} != Enums.RequestType.ContainerRetrieval)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00369}00369             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00370}00370                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00371}00371                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00372}00372                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00373}00373                     request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a32189b723545475fbaef32200a3d4a47}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00374}00374                     \$\textcolor{stringliteral}{"{}Request \{request.Id\} is of unknown \{request.Type\} type non-\/existent in VRPTWOptimizer.Enums.RequestType"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00375}00375                     request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00376}00376                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.WrongType}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00377}00377                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00378}00378             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00379}00379             \textcolor{keywordflow}{if} (request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a06c9cb8ce91a2a157ef5aafad417e2c6}{PackageCount}} <= 0)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00380}00380             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00381}00381                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00382}00382                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00383}00383                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00384}00384                     request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a32189b723545475fbaef32200a3d4a47}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00385}00385                     \$\textcolor{stringliteral}{"{}Request \{request.Id\} has 0 packages to pickup and deliver"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00386}00386                     request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00387}00387                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ZeroPackages}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00388}00388 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00389}00389                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00390}00390             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00391}00391             \textcolor{keywordflow}{if} (request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a237c8c9bcfdd77c4e15948276abdb502}{PickupLocation}}.\mbox{\hyperlink{class_common_g_i_s_1_1_location_aa6d57fbce06f9491a85aac4e0ac69870}{Id}} == request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a35f1e8d6b1620ccad38d00e015ebcf50}{DeliveryLocation}}.\mbox{\hyperlink{class_common_g_i_s_1_1_location_aa6d57fbce06f9491a85aac4e0ac69870}{Id}})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00392}00392             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00393}00393                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00394}00394                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00395}00395                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00396}00396                     request.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a32189b723545475fbaef32200a3d4a47}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00397}00397                     \$\textcolor{stringliteral}{"{}Request \{request.Id\} has identical pickup and delivery location \{request.DeliveryLocation.Id\}"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00398}00398                     request,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00399}00399                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.IdenticalDeliveryAndPickup}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00400}00400                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00401}00401             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00402}00402             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00403}00403         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00404}00404 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00410}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a4c47c53ede359fd665b343230a64d292}{00410}}         \textcolor{keyword}{public} \textcolor{keyword}{static} IEnumerable<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a4c47c53ede359fd665b343230a64d292}{ValidateRouteAssignmentCompletness}}(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} route)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00411}00411         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00412}00412             List<ValidationError> errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00413}00413             \textcolor{keywordflow}{if} (route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} == \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.SemiTrailer \&\& route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a9b94599db46afba7bd052ddb5cfd7ab9}{VehicleTractor}} == \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00414}00414             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00415}00415                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00416}00416                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00417}00417                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00418}00418                     \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{route.Vehicle.Id\}-\/\{Math.Round(route.ArrivalTimes[0])\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00419}00419                     \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Route starting on \{Math.Round(route.ArrivalTimes[0])\} of vehicle \{route.Vehicle.Id\} does not have a tractor unit although \{route.Vehicle.Id\} is a semi-\/trailer"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00420}00420                     route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00421}00421                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.CapacityVehicleMissing}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00422}00422                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00423}00423             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00424}00424             \textcolor{keywordflow}{if} (route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} == \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.Tractor)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00425}00425             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00426}00426                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00427}00427                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00428}00428                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00429}00429                     \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{route.Vehicle.Id\}-\/\{Math.Round(route.ArrivalTimes[0])\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00430}00430                     \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Route starting on \{Math.Round(route.ArrivalTimes[0])\} has a tractor vehicle \{route.Vehicle.Id\} assigned as truck or semi-\/trailer unit"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00431}00431                     route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00432}00432                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.TractorAssignedAsCapacityVehicle}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00433}00433                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00434}00434             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00435}00435             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00436}00436         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00437}00437 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00443}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aeee9c9f4d765e7264636923edf08666c}{00443}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aeee9c9f4d765e7264636923edf08666c}{ValidateRouteCapacityConstraints}}(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} route)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00444}00444         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00445}00445             List<ValidationError> errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00446}00446             List<\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}}> currentStack = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00447}00447             List<\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}}> handledRequests = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00448}00448             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} iloc = 0; iloc < route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a8962aaa555bfdd22f08986597b379d12}{VisitedLocations}}.Count; iloc++)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00449}00449             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00450}00450                 route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a0b3882b5ce8370da7be73b099b265c87}{UnloadedRequests}}[iloc].ForEach(rq => \{ currentStack.Remove(rq); \});}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00451}00451                 currentStack.AddRange(route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_aeb66938fd3c3746cec633d48fdd978bc}{LoadedRequests}}[iloc]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00452}00452                 handledRequests.AddRange(route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_aeb66938fd3c3746cec633d48fdd978bc}{LoadedRequests}}[iloc]);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00453}00453                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00454}00454                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00455}00455                     \textcolor{keywordflow}{if} (route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}{CapacityAggregationType}}[i] == Enums.Aggregation.Sum \&\& currentStack.Sum(rq => rq.Size[i]) > route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}[i])}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00456}00456                     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00457}00457                         errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00458}00458                             \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00459}00459                             \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00460}00460                             \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{route.Vehicle.Id\}-\/\{Math.Round(route.ArrivalTimes[0])\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00461}00461                             \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Route starting on \{Math.Round(route.ArrivalTimes[0])\} of vehicle \{route.Vehicle.Id\} validates capacity constraint with \{currentStack.Sum(rq => rq.Size[i])\} over \{route.Vehicle.Capacity[i]\} after load in \{route.VisitedLocations[iloc].Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00462}00462                             route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00463}00463                             \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ExceededCapacity}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00464}00464                             ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00465}00465                     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00466}00466                     \textcolor{keywordflow}{if} (route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}{CapacityAggregationType}}[i] == Enums.Aggregation.Max \&\& currentStack.Any() \&\& currentStack.Max(rq => rq.Size[i]) > route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}[i])}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00467}00467                     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00468}00468                         errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00469}00469                             \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00470}00470                             \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00471}00471                             \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{route.Vehicle.Id\}-\/\{Math.Round(route.ArrivalTimes[0])\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00472}00472                             \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Route starting on \{Math.Round(route.ArrivalTimes[0])\} of vehicle \{route.Vehicle.Id\} validates capacity constraint with \{currentStack.Max(rq => rq.Size[i])\} over \{route.Vehicle.Capacity[i]\} after load in \{route.VisitedLocations[iloc].Id\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00473}00473                             route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00474}00474                             \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ExceededCapacity}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00475}00475                             ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00476}00476                     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00477}00477                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00478}00478             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00479}00479             \textcolor{keywordflow}{foreach} (var handledRequest \textcolor{keywordflow}{in} handledRequests)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00480}00480             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00481}00481                 \textcolor{keywordflow}{if} (!handledRequest.MaxVehicleSize.DoesVehicleFitIntoRestrictions(route.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_a1656a221501b8b26645ea1eab011bfc2}{Vehicle}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}{RoadProperties}}))}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00482}00482                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00483}00483                     errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00484}00484                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00485}00485                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.TransportRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00486}00486                         \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{route.Vehicle.Id\}-\/\{Math.Round(route.ArrivalTimes[0])\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00487}00487                         \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Vehicle \{route.Vehicle.Id\} should not serve \{handledRequest.Id\} as it violates max allowed vehicle's size of \{handledRequest.MaxVehicleSize.EpCount\} by having \{route.Vehicle.RoadProperties.EpCount\} size"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00488}00488                         handledRequest,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00489}00489                         \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.ExceededCapacity}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00490}00490                         ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00491}00491                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00492}00492             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00493}00493             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00494}00494         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00495}00495 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00502}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aa14dc529773344e64d67cde031dfb2d2}{00502}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aa14dc529773344e64d67cde031dfb2d2}{ValidateRoutesTimeOverlap}}(IEnumerable<IRoute> routes, \textcolor{keywordtype}{bool} arrivalsCanOverlapDepartures)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00503}00503         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00504}00504             List<ValidationError> errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00505}00505             \textcolor{keywordflow}{foreach} (var route1 \textcolor{keywordflow}{in} routes)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00506}00506             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00507}00507                 \textcolor{keywordflow}{foreach} (var route2 \textcolor{keywordflow}{in} routes)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00508}00508                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00509}00509                     \textcolor{keywordflow}{if} (route1 != route2)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00510}00510                     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00511}00511                         \textcolor{keywordflow}{if} (!arrivalsCanOverlapDepartures)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00512}00512                         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00513}00513                             \textcolor{keywordflow}{if} (route1.DepartureTimes[\string^1] > route2.ArrivalTimes[0] \&\& route1.ArrivalTimes[0] < route2.DepartureTimes[\string^1])}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00514}00514                             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00515}00515                                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00516}00516                                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00517}00517                                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00518}00518                                     \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{route1.Vehicle.Id\}-\/\{Math.Round(route1.ArrivalTimes[0])\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00519}00519                                     \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Routes of vehicle \{route1.Vehicle.Id\} spanning from \{Math.Round(route1.ArrivalTimes[0])\} to \{Math.Round(route1.DepartureTimes[\string^1])\} and \{Math.Round(route2.ArrivalTimes[0])\} to \{Math.Round(route2.DepartureTimes[\string^1])\} overlap"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00520}00520                                     route1,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00521}00521                                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.OverlappingRoutes}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00522}00522                                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00523}00523                             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00524}00524                         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00525}00525                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (arrivalsCanOverlapDepartures)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00526}00526                         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00527}00527                             \textcolor{keywordflow}{if} (route1.ArrivalTimes[\string^1] > route2.DepartureTimes[0] \&\& route1.DepartureTimes[0] < route2.ArrivalTimes[\string^1])}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00528}00528                             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00529}00529                                 \textcolor{keywordtype}{int} driverId = route1.VehicleDriver != \textcolor{keyword}{null} ? route1.VehicleDriver.Id : -\/1;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00530}00530                                 \textcolor{keywordtype}{int} tractorId = route1.VehicleTractor != \textcolor{keyword}{null} ? route1.VehicleTractor.Id : -\/1;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00531}00531                                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00532}00532                                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.InfeasibleSolution,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00533}00533                                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Route,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00534}00534                                     \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}\{route1.Vehicle.Id\}-\/\{route1.ArrivalTimes[0]\}"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00535}00535                                     \textcolor{keywordtype}{string}.Format(\$\textcolor{stringliteral}{"{}Routes of vehicle \{route1.Vehicle.Id\} drove by \{driverId\} and pulled by \{tractorId\} spanning from \{Math.Round(route1.DepartureTimes[0])\} to \{Math.Round(route1.ArrivalTimes[\string^1])\} and vehicle \{route2.Vehicle.Id\} from \{Math.Round(route2.DepartureTimes[0])\} to \{Math.Round(route2.ArrivalTimes[\string^1])\} overlap"{}}),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00536}00536                                     route1,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00537}00537                                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.OverlappingRoutes}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00538}00538                                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00539}00539                             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00540}00540                         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00541}00541                     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00542}00542                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00543}00543             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00544}00544             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00545}00545         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00546}00546 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00553}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_af9facb4aa7d26fc71b1cc16c6634c3b9}{00553}}         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_af9facb4aa7d26fc71b1cc16c6634c3b9}{ValidateSolutionData}}(List<IRoute> routes, List<TransportRequest> leftRequests, List<TransportRequest> requests)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00554}00554         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00555}00555             List<ValidationError> errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00556}00556             errors.AddRange(ValidateSolutionCompletness(routes, leftRequests, requests));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00557}00557             \textcolor{keywordflow}{foreach} (var route \textcolor{keywordflow}{in} routes)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00558}00558             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00559}00559                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a4c47c53ede359fd665b343230a64d292}{ValidateRouteAssignmentCompletness}}(route));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00560}00560                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aeee9c9f4d765e7264636923edf08666c}{ValidateRouteCapacityConstraints}}(route));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00561}00561                 errors.AddRange(ValidateRouteLoadUnloadLocationCompliance(route));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00562}00562             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00563}00563             \textcolor{keywordflow}{foreach} (var vehicleRoutes \textcolor{keywordflow}{in} routes.GroupBy(rt => rt.Vehicle.Id))}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00564}00564             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00565}00565                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aa14dc529773344e64d67cde031dfb2d2}{ValidateRoutesTimeOverlap}}(vehicleRoutes, \textcolor{keyword}{false}));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00566}00566             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00567}00567             \textcolor{keywordflow}{foreach} (var tractorRoutes \textcolor{keywordflow}{in} routes.Where(rt => rt.VehicleTractor != \textcolor{keyword}{null}).GroupBy(rt => rt.VehicleTractor.Id))}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00568}00568             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00569}00569                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aa14dc529773344e64d67cde031dfb2d2}{ValidateRoutesTimeOverlap}}(tractorRoutes, \textcolor{keyword}{true}));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00570}00570             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00571}00571             \textcolor{keywordflow}{foreach} (var driverRoutes \textcolor{keywordflow}{in} routes.Where(rt => rt.VehicleDriver != \textcolor{keyword}{null}).GroupBy(rt => rt.VehicleDriver.Id))}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00572}00572             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00573}00573                 errors.AddRange(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_aa14dc529773344e64d67cde031dfb2d2}{ValidateRoutesTimeOverlap}}(driverRoutes, \textcolor{keyword}{true}));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00574}00574             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00575}00575             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00576}00576         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00577}00577 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00578}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a11092249bd48343c3a2e65a5a609a355}{00578}}         \textcolor{keyword}{public} \textcolor{keyword}{static} IEnumerable<ValidationError> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_v_r_p_validator_a11092249bd48343c3a2e65a5a609a355}{ValidateVehicleProperties}}(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} vehicle)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00579}00579         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00580}00580             List<ValidationError> errors = \textcolor{keyword}{new} List<ValidationError>();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00581}00581             \textcolor{keywordflow}{if} (vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} != \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.SemiTrailer \&\&}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00582}00582                 vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} != \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.StraightTruck \&\&}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00583}00583                 vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} != \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.Tractor)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00584}00584             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00585}00585                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00586}00586                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00587}00587                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00588}00588                     vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00589}00589                     \$\textcolor{stringliteral}{"{}Vehicle \{vehicle.Id\} is of unknown \{vehicle.Type\} type non-\/existent in CommonGIS.Enums.VehicleType"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00590}00590                     vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00591}00591                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.WrongType}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00592}00592                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00593}00593             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00594}00594             \textcolor{keywordflow}{if} (vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}{RoadProperties}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a21daca498983d0da7779d0d031ac3806}{EpCount}} > \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a50adc8bff31e280f979c182753b1897a}{MaxEPCount}})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00595}00595             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00596}00596                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00597}00597                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00598}00598                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00599}00599                     vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00600}00600                     \$\textcolor{stringliteral}{"{}Vehicle \{vehicle.Id\} has larger ep count (\{vehicle.RoadProperties.EpCount\}) then expected maximum of \{VehicleRoadRestrictionProperties.MaxEPCount\}"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00601}00601                     vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00602}00602                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.TooLargeVehicleSize}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00603}00603                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00604}00604             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00605}00605             \textcolor{keywordflow}{if} (vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}{RoadProperties}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a4c1d465d3831f8466c446161a127600f}{GrossVehicleWeight}} > \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a39050bdb51269a4ca5897e8e0bfd8dae}{MaxGrossVehicleWeight}})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00606}00606             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00607}00607                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00608}00608                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00609}00609                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00610}00610                     vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00611}00611                     \$\textcolor{stringliteral}{"{}Vehicle \{vehicle.Id\} has larger gross vehicle weight (\{vehicle.RoadProperties.GrossVehicleWeight\}) then expected maximum of \{VehicleRoadRestrictionProperties.MaxGrossVehicleWeight\}"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00612}00612                     vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00613}00613                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.TooLargeVehicleSize}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00614}00614                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00615}00615             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00616}00616             \textcolor{keywordflow}{if} (vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}{RoadProperties}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a62ab671fa005e519395083003f28a1be}{Height}} > \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a5f80468b3a0c75749f5e852e307ad6eb}{MaxHeight}})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00617}00617             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00618}00618                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00619}00619                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00620}00620                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00621}00621                     vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00622}00622                     \$\textcolor{stringliteral}{"{}Vehicle \{vehicle.Id\} has larger height (\{vehicle.RoadProperties.Height\}) then expected maximum of \{VehicleRoadRestrictionProperties.MaxHeight\}"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00623}00623                     vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00624}00624                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.TooLargeVehicleSize}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00625}00625                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00626}00626             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00627}00627             \textcolor{keywordflow}{if} (vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}{RoadProperties}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a65a850332998b86b49f74c056b43abd6}{Width}} > \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_ab9ed1fef8b170b8a02d5fd2ba734e9ab}{MaxWidth}})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00628}00628             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00629}00629                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00630}00630                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00631}00631                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00632}00632                     vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00633}00633                     \$\textcolor{stringliteral}{"{}Vehicle \{vehicle.Id\} has larger width (\{vehicle.RoadProperties.Width\}) then expected maximum of \{VehicleRoadRestrictionProperties.MaxWidth\}"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00634}00634                     vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00635}00635                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.TooLargeVehicleSize}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00636}00636                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00637}00637             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00638}00638             \textcolor{keywordflow}{if} (vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}.All(cap => cap <= 0) \&\& vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} != \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.Tractor)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00639}00639             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00640}00640                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00641}00641                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00642}00642                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00643}00643                     vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00644}00644                     \$\textcolor{stringliteral}{"{}Vehicle \{vehicle.Id\} has zero capacity although it is \{vehicle.Type\}"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00645}00645                     vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00646}00646                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.WrongProperties}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00647}00647                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00648}00648             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00649}00649             \textcolor{keywordflow}{if} (vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}.Any(cap => cap > 0) \&\& vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} == \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}}.VehicleType.Tractor)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00650}00650             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00651}00651                 errors.Add(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_1_1_validation_error}{ValidationError}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00652}00652                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_a59daa0b30abe119e835ea8a2ca4b2239}{VRPErrorType}}.ImprobableValue,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00653}00653                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80c}{VRPObjectType}}.Vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00654}00654                     vehicle.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource_aacbb2ecbfc2ba0fa846364627af5a195}{Id}}.ToString(),}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00655}00655                     \$\textcolor{stringliteral}{"{}Vehicle \{vehicle.Id\} has non zero capacity although it is \{vehicle.Type\}"{}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00656}00656                     vehicle,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00657}00657                     \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aa8aa68a7a6cfb16828910645145f31d5}{ErrorCode}}.WrongProperties}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00658}00658                     ));}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00659}00659             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00660}00660             \textcolor{keywordflow}{return} errors;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00661}00661         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00662}00662     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_validator_8cs_source_l00663}00663 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,156 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer}{}\doxysection{VRPTWOptimizer.\+BL.\+SA.\+Simulated\+Annealing.\+Simmulated\+Annealing\+VRPTWOptimizer Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer}\index{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}}
+Inheritance diagram for VRPTWOptimizer.\+BL.\+SA.\+Simulated\+Annealing.\+Simmulated\+Annealing\+VRPTWOptimizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456}{Scenario\+Type}} \{ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456ada1084049b0478931cd1b084309f5795}{User\+Default\+Scenario}} = 0
+, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456a0eda7ece39edc2fb4086c36ed6166d62}{Best\+Cost\+Scenario}} = 1
+, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456a7c36583b877668dabc4edab629d54dd0}{Best\+Time\+Scenario}} = 2
+, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456ab0b2931fde5244c9e6e557a2ec0d6247}{Uniform\+Scenario}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_optimizer_result}{VRPOptimizer\+Result}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_a72d2f2aa87b67065a0829391875fbd0e}{Optimize}} (\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}} problem\+Data\+Provider, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} service\+Time\+Estimator, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Provider)
+\begin{DoxyCompactList}\small\item\em Solves \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} Routing Problem \end{DoxyCompactList}\item 
+List$<$ List$<$ int $>$ $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_adc345524e08b091ae25744408fe757bc}{Permutation}} (List$<$ int $>$ lista)
+\begin{DoxyCompactList}\small\item\em Funkcja generująca permutacją węzłów na trasie przekazanej jako parametr \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_optimizer_result}{VRPOptimizer\+Result}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_a3c464f24a763e368b1949e35599c6b13}{Optimize}} (\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}} problem\+Data\+Provider, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCost\+Function}} cost\+Function\+Factors, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} service\+Time\+Estimator, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Provider)
+\begin{DoxyCompactList}\small\item\em Solves \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} Routing Problem \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source}{Simmulated\+Annealing\+VRPTWOptimizer.\+cs}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456}} 
+\index{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}!ScenarioType@{ScenarioType}}
+\index{ScenarioType@{ScenarioType}!VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}}
+\doxysubsubsection{\texorpdfstring{ScenarioType}{ScenarioType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456}{VRPTWOptimizer.\+BL.\+SA.\+Simulated\+Annealing.\+Simmulated\+Annealing\+VRPTWOptimizer.\+Scenario\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UserDefaultScenario@{UserDefaultScenario}!VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}}\index{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}!UserDefaultScenario@{UserDefaultScenario}}}\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456ada1084049b0478931cd1b084309f5795}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456ada1084049b0478931cd1b084309f5795}} 
+User\+Default\+Scenario&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BestCostScenario@{BestCostScenario}!VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}}\index{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}!BestCostScenario@{BestCostScenario}}}\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456a0eda7ece39edc2fb4086c36ed6166d62}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456a0eda7ece39edc2fb4086c36ed6166d62}} 
+Best\+Cost\+Scenario&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BestTimeScenario@{BestTimeScenario}!VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}}\index{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}!BestTimeScenario@{BestTimeScenario}}}\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456a7c36583b877668dabc4edab629d54dd0}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456a7c36583b877668dabc4edab629d54dd0}} 
+Best\+Time\+Scenario&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UniformScenario@{UniformScenario}!VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}}\index{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}!UniformScenario@{UniformScenario}}}\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456ab0b2931fde5244c9e6e557a2ec0d6247}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_aa3f8395ce6e60cc4dd012585841de456ab0b2931fde5244c9e6e557a2ec0d6247}} 
+Uniform\+Scenario&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source}{Simmulated\+Annealing\+VRPTWOptimizer.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_a72d2f2aa87b67065a0829391875fbd0e}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_a72d2f2aa87b67065a0829391875fbd0e}} 
+\index{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}!Optimize@{Optimize}}
+\index{Optimize@{Optimize}!VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}}
+\doxysubsubsection{\texorpdfstring{Optimize()}{Optimize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_optimizer_result}{VRPOptimizer\+Result}} VRPTWOptimizer.\+BL.\+SA.\+Simulated\+Annealing.\+Simmulated\+Annealing\+VRPTWOptimizer.\+Optimize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}}}]{problem\+Data\+Provider,  }\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}}}]{service\+Time\+Estimator,  }\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Provider }\end{DoxyParamCaption})}
+
+
+
+Solves \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} Routing Problem 
+
+
+\begin{DoxyParams}{Parameters}
+{\em problem\+Data\+Provider} & \\
+\hline
+{\em service\+Time\+Estimator} & \\
+\hline
+{\em distance\+Provider} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer_a7cb722891e5be074ab58d95a9e532c31}{VRPTWOptimizer.\+Interfaces.\+IVRPOptimizer}}.
+
+
+
+Definition at line \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source_l00134}{134}} of file \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source}{Simmulated\+Annealing\+VRPTWOptimizer.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_a3c464f24a763e368b1949e35599c6b13}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_a3c464f24a763e368b1949e35599c6b13}} 
+\index{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}!Optimize@{Optimize}}
+\index{Optimize@{Optimize}!VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}}
+\doxysubsubsection{\texorpdfstring{Optimize()}{Optimize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_optimizer_result}{VRPOptimizer\+Result}} VRPTWOptimizer.\+BL.\+SA.\+Simulated\+Annealing.\+Simmulated\+Annealing\+VRPTWOptimizer.\+Optimize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}}}]{problem\+Data\+Provider,  }\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCost\+Function}}}]{cost\+Function\+Factors,  }\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}}}]{service\+Time\+Estimator,  }\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Provider }\end{DoxyParamCaption})}
+
+
+
+Solves \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} Routing Problem 
+
+
+\begin{DoxyParams}{Parameters}
+{\em problem\+Data\+Provider} & \\
+\hline
+{\em cost\+Function\+Factors} & \\
+\hline
+{\em service\+Time\+Estimator} & \\
+\hline
+{\em distance\+Provider} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer_abda4122099956af70a5a6fc91d329fb5}{VRPTWOptimizer.\+Interfaces.\+IVRPOptimizer}}.
+
+
+
+Definition at line \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source_l00980}{980}} of file \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source}{Simmulated\+Annealing\+VRPTWOptimizer.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_adc345524e08b091ae25744408fe757bc}\label{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing_1_1_simmulated_annealing_v_r_p_t_w_optimizer_adc345524e08b091ae25744408fe757bc}} 
+\index{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}!Permutation@{Permutation}}
+\index{Permutation@{Permutation}!VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer@{VRPTWOptimizer.BL.SA.SimulatedAnnealing.SimmulatedAnnealingVRPTWOptimizer}}
+\doxysubsubsection{\texorpdfstring{Permutation()}{Permutation()}}
+{\footnotesize\ttfamily List$<$ List$<$ int $>$ $>$ VRPTWOptimizer.\+BL.\+SA.\+Simulated\+Annealing.\+Simmulated\+Annealing\+VRPTWOptimizer.\+Permutation (\begin{DoxyParamCaption}\item[{List$<$ int $>$}]{lista }\end{DoxyParamCaption})}
+
+
+
+Funkcja generująca permutacją węzłów na trasie przekazanej jako parametr 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Trasa poddawana permutacji -\/ tylko numery węzłów przekazywane jako int\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wszystkie permutacje trasy przekazanej na wejściu funkcji
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source_l00935}{935}} of file \mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs_source}{Simmulated\+Annealing\+VRPTWOptimizer.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_simmulated_annealing_v_r_p_t_w_optimizer_8cs}{Simmulated\+Annealing\+VRPTWOptimizer.\+cs}}\end{DoxyCompactItemize}

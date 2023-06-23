@@ -1,0 +1,775 @@
+\begin{theindex}
+
+  \item {.NETCoreApp,Version=v5.0.AssemblyAttributes.cs}, 
+		\hyperpage{106, 107}
+
+  \indexspace
+
+  \item {AddSolution}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{77}
+  \item {Aggregation}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{10}
+  \item {Aggregation.cs}, \hyperpage{98}
+  \item {Algorithm}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{87}
+  \item {ArrivalTime}
+    \subitem {VRPTWOptimizer.VRPSolution.ScheduleItem}, \hyperpage{39}
+  \item {ArrivalTimes}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{22}
+  \item {AvailabilityEnd}
+    \subitem {VRPTWOptimizer.Dto.TimeInterval}, \hyperpage{42}
+    \subitem {VRPTWOptimizer.Resource}, \hyperpage{38}
+  \item {AvailabilityStart}
+    \subitem {VRPTWOptimizer.Dto.TimeInterval}, \hyperpage{42}
+    \subitem {VRPTWOptimizer.Resource}, \hyperpage{38}
+  \item {AvailableForLoadingTime}
+    \subitem {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{43}
+  \item {AvailableForNextAssignmentTime}
+    \subitem {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{44}
+
+  \indexspace
+
+  \item {Backhauling}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+  \item {Box}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+
+  \indexspace
+
+  \item {CallbackUrl}
+    \subitem {VRPTWOptimizer.Dto.PickingSchedule}, \hyperpage{35}
+  \item {CanFitCapacity}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{59}
+  \item {CanFitRequests}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{59}
+  \item {CanFitRequestsSomewhereInVehicle}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{60}
+  \item {CanHandleRequest}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{60}
+  \item {Capacity}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{61}
+  \item {CapacityAggregationType}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{61}
+  \item {CapacityVehicleType}
+    \subitem {VRPTWOptimizer.Dto.TransportPickingLists}, \hyperpage{46}
+    \subitem {VRPTWOptimizer.Dto.VehicleSchedule}, \hyperpage{64}
+  \item {CargoGroup}
+    \subitem {VRPTWOptimizer.CargoUnit}, \hyperpage{13}
+  \item {CargoType}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{51}
+  \item {CargoType.cs}, \hyperpage{98, 99}
+  \item {CargoTypes}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{51}
+  \item {CargoUnit.cs}, \hyperpage{91}
+  \item {CargoUnitType}
+    \subitem {VRPTWOptimizer.CargoUnit}, \hyperpage{14}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+  \item {CargoUnitType.cs}, \hyperpage{99}
+  \item {CarrierMinDistanceFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{72}
+  \item {CarrierMinDistanceThreshold}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{72}
+  \item {CarrierShareFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{72}
+  \item {CarrierShareRatio}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{72}
+  \item {Client}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{79}
+  \item {CompatibileVehiclesIds}
+    \subitem {VRPTWOptimizer.Driver}, \hyperpage{18}
+  \item {ComputationTime}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{87}
+  \item {ComputationTimestamp}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{87}
+  \item {ComputeFillInFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{68}
+  \item {ComputeMaxEarlyArrival}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{69}
+  \item {ComputeMaxTimeDiff}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{69}
+  \item {ComputerId}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{87}
+  \item {ComputeTotalEarlyArrival}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{70}
+  \item {ComputeTotalTimeDiff}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{70}
+  \item {ContainerRetrieval}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+  \item {CostFunctionFactors}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{79}
+  \item {CreateOptimizer}
+    \subitem {VRPTWOptimizer.Interfaces.IVRPOptimizerFactory}, 
+		\hyperpage{28}
+
+  \indexspace
+
+  \item {DataFormatVersion}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{79}
+  \item {Date}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{80}
+  \item {Delay}
+    \subitem {VRPTWOptimizer.VRPSolution.ScheduleItem}, \hyperpage{39}
+  \item {DelaysCount}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{88}
+  \item {DeliveryAvailableTimeWindowEnd}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{51}
+  \item {DeliveryAvailableTimeWindowStart}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{51}
+  \item {DeliveryLocation}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{52}
+  \item {DeliveryLocationId}
+    \subitem {VRPTWOptimizer.Dto.StorePickingList}, \hyperpage{41}
+  \item {DeliveryPreferedTimeWindowEnd}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{52}
+  \item {DeliveryPreferedTimeWindowStart}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{52}
+  \item {DepartureTime}
+    \subitem {VRPTWOptimizer.VRPSolution.ScheduleItem}, \hyperpage{39}
+  \item {DepartureTimes}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{22}
+  \item {DepotId}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{80}
+  \item {DesiredDepartureTime}
+    \subitem {VRPTWOptimizer.Dto.TransportPickingLists}, \hyperpage{46}
+  \item {DictionaryDistanceProviderBase}
+    \subitem {VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}, 
+		\hyperpage{16}
+  \item {DictionaryDistanceProviderBase.cs}, \hyperpage{92}
+  \item {DistanceData}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{80}
+  \item {DistanceFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{73}
+  \item {distanceMatrix}
+    \subitem {VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}, 
+		\hyperpage{16}
+  \item {Distances}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{23}
+  \item {Driver}
+    \subitem {VRPTWOptimizer.Driver}, \hyperpage{18}
+  \item {Driver.cs}, \hyperpage{93}
+  \item {DriverId}
+    \subitem {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{44}
+  \item {Drivers}
+    \subitem {VRPTWOptimizer.Interfaces.IVRPProvider}, \hyperpage{30}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{80}
+  \item {DriveTimeFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{73}
+
+  \indexspace
+
+  \item {EmptyBoxes}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+  \item {EpCapacity}
+    \subitem {VRPTWOptimizer.Dto.TransportPickingLists}, \hyperpage{46}
+    \subitem {VRPTWOptimizer.Dto.VehicleSchedule}, \hyperpage{64}
+  \item {EpCount}
+    \subitem {VRPTWOptimizer.Dto.StorePickingList}, \hyperpage{41}
+  \item {EstimateLoadUnloadTime}
+    \subitem {VRPTWOptimizer.Interfaces.ITimeEstimator}, \hyperpage{26}
+  \item {ExpectedArriveTime}
+    \subitem {VRPTWOptimizer.InsertionResult}, \hyperpage{20}
+  \item {ExtractBestFitRequests}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{50}
+
+  \indexspace
+
+  \item {FillInFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{73}
+  \item {FillInRatio}
+    \subitem {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{44}
+  \item {FinalLocation}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{61}
+  \item {Food}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+
+  \indexspace
+
+  \item {Garbage}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+  \item {GeneratePickingSchedule}
+    \subitem {VRPTWOptimizer.Dto.PickingSchedule}, \hyperpage{34}
+  \item {GenerateVRPDefintion}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{77, 78}
+  \item {GenerateVRPSolution}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{86}
+  \item {GetDefaultParametersFunction}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{71}
+  \item {GetDistance}
+    \subitem {VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}, 
+		\hyperpage{16}
+  \item {GoodsDistribution}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+  \item {GoodsId}
+    \subitem {VRPTWOptimizer.CargoUnit}, \hyperpage{14}
+  \item {GoodsList}
+    \subitem {VRPTWOptimizer.Dto.StorePickingList}, \hyperpage{41}
+  \item {GoodsName}
+    \subitem {VRPTWOptimizer.CargoUnit}, \hyperpage{14}
+
+  \indexspace
+
+  \item {HomeDepot}
+    \subitem {VRPTWOptimizer.Interfaces.IVRPProvider}, \hyperpage{30}
+
+  \indexspace
+
+  \item {Id}
+    \subitem {VRPTWOptimizer.Dto.PickingSchedule}, \hyperpage{35}
+    \subitem {VRPTWOptimizer.Resource}, \hyperpage{38}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{52}
+  \item {InitializeDistanceDictionary}
+    \subitem {VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}, 
+		\hyperpage{16}
+  \item {InitialLocation}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{61}
+  \item {InsertionResult}
+    \subitem {VRPTWOptimizer.InsertionResult}, \hyperpage{19}
+  \item {InsertionResult.cs}, \hyperpage{100}
+  \item {IRoute.cs}, \hyperpage{101}
+  \item {ITimeEstimator.cs}, \hyperpage{101, 102}
+  \item {IVRPOptimizer.cs}, \hyperpage{102}
+  \item {IVRPOptimizerFactory.cs}, \hyperpage{102, 103}
+  \item {IVRPProvider.cs}, \hyperpage{103}
+  \item {IVRPSolutionWriter.cs}, \hyperpage{103, 104}
+
+  \indexspace
+
+  \item {JSONDefinitionWriter}
+    \subitem {VRPTWOptimizer.Logging.JSONDefinitionWriter}, 
+		\hyperpage{32}
+  \item {JSONDefinitionWriter.cs}, \hyperpage{105}
+
+  \indexspace
+
+  \item {LeftCargoUnitFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{73}
+  \item {LeftRequests}
+    \subitem {VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}, 
+		\hyperpage{84}
+    \subitem {VRPTWOptimizer.VRPOptimizerResult}, \hyperpage{82}
+  \item {LeftRequestsIds}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{88}
+  \item {Length}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{23}
+    \subitem {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{44}
+  \item {LoadData}
+    \subitem {VRPTWOptimizer.Interfaces.IVRPProvider}, \hyperpage{29}
+  \item {LoadedRequests}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{23}
+  \item {LoadedRequestsIds}
+    \subitem {VRPTWOptimizer.VRPSolution.ScheduleItem}, \hyperpage{40}
+  \item {LoadingOrder}
+    \subitem {VRPTWOptimizer.Dto.StorePickingList}, \hyperpage{41}
+  \item {LocationId}
+    \subitem {VRPTWOptimizer.VRPSolution.ScheduleItem}, \hyperpage{40}
+
+  \indexspace
+
+  \item {Max}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+  \item {MaxDelay}
+    \subitem {VRPTWOptimizer.InsertionResult}, \hyperpage{20}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{23}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{88}
+  \item {MaxDelayFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{73}
+  \item {MaxDelaySquaredFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{74}
+  \item {MaxEarlyArrivalFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{74}
+  \item {MaxEarlyArrivalSquaredFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{74}
+  \item {MaxEpCapacity}
+    \subitem {VRPTWOptimizer.Dto.TransportPickingLists}, \hyperpage{47}
+  \item {MaxRideTime}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{61}
+  \item {MaxVehicleSize}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{52}
+  \item {MaxVehicleSpreadFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{74}
+  \item {MutuallyExclusiveRequestsIdTimeBufferDict}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{53}
+
+  \indexspace
+
+  \item {Name}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{53}
+  \item {NecessaryVehicleSpecialProperties}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{53}
+  \item {NewAddedDistance}
+    \subitem {VRPTWOptimizer.InsertionResult}, \hyperpage{20}
+  \item {NewNextArriveTime}
+    \subitem {VRPTWOptimizer.InsertionResult}, \hyperpage{20}
+
+  \indexspace
+
+  \item {OldDistanceBetween}
+    \subitem {VRPTWOptimizer.InsertionResult}, \hyperpage{21}
+  \item {OldNextArriveTime}
+    \subitem {VRPTWOptimizer.InsertionResult}, \hyperpage{21}
+  \item {operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$}
+    \subitem {VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}, 
+		\hyperpage{84}
+  \item {Optimize}
+    \subitem {VRPTWOptimizer.Interfaces.IVRPOptimizer}, \hyperpage{27}
+  \item {OrdersCreateDate}
+    \subitem {VRPTWOptimizer.Dto.PickingSchedule}, \hyperpage{36}
+  \item {OrdersPickingStart}
+    \subitem {VRPTWOptimizer.Dto.PickingSchedule}, \hyperpage{36}
+  \item {OwnerID}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{62}
+
+  \indexspace
+
+  \item {PackageCount}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{53}
+  \item {PackageCountForImediateRetrieval}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{53}
+  \item {PickingLists}
+    \subitem {VRPTWOptimizer.Dto.PickingSchedule}, \hyperpage{36}
+  \item {PickingSchedule.cs}, \hyperpage{93, 94}
+  \item {PickupAvailableTimeWindowEnd}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{54}
+  \item {PickupAvailableTimeWindowStart}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{54}
+  \item {PickupLocation}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{54}
+  \item {PickupPreferedTimeWindowEnd}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{54}
+  \item {PickupPreferedTimeWindowStart}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{54}
+  \item {Priority}
+    \subitem {VRPTWOptimizer.CargoUnit}, \hyperpage{14}
+
+  \indexspace
+
+  \item {Requests}
+    \subitem {VRPTWOptimizer.Interfaces.IVRPProvider}, \hyperpage{30}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{80}
+  \item {RequestType}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+  \item {RequestType.cs}, \hyperpage{99, 100}
+  \item {Resource}
+    \subitem {VRPTWOptimizer.Resource}, \hyperpage{37}
+  \item {Resource.cs}, \hyperpage{108}
+  \item {RestrictedCargoTypes}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{55}
+  \item {RevenueValue}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{55}
+  \item {RoadProperties}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{62}
+  \item {Routes}
+    \subitem {VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}, 
+		\hyperpage{84}
+    \subitem {VRPTWOptimizer.VRPOptimizerResult}, \hyperpage{82}
+  \item {RoutesCountFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{74}
+
+  \indexspace
+
+  \item {SaveSolution}
+    \subitem {VRPTWOptimizer.Interfaces.IVRPSolutionWriter}, 
+		\hyperpage{31}
+    \subitem {VRPTWOptimizer.Logging.JSONDefinitionWriter}, 
+		\hyperpage{33}
+  \item {Schedule}
+    \subitem {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{44}
+  \item {SelfContain}
+    \subitem {VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}, 
+		\hyperpage{17}
+  \item {SemiTrailerTruckId}
+    \subitem {VRPTWOptimizer.Dto.TransportPickingLists}, \hyperpage{47}
+  \item {ServiceTimeEstimator}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{81}
+  \item {SingleRouteValue}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{71}
+  \item {Size}
+    \subitem {VRPTWOptimizer.CargoUnit}, \hyperpage{14}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{55}
+  \item {Solutions}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{81}
+  \item {SpecialProperties}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{62}
+  \item {StoredDistances}
+    \subitem {VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}, 
+		\hyperpage{17}
+  \item {StoreOrders}
+    \subitem {VRPTWOptimizer.Dto.TransportPickingLists}, \hyperpage{47}
+  \item {StorePickingList.cs}, \hyperpage{95, 96}
+  \item {Success}
+    \subitem {VRPTWOptimizer.InsertionResult}, \hyperpage{21}
+  \item {Sum}
+    \subitem {VRPTWOptimizer.Enums}, \hyperpage{11}
+
+  \indexspace
+
+  \item {TimeInterval.cs}, \hyperpage{96}
+  \item {TimeWindowEnd}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{23}
+  \item {TimeWindowStart}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{24}
+  \item {ToPrettyJSONString}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{78}
+  \item {TotalDelay}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{24}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{88}
+  \item {TotalDelayFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{75}
+  \item {TotalDelaySquaredFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{75}
+  \item {TotalEarlyArrivalFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{75}
+  \item {TotalEarlyArrivalSquaredFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{75}
+  \item {TotalLength}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{88}
+  \item {TractorId}
+    \subitem {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{45}
+  \item {TractorRoutes}
+    \subitem {VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}, 
+		\hyperpage{85}
+  \item {TrailerTruckId}
+    \subitem {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{45}
+  \item {TransportId}
+    \subitem {VRPTWOptimizer.Dto.TransportPickingLists}, \hyperpage{47}
+    \subitem {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{45}
+  \item {TransportPickingLists.cs}, \hyperpage{97}
+  \item {TransportRequest}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{49}
+  \item {TransportRequest.cs}, \hyperpage{108}
+  \item {Transports}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{89}
+  \item {TravelTime}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{24}
+  \item {TrySaveToFile}
+    \subitem {VRPTWOptimizer.Dto.PickingSchedule}, \hyperpage{35}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{79}
+  \item {Type}
+    \subitem {VRPTWOptimizer.TransportRequest}, \hyperpage{55}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{62}
+
+  \indexspace
+
+  \item {UnitsCount}
+    \subitem {VRPTWOptimizer.CargoUnit}, \hyperpage{15}
+  \item {UnloadedRequests}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{24}
+  \item {UnloadedRequestsIds}
+    \subitem {VRPTWOptimizer.VRPSolution.ScheduleItem}, \hyperpage{40}
+  \item {UsageFactor}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{75}
+
+  \indexspace
+
+  \item {Value}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{71}
+  \item {Vehicle}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{24}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{57, 58}
+  \item {Vehicle.cs}, \hyperpage{111}
+  \item {VehicleCostPerDistanceUnit}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{62}
+  \item {VehicleCostPerTimeUnit}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{63}
+  \item {VehicleCostPerUsage}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{63}
+  \item {VehicleDriver}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{25}
+  \item {VehicleFlatCostForShortRouteLength}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{63}
+  \item {VehicleId}
+    \subitem {VRPTWOptimizer.Dto.VehicleSchedule}, \hyperpage{64}
+  \item {VehicleMaxRouteLengthForFlatCost}
+    \subitem {VRPTWOptimizer.Vehicle}, \hyperpage{63}
+  \item {Vehicles}
+    \subitem {VRPTWOptimizer.Interfaces.IVRPProvider}, \hyperpage{30}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{81}
+  \item {VehiclesAvailability}
+    \subitem {VRPTWOptimizer.Dto.PickingSchedule}, \hyperpage{36}
+  \item {VehicleSchedule.cs}, \hyperpage{97, 98}
+  \item {vehicleToProfileMapper}
+    \subitem {VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}, 
+		\hyperpage{17}
+  \item {VehicleTractor}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{25}
+  \item {Version}
+    \subitem {VRPTWOptimizer.VRPSolution}, \hyperpage{89}
+  \item {VisitedLocations}
+    \subitem {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{25}
+  \item {VRPCostFunction}
+    \subitem {VRPTWOptimizer.VRPCostFunction}, \hyperpage{67}
+  \item {VRPCostFunction.cs}, \hyperpage{114}
+  \item {VRPDefinition.cs}, \hyperpage{118}
+  \item {VRPOptimizerResult.cs}, \hyperpage{120}
+  \item {VRPResult}
+    \subitem {VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}, 
+		\hyperpage{83}
+  \item {VRPResult.cs}, \hyperpage{104}
+  \item {VRPSolution.cs}, \hyperpage{121}
+  \item {VRPTWOptimizer}, \hyperpage{9}
+  \item {VRPTWOptimizer.AssemblyInfo.cs}, \hyperpage{107}
+  \item {VRPTWOptimizer.CargoUnit}, \hyperpage{13}
+    \subitem {CargoGroup}, \hyperpage{13}
+    \subitem {CargoUnitType}, \hyperpage{14}
+    \subitem {GoodsId}, \hyperpage{14}
+    \subitem {GoodsName}, \hyperpage{14}
+    \subitem {Priority}, \hyperpage{14}
+    \subitem {Size}, \hyperpage{14}
+    \subitem {UnitsCount}, \hyperpage{15}
+  \item {VRPTWOptimizer.DistanceProviders}, \hyperpage{10}
+  \item {VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}, 
+		\hyperpage{15}
+    \subitem {DictionaryDistanceProviderBase}, \hyperpage{16}
+    \subitem {distanceMatrix}, \hyperpage{16}
+    \subitem {GetDistance}, \hyperpage{16}
+    \subitem {InitializeDistanceDictionary}, \hyperpage{16}
+    \subitem {SelfContain}, \hyperpage{17}
+    \subitem {StoredDistances}, \hyperpage{17}
+    \subitem {vehicleToProfileMapper}, \hyperpage{17}
+  \item {VRPTWOptimizer.Driver}, \hyperpage{17}
+    \subitem {CompatibileVehiclesIds}, \hyperpage{18}
+    \subitem {Driver}, \hyperpage{18}
+  \item {VRPTWOptimizer.Dto}, \hyperpage{10}
+  \item {VRPTWOptimizer.Dto.PickingSchedule}, \hyperpage{33}
+    \subitem {CallbackUrl}, \hyperpage{35}
+    \subitem {GeneratePickingSchedule}, \hyperpage{34}
+    \subitem {Id}, \hyperpage{35}
+    \subitem {OrdersCreateDate}, \hyperpage{36}
+    \subitem {OrdersPickingStart}, \hyperpage{36}
+    \subitem {PickingLists}, \hyperpage{36}
+    \subitem {TrySaveToFile}, \hyperpage{35}
+    \subitem {VehiclesAvailability}, \hyperpage{36}
+  \item {VRPTWOptimizer.Dto.StorePickingList}, \hyperpage{40}
+    \subitem {DeliveryLocationId}, \hyperpage{41}
+    \subitem {EpCount}, \hyperpage{41}
+    \subitem {GoodsList}, \hyperpage{41}
+    \subitem {LoadingOrder}, \hyperpage{41}
+  \item {VRPTWOptimizer.Dto.TimeInterval}, \hyperpage{42}
+    \subitem {AvailabilityEnd}, \hyperpage{42}
+    \subitem {AvailabilityStart}, \hyperpage{42}
+  \item {VRPTWOptimizer.Dto.TransportPickingLists}, \hyperpage{45}
+    \subitem {CapacityVehicleType}, \hyperpage{46}
+    \subitem {DesiredDepartureTime}, \hyperpage{46}
+    \subitem {EpCapacity}, \hyperpage{46}
+    \subitem {MaxEpCapacity}, \hyperpage{47}
+    \subitem {SemiTrailerTruckId}, \hyperpage{47}
+    \subitem {StoreOrders}, \hyperpage{47}
+    \subitem {TransportId}, \hyperpage{47}
+  \item {VRPTWOptimizer.Dto.VehicleSchedule}, \hyperpage{64}
+    \subitem {CapacityVehicleType}, \hyperpage{64}
+    \subitem {EpCapacity}, \hyperpage{64}
+    \subitem {VehicleId}, \hyperpage{64}
+    \subitem {YardAvailabilitySchedule}, \hyperpage{65}
+  \item {VRPTWOptimizer.Enums}, \hyperpage{10}
+    \subitem {Aggregation}, \hyperpage{10}
+    \subitem {Backhauling}, \hyperpage{11}
+    \subitem {Box}, \hyperpage{11}
+    \subitem {CargoType}, \hyperpage{11}
+    \subitem {CargoUnitType}, \hyperpage{11}
+    \subitem {ContainerRetrieval}, \hyperpage{11}
+    \subitem {EmptyBoxes}, \hyperpage{11}
+    \subitem {Food}, \hyperpage{11}
+    \subitem {Garbage}, \hyperpage{11}
+    \subitem {GoodsDistribution}, \hyperpage{11}
+    \subitem {Max}, \hyperpage{11}
+    \subitem {RequestType}, \hyperpage{11}
+    \subitem {Sum}, \hyperpage{11}
+  \item {VRPTWOptimizer.InsertionResult}, \hyperpage{19}
+    \subitem {ExpectedArriveTime}, \hyperpage{20}
+    \subitem {InsertionResult}, \hyperpage{19}
+    \subitem {MaxDelay}, \hyperpage{20}
+    \subitem {NewAddedDistance}, \hyperpage{20}
+    \subitem {NewNextArriveTime}, \hyperpage{20}
+    \subitem {OldDistanceBetween}, \hyperpage{21}
+    \subitem {OldNextArriveTime}, \hyperpage{21}
+    \subitem {Success}, \hyperpage{21}
+  \item {VRPTWOptimizer.Interfaces}, \hyperpage{12}
+  \item {VRPTWOptimizer.Interfaces.IRoute}, \hyperpage{21}
+    \subitem {ArrivalTimes}, \hyperpage{22}
+    \subitem {DepartureTimes}, \hyperpage{22}
+    \subitem {Distances}, \hyperpage{23}
+    \subitem {Length}, \hyperpage{23}
+    \subitem {LoadedRequests}, \hyperpage{23}
+    \subitem {MaxDelay}, \hyperpage{23}
+    \subitem {TimeWindowEnd}, \hyperpage{23}
+    \subitem {TimeWindowStart}, \hyperpage{24}
+    \subitem {TotalDelay}, \hyperpage{24}
+    \subitem {TravelTime}, \hyperpage{24}
+    \subitem {UnloadedRequests}, \hyperpage{24}
+    \subitem {Vehicle}, \hyperpage{24}
+    \subitem {VehicleDriver}, \hyperpage{25}
+    \subitem {VehicleTractor}, \hyperpage{25}
+    \subitem {VisitedLocations}, \hyperpage{25}
+  \item {VRPTWOptimizer.Interfaces.ITimeEstimator}, \hyperpage{25}
+    \subitem {EstimateLoadUnloadTime}, \hyperpage{26}
+  \item {VRPTWOptimizer.Interfaces.IVRPOptimizer}, \hyperpage{26}
+    \subitem {Optimize}, \hyperpage{27}
+  \item {VRPTWOptimizer.Interfaces.IVRPOptimizerFactory}, 
+		\hyperpage{28}
+    \subitem {CreateOptimizer}, \hyperpage{28}
+  \item {VRPTWOptimizer.Interfaces.IVRPProvider}, \hyperpage{29}
+    \subitem {Drivers}, \hyperpage{30}
+    \subitem {HomeDepot}, \hyperpage{30}
+    \subitem {LoadData}, \hyperpage{29}
+    \subitem {Requests}, \hyperpage{30}
+    \subitem {Vehicles}, \hyperpage{30}
+    \subitem {ZeroHour}, \hyperpage{30}
+  \item {VRPTWOptimizer.Interfaces.IVRPSolutionWriter}, \hyperpage{31}
+    \subitem {SaveSolution}, \hyperpage{31}
+  \item {VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}, 
+		\hyperpage{83}
+    \subitem {LeftRequests}, \hyperpage{84}
+    \subitem {operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$}, 
+		\hyperpage{84}
+    \subitem {Routes}, \hyperpage{84}
+    \subitem {TractorRoutes}, \hyperpage{85}
+    \subitem {VRPResult}, \hyperpage{83}
+  \item {VRPTWOptimizer.Logging}, \hyperpage{12}
+  \item {VRPTWOptimizer.Logging.JSONDefinitionWriter}, \hyperpage{32}
+    \subitem {JSONDefinitionWriter}, \hyperpage{32}
+    \subitem {SaveSolution}, \hyperpage{33}
+  \item {VRPTWOptimizer.Resource}, \hyperpage{37}
+    \subitem {AvailabilityEnd}, \hyperpage{38}
+    \subitem {AvailabilityStart}, \hyperpage{38}
+    \subitem {Id}, \hyperpage{38}
+    \subitem {Resource}, \hyperpage{37}
+  \item {VRPTWOptimizer.TransportRequest}, \hyperpage{48}
+    \subitem {CargoType}, \hyperpage{51}
+    \subitem {CargoTypes}, \hyperpage{51}
+    \subitem {DeliveryAvailableTimeWindowEnd}, \hyperpage{51}
+    \subitem {DeliveryAvailableTimeWindowStart}, \hyperpage{51}
+    \subitem {DeliveryLocation}, \hyperpage{52}
+    \subitem {DeliveryPreferedTimeWindowEnd}, \hyperpage{52}
+    \subitem {DeliveryPreferedTimeWindowStart}, \hyperpage{52}
+    \subitem {ExtractBestFitRequests}, \hyperpage{50}
+    \subitem {Id}, \hyperpage{52}
+    \subitem {MaxVehicleSize}, \hyperpage{52}
+    \subitem {MutuallyExclusiveRequestsIdTimeBufferDict}, 
+		\hyperpage{53}
+    \subitem {Name}, \hyperpage{53}
+    \subitem {NecessaryVehicleSpecialProperties}, \hyperpage{53}
+    \subitem {PackageCount}, \hyperpage{53}
+    \subitem {PackageCountForImediateRetrieval}, \hyperpage{53}
+    \subitem {PickupAvailableTimeWindowEnd}, \hyperpage{54}
+    \subitem {PickupAvailableTimeWindowStart}, \hyperpage{54}
+    \subitem {PickupLocation}, \hyperpage{54}
+    \subitem {PickupPreferedTimeWindowEnd}, \hyperpage{54}
+    \subitem {PickupPreferedTimeWindowStart}, \hyperpage{54}
+    \subitem {RestrictedCargoTypes}, \hyperpage{55}
+    \subitem {RevenueValue}, \hyperpage{55}
+    \subitem {Size}, \hyperpage{55}
+    \subitem {TransportRequest}, \hyperpage{49}
+    \subitem {Type}, \hyperpage{55}
+  \item {VRPTWOptimizer.Vehicle}, \hyperpage{56}
+    \subitem {CanFitCapacity}, \hyperpage{59}
+    \subitem {CanFitRequests}, \hyperpage{59}
+    \subitem {CanFitRequestsSomewhereInVehicle}, \hyperpage{60}
+    \subitem {CanHandleRequest}, \hyperpage{60}
+    \subitem {Capacity}, \hyperpage{61}
+    \subitem {CapacityAggregationType}, \hyperpage{61}
+    \subitem {FinalLocation}, \hyperpage{61}
+    \subitem {InitialLocation}, \hyperpage{61}
+    \subitem {MaxRideTime}, \hyperpage{61}
+    \subitem {OwnerID}, \hyperpage{62}
+    \subitem {RoadProperties}, \hyperpage{62}
+    \subitem {SpecialProperties}, \hyperpage{62}
+    \subitem {Type}, \hyperpage{62}
+    \subitem {Vehicle}, \hyperpage{57, 58}
+    \subitem {VehicleCostPerDistanceUnit}, \hyperpage{62}
+    \subitem {VehicleCostPerTimeUnit}, \hyperpage{63}
+    \subitem {VehicleCostPerUsage}, \hyperpage{63}
+    \subitem {VehicleFlatCostForShortRouteLength}, \hyperpage{63}
+    \subitem {VehicleMaxRouteLengthForFlatCost}, \hyperpage{63}
+  \item {VRPTWOptimizer.VRPCostFunction}, \hyperpage{65}
+    \subitem {CarrierMinDistanceFactor}, \hyperpage{72}
+    \subitem {CarrierMinDistanceThreshold}, \hyperpage{72}
+    \subitem {CarrierShareFactor}, \hyperpage{72}
+    \subitem {CarrierShareRatio}, \hyperpage{72}
+    \subitem {ComputeFillInFactor}, \hyperpage{68}
+    \subitem {ComputeMaxEarlyArrival}, \hyperpage{69}
+    \subitem {ComputeMaxTimeDiff}, \hyperpage{69}
+    \subitem {ComputeTotalEarlyArrival}, \hyperpage{70}
+    \subitem {ComputeTotalTimeDiff}, \hyperpage{70}
+    \subitem {DistanceFactor}, \hyperpage{73}
+    \subitem {DriveTimeFactor}, \hyperpage{73}
+    \subitem {FillInFactor}, \hyperpage{73}
+    \subitem {GetDefaultParametersFunction}, \hyperpage{71}
+    \subitem {LeftCargoUnitFactor}, \hyperpage{73}
+    \subitem {MaxDelayFactor}, \hyperpage{73}
+    \subitem {MaxDelaySquaredFactor}, \hyperpage{74}
+    \subitem {MaxEarlyArrivalFactor}, \hyperpage{74}
+    \subitem {MaxEarlyArrivalSquaredFactor}, \hyperpage{74}
+    \subitem {MaxVehicleSpreadFactor}, \hyperpage{74}
+    \subitem {RoutesCountFactor}, \hyperpage{74}
+    \subitem {SingleRouteValue}, \hyperpage{71}
+    \subitem {TotalDelayFactor}, \hyperpage{75}
+    \subitem {TotalDelaySquaredFactor}, \hyperpage{75}
+    \subitem {TotalEarlyArrivalFactor}, \hyperpage{75}
+    \subitem {TotalEarlyArrivalSquaredFactor}, \hyperpage{75}
+    \subitem {UsageFactor}, \hyperpage{75}
+    \subitem {Value}, \hyperpage{71}
+    \subitem {VRPCostFunction}, \hyperpage{67}
+  \item {VRPTWOptimizer.VRPDefinition}, \hyperpage{76}
+    \subitem {AddSolution}, \hyperpage{77}
+    \subitem {Client}, \hyperpage{79}
+    \subitem {CostFunctionFactors}, \hyperpage{79}
+    \subitem {DataFormatVersion}, \hyperpage{79}
+    \subitem {Date}, \hyperpage{80}
+    \subitem {DepotId}, \hyperpage{80}
+    \subitem {DistanceData}, \hyperpage{80}
+    \subitem {Drivers}, \hyperpage{80}
+    \subitem {GenerateVRPDefintion}, \hyperpage{77, 78}
+    \subitem {Requests}, \hyperpage{80}
+    \subitem {ServiceTimeEstimator}, \hyperpage{81}
+    \subitem {Solutions}, \hyperpage{81}
+    \subitem {ToPrettyJSONString}, \hyperpage{78}
+    \subitem {TrySaveToFile}, \hyperpage{79}
+    \subitem {Vehicles}, \hyperpage{81}
+    \subitem {ZeroHour}, \hyperpage{81}
+  \item {VRPTWOptimizer.VRPOptimizerResult}, \hyperpage{82}
+    \subitem {LeftRequests}, \hyperpage{82}
+    \subitem {Routes}, \hyperpage{82}
+  \item {VRPTWOptimizer.VRPSolution}, \hyperpage{85}
+    \subitem {Algorithm}, \hyperpage{87}
+    \subitem {ComputationTime}, \hyperpage{87}
+    \subitem {ComputationTimestamp}, \hyperpage{87}
+    \subitem {ComputerId}, \hyperpage{87}
+    \subitem {DelaysCount}, \hyperpage{88}
+    \subitem {GenerateVRPSolution}, \hyperpage{86}
+    \subitem {LeftRequestsIds}, \hyperpage{88}
+    \subitem {MaxDelay}, \hyperpage{88}
+    \subitem {TotalDelay}, \hyperpage{88}
+    \subitem {TotalLength}, \hyperpage{88}
+    \subitem {Transports}, \hyperpage{89}
+    \subitem {Version}, \hyperpage{89}
+  \item {VRPTWOptimizer.VRPSolution.ScheduleItem}, \hyperpage{38}
+    \subitem {ArrivalTime}, \hyperpage{39}
+    \subitem {Delay}, \hyperpage{39}
+    \subitem {DepartureTime}, \hyperpage{39}
+    \subitem {LoadedRequestsIds}, \hyperpage{40}
+    \subitem {LocationId}, \hyperpage{40}
+    \subitem {UnloadedRequestsIds}, \hyperpage{40}
+  \item {VRPTWOptimizer.VRPSolution.TransportItem}, \hyperpage{43}
+    \subitem {AvailableForLoadingTime}, \hyperpage{43}
+    \subitem {AvailableForNextAssignmentTime}, \hyperpage{44}
+    \subitem {DriverId}, \hyperpage{44}
+    \subitem {FillInRatio}, \hyperpage{44}
+    \subitem {Length}, \hyperpage{44}
+    \subitem {Schedule}, \hyperpage{44}
+    \subitem {TractorId}, \hyperpage{45}
+    \subitem {TrailerTruckId}, \hyperpage{45}
+    \subitem {TransportId}, \hyperpage{45}
+
+  \indexspace
+
+  \item {YardAvailabilitySchedule}
+    \subitem {VRPTWOptimizer.Dto.VehicleSchedule}, \hyperpage{65}
+
+  \indexspace
+
+  \item {ZeroHour}
+    \subitem {VRPTWOptimizer.Interfaces.IVRPProvider}, \hyperpage{30}
+    \subitem {VRPTWOptimizer.VRPDefinition}, \hyperpage{81}
+
+\end{theindex}

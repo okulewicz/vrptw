@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['alns_0',['ALNS',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s.html',1,'VRPTWOptimizer::BL']]],
+  ['assignment_1',['Assignment',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_assignment.html',1,'VRPTWOptimizer::BL::Meta']]],
+  ['bl_2',['BL',['../namespace_v_r_p_t_w_optimizer_1_1_b_l.html',1,'VRPTWOptimizer']]],
+  ['classes_3',['Classes',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_classes.html',1,'VRPTWOptimizer::BL::SA']]],
+  ['cluster_4',['Cluster',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster.html',1,'VRPTWOptimizer::BL::Meta']]],
+  ['distanceproviders_5',['DistanceProviders',['../namespace_v_r_p_t_w_optimizer_1_1_distance_providers.html',1,'VRPTWOptimizer']]],
+  ['distributionclusteringintegratedfleet_6',['DistributionClusteringIntegratedFleet',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_distribution_clustering_integrated_fleet.html',1,'VRPTWOptimizer::BL::Meta::Cluster']]],
+  ['dto_7',['Dto',['../namespace_v_r_p_t_w_optimizer_1_1_dto.html',1,'VRPTWOptimizer']]],
+  ['enums_8',['Enums',['../namespace_v_r_p_t_w_optimizer_1_1_enums.html',1,'VRPTWOptimizer']]],
+  ['generalizedclustering_9',['GeneralizedClustering',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_generalized_clustering.html',1,'VRPTWOptimizer::BL::Meta::Cluster']]],
+  ['interfaces_10',['Interfaces',['../namespace_v_r_p_t_w_optimizer_1_1_interfaces.html',1,'VRPTWOptimizer']]],
+  ['logging_11',['Logging',['../namespace_v_r_p_t_w_optimizer_1_1_logging.html',1,'VRPTWOptimizer']]],
+  ['meta_12',['Meta',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta.html',1,'VRPTWOptimizer::BL']]],
+  ['model_13',['Model',['../namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_model.html',1,'VRPTWOptimizer::Utils']]],
+  ['oracle_14',['Oracle',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_oracle.html',1,'VRPTWOptimizer::BL::Meta']]],
+  ['provider_15',['Provider',['../namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_provider.html',1,'VRPTWOptimizer::Utils']]],
+  ['reader_16',['Reader',['../namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_reader.html',1,'VRPTWOptimizer::Utils']]],
+  ['sa_17',['SA',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a.html',1,'VRPTWOptimizer::BL']]],
+  ['simulatedannealing_18',['SimulatedAnnealing',['../namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_s_a_1_1_simulated_annealing.html',1,'VRPTWOptimizer::BL::SA']]],
+  ['timeestimators_19',['TimeEstimators',['../namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators.html',1,'VRPTWOptimizer::Utils']]],
+  ['utils_20',['Utils',['../namespace_v_r_p_t_w_optimizer_1_1_utils.html',1,'VRPTWOptimizer']]],
+  ['validation_21',['Validation',['../namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation.html',1,'VRPTWOptimizer::Utils']]],
+  ['vrpdefinition_22',['VrpDefinition',['../namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition.html',1,'VRPTWOptimizer::Utils']]],
+  ['vrptwoptimizer_23',['VRPTWOptimizer',['../namespace_v_r_p_t_w_optimizer.html',1,'']]]
+];

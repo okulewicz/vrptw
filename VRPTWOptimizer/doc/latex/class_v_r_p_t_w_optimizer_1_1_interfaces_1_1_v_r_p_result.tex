@@ -1,0 +1,140 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}{}\doxysection{VRPTWOptimizer.\+Interfaces.\+VRPResult\texorpdfstring{$<$}{<} R, V, Rt \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}\index{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}}
+
+
+Class containing list of routes for each tractor and straight truck  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_ae14089eb624ab22a2ce503ca5e737146}{VRPResult}} (Dictionary$<$ V, List$<$ Rt $>$ $>$ routes, List$<$ R $>$ left\+Requests)
+\begin{DoxyCompactList}\small\item\em Creates VRP results from routes dictionary and left requests list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static implicit \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_a749ad198f8f361d06d2c29b8841ff482}{operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$}} (\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}{VRPResult}}$<$ R, V, Rt $>$ vrp)
+\begin{DoxyCompactList}\small\item\em Converts solution into Tuple for backward compatibility \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ R $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_ad4afd7e5bc67c721183657d58400a1f1}{Left\+Requests}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Requests that were not assigned to any vehicle \end{DoxyCompactList}\item 
+List$<$ Rt $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_a5f2af531e3fa8e3143ef8bb27bfd64d5}{Routes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Flat list of routes without tractor assignment \end{DoxyCompactList}\item 
+Dictionary$<$ V, List$<$ Rt $>$ $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_a4b05f21b6bcb5ee19989c1613e2fcd14}{Tractor\+Routes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Full schedule with routes for each tractor and straight truck \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class containing list of routes for each tractor and straight truck 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em R} & \\
+\hline
+{\em V} & \\
+\hline
+{\em Rt} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em R} : {\em \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}}}]\item[{\em V} : {\em \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}}]\item[{\em Rt} : {\em \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}}}]\end{description}
+\end{Desc}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_result_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_v_r_p_result_8cs_source}{VRPResult.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_ae14089eb624ab22a2ce503ca5e737146}\label{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_ae14089eb624ab22a2ce503ca5e737146}} 
+\index{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}!VRPResult@{VRPResult}}
+\index{VRPResult@{VRPResult}!VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}}
+\doxysubsubsection{\texorpdfstring{VRPResult()}{VRPResult()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}{VRPTWOptimizer.\+Interfaces.\+VRPResult}}$<$ R, V, Rt $>$.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}{VRPResult}} (\begin{DoxyParamCaption}\item[{Dictionary$<$ V, List$<$ Rt $>$ $>$}]{routes,  }\item[{List$<$ R $>$}]{left\+Requests }\end{DoxyParamCaption})}
+
+
+
+Creates VRP results from routes dictionary and left requests list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em routes} & \\
+\hline
+{\em left\+Requests} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_result_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_v_r_p_result_8cs_source}{VRPResult.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_a749ad198f8f361d06d2c29b8841ff482}\label{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_a749ad198f8f361d06d2c29b8841ff482}} 
+\index{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}!operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$@{operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$}}
+\index{operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$@{operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$}!VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}}
+\doxysubsubsection{\texorpdfstring{operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$()}{operator Tuple< List< Rt >, List< R > >()}}
+{\footnotesize\ttfamily static implicit \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}{VRPTWOptimizer.\+Interfaces.\+VRPResult}}$<$ R, V, Rt $>$.operator Tuple$<$ List$<$ Rt $>$, List$<$ R $>$ $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}{VRPResult}}$<$ R, V, Rt $>$}]{vrp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts solution into Tuple for backward compatibility 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vrp} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_ad4afd7e5bc67c721183657d58400a1f1}\label{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_ad4afd7e5bc67c721183657d58400a1f1}} 
+\index{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}!LeftRequests@{LeftRequests}}
+\index{LeftRequests@{LeftRequests}!VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}}
+\doxysubsubsection{\texorpdfstring{LeftRequests}{LeftRequests}}
+{\footnotesize\ttfamily List$<$R$>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}{VRPTWOptimizer.\+Interfaces.\+VRPResult}}$<$ R, V, Rt $>$.Left\+Requests\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Requests that were not assigned to any vehicle 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_result_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_v_r_p_result_8cs_source}{VRPResult.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_a5f2af531e3fa8e3143ef8bb27bfd64d5}\label{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_a5f2af531e3fa8e3143ef8bb27bfd64d5}} 
+\index{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}!Routes@{Routes}}
+\index{Routes@{Routes}!VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}}
+\doxysubsubsection{\texorpdfstring{Routes}{Routes}}
+{\footnotesize\ttfamily List$<$Rt$>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}{VRPTWOptimizer.\+Interfaces.\+VRPResult}}$<$ R, V, Rt $>$.Routes\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Flat list of routes without tractor assignment 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_result_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_v_r_p_result_8cs_source}{VRPResult.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_a4b05f21b6bcb5ee19989c1613e2fcd14}\label{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result_a4b05f21b6bcb5ee19989c1613e2fcd14}} 
+\index{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}!TractorRoutes@{TractorRoutes}}
+\index{TractorRoutes@{TractorRoutes}!VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.VRPResult$<$ R, V, Rt $>$}}
+\doxysubsubsection{\texorpdfstring{TractorRoutes}{TractorRoutes}}
+{\footnotesize\ttfamily Dictionary$<$V, List$<$Rt$>$ $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_interfaces_1_1_v_r_p_result}{VRPTWOptimizer.\+Interfaces.\+VRPResult}}$<$ R, V, Rt $>$.Tractor\+Routes\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Full schedule with routes for each tractor and straight truck 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_result_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_v_r_p_result_8cs_source}{VRPResult.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_r_p_result_8cs}{VRPResult.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,66 @@
+\hypertarget{_request_d_t_o_8cs_source}{}\doxysection{Request\+DTO.\+cs}
+\label{_request_d_t_o_8cs_source}\index{RequestDTO.cs@{RequestDTO.cs}}
+\mbox{\hyperlink{_request_d_t_o_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}};}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00002}00002 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00004}00004 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums}{Enums}};}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00006}\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils}{00006}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_model}{VRPTWOptimizer.Utils.Model}}}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00009}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_request_d_t_o}{00009}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_request_d_t_o}{RequestDTO}} : \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}}}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00010}00010     \{}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00011}00011         [JsonConstructor]}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00012}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_request_d_t_o_acc56cfdddb92f1cb9570fed1801dee88}{00012}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_request_d_t_o_acc56cfdddb92f1cb9570fed1801dee88}{RequestDTO}}(}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00013}00013             \textcolor{keywordtype}{int} \textcolor{keywordtype}{id},}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00014}00014             \textcolor{keywordtype}{double}[] size,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00015}00015             \textcolor{keywordtype}{int}[] necessaryVehicleSpecialProperties,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00016}00016             \textcolor{keywordtype}{int} packageCount,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00017}00017             \textcolor{keywordtype}{int} packageCountForImediateRetrieval,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00018}00018             \mbox{\hyperlink{class_common_g_i_s_1_1_base_location}{BaseLocation}} pickupLocation,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00019}00019             \textcolor{keywordtype}{double} pickupAvailableTimeWindowStart,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00020}00020             \textcolor{keywordtype}{double} pickupPreferedTimeWindowStart,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00021}00021             \textcolor{keywordtype}{double} pickupPreferedTimeWindowEnd,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00022}00022             \textcolor{keywordtype}{double} pickupAvailableTimeWindowEnd,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00023}00023             \mbox{\hyperlink{class_common_g_i_s_1_1_base_location}{BaseLocation}} deliveryLocation,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00024}00024             \textcolor{keywordtype}{double} deliveryAvailableTimeWindowStart,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00025}00025             \textcolor{keywordtype}{double} deliveryPreferedTimeWindowStart,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00026}00026             \textcolor{keywordtype}{double} deliveryPreferedTimeWindowEnd,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00027}00027             \textcolor{keywordtype}{double} deliveryAvailableTimeWindowEnd,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00028}00028             \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_acef88cc2214a76baf375f78f1383f290}{RequestType}} type,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00029}00029             \textcolor{keywordtype}{int}[] cargoTypes,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00030}00030             \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} maxVehicleSize,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00031}00031             \textcolor{keywordtype}{int}[] restrictedGoodsTypes,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00032}00032             Dictionary<int, double> mutuallyExclusiveRequestsIdTimeBufferDict,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00033}00033             \textcolor{keywordtype}{double} revenueValue,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00034}00034             \textcolor{keywordtype}{string} name) : base(}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00035}00035                 id,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00036}00036                 size,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00037}00037                 necessaryVehicleSpecialProperties,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00038}00038                 packageCount,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00039}00039                 packageCountForImediateRetrieval,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00040}00040                 pickupLocation,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00041}00041                 pickupAvailableTimeWindowStart,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00042}00042                 pickupPreferedTimeWindowStart,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00043}00043                 pickupPreferedTimeWindowEnd,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00044}00044                 pickupAvailableTimeWindowEnd,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00045}00045                 deliveryLocation,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00046}00046                 deliveryAvailableTimeWindowStart,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00047}00047                 deliveryPreferedTimeWindowStart,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00048}00048                 deliveryPreferedTimeWindowEnd,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00049}00049                 deliveryAvailableTimeWindowEnd,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00050}00050                 type,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00051}00051                 cargoTypes,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00052}00052                 maxVehicleSize,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00053}00053                 restrictedGoodsTypes ?? new int[0],}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00054}00054                 mutuallyExclusiveRequestsIdTimeBufferDict,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00055}00055                 revenueValue,}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00056}00056                 name)}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00057}00057         \{}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00058}00058         \}}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{_request_d_t_o_8cs_source_l00060}00060 \}}
+
+\end{DoxyCode}

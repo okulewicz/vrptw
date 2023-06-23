@@ -1,0 +1,25 @@
+var class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics =
+[
+    [ "VRPResultStatistics", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a4079f45e91913edcf42dd808848ea3e9", null ],
+    [ "VRPResultStatistics", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#af5a573393d4915163a9add20353c992a", null ],
+    [ "Cost", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a10904d4de02033b64b210fbf991cb28a", null ],
+    [ "FillRatio", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#ac0504762b687e0f95a94c7efcd2012fa", null ],
+    [ "LeftEP", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#ab6a70d342e60e2906b8a23e38ae7d087", null ],
+    [ "LeftRequests", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#aa506079bbd90e711bb08cc078625eb2a", null ],
+    [ "Length", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a18521a599779d9c681cae5e0832c4ff6", null ],
+    [ "MaxDelayStr", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#af23569d25bc0a1370a562c494ba10988", null ],
+    [ "MaxDelayTime", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#af449eaf997a95c582f4a7db0122e303a", null ],
+    [ "MaxEarlyArrival", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a2a0b998daec3271b147287f64ced5b54", null ],
+    [ "MaxEarlyStr", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a11bc42dde48c26387222e57d7acf3320", null ],
+    [ "Routes", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a1eef50caf80d47c696a742e26188c1c0", null ],
+    [ "TotalDelay", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#ab9e905d9e9e9c855ca6567c67480fcd6", null ],
+    [ "TotalDelayStr", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a622b537ad3b7da2f1fff09108733213b", null ],
+    [ "TotalEarlyArrival", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#abd0cb6a3df164802b4b1f6e04ed244e6", null ],
+    [ "TotalEarlyStr", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#aab80b27a395f2dff91c12f0ccf911d3c", null ],
+    [ "TotalTravelTime", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#aa1b1afd0c90936eb71c492d33d32cd60", null ],
+    [ "TravelTimeStr", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a5d364918e6ad6f67c07f42f101844a4f", null ],
+    [ "UniqueTractorCount", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a410a5b70b24705de65f272cc3173c7a7", null ],
+    [ "UniqueTrailersCount", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#ababe75b233153aa364843622a68b49f3", null ],
+    [ "UniqueTrucksCount", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#a16899e51b1c19f6c8c062717fba1ea59", null ],
+    [ "Visits", "class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_result_statistics.html#ad42d70e64c61ac9a2d2a66112b21d8c4", null ]
+];

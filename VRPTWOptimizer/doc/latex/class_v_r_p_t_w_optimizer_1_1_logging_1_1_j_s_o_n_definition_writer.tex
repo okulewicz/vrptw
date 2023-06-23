@@ -1,0 +1,79 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer}{}\doxysection{VRPTWOptimizer.\+Logging.\+JSONDefinition\+Writer Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer}\index{VRPTWOptimizer.Logging.JSONDefinitionWriter@{VRPTWOptimizer.Logging.JSONDefinitionWriter}}
+
+
+Serializes solution to JSON  
+
+
+Inheritance diagram for VRPTWOptimizer.\+Logging.\+JSONDefinition\+Writer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_a6c826abcf54d5575373441e5ff6b4064}{JSONDefinition\+Writer}} (List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ requests, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ vehicles, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} optimizer, Date\+Time zero\+Hour, Date\+Time computations\+End, Date\+Time computations\+Start, \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} distance\+Data, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} time\+Estimator, string filename, string client\+Name)
+\item 
+void \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_adaeff3ef12bc6c00ae8cb1cc763cb63b}{Save\+Solution}} (List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$ routes, List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ unassigned\+Requests, Date\+Time billing\+Date, string home\+Depot\+Id, string algorithm\+Name)
+\begin{DoxyCompactList}\small\item\em Saves solution to the format implemented by this Writer class (JSON in this case) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serializes solution to JSON 
+
+Definition at line \mbox{\hyperlink{_j_s_o_n_definition_writer_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_j_s_o_n_definition_writer_8cs_source}{JSONDefinition\+Writer.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_a6c826abcf54d5575373441e5ff6b4064}\label{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_a6c826abcf54d5575373441e5ff6b4064}} 
+\index{VRPTWOptimizer.Logging.JSONDefinitionWriter@{VRPTWOptimizer.Logging.JSONDefinitionWriter}!JSONDefinitionWriter@{JSONDefinitionWriter}}
+\index{JSONDefinitionWriter@{JSONDefinitionWriter}!VRPTWOptimizer.Logging.JSONDefinitionWriter@{VRPTWOptimizer.Logging.JSONDefinitionWriter}}
+\doxysubsubsection{\texorpdfstring{JSONDefinitionWriter()}{JSONDefinitionWriter()}}
+{\footnotesize\ttfamily VRPTWOptimizer.\+Logging.\+JSONDefinition\+Writer.\+JSONDefinition\+Writer (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{requests,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$}]{vehicles,  }\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}}}]{optimizer,  }\item[{Date\+Time}]{zero\+Hour,  }\item[{Date\+Time}]{computations\+End,  }\item[{Date\+Time}]{computations\+Start,  }\item[{\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}}}]{distance\+Data,  }\item[{\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}}}]{time\+Estimator,  }\item[{string}]{filename,  }\item[{string}]{client\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_j_s_o_n_definition_writer_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_j_s_o_n_definition_writer_8cs_source}{JSONDefinition\+Writer.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_adaeff3ef12bc6c00ae8cb1cc763cb63b}\label{class_v_r_p_t_w_optimizer_1_1_logging_1_1_j_s_o_n_definition_writer_adaeff3ef12bc6c00ae8cb1cc763cb63b}} 
+\index{VRPTWOptimizer.Logging.JSONDefinitionWriter@{VRPTWOptimizer.Logging.JSONDefinitionWriter}!SaveSolution@{SaveSolution}}
+\index{SaveSolution@{SaveSolution}!VRPTWOptimizer.Logging.JSONDefinitionWriter@{VRPTWOptimizer.Logging.JSONDefinitionWriter}}
+\doxysubsubsection{\texorpdfstring{SaveSolution()}{SaveSolution()}}
+{\footnotesize\ttfamily void VRPTWOptimizer.\+Logging.\+JSONDefinition\+Writer.\+Save\+Solution (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}} $>$}]{routes,  }\item[{List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{unassigned\+Requests,  }\item[{Date\+Time}]{billing\+Date,  }\item[{string}]{home\+Depot\+Id,  }\item[{string}]{algorithm\+Name }\end{DoxyParamCaption})}
+
+
+
+Saves solution to the format implemented by this Writer class (JSON in this case) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em routes} & \\
+\hline
+{\em unassigned\+Requests} & \\
+\hline
+{\em billing\+Date} & \\
+\hline
+{\em home\+Depot\+Id} & \\
+\hline
+{\em algorithm\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_solution_writer_a1c50b9ad9db69f2d90bf1d3d14021415}{VRPTWOptimizer.\+Interfaces.\+IVRPSolution\+Writer}}.
+
+
+
+Definition at line \mbox{\hyperlink{_j_s_o_n_definition_writer_8cs_source_l00060}{60}} of file \mbox{\hyperlink{_j_s_o_n_definition_writer_8cs_source}{JSONDefinition\+Writer.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_j_s_o_n_definition_writer_8cs}{JSONDefinition\+Writer.\+cs}}\end{DoxyCompactItemize}

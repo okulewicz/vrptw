@@ -1,0 +1,113 @@
+\hypertarget{_a_l_n_s_vehicle_8cs_source}{}\doxysection{ALNSVehicle.\+cs}
+\label{_a_l_n_s_vehicle_8cs_source}\index{ALNSVehicle.cs@{ALNSVehicle.cs}}
+\mbox{\hyperlink{_a_l_n_s_vehicle_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00001}00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00002}00002 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00006}00006 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils}{Utils}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition}{VrpDefinition}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00007}00007 \textcolor{keyword}{using} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l}{BL}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s}{ALNS}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_node}{ALNSNode}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s}{VRPTWOptimizer.BL.ALNS}}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00011}00011     \textcolor{keyword}{internal} \textcolor{keyword}{class }ALNSVehicle}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00012}00012     \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00013}00013         \textcolor{keyword}{public} \textcolor{keywordtype}{double} AvailabilityEnd \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00015}00015         \textcolor{keyword}{public} \textcolor{keywordtype}{double} AvailabilityStart \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00017}00017         \textcolor{keyword}{public} \textcolor{keywordtype}{double}[] Capacity \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00019}00019         \textcolor{keyword}{public} \textcolor{keywordtype}{double} CostPerDistanceUnit \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00020}00020         \textcolor{keyword}{public} \textcolor{keywordtype}{double} FlatCostRate \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00021}00021         \textcolor{keyword}{public} \textcolor{keywordtype}{double} FlatCostThreshold \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00022}00022         \textcolor{keyword}{public} \textcolor{keywordtype}{int} Id \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00024}00024         \textcolor{keyword}{public} ALNSVehicleRoadRestrictions VehicleRoadRestrictions \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00026}00026         \textcolor{keyword}{public} ALNSVehicle(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{double}[] capacity, \textcolor{keywordtype}{double} availabilityStart, \textcolor{keywordtype}{double} availabilityEnd, ALNSVehicleRoadRestrictions roadRestrictions,}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00027}00027             \textcolor{keywordtype}{double} costPerDistanceUnit, \textcolor{keywordtype}{double} flatCostRate, \textcolor{keywordtype}{double} flatCostThreshold)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00028}00028         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00029}00029             Id = id;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00030}00030             Capacity = capacity;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00031}00031             AvailabilityStart = availabilityStart;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00032}00032             AvailabilityEnd = availabilityEnd;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00033}00033             VehicleRoadRestrictions = roadRestrictions;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00034}00034             CostPerDistanceUnit = costPerDistanceUnit;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00035}00035             FlatCostRate = flatCostRate;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00036}00036             FlatCostThreshold = flatCostThreshold;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00037}00037         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00039}00039         \textcolor{keyword}{internal} \textcolor{keywordtype}{double} RouteCost(\textcolor{keywordtype}{double} routeLength)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00040}00040         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00041}00041             \textcolor{keywordflow}{if} (routeLength < FlatCostThreshold)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00042}00042             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00043}00043                 \textcolor{keywordflow}{return} FlatCostRate;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00044}00044             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00045}00045             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00046}00046             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00047}00047                 \textcolor{keywordflow}{return} routeLength * CostPerDistanceUnit;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00048}00048             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00049}00049         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00052}00052         \textcolor{comment}{// Finds vehicles that can serve each Node in the list of nodes}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00053}00053         \textcolor{comment}{// Used in RelatednessMeasure function to find vehicles that can be used to serve two nodes}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00054}00054         \textcolor{keyword}{public} \textcolor{keyword}{static} Dictionary<string, List<ALNSVehicle>> FindMultipleNodesVehicles(List<ALNSNode> Nodes, List<ALNSVehicle> Vehicles)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00055}00055         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00056}00056             Dictionary<string, List<ALNSVehicle>> NodesAndTheirVehicles = \textcolor{keyword}{new} Dictionary<string, List<ALNSVehicle>>();}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00058}00058             \textcolor{keywordflow}{foreach} (ALNSNode node \textcolor{keywordflow}{in} Nodes)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00059}00059             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00060}00060                 NodesAndTheirVehicles[node.Id] = FindSingleNodeVehicles(node, Vehicles);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00061}00061             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00063}00063             \textcolor{comment}{//foreach (KeyValuePair<string, List<ALNSVehicle>> kvp in NodesAndTheirVehicles)}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00064}00064             \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00065}00065             \textcolor{comment}{//    Console.WriteLine(\$"{}Node \{kvp.Key\} vehicles: "{});}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00066}00066             \textcolor{comment}{//    foreach (ALNSVehicle v in kvp.Value)}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00067}00067             \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00068}00068             \textcolor{comment}{//        Console.Write(\$"{} \{v.Id\} ::"{});}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00069}00069             \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00070}00070             \textcolor{comment}{//    Console.WriteLine();}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00071}00071             \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00073}00073             \textcolor{keywordflow}{return} NodesAndTheirVehicles;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00074}00074         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00076}00076         \textcolor{comment}{// Finds Vehicles that can serve a node}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00077}00077         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ALNSVehicle> FindSingleNodeVehicles(ALNSNode node, List<ALNSVehicle> vehicles)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00078}00078         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00079}00079             List<ALNSVehicle> AvailableVehicles = \textcolor{keyword}{new} List<ALNSVehicle>();}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00080}00080             \textcolor{keywordflow}{foreach} (ALNSVehicle vehicle \textcolor{keywordflow}{in} vehicles)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00081}00081             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00082}00082                 \textcolor{keywordflow}{if} (VehicleAvailableForNode(vehicle, node))}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00083}00083                 \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00084}00084                     AvailableVehicles.Add(vehicle);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00085}00085                 \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00086}00086             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00088}00088             \textcolor{keywordflow}{return} AvailableVehicles;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00089}00089         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00091}00091         \textcolor{comment}{// Required to convert ALNSRoute to Route object}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00092}00092         \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cad6af9c1eaff2a89ebd3f8d0c542be12b}{Vehicle}} ALNSVehicle2Vehicle(ALNSVehicle alnsVehicle, \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider}{IVRPJSONProvider}} vrpProvider)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00093}00093         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00094}00094             \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_validation_aae1d999843ee79c6abaea9828f4ec80cad6af9c1eaff2a89ebd3f8d0c542be12b}{Vehicle}} vehicle = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}.Where(r => r.Id == alnsVehicle.Id).First();}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00096}00096             \textcolor{keywordflow}{return} vehicle;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00097}00097         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00099}\mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions}{00099}}         \textcolor{keyword}{public} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions}{ALNSVehicleRoadRestrictions}}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00100}00100         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00101}\mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions_a4aadd6f9e79001a40864d6129451bbfa}{00101}}             \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions_a4aadd6f9e79001a40864d6129451bbfa}{EpCount}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00102}\mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions_af0a28f9837063118764f1fa2cf7fe907}{00102}}             \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions_af0a28f9837063118764f1fa2cf7fe907}{GrossVehicleWeight}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00103}\mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions_a380efba3ad82670dc271a86fc64c7153}{00103}}             \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions_a380efba3ad82670dc271a86fc64c7153}{Height}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00104}\mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions_a2ce3b8ebff7588d3f5dd6905e42507b8}{00104}}             \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle_1_1_a_l_n_s_vehicle_road_restrictions_a2ce3b8ebff7588d3f5dd6905e42507b8}{Width}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00105}00105         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00106}00106     \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_vehicle_8cs_source_l00107}00107 \}}
+
+\end{DoxyCode}

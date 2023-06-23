@@ -1,0 +1,165 @@
+\hypertarget{_v_r_p_definition_8cs_source}{}\doxysection{VRPDefinition.\+cs}
+\mbox{\hyperlink{_v_r_p_definition_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00002}00002 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00003}00003 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00005}00005 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00006}00006 \textcolor{keyword}{using} System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00007}00007 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00014}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{00014}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00015}00015     \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00016}00016         \textcolor{keyword}{private} \textcolor{keyword}{class }LawAbidingFloatConverter : JsonConverter}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00017}00017         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00018}00018             \textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{bool} CanRead}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00019}00019             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00020}00020                 \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00021}00021                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00022}00022                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00023}00023                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00024}00024             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00025}00025             \textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{bool} CanWrite}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00026}00026             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00027}00027                 \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00028}00028                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00029}00029                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00030}00030                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00031}00031             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00033}00033             \textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{bool} CanConvert(Type objectType)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00034}00034             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00035}00035                 \textcolor{keywordflow}{return} objectType == typeof(\textcolor{keywordtype}{double}) || objectType == typeof(\textcolor{keywordtype}{float});}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00036}00036             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00038}00038             \textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{object} ReadJson(JsonReader reader, Type objectType, \textcolor{keywordtype}{object} existingValue, JsonSerializer serializer)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00039}00039             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00040}00040                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} NotImplementedException();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00041}00041             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00043}00043             \textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{void} WriteJson(JsonWriter writer, \textcolor{keywordtype}{object} value, JsonSerializer serializer)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00044}00044             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00045}00045                 var val = value as \textcolor{keywordtype}{double}? ?? (\textcolor{keywordtype}{double}?)(value as \textcolor{keywordtype}{float}?);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00046}00046                 \textcolor{keywordflow}{if} (val == \textcolor{keyword}{null} || Double.IsNaN((\textcolor{keywordtype}{double})val) || Double.IsInfinity((\textcolor{keywordtype}{double})val))}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00047}00047                 \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00048}00048                     writer.WriteNull();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00049}00049                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00050}00050                 \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00051}00051                 writer.WriteValue((\textcolor{keywordtype}{double})val);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00052}00052             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00053}00053         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00058}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ac5ffd6fa81c00e25b25552a65cbd3b90}{00058}}         \textcolor{keyword}{public} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ac5ffd6fa81c00e25b25552a65cbd3b90}{Client}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00062}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a9a745b851c7ee521535bf732e88ef721}{00062}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a9a745b851c7ee521535bf732e88ef721}{CostFunctionFactors}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00066}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af2d2b433724f1cee1f026b3fb7b793f6}{00066}}         \textcolor{keyword}{public} Version \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af2d2b433724f1cee1f026b3fb7b793f6}{DataFormatVersion}} => Assembly.GetAssembly(\textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}}().GetType()).GetName().Version;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00071}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abdacb794459fc98245a1c1a14ef4a2ec}{00071}}         \textcolor{keyword}{public} DateTime \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abdacb794459fc98245a1c1a14ef4a2ec}{Date}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00075}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a581fc9b90acb00412441234ad975e781}{00075}}         \textcolor{keyword}{public} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a581fc9b90acb00412441234ad975e781}{DepotId}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00079}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a86b903da6c8bdcfe47a799ebb7a30bd4}{00079}}         \textcolor{keyword}{public} \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a86b903da6c8bdcfe47a799ebb7a30bd4}{DistanceData}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00083}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ab31da63233478f21f10516834bd3d2ed}{00083}}         \textcolor{keyword}{public} List<Driver> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ab31da63233478f21f10516834bd3d2ed}{Drivers}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00087}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af769c9bba18c594eb7b2477d94f359a9}{00087}}         \textcolor{keyword}{public} List<TransportRequest> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af769c9bba18c594eb7b2477d94f359a9}{Requests}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00091}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a274f812b093e205bc1c92d785c629faa}{00091}}         \textcolor{keyword}{public} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a274f812b093e205bc1c92d785c629faa}{ServiceTimeEstimator}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00095}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ad90c7ec1732bd5c1a2586a9bf85ad2a0}{00095}}         \textcolor{keyword}{public} List<VRPSolution> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ad90c7ec1732bd5c1a2586a9bf85ad2a0}{Solutions}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00099}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a89c19805b4bfb840e89d1774ccd925c8}{00099}}         \textcolor{keyword}{public} List<Vehicle> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a89c19805b4bfb840e89d1774ccd925c8}{Vehicles}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00103}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ae7bd11c4a4d9023b94e1eac284812ed9}{00103}}         \textcolor{keyword}{public} DateTime \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ae7bd11c4a4d9023b94e1eac284812ed9}{ZeroHour}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00114}00114         [Obsolete(\textcolor{stringliteral}{"{}Please use GenerateVRPDefintion with conscious costFunctionFactors definition"{}})]}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00115}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a109dc32d0d1fd742fd11f9402c9a73a4}{00115}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a109dc32d0d1fd742fd11f9402c9a73a4}{GenerateVRPDefintion}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00116}00116             \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}} vrpProvider,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00117}00117             DateTime billingDate,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00118}00118             \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00119}00119             \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}} timeEstimator,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00120}00120             \textcolor{keywordtype}{string} client)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00121}00121         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00122}00122             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}} costFunctionFactors = \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function_a79565414d578890a651795ea4404ed5c}{GetDefaultParametersFunction}}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00123}00123             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a109dc32d0d1fd742fd11f9402c9a73a4}{GenerateVRPDefintion}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00124}00124                 vrpProvider,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00125}00125                 costFunctionFactors,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00126}00126                 billingDate,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00127}00127                 distanceProvider,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00128}00128                 timeEstimator,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00129}00129                 client);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00130}00130         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00142}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abc0b75b34b15d814845d8593f864e468}{00142}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abc0b75b34b15d814845d8593f864e468}{GenerateVRPDefintion}}(}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00143}00143             \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{IVRPProvider}} vrpProvider,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00144}00144             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_cost_function}{VRPCostFunction}} costFunctionFactors,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00145}00145             DateTime billingDate,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00146}00146             \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistanceProvider}} distanceProvider,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00147}00147             \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}} timeEstimator,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00148}00148             \textcolor{keywordtype}{string} client)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00149}00149         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00150}00150             List<VRPSolution> vrpSolutions = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00151}00151             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition}{VRPDefinition}} vrpDefinition = \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00152}00152             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00153}00153                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a9a745b851c7ee521535bf732e88ef721}{CostFunctionFactors}} = costFunctionFactors,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00154}00154                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_af769c9bba18c594eb7b2477d94f359a9}{Requests}} = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00155}00155                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a274f812b093e205bc1c92d785c629faa}{ServiceTimeEstimator}} = timeEstimator,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00156}00156                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a89c19805b4bfb840e89d1774ccd925c8}{Vehicles}} = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00157}00157                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ab31da63233478f21f10516834bd3d2ed}{Drivers}} = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a39bfa8581acd1ac981b63f681d184b00}{Drivers}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00158}00158                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ad90c7ec1732bd5c1a2586a9bf85ad2a0}{Solutions}} = vrpSolutions,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00159}00159                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_abdacb794459fc98245a1c1a14ef4a2ec}{Date}} = billingDate.Date,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00160}00160                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a581fc9b90acb00412441234ad975e781}{DepotId}} = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a2d19009b7dd660f4e205890a57f81aed}{HomeDepot}}.Id,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00161}00161                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ac5ffd6fa81c00e25b25552a65cbd3b90}{Client}} = client,}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00162}00162                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ae7bd11c4a4d9023b94e1eac284812ed9}{ZeroHour}} = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a847356bc367a7b2891703892dc16c93e}{ZeroHour}},}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00163}00163                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a86b903da6c8bdcfe47a799ebb7a30bd4}{DistanceData}} = distanceProvider}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00164}00164             \};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00166}00166             \textcolor{keywordflow}{return} vrpDefinition;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00167}00167         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00173}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a355cb57cdd8244aa460f793f452f5976}{00173}}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a355cb57cdd8244aa460f793f452f5976}{AddSolution}}(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution}{VRPSolution}} vrpSolution)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00174}00174         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00175}00175             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ad90c7ec1732bd5c1a2586a9bf85ad2a0}{Solutions}} == \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00176}00176             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00177}00177                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ad90c7ec1732bd5c1a2586a9bf85ad2a0}{Solutions}} = \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00178}00178             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00179}00179             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_ad90c7ec1732bd5c1a2586a9bf85ad2a0}{Solutions}}.Add(vrpSolution);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00180}00180         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00186}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a0c4cc1903bb7251cbcd477f5a866468a}{00186}}         \textcolor{keyword}{public} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a0c4cc1903bb7251cbcd477f5a866468a}{ToPrettyJSONString}}()}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00187}00187         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00188}00188             var settings = \textcolor{keyword}{new} JsonSerializerSettings();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00189}00189             var floatConverter = \textcolor{keyword}{new} LawAbidingFloatConverter();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00190}00190             settings.Converters.Add(floatConverter);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00191}00191             settings.Formatting = Formatting.Indented;}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00192}00192             var serializer = JsonSerializer.Create(settings);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00193}00193             var writer = \textcolor{keyword}{new} StringWriter();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00194}00194             serializer.Serialize(writer, \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00195}00195             \textcolor{keywordflow}{return} writer.ToString();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00196}00196         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00203}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a8e36bdbf9beed6d0ba7716370793cdcc}{00203}}         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a8e36bdbf9beed6d0ba7716370793cdcc}{TrySaveToFile}}(\textcolor{keywordtype}{string} filename)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00204}00204         \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00205}00205             \textcolor{keywordtype}{string} contents = this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_definition_a0c4cc1903bb7251cbcd477f5a866468a}{ToPrettyJSONString}}();}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00206}00206             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00207}00207             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00208}00208                 File.WriteAllText(filename, contents);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00209}00209                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00210}00210             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00211}00211             \textcolor{keywordflow}{catch} (UnauthorizedAccessException)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00212}00212             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00213}00213                 Console.WriteLine(\$\textcolor{stringliteral}{"{}Cannot access \{filename\}"{}});}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00214}00214                 Console.Write(contents);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00215}00215                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00216}00216             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00217}00217             \textcolor{keywordflow}{catch} (DirectoryNotFoundException)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00218}00218             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00219}00219                 Console.WriteLine(\$\textcolor{stringliteral}{"{}Designated location directory \{filename\} does not exists"{}});}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00220}00220                 Console.Write(contents);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00221}00221                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00222}00222             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00223}00223             \textcolor{keywordflow}{catch} (IOException)}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00224}00224             \{}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00225}00225                 Console.WriteLine(\$\textcolor{stringliteral}{"{}Cannot create \{filename\} for unknown reason"{}});}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00226}00226                 Console.Write(contents);}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00227}00227                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00228}00228             \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00229}00229         \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00230}00230     \}}
+\DoxyCodeLine{\Hypertarget{_v_r_p_definition_8cs_source_l00231}00231 \}}
+
+\end{DoxyCode}

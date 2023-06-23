@@ -1,0 +1,160 @@
+\hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}{}\doxysection{VRPTWOptimizer.\+Interfaces.\+IVRPProvider Interface Reference}
+\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}\index{VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}}
+
+
+Provides problem data for \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}}  
+
+
+Inheritance diagram for VRPTWOptimizer.\+Interfaces.\+IVRPProvider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.004773cm]{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_ac6ad0fc834d9c3f58b27a830220b3393}{Load\+Data}} (Date\+Time billing\+Date, string home\+Depot\+Id)
+\begin{DoxyCompactList}\small\item\em Gets the data from underlying source \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a39bfa8581acd1ac981b63f681d184b00}{Drivers}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of available \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} objects \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a2d19009b7dd660f4e205890a57f81aed}{Home\+Depot}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Location of the main warehouse or main depot \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects to be served \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} $>$ \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of available \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} objects \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a847356bc367a7b2891703892dc16c93e}{Zero\+Hour}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Real world timestamp used to turn relative time of the problem to real world time \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides problem data for \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_optimizer}{IVRPOptimizer}} 
+
+Definition at line \mbox{\hyperlink{_i_v_r_p_provider_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_i_v_r_p_provider_8cs_source}{IVRPProvider.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_ac6ad0fc834d9c3f58b27a830220b3393}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_ac6ad0fc834d9c3f58b27a830220b3393}} 
+\index{VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}!LoadData@{LoadData}}
+\index{LoadData@{LoadData}!VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}}
+\doxysubsubsection{\texorpdfstring{LoadData()}{LoadData()}}
+{\footnotesize\ttfamily void VRPTWOptimizer.\+Interfaces.\+IVRPProvider.\+Load\+Data (\begin{DoxyParamCaption}\item[{Date\+Time}]{billing\+Date,  }\item[{string}]{home\+Depot\+Id }\end{DoxyParamCaption})}
+
+
+
+Gets the data from underlying source 
+
+
+\begin{DoxyParams}{Parameters}
+{\em billing\+Date} & \\
+\hline
+{\em home\+Depot\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_j_s_o_n_d_t_o_provider_adb2cafc5e438b41eeb1160bbb7676a9a}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+JSONDTOProvider}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_via_tms_d_t_o_provider_af1cdc2a1e1d63f455255e6c1f9f582be}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+Via\+Tms\+DTOProvider}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a39bfa8581acd1ac981b63f681d184b00}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a39bfa8581acd1ac981b63f681d184b00}} 
+\index{VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}!Drivers@{Drivers}}
+\index{Drivers@{Drivers}!VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}}
+\doxysubsubsection{\texorpdfstring{Drivers}{Drivers}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}}$>$ VRPTWOptimizer.\+Interfaces.\+IVRPProvider.\+Drivers\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+List of available \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} objects 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_j_s_o_n_d_t_o_provider_af6b7c83ed928aed9fe8330ef866f0240}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+JSONDTOProvider}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_via_tms_d_t_o_provider_a7f60b7fd2b44499b8fb2ec89a0d3d61d}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+Via\+Tms\+DTOProvider}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_v_r_p_provider_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_i_v_r_p_provider_8cs_source}{IVRPProvider.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a2d19009b7dd660f4e205890a57f81aed}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a2d19009b7dd660f4e205890a57f81aed}} 
+\index{VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}!HomeDepot@{HomeDepot}}
+\index{HomeDepot@{HomeDepot}!VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}}
+\doxysubsubsection{\texorpdfstring{HomeDepot}{HomeDepot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} VRPTWOptimizer.\+Interfaces.\+IVRPProvider.\+Home\+Depot\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Location of the main warehouse or main depot 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_j_s_o_n_d_t_o_provider_a38be82fd6d09787f5ba2f08f7fdef4dc}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+JSONDTOProvider}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_via_tms_d_t_o_provider_a770080330be94b27be0b1d27c47d146c}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+Via\+Tms\+DTOProvider}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_v_r_p_provider_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_i_v_r_p_provider_8cs_source}{IVRPProvider.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}} 
+\index{VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}!Requests@{Requests}}
+\index{Requests@{Requests}!VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}}
+\doxysubsubsection{\texorpdfstring{Requests}{Requests}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}}$>$ VRPTWOptimizer.\+Interfaces.\+IVRPProvider.\+Requests\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+List of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects to be served 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_j_s_o_n_d_t_o_provider_af6449cd7ad068adbbc155bbd56e706c9}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+JSONDTOProvider}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_via_tms_d_t_o_provider_a5734e74eaa81c54243c1055e05acb496}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+Via\+Tms\+DTOProvider}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_v_r_p_provider_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_i_v_r_p_provider_8cs_source}{IVRPProvider.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}} 
+\index{VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}!Vehicles@{Vehicles}}
+\index{Vehicles@{Vehicles}!VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}}
+\doxysubsubsection{\texorpdfstring{Vehicles}{Vehicles}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}$>$ VRPTWOptimizer.\+Interfaces.\+IVRPProvider.\+Vehicles\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+List of available \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} objects 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_j_s_o_n_d_t_o_provider_a877d664b824b2fdbc5609fab42bace8b}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+JSONDTOProvider}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_via_tms_d_t_o_provider_a2a8a53479e18a3e75b272bdf0ec55ed1}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+Via\+Tms\+DTOProvider}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_v_r_p_provider_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_i_v_r_p_provider_8cs_source}{IVRPProvider.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a847356bc367a7b2891703892dc16c93e}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a847356bc367a7b2891703892dc16c93e}} 
+\index{VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}!ZeroHour@{ZeroHour}}
+\index{ZeroHour@{ZeroHour}!VRPTWOptimizer.Interfaces.IVRPProvider@{VRPTWOptimizer.Interfaces.IVRPProvider}}
+\doxysubsubsection{\texorpdfstring{ZeroHour}{ZeroHour}}
+{\footnotesize\ttfamily Date\+Time VRPTWOptimizer.\+Interfaces.\+IVRPProvider.\+Zero\+Hour\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Real world timestamp used to turn relative time of the problem to real world time 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_j_s_o_n_d_t_o_provider_ab6c567e89cb5c6ee040ddc0410e989fb}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+JSONDTOProvider}}, and \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_via_tms_d_t_o_provider_a1843564a93d70eda08da289202533ac8}{VRPTWOptimizer.\+Utils.\+Vrp\+Definition.\+VRPDefinition\+Via\+Tms\+DTOProvider}}.
+
+
+
+Definition at line \mbox{\hyperlink{_i_v_r_p_provider_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_i_v_r_p_provider_8cs_source}{IVRPProvider.\+cs}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_v_r_p_provider_8cs}{IVRPProvider.\+cs}}\end{DoxyCompactItemize}

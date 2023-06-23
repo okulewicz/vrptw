@@ -1,0 +1,148 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base}{}\doxysection{VRPTWOptimizer.\+Distance\+Providers.\+Dictionary\+Distance\+Provider\+Base Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base}\index{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}}
+Inheritance diagram for VRPTWOptimizer.\+Distance\+Providers.\+Dictionary\+Distance\+Provider\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_a9f94264495d574e45d241e3b64dae1d1}{Get\+Distance}} (\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} from, \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} to, \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} vehicle\+Properties)
+\begin{DoxyCompactList}\small\item\em Gets distance between from Location and to Location \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_adfad2e197909a14cc86578f78e4e9448}{Dictionary\+Distance\+Provider\+Base}} (bool self\+Contain)
+\item 
+void \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ae6260324b2987553bc5d8eebe483d878}{Initialize\+Distance\+Dictionary}} (List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ distances)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, Dictionary$<$ string, Dictionary$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}, \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ $>$ $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ae1525915ab400882d74a2c366e192f51}{distance\+Matrix}}
+\item 
+Dictionary$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}, \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_af463f7a1f9be63857eacee2c5b71b6c1}{vehicle\+To\+Profile\+Mapper}}
+\item 
+bool \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ac6c499ae51df546d1b11491c3fdfd538}{Self\+Contain}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ac1eeade0cf12ca78c5a4a8f587311d28}{Stored\+Distances}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source}{Dictionary\+Distance\+Provider\+Base.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_adfad2e197909a14cc86578f78e4e9448}\label{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_adfad2e197909a14cc86578f78e4e9448}} 
+\index{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}!DictionaryDistanceProviderBase@{DictionaryDistanceProviderBase}}
+\index{DictionaryDistanceProviderBase@{DictionaryDistanceProviderBase}!VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}}
+\doxysubsubsection{\texorpdfstring{DictionaryDistanceProviderBase()}{DictionaryDistanceProviderBase()}}
+{\footnotesize\ttfamily VRPTWOptimizer.\+Distance\+Providers.\+Dictionary\+Distance\+Provider\+Base.\+Dictionary\+Distance\+Provider\+Base (\begin{DoxyParamCaption}\item[{bool}]{self\+Contain }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source}{Dictionary\+Distance\+Provider\+Base.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_a9f94264495d574e45d241e3b64dae1d1}\label{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_a9f94264495d574e45d241e3b64dae1d1}} 
+\index{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}!GetDistance@{GetDistance}}
+\index{GetDistance@{GetDistance}!VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}}
+\doxysubsubsection{\texorpdfstring{GetDistance()}{GetDistance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} VRPTWOptimizer.\+Distance\+Providers.\+Dictionary\+Distance\+Provider\+Base.\+Get\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}}]{from,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}}]{to,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}}]{vehicle\+Properties }\end{DoxyParamCaption})}
+
+
+
+Gets distance between from Location and to Location 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & \\
+\hline
+{\em to} & \\
+\hline
+{\em vehicle\+Properties} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider_a91899eab2f7298972955f9144301b2ed}{Common\+GIS.\+Interfaces.\+IDistance\+Provider}}.
+
+
+
+Definition at line \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source_l00045}{45}} of file \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source}{Dictionary\+Distance\+Provider\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ae6260324b2987553bc5d8eebe483d878}\label{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ae6260324b2987553bc5d8eebe483d878}} 
+\index{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}!InitializeDistanceDictionary@{InitializeDistanceDictionary}}
+\index{InitializeDistanceDictionary@{InitializeDistanceDictionary}!VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}}
+\doxysubsubsection{\texorpdfstring{InitializeDistanceDictionary()}{InitializeDistanceDictionary()}}
+{\footnotesize\ttfamily void VRPTWOptimizer.\+Distance\+Providers.\+Dictionary\+Distance\+Provider\+Base.\+Initialize\+Distance\+Dictionary (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} $>$}]{distances }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source}{Dictionary\+Distance\+Provider\+Base.\+cs}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ae1525915ab400882d74a2c366e192f51}\label{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ae1525915ab400882d74a2c366e192f51}} 
+\index{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}!distanceMatrix@{distanceMatrix}}
+\index{distanceMatrix@{distanceMatrix}!VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}}
+\doxysubsubsection{\texorpdfstring{distanceMatrix}{distanceMatrix}}
+{\footnotesize\ttfamily Dictionary$<$string, Dictionary$<$string, Dictionary$<$\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}, \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}}$>$ $>$ $>$ VRPTWOptimizer.\+Distance\+Providers.\+Dictionary\+Distance\+Provider\+Base.\+distance\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source}{Dictionary\+Distance\+Provider\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ac6c499ae51df546d1b11491c3fdfd538}\label{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ac6c499ae51df546d1b11491c3fdfd538}} 
+\index{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}!SelfContain@{SelfContain}}
+\index{SelfContain@{SelfContain}!VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}}
+\doxysubsubsection{\texorpdfstring{SelfContain}{SelfContain}}
+{\footnotesize\ttfamily bool VRPTWOptimizer.\+Distance\+Providers.\+Dictionary\+Distance\+Provider\+Base.\+Self\+Contain\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source}{Dictionary\+Distance\+Provider\+Base.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_af463f7a1f9be63857eacee2c5b71b6c1}\label{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_af463f7a1f9be63857eacee2c5b71b6c1}} 
+\index{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}!vehicleToProfileMapper@{vehicleToProfileMapper}}
+\index{vehicleToProfileMapper@{vehicleToProfileMapper}!VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}}
+\doxysubsubsection{\texorpdfstring{vehicleToProfileMapper}{vehicleToProfileMapper}}
+{\footnotesize\ttfamily Dictionary$<$\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}, \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}$>$ VRPTWOptimizer.\+Distance\+Providers.\+Dictionary\+Distance\+Provider\+Base.\+vehicle\+To\+Profile\+Mapper\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source}{Dictionary\+Distance\+Provider\+Base.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ac1eeade0cf12ca78c5a4a8f587311d28}\label{class_v_r_p_t_w_optimizer_1_1_distance_providers_1_1_dictionary_distance_provider_base_ac1eeade0cf12ca78c5a4a8f587311d28}} 
+\index{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}!StoredDistances@{StoredDistances}}
+\index{StoredDistances@{StoredDistances}!VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase@{VRPTWOptimizer.DistanceProviders.DictionaryDistanceProviderBase}}
+\doxysubsubsection{\texorpdfstring{StoredDistances}{StoredDistances}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}}$>$ VRPTWOptimizer.\+Distance\+Providers.\+Dictionary\+Distance\+Provider\+Base.\+Stored\+Distances\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_dictionary_distance_provider_base_8cs_source}{Dictionary\+Distance\+Provider\+Base.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_dictionary_distance_provider_base_8cs}{Dictionary\+Distance\+Provider\+Base.\+cs}}\end{DoxyCompactItemize}

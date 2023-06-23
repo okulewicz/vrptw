@@ -1,0 +1,5 @@
+var class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory =
+[
+    [ "CreateOptimizer", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory.html#a216c4ead789f98cad75ef3ade4df4762", null ],
+    [ "CreateOptimizer", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_factory.html#a1742957cc7d91a4791ac05586be98c9a", null ]
+];

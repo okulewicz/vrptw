@@ -1,0 +1,38 @@
+\hypertarget{_time_estimator_d_t_o_8cs_source}{}\doxysection{Time\+Estimator\+DTO.\+cs}
+\label{_time_estimator_d_t_o_8cs_source}\index{TimeEstimatorDTO.cs@{TimeEstimatorDTO.cs}}
+\mbox{\hyperlink{_time_estimator_d_t_o_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00001}00001 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00002}00002 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00004}00004 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_model}{VRPTWOptimizer.Utils.Model}}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00006}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os}{00006}}     \textcolor{keyword}{public} \textcolor{keyword}{partial class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os}{ViaTmsJSONDTOs}}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00007}00007     \{}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00008}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o}{00008}}         \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o}{TimeEstimatorDTO}} : \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITimeEstimator}}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00009}00009         \{}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00010}00010             [JsonProperty(\textcolor{stringliteral}{"{}StopTime"{}})]}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00011}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a917ff14586d0c891a51f3bd1d3504d01}{00011}}             \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a917ff14586d0c891a51f3bd1d3504d01}{StopTime}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00012}00012             [JsonProperty(\textcolor{stringliteral}{"{}TimePerDeliveredPiece"{}})]}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00013}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_aaa33872e97d6a91475eaab9ce362533c}{00013}}             \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_aaa33872e97d6a91475eaab9ce362533c}{TimePerDeliveredPiece}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00014}00014             [JsonProperty(\textcolor{stringliteral}{"{}TimePerImmediateReturnPiece"{}})]}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00015}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_ae82dd0f4cd11a14b8ff310d8459c460d}{00015}}             \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_ae82dd0f4cd11a14b8ff310d8459c460d}{TimePerImmediateReturnPiece}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00016}00016             [JsonProperty(\textcolor{stringliteral}{"{}TimePerPickedUpPiece"{}})]}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00017}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a60a767cb264a85ec0a46b59366b2b5d3}{00017}}             \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a60a767cb264a85ec0a46b59366b2b5d3}{TimePerPickedUpPiece}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00019}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_af37e6932898372930b8727cb39b41b52}{00019}}             \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_af37e6932898372930b8727cb39b41b52}{EstimateLoadUnloadTime}}(\textcolor{keywordtype}{int} epUnloadCount, \textcolor{keywordtype}{int} epLoadOnlyCount, \textcolor{keywordtype}{int} epImmediatelyRetrievedCount, \textcolor{keywordtype}{int} noRequests)}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00020}00020             \{}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00021}00021                 \textcolor{keywordflow}{if} (noRequests == 0)}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00022}00022                 \{}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00023}00023                     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00024}00024                 \}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00025}00025                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a917ff14586d0c891a51f3bd1d3504d01}{StopTime}} +}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00026}00026                     \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_aaa33872e97d6a91475eaab9ce362533c}{TimePerDeliveredPiece}} * epUnloadCount +}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00027}00027                     \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_a60a767cb264a85ec0a46b59366b2b5d3}{TimePerPickedUpPiece}} * epLoadOnlyCount +}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00028}00028                     \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os_1_1_time_estimator_d_t_o_ae82dd0f4cd11a14b8ff310d8459c460d}{TimePerImmediateReturnPiece}} * epImmediatelyRetrievedCount;}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00029}00029             \}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00030}00030         \}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00031}00031     \}}
+\DoxyCodeLine{\Hypertarget{_time_estimator_d_t_o_8cs_source_l00032}00032 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,173 @@
+\hypertarget{class_common_g_i_s_1_1_distance}{}\doxysection{Common\+GIS.\+Distance Class Reference}
+\label{class_common_g_i_s_1_1_distance}\index{CommonGIS.Distance@{CommonGIS.Distance}}
+
+
+Represents properties of distance between 2 \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} objects  
+
+
+Inheritance diagram for Common\+GIS.\+Distance\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_common_g_i_s_1_1_distance}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_distance_a9bc0e782a957b6cf90e0f27b822cc2aa}{Distance}} (string from\+Id, string to\+Id, double length, double time, \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} profile)
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} object \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_common_g_i_s_1_1_distance_a8bfbabd410c265a58253fb736b4ee5c5}{Equals}} (\mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} other)
+\begin{DoxyCompactList}\small\item\em Verifies if two distances are identical in length and time \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_common_g_i_s_1_1_distance_afe206a95e13cc7270e52b9fa68c52a32}{From\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Source identifier \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}{Length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Length (assumed to be in meters) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} \mbox{\hyperlink{class_common_g_i_s_1_1_distance_a2997c43715a9478b18f41bfaa125775c}{Profile}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Vehicle profile for which the distance has been found \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_common_g_i_s_1_1_distance_a873fe0d3bc5a3a24c5916d2ea6176a90}{Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time (assumed to be in seconds) \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_common_g_i_s_1_1_distance_adf763646e49cbcb6c4b3e6cac9746a96}{To\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Destination identifier \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents properties of distance between 2 \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} objects 
+
+Definition at line \mbox{\hyperlink{_distance_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_distance_8cs_source}{Distance.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_a9bc0e782a957b6cf90e0f27b822cc2aa}\label{class_common_g_i_s_1_1_distance_a9bc0e782a957b6cf90e0f27b822cc2aa}} 
+\index{CommonGIS.Distance@{CommonGIS.Distance}!Distance@{Distance}}
+\index{Distance@{Distance}!CommonGIS.Distance@{CommonGIS.Distance}}
+\doxysubsubsection{\texorpdfstring{Distance()}{Distance()}}
+{\footnotesize\ttfamily Common\+GIS.\+Distance.\+Distance (\begin{DoxyParamCaption}\item[{string}]{from\+Id,  }\item[{string}]{to\+Id,  }\item[{double}]{length,  }\item[{double}]{time,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}}]{profile }\end{DoxyParamCaption})}
+
+
+
+Creates \mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}} object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+Id} & \\
+\hline
+{\em to\+Id} & \\
+\hline
+{\em length} & \\
+\hline
+{\em time} & \\
+\hline
+{\em profile} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_distance_8cs_source_l00044}{44}} of file \mbox{\hyperlink{_distance_8cs_source}{Distance.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_a8bfbabd410c265a58253fb736b4ee5c5}\label{class_common_g_i_s_1_1_distance_a8bfbabd410c265a58253fb736b4ee5c5}} 
+\index{CommonGIS.Distance@{CommonGIS.Distance}!Equals@{Equals}}
+\index{Equals@{Equals}!CommonGIS.Distance@{CommonGIS.Distance}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily bool Common\+GIS.\+Distance.\+Equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_distance}{Distance}}}]{other }\end{DoxyParamCaption})}
+
+
+
+Verifies if two distances are identical in length and time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_distance_8cs_source_l00058}{58}} of file \mbox{\hyperlink{_distance_8cs_source}{Distance.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_afe206a95e13cc7270e52b9fa68c52a32}\label{class_common_g_i_s_1_1_distance_afe206a95e13cc7270e52b9fa68c52a32}} 
+\index{CommonGIS.Distance@{CommonGIS.Distance}!FromId@{FromId}}
+\index{FromId@{FromId}!CommonGIS.Distance@{CommonGIS.Distance}}
+\doxysubsubsection{\texorpdfstring{FromId}{FromId}}
+{\footnotesize\ttfamily string Common\+GIS.\+Distance.\+From\+Id\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Source identifier 
+
+
+
+Definition at line \mbox{\hyperlink{_distance_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_distance_8cs_source}{Distance.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}\label{class_common_g_i_s_1_1_distance_aed3c63e7fd87ca262eecf0f9bbd8c328}} 
+\index{CommonGIS.Distance@{CommonGIS.Distance}!Length@{Length}}
+\index{Length@{Length}!CommonGIS.Distance@{CommonGIS.Distance}}
+\doxysubsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily double Common\+GIS.\+Distance.\+Length\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Length (assumed to be in meters) 
+
+
+
+Definition at line \mbox{\hyperlink{_distance_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_distance_8cs_source}{Distance.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_a2997c43715a9478b18f41bfaa125775c}\label{class_common_g_i_s_1_1_distance_a2997c43715a9478b18f41bfaa125775c}} 
+\index{CommonGIS.Distance@{CommonGIS.Distance}!Profile@{Profile}}
+\index{Profile@{Profile}!CommonGIS.Distance@{CommonGIS.Distance}}
+\doxysubsubsection{\texorpdfstring{Profile}{Profile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} Common\+GIS.\+Distance.\+Profile\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Vehicle profile for which the distance has been found 
+
+
+
+Definition at line \mbox{\hyperlink{_distance_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_distance_8cs_source}{Distance.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_a873fe0d3bc5a3a24c5916d2ea6176a90}\label{class_common_g_i_s_1_1_distance_a873fe0d3bc5a3a24c5916d2ea6176a90}} 
+\index{CommonGIS.Distance@{CommonGIS.Distance}!Time@{Time}}
+\index{Time@{Time}!CommonGIS.Distance@{CommonGIS.Distance}}
+\doxysubsubsection{\texorpdfstring{Time}{Time}}
+{\footnotesize\ttfamily double Common\+GIS.\+Distance.\+Time\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Time (assumed to be in seconds) 
+
+
+
+Definition at line \mbox{\hyperlink{_distance_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_distance_8cs_source}{Distance.\+cs}}.
+
+\mbox{\Hypertarget{class_common_g_i_s_1_1_distance_adf763646e49cbcb6c4b3e6cac9746a96}\label{class_common_g_i_s_1_1_distance_adf763646e49cbcb6c4b3e6cac9746a96}} 
+\index{CommonGIS.Distance@{CommonGIS.Distance}!ToId@{ToId}}
+\index{ToId@{ToId}!CommonGIS.Distance@{CommonGIS.Distance}}
+\doxysubsubsection{\texorpdfstring{ToId}{ToId}}
+{\footnotesize\ttfamily string Common\+GIS.\+Distance.\+To\+Id\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Destination identifier 
+
+
+
+Definition at line \mbox{\hyperlink{_distance_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_distance_8cs_source}{Distance.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_distance_8cs}{Distance.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,98 @@
+\hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator}{}\doxysection{VRPTWOptimizer.\+Interfaces.\+IRoute\+Generator\texorpdfstring{$<$}{<} R, V, Rt \texorpdfstring{$>$}{>} Interface Template Reference}
+\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator}\index{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$}}
+
+
+Creates route object aware of the distance and time issues related to transport  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Rt \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator_aacf15bc37799021a6b66cc7e3fc6ef81}{Create\+Route}} (V vehicle)
+\begin{DoxyCompactList}\small\item\em Creates route for the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator_ae090f64f1bd4a4ed1ca42cdd02b9bb39}{Distance\+Provider}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Distance provider gives distance and travek time between Location objects \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator_a5ebd6d6e6a1b94197296a183ee0d0f9c}{Time\+Estimator}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time estimator predicts service time of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} at pickup and delivery Location objects \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Creates route object aware of the distance and time issues related to transport 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em R} & \\
+\hline
+{\em V} & \\
+\hline
+{\em Rt} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em R} : {\em \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}}}]\item[{\em V} : {\em \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}}]\item[{\em Rt} : {\em \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route}{IRoute}}}]\item[{\em Rt} : {\em R}]\item[{\em Rt} : {\em V}]\end{description}
+\end{Desc}
+
+
+Definition at line \mbox{\hyperlink{_i_route_generator_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_i_route_generator_8cs_source}{IRoute\+Generator.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator_aacf15bc37799021a6b66cc7e3fc6ef81}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator_aacf15bc37799021a6b66cc7e3fc6ef81}} 
+\index{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$}!CreateRoute@{CreateRoute}}
+\index{CreateRoute@{CreateRoute}!VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$}}
+\doxysubsubsection{\texorpdfstring{CreateRoute()}{CreateRoute()}}
+{\footnotesize\ttfamily Rt \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator}{VRPTWOptimizer.\+Interfaces.\+IRoute\+Generator}}$<$ R, V, Rt $>$.Create\+Route (\begin{DoxyParamCaption}\item[{V}]{vehicle }\end{DoxyParamCaption})}
+
+
+
+Creates route for the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vehicle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator_ae090f64f1bd4a4ed1ca42cdd02b9bb39}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator_ae090f64f1bd4a4ed1ca42cdd02b9bb39}} 
+\index{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$}!DistanceProvider@{DistanceProvider}}
+\index{DistanceProvider@{DistanceProvider}!VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$}}
+\doxysubsubsection{\texorpdfstring{DistanceProvider}{DistanceProvider}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_common_g_i_s_1_1_interfaces_1_1_i_distance_provider}{IDistance\+Provider}} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator}{VRPTWOptimizer.\+Interfaces.\+IRoute\+Generator}}$<$ R, V, Rt $>$.Distance\+Provider\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Distance provider gives distance and travek time between Location objects 
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_generator_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_i_route_generator_8cs_source}{IRoute\+Generator.\+cs}}.
+
+\mbox{\Hypertarget{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator_a5ebd6d6e6a1b94197296a183ee0d0f9c}\label{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator_a5ebd6d6e6a1b94197296a183ee0d0f9c}} 
+\index{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$}!TimeEstimator@{TimeEstimator}}
+\index{TimeEstimator@{TimeEstimator}!VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$@{VRPTWOptimizer.Interfaces.IRouteGenerator$<$ R, V, Rt $>$}}
+\doxysubsubsection{\texorpdfstring{TimeEstimator}{TimeEstimator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator}{ITime\+Estimator}} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_route_generator}{VRPTWOptimizer.\+Interfaces.\+IRoute\+Generator}}$<$ R, V, Rt $>$.Time\+Estimator\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Time estimator predicts service time of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} at pickup and delivery Location objects 
+
+
+
+Definition at line \mbox{\hyperlink{_i_route_generator_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_i_route_generator_8cs_source}{IRoute\+Generator.\+cs}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_route_generator_8cs}{IRoute\+Generator.\+cs}}\end{DoxyCompactItemize}

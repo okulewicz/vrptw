@@ -1,0 +1,130 @@
+\hypertarget{_a_l_n_s_get_data_8cs_source}{}\doxysection{ALNSGet\+Data.\+cs}
+\label{_a_l_n_s_get_data_8cs_source}\index{ALNSGetData.cs@{ALNSGetData.cs}}
+\mbox{\hyperlink{_a_l_n_s_get_data_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00001}00001 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00002}00002 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00004}00004 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00006}00006 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00007}00007 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00008}00008 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils}{Utils}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_model}{Model}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00009}00009 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils}{Utils}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition}{VrpDefinition}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00010}00010 \textcolor{keyword}{using} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l}{BL}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s}{ALNS}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_node}{ALNSNode}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00011}00011 \textcolor{keyword}{using} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l}{BL}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s}{ALNS}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s_1_1_a_l_n_s_vehicle}{ALNSVehicle}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00012}00012 \textcolor{keyword}{using} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils}{Utils}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_utils_1_1_model}{Model}}.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_via_tms_j_s_o_n_d_t_os}{ViaTmsJSONDTOs}};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00014}\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l}{00014}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_b_l_1_1_a_l_n_s}{VRPTWOptimizer.BL.ALNS}}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00016}00016     \textcolor{keyword}{internal} \textcolor{keyword}{class }ALNSGetData}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00017}00017     \{ }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00018}00018         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ALNSNode> CreateDeliveryNodes(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider}{IVRPJSONProvider}} vrpProvider)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00019}00019         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00020}00020             List<ALNSNode> DeliveryNodes = \textcolor{keyword}{new} List<ALNSNode>();}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00022}00022             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}.Count(); i++)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00023}00023             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00024}00024                 \textcolor{keywordtype}{string} locationId = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].DeliveryLocation.Id;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00025}00025                 \textcolor{keywordtype}{double} timeWindowStart = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].DeliveryPreferedTimeWindowStart;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00026}00026                 \textcolor{keywordtype}{double} timeWindowEnd = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].DeliveryPreferedTimeWindowEnd;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00027}00027                 \textcolor{keywordtype}{int} packageCount = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].PackageCount;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00028}00028                 \textcolor{keywordtype}{int} packageCountForImediateRetrieval = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].PackageCountForImediateRetrieval;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00029}00029                 \textcolor{keywordtype}{double}[] demand = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].Size;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00030}00030                 \textcolor{keywordtype}{double}[] load = \{ 0, 0 \};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00031}00031                 \textcolor{keywordtype}{double}[] capacity = \{ 0.0, 0.0 \};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00032}00032                 ALNSVehicleRoadRestrictions vehicleRoadRestrictions = \textcolor{keyword}{new} ALNSVehicleRoadRestrictions();}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00033}00033                 ALNSRequestRoadRestrictions requestRoadRestrictions = \textcolor{keyword}{new} ALNSRequestRoadRestrictions();}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00035}00035                 ALNSVehicle vehicle = \textcolor{keyword}{new} ALNSVehicle(0, capacity, 0.0, 0.0, vehicleRoadRestrictions, 1, 0, 0);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00037}00037                 requestRoadRestrictions.EpCount = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].MaxVehicleSize.EpCount;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00038}00038                 requestRoadRestrictions.GrossVehicleWeight = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].MaxVehicleSize.GrossVehicleWeight;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00039}00039                 requestRoadRestrictions.Width = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].MaxVehicleSize.Width;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00040}00040                 requestRoadRestrictions.Height = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].MaxVehicleSize.Height;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00042}00042                 \textcolor{comment}{//ALNSNode deliveryNode = new ALNSNode((i + 1 + vrpProvider.Requests.Count()).ToString(), true, locationId, timeWindowStart, timeWindowEnd, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, packageCount, packageCountForImediateRetrieval, demand, load, vehicle, requestRoadRestrictions, "{}"{}, "{}"{});}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00043}00043                 ALNSNode deliveryNode = \textcolor{keyword}{new} ALNSNode((vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].Id).ToString(), locationId, timeWindowStart, timeWindowEnd, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, packageCount, packageCountForImediateRetrieval, demand, load, vehicle, requestRoadRestrictions);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00044}00044                 DeliveryNodes.Add(deliveryNode);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00045}00045             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00047}00047             \textcolor{keywordflow}{return} DeliveryNodes;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00048}00048         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00050}00050         \textcolor{keyword}{public} \textcolor{keyword}{static} List<ALNSVehicle> CreateFleet(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider}{IVRPJSONProvider}} vrpProvider)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00051}00051         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00052}00052             List<ALNSVehicle> Vehicles = \textcolor{keyword}{new} List<ALNSVehicle>();}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00054}00054             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}.Count(); i++)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00055}00055             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00056}00056                 ALNSVehicleRoadRestrictions roadRestrictions = \textcolor{keyword}{new} ALNSVehicleRoadRestrictions();}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00057}00057                 roadRestrictions.EpCount = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].RoadProperties.EpCount;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00058}00058                 roadRestrictions.GrossVehicleWeight = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].RoadProperties.GrossVehicleWeight;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00059}00059                 roadRestrictions.Height = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].RoadProperties.Height;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00060}00060                 roadRestrictions.Width = vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].RoadProperties.Width;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00062}00062                 Vehicles.Add(\textcolor{keyword}{new} ALNSVehicle(}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00063}00063                     vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].Id,}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00064}00064                     vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].Capacity,}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00065}00065                     vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].AvailabilityStart,}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00066}00066                     vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].AvailabilityEnd,}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00067}00067                     roadRestrictions,}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00068}00068                     vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].VehicleCostPerDistanceUnit,}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00069}00069                     vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].VehicleFlatCostForShortRouteLength,}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00070}00070                     vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_a4199547318344b5c4f5cf5cfc2765fa1}{Vehicles}}[i].VehicleMaxRouteLengthForFlatCost}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00071}00071 ));}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00072}00072             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00074}00074             \textcolor{keywordflow}{return} Vehicles;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00075}00075         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00077}00077         \textcolor{comment}{// create dictionary with distances and times}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00078}00078         \textcolor{keyword}{public} \textcolor{keyword}{static} Dictionary<(string, string), \textcolor{keywordtype}{double}[]> CreateLengthTimeDictionary(\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider}{IVRPJSONProvider}} vrpProvider)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00079}00079         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00080}00080             Dictionary<(string, string), \textcolor{keywordtype}{double}[]> LT = \textcolor{keyword}{new} Dictionary<(\textcolor{keywordtype}{string}, \textcolor{keywordtype}{string}), \textcolor{keywordtype}{double}[]>();}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00082}00082             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider_a5b7580b32f1143e07e2083d702cd5360}{Distances}}.Count(); i++)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00083}00083             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00084}00084                 (string, string) key = (vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider_a5b7580b32f1143e07e2083d702cd5360}{Distances}}[i].FromId, vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider_a5b7580b32f1143e07e2083d702cd5360}{Distances}}[i].ToId);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00085}00085                 \textcolor{keywordtype}{double}[] val = \{ vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider_a5b7580b32f1143e07e2083d702cd5360}{Distances}}[i].Length, vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider_a5b7580b32f1143e07e2083d702cd5360}{Distances}}[i].Time \};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00086}00086                 LT[key] = val;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00087}00087             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00089}00089             \textcolor{keywordtype}{double}[] zeroLT = \{ 0.0, 0.0 \};}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00090}00090             LT[(vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider_af216d81045d08b2a39a264f24d089355}{DepotId}}, vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider_af216d81045d08b2a39a264f24d089355}{DepotId}})] = zeroLT;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00092}00092             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}.Count(); i++)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00093}00093             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00094}00094                 LT[(vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].DeliveryLocation.Id, vrpProvider.\mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_v_r_p_provider_af8d49aa28e8758bf0aa710d8e295fdb2}{Requests}}[i].DeliveryLocation.Id)] = zeroLT; ;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00095}00095             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00097}00097             \textcolor{keywordflow}{return} LT;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00098}00098         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00100}00100         \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider}{IVRPJSONProvider}} LoadData(\textcolor{keywordtype}{string} inputFile)}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00101}00101         \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00102}00102             \textcolor{comment}{// Copy to output directory -\/-\/> Copy if newer}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00103}00103             \textcolor{comment}{// const string inputFile = "{}JSON/stokrotka-\/2022-\/01-\/26-\/CD Teresin-\/improved-\/data.json"{};}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00104}00104             var request = File.ReadAllText(inputFile);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00106}00106             Dictionary<string, object> genericInputObject = JsonConvert.DeserializeObject<Dictionary<string, object>>(request);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00108}00108             \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_i_v_r_p_j_s_o_n_provider}{IVRPJSONProvider}} vrpProvider;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00110}00110             \textcolor{keywordflow}{if} (genericInputObject.ContainsKey(\textcolor{stringliteral}{"{}home\_depots"{}}))}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00111}00111             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00112}00112                 VRPDefinitionViaTmsDTO vrpDTO = JsonConvert.DeserializeObject<VRPDefinitionViaTmsDTO>(request);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00113}00113                 vrpProvider = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_via_tms_d_t_o_provider}{VRPDefinitionViaTmsDTOProvider}}(vrpDTO);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00114}00114             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00115}00115             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00116}00116             \{}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00117}00117                 \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_v_r_p_definition_j_s_o_n_d_t_o}{VRPDefinitionJSONDTO}} vrpDTO = JsonConvert.DeserializeObject<\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_model_1_1_v_r_p_definition_j_s_o_n_d_t_o}{VRPDefinitionJSONDTO}}>(request);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00118}00118                 vrpProvider = \textcolor{keyword}{new} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_vrp_definition_1_1_v_r_p_definition_j_s_o_n_d_t_o_provider}{VRPDefinitionJSONDTOProvider}}(vrpDTO);}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00119}00119             \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00121}00121             \textcolor{keywordflow}{return} vrpProvider;}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00122}00122         \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00123}00123     \}}
+\DoxyCodeLine{\Hypertarget{_a_l_n_s_get_data_8cs_source_l00124}00124 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,169 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item}{}\doxysection{VRPTWOptimizer.\+VRPSolution.\+Transport\+Item Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item}\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+
+
+Entry describing a single loop of the Vehicle/combined \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}  
+
+
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_af414e67de541b3a6fce42855bfa934b3}{Available\+For\+Loading\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Relative time when the vehicle needs to be at the gate of warehouse to be loaded \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a3be05e33370ef4e6a2d02228b96e3be4}{Available\+For\+Next\+Assignment\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Relative time when the vehicle is free for next assignements \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_aed9bf23073d5e8e0014e6fd72411a3ff}{Driver\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_aca525c6bfb980bf9826f11420d0841f2}{Fill\+In\+Ratio}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Percent of capacity filled when starting the Route \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a93fdb06dd6fded6f70050f232a9465f0}{Length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Length of a routes in meters \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_schedule_item}{Schedule\+Item}} $>$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a5b450879f4281e050f361eecefc127c8}{Schedule}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List of planned visits \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a6c934dd6e9f450a64b46d3b6f2e937f9}{Tractor\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identifier of tractor unit (if applicable) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a142bf1e46c7f3b8520cef95a5e0b26bf}{Trailer\+Truck\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identifier of semitrailer or straight truck \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a63afedd0f5fc3a1cc2e77ade84c18a5a}{Transport\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Route identifier \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry describing a single loop of the Vehicle/combined \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} 
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00050}{50}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_af414e67de541b3a6fce42855bfa934b3}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_af414e67de541b3a6fce42855bfa934b3}} 
+\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}!AvailableForLoadingTime@{AvailableForLoadingTime}}
+\index{AvailableForLoadingTime@{AvailableForLoadingTime}!VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+\doxysubsubsection{\texorpdfstring{AvailableForLoadingTime}{AvailableForLoadingTime}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+VRPSolution.\+Transport\+Item.\+Available\+For\+Loading\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Relative time when the vehicle needs to be at the gate of warehouse to be loaded 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a3be05e33370ef4e6a2d02228b96e3be4}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a3be05e33370ef4e6a2d02228b96e3be4}} 
+\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}!AvailableForNextAssignmentTime@{AvailableForNextAssignmentTime}}
+\index{AvailableForNextAssignmentTime@{AvailableForNextAssignmentTime}!VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+\doxysubsubsection{\texorpdfstring{AvailableForNextAssignmentTime}{AvailableForNextAssignmentTime}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+VRPSolution.\+Transport\+Item.\+Available\+For\+Next\+Assignment\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Relative time when the vehicle is free for next assignements 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_aed9bf23073d5e8e0014e6fd72411a3ff}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_aed9bf23073d5e8e0014e6fd72411a3ff}} 
+\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}!DriverId@{DriverId}}
+\index{DriverId@{DriverId}!VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+\doxysubsubsection{\texorpdfstring{DriverId}{DriverId}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+VRPSolution.\+Transport\+Item.\+Driver\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+
+
+Identifier of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_driver}{Driver}} (if applicable) 
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_aca525c6bfb980bf9826f11420d0841f2}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_aca525c6bfb980bf9826f11420d0841f2}} 
+\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}!FillInRatio@{FillInRatio}}
+\index{FillInRatio@{FillInRatio}!VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+\doxysubsubsection{\texorpdfstring{FillInRatio}{FillInRatio}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+VRPSolution.\+Transport\+Item.\+Fill\+In\+Ratio\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Percent of capacity filled when starting the Route 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00068}{68}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a93fdb06dd6fded6f70050f232a9465f0}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a93fdb06dd6fded6f70050f232a9465f0}} 
+\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}!Length@{Length}}
+\index{Length@{Length}!VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+\doxysubsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+VRPSolution.\+Transport\+Item.\+Length\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Length of a routes in meters 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00072}{72}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a5b450879f4281e050f361eecefc127c8}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a5b450879f4281e050f361eecefc127c8}} 
+\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+\doxysubsubsection{\texorpdfstring{Schedule}{Schedule}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_schedule_item}{Schedule\+Item}}$>$ VRPTWOptimizer.\+VRPSolution.\+Transport\+Item.\+Schedule\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+List of planned visits 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00076}{76}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a6c934dd6e9f450a64b46d3b6f2e937f9}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a6c934dd6e9f450a64b46d3b6f2e937f9}} 
+\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}!TractorId@{TractorId}}
+\index{TractorId@{TractorId}!VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+\doxysubsubsection{\texorpdfstring{TractorId}{TractorId}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+VRPSolution.\+Transport\+Item.\+Tractor\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Identifier of tractor unit (if applicable) 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00080}{80}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a142bf1e46c7f3b8520cef95a5e0b26bf}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a142bf1e46c7f3b8520cef95a5e0b26bf}} 
+\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}!TrailerTruckId@{TrailerTruckId}}
+\index{TrailerTruckId@{TrailerTruckId}!VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+\doxysubsubsection{\texorpdfstring{TrailerTruckId}{TrailerTruckId}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+VRPSolution.\+Transport\+Item.\+Trailer\+Truck\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Identifier of semitrailer or straight truck 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00084}{84}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a63afedd0f5fc3a1cc2e77ade84c18a5a}\label{class_v_r_p_t_w_optimizer_1_1_v_r_p_solution_1_1_transport_item_a63afedd0f5fc3a1cc2e77ade84c18a5a}} 
+\index{VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}!TransportId@{TransportId}}
+\index{TransportId@{TransportId}!VRPTWOptimizer.VRPSolution.TransportItem@{VRPTWOptimizer.VRPSolution.TransportItem}}
+\doxysubsubsection{\texorpdfstring{TransportId}{TransportId}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+VRPSolution.\+Transport\+Item.\+Transport\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Route identifier 
+
+
+
+Definition at line \mbox{\hyperlink{_v_r_p_solution_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_v_r_p_solution_8cs_source}{VRPSolution.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_v_r_p_solution_8cs}{VRPSolution.\+cs}}\end{DoxyCompactItemize}

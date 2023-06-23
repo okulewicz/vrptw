@@ -252,3 +252,6 @@ msbuild.wrn
 /VRPTWSolver
 /VRPVisualizerReact
 /VRPTWSolver.sln
+/ApiUtils
+/readme-cluster.MD
+/VRPVisualizer/*.json

@@ -1,0 +1,469 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle}{}\doxysection{VRPTWOptimizer.\+Vehicle Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_vehicle}\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+
+
+Defines properties of a \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}}  
+
+
+Inheritance diagram for VRPTWOptimizer.\+Vehicle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_r_p_t_w_optimizer_1_1_vehicle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a1b572f1f340d1ba8bcf36e5a0e05db38}{Vehicle}} (int id, double\mbox{[}$\,$\mbox{]} capacity, int\mbox{[}$\,$\mbox{]} special\+Properties, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}\mbox{[}$\,$\mbox{]} capacity\+Aggregation, \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} initial\+Location, double availability\+Start, \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} final\+Location, double availability\+End, double max\+Ride\+Time, \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} road\+Properties, \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{Vehicle\+Type}} type, double vehicle\+Cost\+Per\+Distance\+Unit, double vehicle\+Cost\+Per\+Time\+Unit, double vehicle\+Cost\+Per\+Usage, int owner\+ID)
+\begin{DoxyCompactList}\small\item\em Creates vehicle object for backward compatibility \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac08b20cafd49c80b3d0776ca3649ea45}{Vehicle}} (int id, double\mbox{[}$\,$\mbox{]} capacity, int\mbox{[}$\,$\mbox{]} special\+Properties, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}\mbox{[}$\,$\mbox{]} capacity\+Aggregation, \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} initial\+Location, double availability\+Start, \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} final\+Location, double availability\+End, double max\+Ride\+Time, \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} road\+Properties, \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{Vehicle\+Type}} type, double vehicle\+Cost\+Per\+Distance\+Unit, double vehicle\+Cost\+Per\+Time\+Unit, double vehicle\+Cost\+Per\+Usage, int owner\+ID, double vehicle\+Flat\+Cost\+For\+Short\+Route\+Length, double vehicle\+Max\+Route\+Length\+For\+Flat\+Cost)
+\begin{DoxyCompactList}\small\item\em Creates vehicle object \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a38543f336ac43b055a9a856a8871c86a}{Can\+Fit\+Requests}} (IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ requests)
+\begin{DoxyCompactList}\small\item\em Verifies if a pool of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects can fit together within the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aed9c29ddcb42cc5ebb5ade486e39d461}{Can\+Fit\+Requests\+Somewhere\+In\+Vehicle}} (IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$ requests)
+\begin{DoxyCompactList}\small\item\em Verifies if a pool of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects can fit together within the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a54b2bdefb7f8d50f93db4471454ca294}{Can\+Handle\+Request}} (\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} candidate\+Request)
+\begin{DoxyCompactList}\small\item\em Verifies if properties of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} conform with abilities of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} and restrictions of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} allow the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} to approach initial and final destinations \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_af46b54f5e5bc7b6a22fa34c8a6303062}{Can\+Fit\+Capacity}} (double\mbox{[}$\,$\mbox{]} capacity, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}\mbox{[}$\,$\mbox{]} aggregation\+Type, IEnumerable$<$ double\mbox{[}$\,$\mbox{]}$>$ sizes)
+\begin{DoxyCompactList}\small\item\em Checks if the given list of cargo sizes would fit into specified capacity according to proper size aggregation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+double\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Array of capacity dimensions (e.\+g. mass, length, volume, euro pallets count) Freezer availability can also be treated as dimension \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}{Capacity\+Aggregation\+Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Array of how the packages sizes are aggregated in various dimensions (e.\+g. sum for mass, max for length ) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aea13b7c7e39530026df3dec330e89fef}{Final\+Location}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Location where vehicle needs to finish its operations \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_adf56c2c70b343141ccd8f8721e74bf3c}{Initial\+Location}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Location where vehicle will be available at Availability\+Start \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aab2881047d0af67d65a7ca7240bbf6df}{Max\+Ride\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Max time span when vehicle can be on road \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a4c7a672437bddc319cb62e790b988245}{Owner\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Identifier of the company owning the vehicle \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}{Road\+Properties}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Size of the vehicle that affects possibility of traversing given route or accessing a certain Location \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}{Special\+Properties}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Describes properties of vehicles within a given domain (e.\+g. lift, freezer) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{Vehicle\+Type}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Type of vehicle necessary to decide if needs to be combined with a unit with engine (semi-\/trailer) or not (truck) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a06905509ca86e5d69ce145b1277de2c9}{Vehicle\+Cost\+Per\+Distance\+Unit}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Cost of using vehicle per distance unit \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a10e1e1f3a39a1694c0a25ced462261f5}{Vehicle\+Cost\+Per\+Time\+Unit}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Cost of using vehicle per time unit (while moving from Location to Location) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a012c4cf8c35f047cf8ccdfbd634b0edc}{Vehicle\+Cost\+Per\+Usage}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Cost of using vehicle at all in a given problem \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a1ee01b6b70ab086160651f5a84dc7a58}{Vehicle\+Flat\+Cost\+For\+Short\+Route\+Length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Cost of using vehicle if route length is shorter than Vehicle\+Max\+Route\+Length\+For\+Flat\+Cost (in meters) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa65292dcd7df7d934e7775bc520b34ff}{Vehicle\+Max\+Route\+Length\+For\+Flat\+Cost}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Distance (by default in meters) for which Vehicle\+Flat\+Cost\+For\+Short\+Route\+Length flat rate is applied, otherwise Vehicle\+Cost\+Per\+Distance\+Unit $\ast$ Distance is applieds \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines properties of a \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} 
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a1b572f1f340d1ba8bcf36e5a0e05db38}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a1b572f1f340d1ba8bcf36e5a0e05db38}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!Vehicle@{Vehicle}}
+\index{Vehicle@{Vehicle}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{Vehicle()}{Vehicle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VRPTWOptimizer.\+Vehicle.\+Vehicle (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{double\mbox{[}$\,$\mbox{]}}]{capacity,  }\item[{int\mbox{[}$\,$\mbox{]}}]{special\+Properties,  }\item[{\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}\mbox{[}$\,$\mbox{]}}]{capacity\+Aggregation,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}}]{initial\+Location,  }\item[{double}]{availability\+Start,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}}]{final\+Location,  }\item[{double}]{availability\+End,  }\item[{double}]{max\+Ride\+Time,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}}]{road\+Properties,  }\item[{\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{Vehicle\+Type}}}]{type,  }\item[{double}]{vehicle\+Cost\+Per\+Distance\+Unit,  }\item[{double}]{vehicle\+Cost\+Per\+Time\+Unit,  }\item[{double}]{vehicle\+Cost\+Per\+Usage,  }\item[{int}]{owner\+ID }\end{DoxyParamCaption})}
+
+
+
+Creates vehicle object for backward compatibility 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em capacity} & \\
+\hline
+{\em special\+Properties} & \\
+\hline
+{\em capacity\+Aggregation} & \\
+\hline
+{\em initial\+Location} & \\
+\hline
+{\em availability\+Start} & \\
+\hline
+{\em final\+Location} & \\
+\hline
+{\em availability\+End} & \\
+\hline
+{\em max\+Ride\+Time} & \\
+\hline
+{\em road\+Properties} & \\
+\hline
+{\em type} & \\
+\hline
+{\em vehicle\+Cost\+Per\+Distance\+Unit} & \\
+\hline
+{\em vehicle\+Cost\+Per\+Time\+Unit} & \\
+\hline
+{\em vehicle\+Cost\+Per\+Usage} & \\
+\hline
+{\em owner\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00094}{94}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_ac08b20cafd49c80b3d0776ca3649ea45}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_ac08b20cafd49c80b3d0776ca3649ea45}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!Vehicle@{Vehicle}}
+\index{Vehicle@{Vehicle}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{Vehicle()}{Vehicle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VRPTWOptimizer.\+Vehicle.\+Vehicle (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{double\mbox{[}$\,$\mbox{]}}]{capacity,  }\item[{int\mbox{[}$\,$\mbox{]}}]{special\+Properties,  }\item[{\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}\mbox{[}$\,$\mbox{]}}]{capacity\+Aggregation,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}}]{initial\+Location,  }\item[{double}]{availability\+Start,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}}}]{final\+Location,  }\item[{double}]{availability\+End,  }\item[{double}]{max\+Ride\+Time,  }\item[{\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}}}]{road\+Properties,  }\item[{\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{Vehicle\+Type}}}]{type,  }\item[{double}]{vehicle\+Cost\+Per\+Distance\+Unit,  }\item[{double}]{vehicle\+Cost\+Per\+Time\+Unit,  }\item[{double}]{vehicle\+Cost\+Per\+Usage,  }\item[{int}]{owner\+ID,  }\item[{double}]{vehicle\+Flat\+Cost\+For\+Short\+Route\+Length,  }\item[{double}]{vehicle\+Max\+Route\+Length\+For\+Flat\+Cost }\end{DoxyParamCaption})}
+
+
+
+Creates vehicle object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em capacity} & \\
+\hline
+{\em special\+Properties} & \\
+\hline
+{\em capacity\+Aggregation} & \\
+\hline
+{\em initial\+Location} & \\
+\hline
+{\em availability\+Start} & \\
+\hline
+{\em final\+Location} & \\
+\hline
+{\em availability\+End} & \\
+\hline
+{\em max\+Ride\+Time} & \\
+\hline
+{\em road\+Properties} & \\
+\hline
+{\em type} & \\
+\hline
+{\em vehicle\+Cost\+Per\+Distance\+Unit} & \\
+\hline
+{\em vehicle\+Cost\+Per\+Time\+Unit} & \\
+\hline
+{\em vehicle\+Cost\+Per\+Usage} & \\
+\hline
+{\em owner\+ID} & \\
+\hline
+{\em vehicle\+Flat\+Cost\+For\+Short\+Route\+Length} & \\
+\hline
+{\em vehicle\+Max\+Route\+Length\+For\+Flat\+Cost} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00148}{148}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_af46b54f5e5bc7b6a22fa34c8a6303062}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_af46b54f5e5bc7b6a22fa34c8a6303062}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!CanFitCapacity@{CanFitCapacity}}
+\index{CanFitCapacity@{CanFitCapacity}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{CanFitCapacity()}{CanFitCapacity()}}
+{\footnotesize\ttfamily static bool VRPTWOptimizer.\+Vehicle.\+Can\+Fit\+Capacity (\begin{DoxyParamCaption}\item[{double\mbox{[}$\,$\mbox{]}}]{capacity,  }\item[{\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}\mbox{[}$\,$\mbox{]}}]{aggregation\+Type,  }\item[{IEnumerable$<$ double\mbox{[}$\,$\mbox{]}$>$}]{sizes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if the given list of cargo sizes would fit into specified capacity according to proper size aggregation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & \\
+\hline
+{\em aggregation\+Type} & \\
+\hline
+{\em sizes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00226}{226}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a38543f336ac43b055a9a856a8871c86a}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a38543f336ac43b055a9a856a8871c86a}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!CanFitRequests@{CanFitRequests}}
+\index{CanFitRequests@{CanFitRequests}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{CanFitRequests()}{CanFitRequests()}}
+{\footnotesize\ttfamily bool VRPTWOptimizer.\+Vehicle.\+Can\+Fit\+Requests (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{requests }\end{DoxyParamCaption})}
+
+
+
+Verifies if a pool of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects can fit together within the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em requests} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00257}{257}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_aed9c29ddcb42cc5ebb5ade486e39d461}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_aed9c29ddcb42cc5ebb5ade486e39d461}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!CanFitRequestsSomewhereInVehicle@{CanFitRequestsSomewhereInVehicle}}
+\index{CanFitRequestsSomewhereInVehicle@{CanFitRequestsSomewhereInVehicle}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{CanFitRequestsSomewhereInVehicle()}{CanFitRequestsSomewhereInVehicle()}}
+{\footnotesize\ttfamily bool VRPTWOptimizer.\+Vehicle.\+Can\+Fit\+Requests\+Somewhere\+In\+Vehicle (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} $>$}]{requests }\end{DoxyParamCaption})}
+
+
+
+Verifies if a pool of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} objects can fit together within the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em requests} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00279}{279}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a54b2bdefb7f8d50f93db4471454ca294}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a54b2bdefb7f8d50f93db4471454ca294}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!CanHandleRequest@{CanHandleRequest}}
+\index{CanHandleRequest@{CanHandleRequest}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{CanHandleRequest()}{CanHandleRequest()}}
+{\footnotesize\ttfamily bool VRPTWOptimizer.\+Vehicle.\+Can\+Handle\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}}}]{candidate\+Request }\end{DoxyParamCaption})}
+
+
+
+Verifies if properties of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} conform with abilities of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} and restrictions of \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{Transport\+Request}} allow the \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} to approach initial and final destinations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em candidate\+Request} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00317}{317}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!Capacity@{Capacity}}
+\index{Capacity@{Capacity}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{Capacity}{Capacity}}
+{\footnotesize\ttfamily double \mbox{[}$\,$\mbox{]} VRPTWOptimizer.\+Vehicle.\+Capacity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Array of capacity dimensions (e.\+g. mass, length, volume, euro pallets count) Freezer availability can also be treated as dimension 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!CapacityAggregationType@{CapacityAggregationType}}
+\index{CapacityAggregationType@{CapacityAggregationType}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{CapacityAggregationType}{CapacityAggregationType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}} \mbox{[}$\,$\mbox{]} VRPTWOptimizer.\+Vehicle.\+Capacity\+Aggregation\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Array of how the packages sizes are aggregated in various dimensions (e.\+g. sum for mass, max for length ) 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_aea13b7c7e39530026df3dec330e89fef}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_aea13b7c7e39530026df3dec330e89fef}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!FinalLocation@{FinalLocation}}
+\index{FinalLocation@{FinalLocation}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{FinalLocation}{FinalLocation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} VRPTWOptimizer.\+Vehicle.\+Final\+Location\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Location where vehicle needs to finish its operations 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_adf56c2c70b343141ccd8f8721e74bf3c}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_adf56c2c70b343141ccd8f8721e74bf3c}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!InitialLocation@{InitialLocation}}
+\index{InitialLocation@{InitialLocation}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{InitialLocation}{InitialLocation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} VRPTWOptimizer.\+Vehicle.\+Initial\+Location\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Location where vehicle will be available at Availability\+Start 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_aab2881047d0af67d65a7ca7240bbf6df}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_aab2881047d0af67d65a7ca7240bbf6df}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!MaxRideTime@{MaxRideTime}}
+\index{MaxRideTime@{MaxRideTime}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{MaxRideTime}{MaxRideTime}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Vehicle.\+Max\+Ride\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Max time span when vehicle can be on road 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a4c7a672437bddc319cb62e790b988245}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a4c7a672437bddc319cb62e790b988245}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!OwnerID@{OwnerID}}
+\index{OwnerID@{OwnerID}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{OwnerID}{OwnerID}}
+{\footnotesize\ttfamily int VRPTWOptimizer.\+Vehicle.\+Owner\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Identifier of the company owning the vehicle 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!RoadProperties@{RoadProperties}}
+\index{RoadProperties@{RoadProperties}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{RoadProperties}{RoadProperties}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{Vehicle\+Road\+Restriction\+Properties}} VRPTWOptimizer.\+Vehicle.\+Road\+Properties\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Size of the vehicle that affects possibility of traversing given route or accessing a certain Location 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!SpecialProperties@{SpecialProperties}}
+\index{SpecialProperties@{SpecialProperties}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{SpecialProperties}{SpecialProperties}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} VRPTWOptimizer.\+Vehicle.\+Special\+Properties\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Describes properties of vehicles within a given domain (e.\+g. lift, freezer) 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!Type@{Type}}
+\index{Type@{Type}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{Vehicle\+Type}} VRPTWOptimizer.\+Vehicle.\+Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Type of vehicle necessary to decide if needs to be combined with a unit with engine (semi-\/trailer) or not (truck) 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a06905509ca86e5d69ce145b1277de2c9}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a06905509ca86e5d69ce145b1277de2c9}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!VehicleCostPerDistanceUnit@{VehicleCostPerDistanceUnit}}
+\index{VehicleCostPerDistanceUnit@{VehicleCostPerDistanceUnit}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{VehicleCostPerDistanceUnit}{VehicleCostPerDistanceUnit}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Vehicle.\+Vehicle\+Cost\+Per\+Distance\+Unit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Cost of using vehicle per distance unit 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a10e1e1f3a39a1694c0a25ced462261f5}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a10e1e1f3a39a1694c0a25ced462261f5}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!VehicleCostPerTimeUnit@{VehicleCostPerTimeUnit}}
+\index{VehicleCostPerTimeUnit@{VehicleCostPerTimeUnit}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{VehicleCostPerTimeUnit}{VehicleCostPerTimeUnit}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Vehicle.\+Vehicle\+Cost\+Per\+Time\+Unit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Cost of using vehicle per time unit (while moving from Location to Location) 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a012c4cf8c35f047cf8ccdfbd634b0edc}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a012c4cf8c35f047cf8ccdfbd634b0edc}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!VehicleCostPerUsage@{VehicleCostPerUsage}}
+\index{VehicleCostPerUsage@{VehicleCostPerUsage}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{VehicleCostPerUsage}{VehicleCostPerUsage}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Vehicle.\+Vehicle\+Cost\+Per\+Usage\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Cost of using vehicle at all in a given problem 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00063}{63}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_a1ee01b6b70ab086160651f5a84dc7a58}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_a1ee01b6b70ab086160651f5a84dc7a58}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!VehicleFlatCostForShortRouteLength@{VehicleFlatCostForShortRouteLength}}
+\index{VehicleFlatCostForShortRouteLength@{VehicleFlatCostForShortRouteLength}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{VehicleFlatCostForShortRouteLength}{VehicleFlatCostForShortRouteLength}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Vehicle.\+Vehicle\+Flat\+Cost\+For\+Short\+Route\+Length\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Cost of using vehicle if route length is shorter than Vehicle\+Max\+Route\+Length\+For\+Flat\+Cost (in meters) 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00069}{69}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_vehicle_aa65292dcd7df7d934e7775bc520b34ff}\label{class_v_r_p_t_w_optimizer_1_1_vehicle_aa65292dcd7df7d934e7775bc520b34ff}} 
+\index{VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}!VehicleMaxRouteLengthForFlatCost@{VehicleMaxRouteLengthForFlatCost}}
+\index{VehicleMaxRouteLengthForFlatCost@{VehicleMaxRouteLengthForFlatCost}!VRPTWOptimizer.Vehicle@{VRPTWOptimizer.Vehicle}}
+\doxysubsubsection{\texorpdfstring{VehicleMaxRouteLengthForFlatCost}{VehicleMaxRouteLengthForFlatCost}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Vehicle.\+Vehicle\+Max\+Route\+Length\+For\+Flat\+Cost\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Distance (by default in meters) for which Vehicle\+Flat\+Cost\+For\+Short\+Route\+Length flat rate is applied, otherwise Vehicle\+Cost\+Per\+Distance\+Unit $\ast$ Distance is applieds 
+
+
+
+Definition at line \mbox{\hyperlink{_vehicle_8cs_source_l00074}{74}} of file \mbox{\hyperlink{_vehicle_8cs_source}{Vehicle.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_vehicle_8cs}{Vehicle.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+var class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer =
+[
+    [ "OptimizerLogger", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_1_1_optimizer_logger.html", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer_1_1_optimizer_logger" ],
+    [ "Optimize", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer.html#a7699ec1d7caebab271fd6db08519bb97", null ],
+    [ "Optimize", "class_v_r_p_t_w_optimizer_1_1_b_l_1_1_meta_1_1_cluster_1_1_multiple_tries_clusterizing_v_r_p_optimizer.html#a987274974d09847a6db18db07f8f76d5", null ]
+];

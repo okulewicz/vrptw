@@ -1,0 +1,114 @@
+\hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator}{}\doxysection{VRPTWOptimizer.\+Utils.\+Time\+Estimators.\+Expert\+Service\+Time\+Estimator Class Reference}
+\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator}\index{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}}
+Inheritance diagram for VRPTWOptimizer.\+Utils.\+Time\+Estimators.\+Expert\+Service\+Time\+Estimator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a936d0d07f36a2d2361963777a5e45939}{Estimate\+Load\+Unload\+Time}} (int ep\+Unload\+Count, int ep\+Load\+Only\+Count, int ep\+Immediately\+Retrieved\+Count, int no\+Requests)
+\begin{DoxyCompactList}\small\item\em This method is used to predict time it will take to serve all the loadings and unloadings within the given location \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_ae27d87e53293d2eb250489f53c32cc28}{Stop\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_afee2f9dedbd02b8c69f4528d93ceabb1}{Time\+Per\+Delivered\+Piece}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a46f0787340a91c8704572fb615de83f7}{Time\+Per\+Immediate\+Return\+Piece}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a025cedd3d33a05c4da0a3a113a5caa27}{Time\+Per\+Picked\+Up\+Piece}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_expert_service_time_estimator_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_expert_service_time_estimator_8cs_source}{Expert\+Service\+Time\+Estimator.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a936d0d07f36a2d2361963777a5e45939}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a936d0d07f36a2d2361963777a5e45939}} 
+\index{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}!EstimateLoadUnloadTime@{EstimateLoadUnloadTime}}
+\index{EstimateLoadUnloadTime@{EstimateLoadUnloadTime}!VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}}
+\doxysubsubsection{\texorpdfstring{EstimateLoadUnloadTime()}{EstimateLoadUnloadTime()}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Time\+Estimators.\+Expert\+Service\+Time\+Estimator.\+Estimate\+Load\+Unload\+Time (\begin{DoxyParamCaption}\item[{int}]{ep\+Unload\+Count,  }\item[{int}]{ep\+Load\+Only\+Count,  }\item[{int}]{ep\+Immediately\+Retrieved\+Count,  }\item[{int}]{handled\+Transport\+Requests\+Count }\end{DoxyParamCaption})}
+
+
+
+This method is used to predict time it will take to serve all the loadings and unloadings within the given location 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ep\+Unload\+Count} & Number of Euro\+Pallets that are being unloaded\\
+\hline
+{\em ep\+Load\+Only\+Count} & Number of Euro\+Pallets that are being loaded, but were not unloaded\\
+\hline
+{\em ep\+Immediately\+Retrieved\+Count} & Number of Euro\+Pallets that are being delivered and immediately retrieved after handling in Location\\
+\hline
+{\em handled\+Transport\+Requests\+Count} & Number of transport requests loaded and unloaded in the given location\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_v_r_p_t_w_optimizer_1_1_interfaces_1_1_i_time_estimator_a98bc5e148758116e364366acb432c85c}{VRPTWOptimizer.\+Interfaces.\+ITime\+Estimator}}.
+
+
+
+Definition at line \mbox{\hyperlink{_expert_service_time_estimator_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_expert_service_time_estimator_8cs_source}{Expert\+Service\+Time\+Estimator.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_ae27d87e53293d2eb250489f53c32cc28}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_ae27d87e53293d2eb250489f53c32cc28}} 
+\index{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}!StopTime@{StopTime}}
+\index{StopTime@{StopTime}!VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}}
+\doxysubsubsection{\texorpdfstring{StopTime}{StopTime}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Time\+Estimators.\+Expert\+Service\+Time\+Estimator.\+Stop\+Time\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \mbox{\hyperlink{_expert_service_time_estimator_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_expert_service_time_estimator_8cs_source}{Expert\+Service\+Time\+Estimator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_afee2f9dedbd02b8c69f4528d93ceabb1}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_afee2f9dedbd02b8c69f4528d93ceabb1}} 
+\index{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}!TimePerDeliveredPiece@{TimePerDeliveredPiece}}
+\index{TimePerDeliveredPiece@{TimePerDeliveredPiece}!VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}}
+\doxysubsubsection{\texorpdfstring{TimePerDeliveredPiece}{TimePerDeliveredPiece}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Time\+Estimators.\+Expert\+Service\+Time\+Estimator.\+Time\+Per\+Delivered\+Piece\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \mbox{\hyperlink{_expert_service_time_estimator_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_expert_service_time_estimator_8cs_source}{Expert\+Service\+Time\+Estimator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a46f0787340a91c8704572fb615de83f7}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a46f0787340a91c8704572fb615de83f7}} 
+\index{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}!TimePerImmediateReturnPiece@{TimePerImmediateReturnPiece}}
+\index{TimePerImmediateReturnPiece@{TimePerImmediateReturnPiece}!VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}}
+\doxysubsubsection{\texorpdfstring{TimePerImmediateReturnPiece}{TimePerImmediateReturnPiece}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Time\+Estimators.\+Expert\+Service\+Time\+Estimator.\+Time\+Per\+Immediate\+Return\+Piece\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \mbox{\hyperlink{_expert_service_time_estimator_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_expert_service_time_estimator_8cs_source}{Expert\+Service\+Time\+Estimator.\+cs}}.
+
+\mbox{\Hypertarget{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a025cedd3d33a05c4da0a3a113a5caa27}\label{class_v_r_p_t_w_optimizer_1_1_utils_1_1_time_estimators_1_1_expert_service_time_estimator_a025cedd3d33a05c4da0a3a113a5caa27}} 
+\index{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}!TimePerPickedUpPiece@{TimePerPickedUpPiece}}
+\index{TimePerPickedUpPiece@{TimePerPickedUpPiece}!VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator@{VRPTWOptimizer.Utils.TimeEstimators.ExpertServiceTimeEstimator}}
+\doxysubsubsection{\texorpdfstring{TimePerPickedUpPiece}{TimePerPickedUpPiece}}
+{\footnotesize\ttfamily double VRPTWOptimizer.\+Utils.\+Time\+Estimators.\+Expert\+Service\+Time\+Estimator.\+Time\+Per\+Picked\+Up\+Piece\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \mbox{\hyperlink{_expert_service_time_estimator_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_expert_service_time_estimator_8cs_source}{Expert\+Service\+Time\+Estimator.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_expert_service_time_estimator_8cs}{Expert\+Service\+Time\+Estimator.\+cs}}\end{DoxyCompactItemize}

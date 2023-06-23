@@ -1,0 +1,28 @@
+\hypertarget{_vehicle_schedule_8cs_source}{}\doxysection{Vehicle\+Schedule.\+cs}
+\label{_vehicle_schedule_8cs_source}\index{VehicleSchedule.cs@{VehicleSchedule.cs}}
+\mbox{\hyperlink{_vehicle_schedule_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}};}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00002}00002 \textcolor{keyword}{using} Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00003}00003 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00006}00006 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00007}00007 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_dto}{VRPTWOptimizer.Dto}}}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00014}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule}{00014}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule}{VehicleSchedule}}}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00015}00015     \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00019}00019         [JsonProperty(\textcolor{stringliteral}{"{}capacityVehicleType"{}})]}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00020}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule_a0d75141ca50a3dba85e7f221183d6ed6}{00020}}         \textcolor{keyword}{public} \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{VehicleType}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule_a0d75141ca50a3dba85e7f221183d6ed6}{CapacityVehicleType}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00024}00024         [JsonProperty(\textcolor{stringliteral}{"{}epCapacity"{}})]}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00025}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule_a90f2a93fbb3d6b38736ef4a6b0d36418}{00025}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule_a90f2a93fbb3d6b38736ef4a6b0d36418}{EpCapacity}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00029}00029         [JsonProperty(\textcolor{stringliteral}{"{}semiTrailerTruckId"{}})]}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00030}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule_a0935c00a2036e0dca3961553e2dff430}{00030}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule_a0935c00a2036e0dca3961553e2dff430}{VehicleId}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00034}00034         [JsonProperty(\textcolor{stringliteral}{"{}schedule"{}})]}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00035}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule_a36ef6d5cf7ba69f17cdb38756963f592}{00035}}         \textcolor{keyword}{public} List<TimeInterval> \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_dto_1_1_vehicle_schedule_a36ef6d5cf7ba69f17cdb38756963f592}{YardAvailabilitySchedule}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_schedule_8cs_source_l00037}00037 \}}
+
+\end{DoxyCode}

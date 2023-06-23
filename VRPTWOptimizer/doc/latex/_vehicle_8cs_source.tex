@@ -1,0 +1,240 @@
+\hypertarget{_vehicle_8cs_source}{}\doxysection{Vehicle.\+cs}
+\mbox{\hyperlink{_vehicle_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00001}00001 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00002}00002 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_common_g_i_s}{CommonGIS}}.\mbox{\hyperlink{namespace_common_g_i_s_1_1_enums}{Enums}};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00003}00003 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00005}00005 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00006}00006 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}.\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums}{Enums}};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_v_r_p_t_w_optimizer}{VRPTWOptimizer}}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00013}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{00013}}     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \textcolor{keyword}{class }\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle}{Vehicle}} : \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_resource}{Resource}}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00014}00014     \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00019}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{00019}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double}[] \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00023}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}{00023}}         \textcolor{keyword}{public} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}[] \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}{CapacityAggregationType}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00027}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aea13b7c7e39530026df3dec330e89fef}{00027}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aea13b7c7e39530026df3dec330e89fef}{FinalLocation}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00031}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_adf56c2c70b343141ccd8f8721e74bf3c}{00031}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_adf56c2c70b343141ccd8f8721e74bf3c}{InitialLocation}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00035}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aab2881047d0af67d65a7ca7240bbf6df}{00035}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aab2881047d0af67d65a7ca7240bbf6df}{MaxRideTime}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00039}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a4c7a672437bddc319cb62e790b988245}{00039}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a4c7a672437bddc319cb62e790b988245}{OwnerID}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00043}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}{00043}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}{RoadProperties}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00047}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}{00047}}         \textcolor{keyword}{public} \textcolor{keywordtype}{int}[] \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}{SpecialProperties}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00051}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{00051}}         \textcolor{keyword}{public} \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{VehicleType}} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00055}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a06905509ca86e5d69ce145b1277de2c9}{00055}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a06905509ca86e5d69ce145b1277de2c9}{VehicleCostPerDistanceUnit}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00059}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a10e1e1f3a39a1694c0a25ced462261f5}{00059}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a10e1e1f3a39a1694c0a25ced462261f5}{VehicleCostPerTimeUnit}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00063}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a012c4cf8c35f047cf8ccdfbd634b0edc}{00063}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a012c4cf8c35f047cf8ccdfbd634b0edc}{VehicleCostPerUsage}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00064}00064         \textcolor{comment}{//TODO 1 MO add this to constructor!}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00065}00065         \textcolor{comment}{//TODO MO Wykorzystać te informacje}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00069}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a1ee01b6b70ab086160651f5a84dc7a58}{00069}} \textcolor{comment}{}        \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a1ee01b6b70ab086160651f5a84dc7a58}{VehicleFlatCostForShortRouteLength}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00074}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa65292dcd7df7d934e7775bc520b34ff}{00074}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa65292dcd7df7d934e7775bc520b34ff}{VehicleMaxRouteLengthForFlatCost}} \{ \textcolor{keyword}{get}; \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00094}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a1b572f1f340d1ba8bcf36e5a0e05db38}{00094}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a1b572f1f340d1ba8bcf36e5a0e05db38}{Vehicle}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id},}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00095}00095                        \textcolor{keywordtype}{double}[] capacity,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00096}00096                        \textcolor{keywordtype}{int}[] specialProperties,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00097}00097                        \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}[] capacityAggregation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00098}00098                        \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} initialLocation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00099}00099                        \textcolor{keywordtype}{double} availabilityStart,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00100}00100                        \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} finalLocation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00101}00101                        \textcolor{keywordtype}{double} availabilityEnd,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00102}00102                        \textcolor{keywordtype}{double} maxRideTime,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00103}00103                        \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} roadProperties,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00104}00104                        \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{VehicleType}} type,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00105}00105                        \textcolor{keywordtype}{double} vehicleCostPerDistanceUnit,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00106}00106                        \textcolor{keywordtype}{double} vehicleCostPerTimeUnit,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00107}00107                        \textcolor{keywordtype}{double} vehicleCostPerUsage,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00108}00108                        \textcolor{keywordtype}{int} ownerID) : this(id,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00109}00109                                            capacity,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00110}00110                                            specialProperties,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00111}00111                                            capacityAggregation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00112}00112                                            initialLocation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00113}00113                                            availabilityStart,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00114}00114                                            finalLocation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00115}00115                                            availabilityEnd,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00116}00116                                            maxRideTime,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00117}00117                                            roadProperties,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00118}00118                                            type,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00119}00119                                            vehicleCostPerDistanceUnit,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00120}00120                                            vehicleCostPerTimeUnit,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00121}00121                                            vehicleCostPerUsage,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00122}00122                                            ownerID,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00123}00123                                            vehicleFlatCostForShortRouteLength: 0,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00124}00124                                            vehicleMaxRouteLengthForFlatCost: 0)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00125}00125         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00126}00126         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00148}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac08b20cafd49c80b3d0776ca3649ea45}{00148}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac08b20cafd49c80b3d0776ca3649ea45}{Vehicle}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id},}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00149}00149                \textcolor{keywordtype}{double}[] capacity,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00150}00150                \textcolor{keywordtype}{int}[] specialProperties,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00151}00151                \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}[] capacityAggregation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00152}00152                \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} initialLocation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00153}00153                \textcolor{keywordtype}{double} availabilityStart,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00154}00154                \mbox{\hyperlink{class_common_g_i_s_1_1_location}{Location}} finalLocation,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00155}00155                \textcolor{keywordtype}{double} availabilityEnd,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00156}00156                \textcolor{keywordtype}{double} maxRideTime,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00157}00157                \mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties}{VehicleRoadRestrictionProperties}} roadProperties,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00158}00158                \mbox{\hyperlink{namespace_common_g_i_s_1_1_enums_a9254700078ab0f52e4f96e3257f9625c}{VehicleType}} type,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00159}00159                \textcolor{keywordtype}{double} vehicleCostPerDistanceUnit,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00160}00160                \textcolor{keywordtype}{double} vehicleCostPerTimeUnit,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00161}00161                \textcolor{keywordtype}{double} vehicleCostPerUsage,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00162}00162                \textcolor{keywordtype}{int} ownerID,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00163}00163                \textcolor{keywordtype}{double} vehicleFlatCostForShortRouteLength,}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00164}00164                \textcolor{keywordtype}{double} vehicleMaxRouteLengthForFlatCost) : base(id, availabilityStart, availabilityEnd)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00165}00165         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00166}00166             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}} = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[capacity.Length];}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00167}00167             Array.Copy(capacity, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}, capacity.Length);}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00168}00168             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}{CapacityAggregationType}} = \textcolor{keyword}{new} \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}[capacityAggregation.Length];}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00169}00169             Array.Copy(capacityAggregation, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}{CapacityAggregationType}}, capacityAggregation.Length);}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00170}00170             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}{SpecialProperties}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[specialProperties.Length];}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00171}00171             Array.Copy(specialProperties, \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}{SpecialProperties}}, specialProperties.Length);}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00172}00172             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_adf56c2c70b343141ccd8f8721e74bf3c}{InitialLocation}} = initialLocation;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00173}00173             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aea13b7c7e39530026df3dec330e89fef}{FinalLocation}} = finalLocation;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00174}00174             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aab2881047d0af67d65a7ca7240bbf6df}{MaxRideTime}} = maxRideTime;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00175}00175             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a8604c43ba04dafeb3e6e9cf370e86c06}{Type}} = type;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00176}00176             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa3387b7a33667f5cf2cbe7a0eedb36f1}{RoadProperties}} = roadProperties;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00177}00177             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a06905509ca86e5d69ce145b1277de2c9}{VehicleCostPerDistanceUnit}} = vehicleCostPerDistanceUnit;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00178}00178             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a10e1e1f3a39a1694c0a25ced462261f5}{VehicleCostPerTimeUnit}} = vehicleCostPerTimeUnit;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00179}00179             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a012c4cf8c35f047cf8ccdfbd634b0edc}{VehicleCostPerUsage}} = vehicleCostPerUsage;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00180}00180             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a4c7a672437bddc319cb62e790b988245}{OwnerID}} = ownerID;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00181}00181             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a1ee01b6b70ab086160651f5a84dc7a58}{VehicleFlatCostForShortRouteLength}} = vehicleFlatCostForShortRouteLength;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00182}00182             \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa65292dcd7df7d934e7775bc520b34ff}{VehicleMaxRouteLengthForFlatCost}} = vehicleMaxRouteLengthForFlatCost;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00183}00183         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00185}00185         \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} CanAccomodateCargoTypesTogether(IEnumerable<TransportRequest> requests)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00186}00186         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00187}00187             \textcolor{keywordflow}{foreach} (var request \textcolor{keywordflow}{in} requests)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00188}00188             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00189}00189                 \textcolor{keywordflow}{if} (requests.Any(req => request.CargoTypes.Any(ct => req.RestrictedCargoTypes.Contains(ct))))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00190}00190                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00191}00191                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00192}00192                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00193}00193             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00194}00194             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00195}00195         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00197}00197         \textcolor{keyword}{private} \textcolor{keywordtype}{bool} CanFitCapacity(IEnumerable<TransportRequest> requestGroup)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00198}00198         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00199}00199             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a1b572f1f340d1ba8bcf36e5a0e05db38}{Vehicle}}.CanFitCapacity(this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}, this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a109f369de809fef5a4a1f92d98bd6156}{CapacityAggregationType}}, requestGroup.Select(rq => rq.Size));}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00200}00200         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00202}00202         \textcolor{keyword}{internal} \textcolor{keywordtype}{double} ComputeDistanceCost(\textcolor{keywordtype}{double} length)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00203}00203         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00204}00204             \textcolor{keywordflow}{if} (length < this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aa65292dcd7df7d934e7775bc520b34ff}{VehicleMaxRouteLengthForFlatCost}})}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00205}00205             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00206}00206                 \textcolor{keywordflow}{return} this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a1ee01b6b70ab086160651f5a84dc7a58}{VehicleFlatCostForShortRouteLength}};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00207}00207             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00208}00208             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00209}00209             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00210}00210                 \textcolor{keywordflow}{return} this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a06905509ca86e5d69ce145b1277de2c9}{VehicleCostPerDistanceUnit}} * length;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00211}00211             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00212}00212         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00214}00214         \textcolor{keyword}{internal} \textcolor{keywordtype}{double} ComputeTimeCost(\textcolor{keywordtype}{double} travelTime)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00215}00215         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00216}00216             \textcolor{keywordflow}{return} this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a10e1e1f3a39a1694c0a25ced462261f5}{VehicleCostPerTimeUnit}} * travelTime;}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00217}00217         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00226}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_af46b54f5e5bc7b6a22fa34c8a6303062}{00226}}         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_af46b54f5e5bc7b6a22fa34c8a6303062}{CanFitCapacity}}(\textcolor{keywordtype}{double}[] capacity, \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}[] aggregationType, IEnumerable<\textcolor{keywordtype}{double}[]> sizes)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00227}00227         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00228}00228             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < capacity.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00229}00229             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00230}00230                 \textcolor{keywordflow}{if} (aggregationType[i] == \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}.Sum)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00231}00231                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00232}00232                     \textcolor{keywordflow}{if} (capacity[i] < sizes.Sum(r => r[i]))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00233}00233                     \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00234}00234                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00235}00235                     \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00236}00236                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00237}00237                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (aggregationType[i] == \mbox{\hyperlink{namespace_v_r_p_t_w_optimizer_1_1_enums_a4a6f2d894dcded1a0764b61939f864c8}{Aggregation}}.Max)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00238}00238                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00239}00239                     \textcolor{keywordflow}{if} (capacity[i] < sizes.Max(r => r[i]))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00240}00240                     \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00241}00241                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00242}00242                     \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00243}00243                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00244}00244                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00245}00245                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00246}00246                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(\$\textcolor{stringliteral}{"{}Vehicle does not support \{aggregationType[i]\} aggregation of sizes"{}});}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00247}00247                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00248}00248             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00249}00249             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00250}00250         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00257}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a38543f336ac43b055a9a856a8871c86a}{00257}}         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a38543f336ac43b055a9a856a8871c86a}{CanFitRequests}}(IEnumerable<TransportRequest> requests)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00258}00258         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00259}00259             \textcolor{keywordflow}{if} (requests.Any(req => !\textcolor{keyword}{this}.CanHandleRequest(req)))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00260}00260             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00261}00261                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00262}00262             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00263}00263             \textcolor{keywordflow}{if} (!CanAccomodateCargoTypesTogether(requests))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00264}00264             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00265}00265                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00266}00266             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00267}00267             \textcolor{keywordflow}{if} (!CanFitCapacity(requests))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00268}00268             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00269}00269                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00270}00270             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00271}00271             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00272}00272         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00273}00273 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00279}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aed9c29ddcb42cc5ebb5ade486e39d461}{00279}}         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_aed9c29ddcb42cc5ebb5ade486e39d461}{CanFitRequestsSomewhereInVehicle}}(IEnumerable<TransportRequest> requests)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00280}00280         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00281}00281             \textcolor{keywordflow}{if} (requests.Any(req => !\textcolor{keyword}{this}.CanHandleRequest(req)))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00282}00282             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00283}00283                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00284}00284             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00285}00285             \textcolor{keywordflow}{foreach} (var requestGroup \textcolor{keywordflow}{in} requests.GroupBy(rq => rq.PickupLocation.Id))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00286}00286             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00287}00287                 \textcolor{keywordflow}{if} (!CanAccomodateCargoTypesTogether(requestGroup))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00288}00288                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00289}00289                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00290}00290                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00291}00291                 \textcolor{keywordflow}{if} (!CanFitCapacity(requestGroup))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00292}00292                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00293}00293                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00294}00294                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00295}00295             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00296}00296             \textcolor{keywordflow}{foreach} (var requestGroup \textcolor{keywordflow}{in} requests.GroupBy(rq => rq.DeliveryLocation.Id))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00297}00297             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00298}00298                 \textcolor{keywordflow}{if} (!CanAccomodateCargoTypesTogether(requestGroup))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00299}00299                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00300}00300                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00301}00301                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00302}00302                 \textcolor{keywordflow}{if} (!CanFitCapacity(requestGroup))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00303}00303                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00304}00304                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00305}00305                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00306}00306             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00307}00307             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00308}00308         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00309}00309 }
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00317}\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a54b2bdefb7f8d50f93db4471454ca294}{00317}}         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a54b2bdefb7f8d50f93db4471454ca294}{CanHandleRequest}}(\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request}{TransportRequest}} candidateRequest)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00318}00318         \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00319}00319             \textcolor{keywordflow}{if} (this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}.Length != candidateRequest.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_aabb57d387dd0e8424f079a9228ed5e29}{Size}}.Length)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00320}00320             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00321}00321                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}Capacity properties of the vehicle do not match request size"{}});}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00322}00322             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00323}00323             \textcolor{keywordflow}{if} (!candidateRequest.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_ac6a087105ba0cdde12894eedc7e39ea0}{MaxVehicleSize}}.\mbox{\hyperlink{class_common_g_i_s_1_1_vehicle_road_restriction_properties_a1aa35b76ba19d87634f029c9543f891f}{DoesVehicleFitIntoRestrictions}}(\textcolor{keyword}{this}.RoadProperties))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00324}00324             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00325}00325                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00326}00326             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00327}00327             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00328}00328             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00329}00329                 \textcolor{keywordflow}{if} (this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_a5820fd9c92393d34f6282576c3a50004}{Capacity}}[i] < candidateRequest.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_aabb57d387dd0e8424f079a9228ed5e29}{Size}}[i])}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00330}00330                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00331}00331                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00332}00332                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00333}00333             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00334}00334             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < candidateRequest.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a3fee3d993c9dbaf0908742c16f789658}{NecessaryVehicleSpecialProperties}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00335}00335             \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00336}00336                 \textcolor{keywordflow}{if} (!this.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_vehicle_ac96913bec2ec72dd651b1298f47cbe51}{SpecialProperties}}.Contains(candidateRequest.\mbox{\hyperlink{class_v_r_p_t_w_optimizer_1_1_transport_request_a3fee3d993c9dbaf0908742c16f789658}{NecessaryVehicleSpecialProperties}}[i]))}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00337}00337                 \{}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00338}00338                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00339}00339                 \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00340}00340             \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00341}00341             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00342}00342         \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00343}00343     \}}
+\DoxyCodeLine{\Hypertarget{_vehicle_8cs_source_l00344}00344 \}}
+
+\end{DoxyCode}
