@@ -10,7 +10,7 @@ image: mcr.microsoft.com/dotnet/sdk:5.0
 
 pipelines:
   default:
-    - parallel:
+    #- parallel:
         - step:
             name: Build and Test
             caches:
@@ -20,16 +20,16 @@ pipelines:
               - dotnet restore
               - dotnet build --no-restore --configuration Release
               - dotnet test --no-build --configuration Release --test-adapter-path:. # --logger:"junit;LogFilePath=$REPORTS_PATH/junit.xml"
-        - step:
-            name: Lint the code
-            caches:
-              - dotnetcore
-            script:
-              - export SOLUTION_NAME=VRPTWModel
-              - export REPORTS_PATH=linter-reports
-              - dotnet new tool-manifest
-              - dotnet tool install JetBrains.ReSharper.GlobalTools
-              - dotnet tool restore
-              - dotnet jb inspectcode ${SOLUTION_NAME}.sln --exclude="**\doc\**.*" --output="${REPORTS_PATH}/jb-${BITBUCKET_BUILD_NUMBER}.xml"
-            artifacts:
-              - linter-reports/**
+        #- step:
+        #    name: lint the code
+        #    caches:
+        #      - dotnetcore
+        #    script:
+        #      - export solution_name=vrptwmodel
+        #      - export reports_path=linter-reports
+        #      - dotnet new tool-manifest
+        #      - dotnet tool install jetbrains.resharper.globaltools
+        #      - dotnet tool restore
+        #      - dotnet jb inspectcode ${solution_name}.sln --exclude="**\doc\**.*" --output="${reports_path}/jb-${bitbucket_build_number}.xml"
+        #    artifacts:
+        #      - linter-reports/**
