@@ -43,7 +43,7 @@ namespace VRPTWOptimizer.Utils.Test
         public void TestOffsetTimeAvaialbility()
         {
             foreach (var item in new string[] {
-                "2023-07-21-bydgoszcz.json"
+                "sample.json"
             })
             {
 
