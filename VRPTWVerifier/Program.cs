@@ -77,14 +77,9 @@ namespace VRPTWVerifier
                 Console.WriteLine("This is probably not a VRPDefinition JSON file");
                 return;
             }
-            //TODO: should also verify possibility of time windows - setting out for task and getting back
-            JsonSerializerSettings serializerSettings = new JsonSerializerSettings()
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            };
             try
             {
-                VRPDefinitionJSONDTO dto = JsonConvert.DeserializeObject<VRPDefinitionJSONDTO>(json, serializerSettings);
+                VRPDefinitionJSONDTO dto = JsonConvert.DeserializeObject<VRPDefinitionJSONDTO>(json, VRPJSONProviderFactory.settings);
                 VRPValidator validator = new VRPValidator();
                 IDistanceProvider distanceProvider = new DistanceMatrixProvider(dto.Distances);
                 bool isFixed = false;
@@ -97,21 +92,36 @@ namespace VRPTWVerifier
 
                 if (dto.Solutions != null)
                 {
-                    var solutions = new List<Solution>();
-                    solutions.AddRange(dto.Solutions);
-                    for (int i = 0; i < solutions.Count; i++)
+                    try
                     {
-                        var solution = solutions[i];
-                        var solutionErrors = ValidateSolution(distanceProvider, transportRequests, vehicles, drivers, solution);
-                        errors.AddRange(solutionErrors);
+                        var solutions = new List<Solution>();
+                        solutions.AddRange(dto.Solutions);
+                        if (!(new DirectoryInfo("output").Exists))
+                        {
+                            Directory.CreateDirectory("output");
+                        }
+                        for (int i = 0; i < solutions.Count; i++)
+                        {
+                            var solution = solutions[i];
+                            var solutionErrors = ValidateSolution(distanceProvider, transportRequests, vehicles, drivers, solution);
+                            errors.AddRange(solutionErrors);
+                            dto.Solutions.Clear();
+                            dto.Solutions.Add(solution);
+                            var stats = new VRPResultStatistics(dto, distanceProvider);
+                            var fileInfo = new FileInfo(filename);
+                            foreach (var summary in VRPResultSummary.PrepareMultipleSummaries(dto, distanceProvider))
+                            {
+                                File.WriteAllLines("output/" + fileInfo.Name.Replace(".json", "-" + summary.Key + ".csv"), summary.Value);
+                            }
+                            VRPResultStatistics.LogResultInCSV("output/" + StatisticsOutputFilename, fileInfo.Name, solution.Algorithm, dto.DepotId, dto.Date, stats, dto.CostFunctionFactors, 0, new());
+                        }
                         dto.Solutions.Clear();
-                        dto.Solutions.Add(solution);
-                        var stats = new VRPResultStatistics(dto, distanceProvider);
-                        var fileInfo = new FileInfo(filename);
-                        VRPResultStatistics.LogResultInCSV(StatisticsOutputFilename, fileInfo.Name, solution.Algorithm, dto.DepotId, dto.Date, stats, dto.CostFunctionFactors);
+                        dto.Solutions.AddRange(solutions);
                     }
-                    dto.Solutions.Clear();
-                    dto.Solutions.AddRange(solutions);
+                    catch (IOException ex)
+                    {
+                        Console.Error.WriteLine("Cannot write to file");
+                    }
                 }
                 else
                 {

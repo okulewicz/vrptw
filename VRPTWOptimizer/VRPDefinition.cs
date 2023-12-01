@@ -1,9 +1,12 @@
-﻿using CommonGIS.Interfaces;
+﻿using CommonGIS;
+using CommonGIS.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Security;
 using VRPTWOptimizer.Interfaces;
 
 namespace VRPTWOptimizer
@@ -86,6 +89,11 @@ namespace VRPTWOptimizer
         /// </summary>
         public List<TransportRequest> Requests { get; set; }
         /// <summary>
+        /// List of Locations in given day
+        /// </summary>
+        public List<Location> Locations { get; set; }
+
+        /// <summary>
         /// Object describing parameters of service (loading/unloading) time estimator model
         /// </summary>
         public ITimeEstimator ServiceTimeEstimator { get; set; }
@@ -148,10 +156,23 @@ namespace VRPTWOptimizer
             string client)
         {
             List<VRPSolution> vrpSolutions = new();
+            Dictionary<string,Location> locations = new Dictionary<string,Location>();
+            locations.TryAdd(vrpProvider.HomeDepot.Id, vrpProvider.HomeDepot);
+            foreach (var request in vrpProvider.Requests)
+            {
+                locations.TryAdd(request.PickupLocation.Id, request.PickupLocation);
+                locations.TryAdd(request.DeliveryLocation.Id, request.DeliveryLocation);
+            }
+            foreach (var vehicle in vrpProvider.Vehicles)
+            {
+                locations.TryAdd(vehicle.InitialLocation.Id, vehicle.InitialLocation);
+                locations.TryAdd(vehicle.FinalLocation.Id, vehicle.FinalLocation);
+            }
             VRPDefinition vrpDefinition = new()
             {
                 CostFunctionFactors = costFunctionFactors,
                 Requests = vrpProvider.Requests,
+                Locations = locations.Values.ToList(),
                 ServiceTimeEstimator = timeEstimator,
                 Vehicles = vrpProvider.Vehicles,
                 Drivers = vrpProvider.Drivers,

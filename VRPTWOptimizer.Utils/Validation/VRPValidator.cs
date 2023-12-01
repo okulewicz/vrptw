@@ -798,6 +798,7 @@ namespace VRPTWOptimizer.Utils.Validation
         public static IEnumerable<ValidationError> ValidateRoutesDelaysAndDistance(List<Model.Transport> transports, List<TransportRequest> transportRequests, List<Vehicle> vehicles, List<Driver> drivers, IDistanceProvider distanceProvider)
         {
             List<ValidationError> errors = new List<ValidationError>();
+            drivers = drivers ?? new List<Driver>();
             foreach (var transport in transports)
             {
                 var vehicle = vehicles.FirstOrDefault(v => v.Id == transport.TrailerTruckId);

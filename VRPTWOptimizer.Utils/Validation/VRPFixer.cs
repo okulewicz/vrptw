@@ -264,19 +264,22 @@ namespace VRPTWOptimizer.Utils.Validation
                         i + 1,
                         driverAvai,
                         driverAvai + VRPCostFunction.SingleDriverWorkTime,
-                        new int[] { relevantVehicles[i].Id }
+                        new int[] { relevantVehicles[i].Id },
+                        new int[] { relevantVehicles[i].OwnerID }
                         ));
                     dto.Drivers.Add(new DriverDTO(
                         i + 1 + countVehicles,
                         driverAvai + 12 * 3600,
                         driverAvai + 12 * 3600 + VRPCostFunction.SingleDriverWorkTime,
-                        new int[] { relevantVehicles[i].Id }
+                        new int[] { relevantVehicles[i].Id },
+                        new int[] { relevantVehicles[i].OwnerID }
                         ));
                     dto.Drivers.Add(new DriverDTO(
                         i + 1,
                         driverAvai + 24 * 3600,
                         driverAvai + 24 * 3600 + VRPCostFunction.SingleDriverWorkTime,
-                        new int[] { relevantVehicles[i].Id }
+                        new int[] { relevantVehicles[i].Id },
+                        new int[] { relevantVehicles[i].OwnerID }
                         ));
                 }
                 isFixed = true;

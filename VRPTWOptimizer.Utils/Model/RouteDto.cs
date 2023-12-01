@@ -62,8 +62,9 @@ namespace VRPTWOptimizer.Utils.Model
         public Vehicle VehicleTractor { get; }
 
         public List<Location> VisitedLocations { get; }
+        public long Id { get; }
 
-        public RouteDto(List<double> arrivalTimes, List<double> departureTimes, List<Distance> distances, List<List<TransportRequest>> loadedRequests, List<List<TransportRequest>> unloadedRequests, List<double> timeWindowStart, List<double> timeWindowEnd, Vehicle vehicle, Driver vehicleDriver, Vehicle vehicleTractor, List<Location> visitedLocations)
+        public RouteDto(List<double> arrivalTimes, List<double> departureTimes, List<Distance> distances, List<List<TransportRequest>> loadedRequests, List<List<TransportRequest>> unloadedRequests, List<double> timeWindowStart, List<double> timeWindowEnd, Vehicle vehicle, Driver vehicleDriver, Vehicle vehicleTractor, List<Location> visitedLocations, long id)
         {
             ArrivalTimes = arrivalTimes;
             DepartureTimes = departureTimes;
@@ -76,10 +77,12 @@ namespace VRPTWOptimizer.Utils.Model
             VehicleDriver = vehicleDriver;
             VehicleTractor = vehicleTractor;
             VisitedLocations = visitedLocations;
+            Id = id;
         }
 
         public RouteDto(Transport definitionDto, List<TransportRequest> requests, List<Vehicle> vehicles, List<Driver> drivers, IDistanceProvider distanceProvider)
         {
+            Id = definitionDto.TransportId;
             Vehicle = vehicles.FirstOrDefault(v => v.Id == definitionDto.TrailerTruckId);
             if (definitionDto.TractorId != -1 && definitionDto.TractorId != 0)
             {
@@ -117,13 +120,15 @@ namespace VRPTWOptimizer.Utils.Model
                     .Concat(UnloadedRequests[i]
                     .Select(rq => rq.DeliveryPreferedTimeWindowStart))
                     .Concat(new List<double>() { Vehicle.AvailabilityStart })
-                    .Concat(new List<double>() { VehicleDriver != null ? VehicleDriver.AvailabilityEnd : double.MinValue })
+                    .Concat(new List<double>() { VehicleTractor != null ? VehicleTractor.AvailabilityStart : double.MinValue })
+                    .Concat(new List<double>() { VehicleDriver != null ? VehicleDriver.AvailabilityStart : double.MinValue })
                     .Max());
                 TimeWindowEnd.Add(LoadedRequests[i]
                     .Select(rq => rq.PickupPreferedTimeWindowEnd)
                     .Concat(UnloadedRequests[i]
                     .Select(rq => rq.DeliveryPreferedTimeWindowEnd))
                     .Concat(new List<double>() { Vehicle.AvailabilityEnd })
+                    .Concat(new List<double>() { VehicleTractor != null ? VehicleTractor.AvailabilityEnd : double.MaxValue })
                     .Concat(new List<double>() { VehicleDriver != null ? VehicleDriver.AvailabilityEnd : double.MaxValue })
                     .Min());
             }

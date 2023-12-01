@@ -2,13 +2,93 @@
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		<VersionPrefix>4.9.0</VersionPrefix>
+		<VersionPrefix>4.19.2</VersionPrefix>
 		<RepositoryUrl>https://bitbucket.org/control-system/autonomicznyspedytor.git</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<Description>Library with basic Vehicle Routing Problem data types and interfaces</Description>
 		<PackageReleaseNotes>
+			4.19.2
+			* Added severity to validation info
+
+			4.19.1
+			* Fixed vehicle availability problem
+
+			4.19.0
+			* Simple validator
+			* Distance providers within basic package
+
+			4.18.0
+			* Added driver work time balance to cost function
+
+			4.17.1
+			* Enum type for vehicle special properties updated
+
+			4.17.0
+			* Enum type for vehicle special properties
+
+			4.16.0
+			* Added locations to VRPDefinition
+
+			4.15.6
+			* Fixed missing profile problem in distances set
+
+			4.15.5
+			* TransportId in VRPSolution propagated from Route.Id
+
+			4.15.4
+			* Merged master into model development
+			* Generalized distance matrix to handle either for speed or quality
+
+			4.15.3
+			* Added transfer and technical_drive to request types
+
+			4.15.2
+			* Allowing to change data in provider
+
+			4.15.1
+			* No distance fallback
+
+			4.15.0
+			* Added Route id
+
+			4.14.0
+			* Extended drivers with CarrierId list
+
+			4.13.3
+			* Version update
+
+			4.13.2
+			* Simplifying distance matrix to gain speed
+			* Introducing new cost function parameters
+
+			4.13.1
+			* Additional convex hull computations
+
+			4.13.0
+			* Extended access to resource fields
+
+			4.12.2
+			* Extended methods of clearing solutions and handling distance matrices
+
+			4.12.1
+			* Fixed fill in factor parameter in cost function
+
+			4.12.0
+			* Changed access to TransportRequest properties
+
+			4.11.0
+			* Changed access to calculate vehicle cost
+
+			4.10.1.1
+			* Version update just to generate package
+
+			4.10.0.1
+			* Fixing package builds
+
+			4.10.0
+			* Added helper function to count important delays
+
 			4.9.0
 			* Added driver count factor
 
@@ -175,17 +255,25 @@
 		</PackageReleaseNotes>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<EmbedAllSources>true</EmbedAllSources>
-		<DebugType>embedded</DebugType>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<IncludeSymbols>true</IncludeSymbols>
+		<DebugType>full</DebugType>
 	</PropertyGroup>
+	<ItemGroup>
+		<Content Include="bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).pdb" PackagePath="lib\$(TargetFramework)\$(AssemblyName).pdb">
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+		</Content>
+	</ItemGroup>
+
 
 	<ItemGroup>
-	  <PackageReference Include="geometry3Sharp" Version="1.0.324" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="geometry3Sharp" Version="1.0.324" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 		<PackageReference Include="Microsoft.SourceLink.Bitbucket.Git" Version="1.1.1" PrivateAssets="All" />
 	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CommonGIS\CommonGIS.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\CommonGIS\CommonGIS.csproj" />
+	</ItemGroup>
 
 </Project>

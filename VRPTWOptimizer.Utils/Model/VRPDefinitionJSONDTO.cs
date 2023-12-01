@@ -7,6 +7,18 @@ using System.Linq;
 namespace VRPTWOptimizer.Utils.Model
 
 {
+    public class CustomIntConverter : JsonConverter<int>
+    {
+        public override void WriteJson(JsonWriter writer, int value, JsonSerializer serializer)
+        {
+            writer.WriteValue(value.ToString());
+        }
+
+        public override int ReadJson(JsonReader reader, Type objectType, int existingValue, bool hasExistingValue, JsonSerializer serializer)
+        {
+            return Convert.ToInt32(reader.Value);
+        }
+    }
     public class DistanceData
     {
         public List<TimeLengthDistance> StoredDistances { get; set; }

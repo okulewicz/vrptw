@@ -3,11 +3,79 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
 	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
-	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <VersionPrefix>1.23.4</VersionPrefix>
+	  <VersionPrefix>1.31.0</VersionPrefix>
 	  <Description>Common useful VRPTW objects for handling abstract base objects</Description>
 	  <PackageReleaseNotes>
+		  1.31.0
+		  * New parameter from TMS 
+		  * Extended drivers summary
+
+		  1.30.0
+		  * Distance providers moved to basic package
+
+		  1.29.1
+		  * Fixed location dictionary creation
+
+		  1.29.0
+		  * Ready for existence_cost in VIATMS JSON
+
+		  1.28.9
+		  * Removed unnecessary id in RouteDTO constructor
+
+		  1.28.8
+		  * Allowing to change data in provider
+
+		  1.28.7
+		  * No distance fallback fix
+
+		  1.28.6
+		  * Fixing route id
+
+		  1.28.5
+		  * Update driver DTO for CarrierID
+
+		  1.28.4
+		  * Additional transformations
+
+		  1.28.3
+		  * Additional convex hull computations
+
+		  1.28.2
+		  * Extended methods of clearing solutions and filling in missing service time
+
+		  1.28.1
+		  * Extended methods of clearing solutions and handling distance matrices
+
+		  1.28.0
+		  * Added ability to clear request properties
+
+		  1.27.1
+		  * Preventing dates in summaries from overflow
+
+		  1.27.0.2
+		  * Version update just to generate package
+
+		  1.27.0
+		  * Reading new VIA TMS Json property driveway_size_in_ep to distinguish between inner and outer vehicle dimensions
+
+		  1.26.0
+		  * New route statistics: TimelinesSummary
+		  * Ensuring wide internal vehicle availability - so drivers can always fit vehicle time
+
+		  1.24.3
+		  * Enhanced route statistics
+
+		  1.24.2
+		  * Fixed null drivers in validator
+
+		  1.24.1
+		  * Fixed utils TimeWindow computation for Drivers
+
+		  1.24.0
+		  * Producing more statistics and summaries
+		  * Tided statistics generation
+
 		  1.23.4
 		  * Upgraded visits printout
 
@@ -200,9 +268,19 @@
 		  1.0.0
 		  * Published version including usefull DTOs and distance providers
 	  </PackageReleaseNotes>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <EmbedAllSources>true</EmbedAllSources>
-	  <DebugType>embedded</DebugType>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <IncludeSymbols>true</IncludeSymbols>
+	  <DebugType>full</DebugType>
   </PropertyGroup>
+  <ItemGroup>
+	  <Content Include="bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).pdb" PackagePath="lib\$(TargetFramework)\$(AssemblyName).pdb">
+		  <PackageCopyToOutput>true</PackageCopyToOutput>
+	  </Content>
+  </ItemGroup>
+
+
 
   <ItemGroup>
     <ProjectReference Include="..\VRPTWOptimizer\VRPTWOptimizer.csproj" />

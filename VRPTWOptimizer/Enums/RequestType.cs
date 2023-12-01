@@ -17,5 +17,13 @@
         /// Getting goods from external entities (may constitute additional profit for company)
         /// </summary>
         Backhauling = 3,
+        /// <summary>
+        /// Delivering cargo between non-warehouse locations
+        /// </summary>
+        Transfer = 4,
+        /// <summary>
+        /// Driving without cargo
+        /// </summary>
+        TechnicalDrive = 5,
     }
 }

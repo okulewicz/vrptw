@@ -86,7 +86,7 @@ namespace VRPTWOptimizer
             /// <summary>
             /// Route identifier
             /// </summary>
-            public int TransportId { get; set; }
+            public long TransportId { get; set; }
         }
 
         /// <summary>
@@ -153,7 +153,6 @@ namespace VRPTWOptimizer
             List<VRPSolution.TransportItem> transportItems = new();
             var orderedTrailerAssignment = routes
                 .OrderBy(rt => rt.ArrivalTimes[0]);
-            int transportId = 1;
             foreach (var assignment in orderedTrailerAssignment)
             {
                 List<VRPSolution.ScheduleItem> scheduleItems = new();
@@ -198,12 +197,54 @@ namespace VRPTWOptimizer
                 }
 
                 double fillInRatio = assignment.Vehicle.Capacity
-                    .Select((capacity, index) => index)
-                    .Max(index => assignment.LoadedRequests[0].Sum(rq => rq.Size[index]) / assignment.Vehicle.Capacity[index])
-                    ;
+                        .Select((capacity, index) => index)
+                        .Max(index =>
+                        {
+                            if (assignment.Vehicle.CapacityAggregationType[index] == Enums.Aggregation.Sum)
+                            {
+                                return assignment.LoadedRequests[0].Sum(rq => rq.Size[index]) / assignment.Vehicle.Capacity[index];
+                            }
+                            else
+                            {
+                                if (assignment.LoadedRequests[0].Count > 0)
+                                {
+                                    return assignment.LoadedRequests[0].Max(rq => rq.Size[index]) / assignment.Vehicle.Capacity[index];
+                                }
+                                return 0;
+                            }
+                        });
+                double peakFillInRatio = assignment.Vehicle.Capacity
+                        .Select((capacity, index) => index)
+                        .Max(index =>
+                        {
+                            if (assignment.Vehicle.CapacityAggregationType[index] == Enums.Aggregation.Sum)
+                            {
+                                double maxFill = 0.0;
+                                List<TransportRequest> currentRequests = new List<TransportRequest>();
+                                for (int visitIdx = 0; visitIdx < assignment.LoadedRequests.Count; visitIdx++)
+                                {
+                                    assignment.UnloadedRequests[visitIdx].ForEach(rq => currentRequests.Remove(rq));
+                                    assignment.LoadedRequests[visitIdx].ForEach(rq => currentRequests.Add(rq));
+                                    maxFill = Math.Max(maxFill, currentRequests.Sum(rq => rq.Size[index]) / assignment.Vehicle.Capacity[index]);
+                                }
+                                return maxFill;
+                            }
+                            else
+                            {
+                                double maxFill = 0.0;
+                                for (int visitIdx = 0; visitIdx < assignment.LoadedRequests.Count; visitIdx++)
+                                {
+                                    if (assignment.LoadedRequests[visitIdx].Count > 0)
+                                    {
+                                        maxFill = Math.Max(maxFill, assignment.LoadedRequests[visitIdx].Max(rq => rq.Size[index]) / assignment.Vehicle.Capacity[index]);
+                                    }
+                                }
+                                return maxFill;
+                            }
+                        });
                 VRPSolution.TransportItem transport = new()
                 {
-                    TransportId = transportId,
+                    TransportId = assignment.Id,
                     TractorId = assignment.VehicleTractor == null ? -1 : assignment.VehicleTractor.Id,
                     TrailerTruckId = assignment.Vehicle.Id,
                     DriverId = assignment.VehicleDriver == null ? -1 : assignment.VehicleDriver.Id,
@@ -211,10 +252,9 @@ namespace VRPTWOptimizer
                     Schedule = scheduleItems,
                     AvailableForLoadingTime = assignment.ArrivalTimes[0],
                     AvailableForNextAssignmentTime = assignment.DepartureTimes[^1],
-                    FillInRatio = Math.Round(fillInRatio, 2)
+                    FillInRatio = Math.Round(peakFillInRatio, 2)
                 };
                 transportItems.Add(transport);
-                transportId++;
             }
 
             VRPSolution vrpSolution = new()

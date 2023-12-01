@@ -1,4 +1,5 @@
 ﻿using CommonGIS.Interfaces;
+using g3;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -36,6 +37,7 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
         public static Dictionary<string, List<string>> PrepareMultipleSummaries(List<IRoute> routes, List<TransportRequest> leftRequests, List<TransportRequest> requests, List<Vehicle> vehicles, List<Driver> drivers, string HomeDepotId, DateTime zeroHour)
         {
             Dictionary<string, List<string>> summaries = new();
+            summaries.Add("timeline-summary", TimelinesSummary(routes, leftRequests, zeroHour));
             summaries.Add("drivers-summary", DriversRoutesSummary(routes, zeroHour));
             summaries.Add("normalized-routes-summary", NormalizedRoutesSummary(routes, zeroHour));
             summaries.Add("routes-summary", RoutesSummary(routes, zeroHour));
@@ -43,7 +45,49 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
             summaries.Add("visits-summary", VisitsSummary(routes, zeroHour));
             summaries.Add("requests-summary", RequestsSummary(requests, HomeDepotId, zeroHour));
             summaries.Add("vehicles-summary", VehiclesSummary(routes, vehicles, zeroHour));
+            summaries.Add("vehicles-costs-summary", VehiclesCostsSummary(routes, vehicles, zeroHour));
             return summaries;
+        }
+
+        private static List<string> TimelinesSummary(List<IRoute> routes, List<TransportRequest> leftRequests, DateTime zeroHour)
+        {
+            const string HHmmFormat = "HH:mm";
+            List<string> result = new List<string>();
+
+            string pretitle = "RequestId;TimeWindowStart;TimeWindowEnd;Limit;Size";
+            result.Add(pretitle);
+            foreach (var leftRequest in leftRequests)
+            {
+                var line = $"{leftRequest.Id};{zeroHour.AddSeconds(leftRequest.DeliveryPreferedTimeWindowStart).ToString(HHmmFormat)};" +
+                    $"{zeroHour.AddSeconds(leftRequest.DeliveryPreferedTimeWindowEnd).ToString(HHmmFormat)};{leftRequest.MaxVehicleSize.EpCount};" +
+                    $"{string.Join(';', leftRequest.Size.Select(a => Math.Round(a, 2)).ToArray())}";
+                result.Add(line);
+            }
+
+            string title = "Driver/VehicleId;EPCount;Capacity;Timeline";
+            result.Add(title);
+            var groupedRoutes = routes
+                .OrderBy(rt => rt.ArrivalTimes[0])
+                .GroupBy(rt => rt.VehicleDriver != null ? rt.VehicleDriver.Id : rt.Vehicle.Id);
+            foreach (var groupedRoute in groupedRoutes.OrderBy(rts => rts.First().Vehicle.RoadProperties.EpCount))
+            {
+                var line = $"{groupedRoute.Key};";
+                IRoute firstRoute = groupedRoute.First();
+                line += $"{firstRoute.Vehicle.RoadProperties.EpCount};";
+                line += $"{string.Join('\t', firstRoute.Vehicle.Capacity.Select(a => Math.Round(a, 2)).ToArray())};";
+                line += $"{(zeroHour.AddSeconds(firstRoute.VehicleDriver != null ? firstRoute.VehicleDriver.AvailabilityStart : firstRoute.Vehicle.AvailabilityStart).ToString(HHmmFormat))};";
+                foreach (var route in groupedRoute)
+                {
+
+                    line += $"{zeroHour.AddSeconds(route.ArrivalTimes[0]).ToString(HHmmFormat)};";
+                    line += $"{zeroHour.AddSeconds(route.DepartureTimes[^1]).ToString(HHmmFormat)};";
+                }
+
+                IRoute lastRoute = groupedRoute.Last();
+                line += $"{(zeroHour.AddSeconds(lastRoute.VehicleDriver != null ? lastRoute.VehicleDriver.AvailabilityEnd : lastRoute.Vehicle.AvailabilityEnd).ToString(HHmmFormat))}";
+                result.Add(line);
+            }
+            return result;
         }
 
         private static List<string> RoutesStarts(List<IRoute> routes, DateTime zeroHour)
@@ -70,7 +114,7 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
         public static List<string> DriversRoutesSummary(List<IRoute> routes, DateTime zeroHour)
         {
             List<string> result = new List<string>();
-            string title = "Tractor/VehicleId;DriverId;DriverStart;DriverEnd;TravelTime;TotalTime;BreakBetweenRoutes;Routes";
+            string title = "Tractor/VehicleId;DriverId;DriverAvailStart;DriverAvailEnd;DriverStart;DriverEnd;TravelTime;TotalTime;BreakBetweenRoutes;Routes";
             result.Add(title);
             int routeId = 1;
             int driverId = 0;
@@ -99,7 +143,7 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                     {
                         if (previousVehicleId != -1)
                         {
-                            AddDriverLog(zeroHour, result, driverId, driverStart, driverEnd, driverRouteCount, driverRide, breakTime, previousVehicleId);
+                            AddDriverLog(zeroHour, result, -previousVehicleId, 0, 86400, driverStart, driverEnd, driverRouteCount, driverRide, breakTime, previousVehicleId);
                         }
                         driverId = Math.Max(driversIds.Any() ? driversIds.Max() : 0, driverId) + 1;
                         driversEnds.Clear();
@@ -116,7 +160,7 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                     {
                         if (driveTime + routeDriveTime > VRPCostFunction.SingleDriverRideTime || routeEndTime - driverStart > VRPCostFunction.SingleDriverWorkTime)
                         {
-                            AddDriverLog(zeroHour, result, driverId, driverStart, driverEnd, driverRouteCount, driverRide, breakTime, previousVehicleId);
+                            AddDriverLog(zeroHour, result, -previousVehicleId, 0, 86400, driverStart, driverEnd, driverRouteCount, driverRide, breakTime, previousVehicleId);
                             driversEnds.Add(driverEnd);
                             driversIds.Add(driverId);
                             driverId += 1;
@@ -145,7 +189,7 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                     routeId++;
                     driverRouteCount++;
                 }
-                AddDriverLog(zeroHour, result, driverId, driverStart, driverEnd, driverRouteCount, driverRide, breakTime, previousVehicleId);
+                AddDriverLog(zeroHour, result, -previousVehicleId, 0, 86400, driverStart, driverEnd, driverRouteCount, driverRide, breakTime, previousVehicleId);
             }
             var driverRoutes = routes
                             .Where(rt => rt.VehicleDriver != null)
@@ -162,8 +206,10 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                 AddDriverLog(zeroHour,
                              result,
                              droutes.Key,
-                             orderedRoutes[0].ArrivalTimes[0],
-                             orderedRoutes[^1].DepartureTimes[^1],
+                             orderedRoutes[0].VehicleDriver.AvailabilityStart,
+                             orderedRoutes[0].VehicleDriver.AvailabilityEnd,
+                             orderedRoutes[0].DepartureTimes[0],
+                             orderedRoutes[^1].ArrivalTimes[^1],
                              orderedRoutes.Count(),
                              orderedRoutes.Sum(rt => rt.Distances.Sum(d => d.Time)),
                              breakTime,
@@ -172,10 +218,12 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
             return result;
         }
 
-        private static void AddDriverLog(DateTime zeroHour, List<string> result, int driverId, double driverStart, double driverEnd, int driverRouteCount, double driverRide, double breakTime, int vehicleId)
+        private static void AddDriverLog(DateTime zeroHour, List<string> result, int driverId, double driverAvailabilityStart, double driverAvailabilityEnd, double driverStart, double driverEnd, int driverRouteCount, double driverRide, double breakTime, int vehicleId)
         {
             var routeDescription = $"{vehicleId};";
             routeDescription += $"{driverId};";
+            routeDescription += $"{zeroHour.AddSeconds(Math.Round(driverAvailabilityStart))};";
+            routeDescription += $"{zeroHour.AddSeconds(Math.Round(driverAvailabilityEnd))};";
             routeDescription += $"{zeroHour.AddSeconds(Math.Round(driverStart))};";
             routeDescription += $"{zeroHour.AddSeconds(Math.Round(driverEnd))};";
             routeDescription += $"{TimeSpan.FromSeconds(Math.Round(driverRide))};";
@@ -188,7 +236,7 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
         public static List<string> NormalizedRoutesSummary(List<IRoute> routes, DateTime zeroHour)
         {
             List<string> result = new List<string>();
-            string title = "Lp;Oddzial;Laczenie;Ilosc palet;Odbior;Wyjazd z DC;Przyjazd na sklep;Powrot do DC;Id pojazdu;Ladownosc;Kierowca;Czas jazdy";
+            string title = "Lp;Oddzial;Laczenie;Ilosc palet;Odbior;Zaladunek w DC;Wyjazd z DC;Przyjazd na sklep;Okno czasowe;Okno czasowe;Punktualnosc;Powrot do DC;Id pojazdu;Ladownosc;Kierowca;Czas jazdy";
             result.Add(title);
             int routeId = 1;
             List<double> driversStarts = new List<double>();
@@ -207,8 +255,13 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                     routeDescription += $"{connectionStr};";
                     routeDescription += $"{route.UnloadedRequests[i].Sum(rq => rq.Size[0])};";
                     routeDescription += $"{route.LoadedRequests[i].Sum(rq => rq.Size[0])};";
+                    routeDescription += $"{TimeSpan.FromSeconds(Math.Round(zeroHour.AddSeconds(route.ArrivalTimes[0]).TimeOfDay.TotalSeconds / 900) * 900)};";
                     routeDescription += $"{TimeSpan.FromSeconds(Math.Round(zeroHour.AddSeconds(route.DepartureTimes[0]).TimeOfDay.TotalSeconds / 900) * 900)};";
                     routeDescription += $"{TimeSpan.FromSeconds(Math.Round(zeroHour.AddSeconds(route.ArrivalTimes[i]).TimeOfDay.TotalSeconds / 900) * 900)};";
+                    routeDescription += $"{TimeSpan.FromSeconds(Math.Round(zeroHour.AddSeconds(route.TimeWindowStart[i]).TimeOfDay.TotalSeconds / 900) * 900)};";
+                    routeDescription += $"{TimeSpan.FromSeconds(Math.Round(zeroHour.AddSeconds(route.TimeWindowEnd[i]).TimeOfDay.TotalSeconds / 900) * 900)};";
+                    var punctuality = Math.Max(route.ArrivalTimes[i] - route.TimeWindowEnd[i], Math.Min(route.ArrivalTimes[i] - route.TimeWindowStart[i], 0));
+                    routeDescription += $"{TimeSpan.FromSeconds(punctuality)};";
                     routeDescription += $"{TimeSpan.FromSeconds(Math.Round(zeroHour.AddSeconds(route.ArrivalTimes[^1]).TimeOfDay.TotalSeconds / 900) * 900)};";
                     routeDescription += $"{currentVehicleId};";
                     routeDescription += $"{route.Vehicle.Capacity[0]};";
@@ -334,10 +387,10 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                         Math.Min(5 * 86400, route.TimeWindowEnd[i]),
                         route.UnloadedRequests[i].Sum(rq => rq.Size[0]),
                         route.LoadedRequests[i].Sum(rq => rq.Size[0]),
-                    strictTimeWindowStart,
-                    preferedTimeWindowStart,
-                    preferedTimeWindowEnd,
-                    strictTimeWindowEnd,
+                    Math.Max(0, strictTimeWindowStart),
+                    Math.Max(0, preferedTimeWindowStart),
+                    Math.Min(5 * 86400, preferedTimeWindowEnd),
+                    Math.Min(5 * 86400, strictTimeWindowEnd),
                     maxSize
                     });
                 }
@@ -431,6 +484,42 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                         line += $";{routes.Count(rt => rt.VehicleTractor != null && relativeTime >= rt.DepartureTimes[0] && rt.DepartureTimes[^1] >= relativeTime)}";
                     }
                 }
+                result.Add(line);
+            }
+            return result;
+        }
+
+        public static List<string> VehiclesCostsSummary(List<IRoute> routes, List<Vehicle> vehicles, DateTime zeroHour)
+        {
+            var orderedVehicles = vehicles
+                .OrderBy(vh => vh.RoadProperties.EpCount)
+                .ThenBy(vh => vh.Id);
+            List<string> result = new List<string>();
+            string title = "Tractor/VehicleId;Size;CostPerAvailability;CostPerRoute;CostPerKM;CostPerH;Routes;RoutesCost;TotalLength;LengthCost;TotalTime;TimeCost";
+            result.Add(title);
+            foreach (var vehicle in orderedVehicles)
+            {
+                string line = $"{vehicle.Id};";
+                line += $"{vehicle.RoadProperties.EpCount};";
+                line += $"{Math.Round(vehicle.VehicleCostPerUsage, 0)};";
+                line += $"{Math.Round(vehicle.VehicleCostPerRoute, 0)};";
+                line += $"{Math.Round(vehicle.VehicleCostPerDistanceUnit * 1000, 2)};";
+                line += $"{Math.Round(vehicle.VehicleCostPerTimeUnit * 3600, 2)};";
+                List<IRoute> vehiclesRoutes = new List<IRoute>();
+                if (vehicle.Type == CommonGIS.Enums.VehicleType.Tractor)
+                {
+                    vehiclesRoutes.AddRange(routes.Where(rt => rt.VehicleTractor != null && rt.VehicleTractor.Id == vehicle.Id));
+                }
+                else
+                {
+                    vehiclesRoutes.AddRange(routes.Where(rt => rt.Vehicle != null && rt.Vehicle.Id == vehicle.Id));
+                }
+                line += $"{vehiclesRoutes.Count};";
+                line += $"{Math.Round(vehiclesRoutes.Sum(rt => vehicle.VehicleCostPerRoute))};";
+                line += $"{Math.Round(vehiclesRoutes.Sum(rt => rt.Distances.Sum(rt => rt.Length / 1000)))};";
+                line += $"{Math.Round(vehiclesRoutes.Sum(rt => (rt.Length < vehicle.VehicleMaxRouteLengthForFlatCost ? vehicle.VehicleFlatCostForShortRouteLength : vehicle.VehicleCostPerDistanceUnit * rt.Length)))};";
+                line += $"{TimeSpan.FromSeconds(Math.Round(vehiclesRoutes.Sum(rt => rt.Distances.Sum(rt => rt.Time))))};";
+                line += $"{Math.Round(vehiclesRoutes.Sum(rt => rt.TravelTime * vehicle.VehicleCostPerTimeUnit))};";
                 result.Add(line);
             }
             return result;

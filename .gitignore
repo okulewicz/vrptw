@@ -239,6 +239,8 @@ msbuild.wrn
 /EstymatorPojazdow
 /JSONSolver
 /MatrixCalculatorUtility
+/CPUBenchmark
+/ListAbilities
 /VRPSolver.BL
 /VRPTWOptimizer.BL.ALNS
 /VRPTWOptimizer.BL.GA
@@ -247,6 +249,8 @@ msbuild.wrn
 /VRPTWOptimizer.BL.Meta.Test
 /VRPTWOptimizer.BL.SA
 /VRPTWOptimizer.BL.StableGA
+/VRPTWOptimizer.BL.VectorGA
+/VRPTWOptimizer.BL.VectorGA.Test
 /VRPTWOptimizer.Stokrotka
 /VRPTWOptimizer.Stokrotka.DataAccess
 /VRPTWSolver
@@ -255,3 +259,4 @@ msbuild.wrn
 /ApiUtils
 /readme-cluster.MD
 /VRPVisualizer/*.json
+VRPTWVerifier/input/*.json

@@ -5,11 +5,16 @@
 	  <RepositoryUrl>https://bitbucket.org/control-system/autonomicznyspedytor.git</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
 	  <PublishRepositoryUrl>true</PublishRepositoryUrl>
-	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <VersionPrefix>1.4.1.1</VersionPrefix>
+	  <VersionPrefix>1.4.2</VersionPrefix>
 	  <Description>Common GIS and road properties objects</Description>
 	  <PackageReleaseNotes>
+		  1.4.2
+		  * Extended methods of clearing solutions and handling distance matrices
+
+		  1.4.1.3
+		  * Version update just to generate package
+
 		  1.4.1.1
 		  * Version update just to generate package
 
@@ -42,9 +47,19 @@
 		  1.0.1.2
 		  * Cleaned up inconsistences with Distance class being abstract
 	  </PackageReleaseNotes>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <EmbedAllSources>true</EmbedAllSources>
-	  <DebugType>embedded</DebugType>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <IncludeSymbols>true</IncludeSymbols>
+	  <DebugType>full</DebugType>
   </PropertyGroup>
+  <ItemGroup>
+	  <Content Include="bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).pdb" PackagePath="lib\$(TargetFramework)\$(AssemblyName).pdb">
+		  <PackageCopyToOutput>true</PackageCopyToOutput>
+	  </Content>
+  </ItemGroup>
+
+
 
   <ItemGroup>
 	  <PackageReference Include="Microsoft.SourceLink.Bitbucket.Git" Version="1.1.1" PrivateAssets="All" />

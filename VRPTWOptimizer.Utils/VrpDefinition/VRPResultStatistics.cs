@@ -1,5 +1,6 @@
 ﻿using CommonGIS;
 using CommonGIS.Interfaces;
+using g3;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -18,45 +19,59 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
     /// </summary>
     public class VRPResultStatistics
     {
-        public double Cost { get; }
-        public double FunctionCost { get; }
-        public double FillRatio { get; }
-        public int LeftEP { get; }
-        public object LeftRequests { get; }
-        public double Length { get; }
-        public string MaxDelayStr { get; }
-        public string MaxServiceDelayStr { get; }
-        public TimeSpan MaxDelayTime { get; }
-        public TimeSpan MaxServiceDelayTime { get; }
-        public TimeSpan MaxEarlyArrival { get; }
-        public string MaxEarlyStr { get; }
-        public TimeSpan MaxLateStart { get; }
-        public string MaxLateStartStr { get; }
-        public TimeSpan MaxSpreadTime { get; }
-        public string MaxSpreadTimeStr { get; }
-        public int Routes { get; }
-        public TimeSpan TotalDelay { get; }
-        public string TotalDelayStr { get; }
-        public TimeSpan TotalEarlyArrival { get; }
-        public string TotalEarlyStr { get; }
-        public TimeSpan TotalTravelTime { get; }
-        public string TravelTimeStr { get; }
-        public int UniqueTractorCount { get; }
-        public int UniqueTrailersCount { get; }
-        public int UniqueTrucksCount { get; }
-        public int Visits { get; }
+        public double Cost { get; private set; }
+        public double LengthCost { get; private set; }
+        public double FunctionCost { get; private set; }
+        public double FillRatio { get; private set; }
+        public int LeftEP { get; private set; }
+        public object LeftRequests { get; private set; }
+        public double Length { get; private set; }
+        public string MaxDelayStr { get; private set; }
+        public string MaxServiceDelayStr { get; private set; }
+        public TimeSpan MaxDelayTime { get; private set; }
+        public TimeSpan MaxServiceDelayTime { get; private set; }
+        public TimeSpan MaxEarlyArrival { get; private set; }
+        public string MaxEarlyStr { get; private set; }
+        public TimeSpan MaxLateStart { get; private set; }
+        public string MaxLateStartStr { get; private set; }
+        public TimeSpan MaxSpreadTime { get; private set; }
+        public string MaxSpreadTimeStr { get; private set; }
+        public int Routes { get; private set; }
+        public TimeSpan TotalDelay { get; private set; }
+        public string TotalDelayStr { get; private set; }
+        public string TotalImportantDelayStr { get; private set; }
+        public TimeSpan TotalEarlyArrival { get; private set; }
+        public string TotalEarlyStr { get; private set; }
+        public TimeSpan TotalTravelTime { get; private set; }
+        public string TravelTimeStr { get; private set; }
+        public int UniqueTractorCount { get; private set; }
+        public int UniqueTrailersCount { get; private set; }
+        public int UniqueTrucksCount { get; private set; }
+        public int Visits { get; private set; }
         public int CountFillInHalf { get; set; }
         public double LengthFillInHalf { get; set; }
         public double EPSizeSumAtInitialLoad { get; set; }
         public int PackgeCountAtInitialLoad { get; set; }
         public object UniqueDriversCount { get; private set; }
         public int NecessaryDriversCount { get; private set; }
+        public int ConvexHullCount { get; private set; }
+        public int MaxDCDeparturesCount { get; private set; }
+        public int MaxDCDeparturesPackageCount { get; private set; }
+        public TimeSpan TotalImportantDelay { get; private set; }
+        public double CostWithoutUsage { get; private set; }
+        public double TimeCost { get; private set; }
+        public double RoutesCost { get; private set; }
 
         /// <summary>
         /// Creates object computing statistics over provided VRPResult object
         /// </summary>
         /// <param name="newResult"></param>
         public VRPResultStatistics(VRPOptimizerResult newResult, VRPCostFunction vrpCostFunction)
+        {
+            FillInStatistics(newResult, vrpCostFunction);
+        }
+
+        private void FillInStatistics(VRPOptimizerResult newResult, VRPCostFunction vrpCostFunction)
         {
             var newRoutes = newResult.Routes;
             LeftRequests = newResult.LeftRequests.Count;
@@ -67,16 +82,32 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
             MaxLateStart = TimeSpan.FromSeconds(VRPCostFunction.ComputeMaxLateVehicleStart(newRoutes));
             MaxSpreadTime = TimeSpan.FromSeconds(VRPCostFunction.ComputeMaxVehicleSpread(newRoutes));
             TotalDelay = TimeSpan.FromSeconds(newRoutes.Sum(rt => rt.TotalDelay));
+            TotalImportantDelay = TimeSpan.FromSeconds(newRoutes.Sum(rt => VRPCostFunction.ComputeImportantDelays(rt)));
+            MaxDCDeparturesCount = 0;
+            MaxDCDeparturesPackageCount = 0;
+            if (newResult.Routes.Any())
+            {
+                for (double time = 0; time < newResult.Routes.Max(rt => rt.DepartureTimes[0]) + 1; time += 3600)
+                {
+                    var routesInHour = newResult.Routes.Where(rt => rt.DepartureTimes[0] >= time && rt.DepartureTimes[0] < time + 3600);
+                    MaxDCDeparturesCount = Math.Max(MaxDCDeparturesCount, routesInHour.Count());
+                    MaxDCDeparturesPackageCount = Math.Max(MaxDCDeparturesPackageCount, routesInHour.Sum(rt => rt.LoadedRequests[0].Sum(rq => rq.PackageCount)));
+                }
+            }
             TotalEarlyArrival = TimeSpan.FromSeconds(newRoutes.Sum(rt => VRPCostFunction.ComputeTotalEarlyArrival(rt)));
             Routes = newRoutes.Count();
             Length = Math.Round(newRoutes.Sum(rt => rt.Length) / 1000);
             Cost = 0.0;
-            Cost += newRoutes.Sum(rt => (rt.Length < rt.Vehicle.VehicleMaxRouteLengthForFlatCost ? rt.Vehicle.VehicleFlatCostForShortRouteLength : rt.Vehicle.VehicleCostPerDistanceUnit * rt.Length));
-            Cost += newRoutes.Sum(rt => (rt.TravelTime * rt.Vehicle.VehicleCostPerTimeUnit));
-            Cost += newRoutes.Sum(rt => (rt.Vehicle.VehicleCostPerRoute));
-            Cost += newRoutes.Where(rt => rt.VehicleTractor != null).Sum(rt => (rt.VehicleTractor.VehicleCostPerRoute));
-            Cost += newRoutes.Where(rt => rt.VehicleTractor != null).Sum(rt => (rt.Length < rt.VehicleTractor.VehicleMaxRouteLengthForFlatCost ? rt.VehicleTractor.VehicleFlatCostForShortRouteLength : rt.VehicleTractor.VehicleCostPerDistanceUnit * rt.Length));
-            Cost += newRoutes.Where(rt => rt.VehicleTractor != null).Sum(rt => (rt.TravelTime * rt.VehicleTractor.VehicleCostPerTimeUnit));
+            LengthCost = newRoutes.Sum(rt => (rt.Length < rt.Vehicle.VehicleMaxRouteLengthForFlatCost ? rt.Vehicle.VehicleFlatCostForShortRouteLength : rt.Vehicle.VehicleCostPerDistanceUnit * rt.Length));
+            LengthCost += newRoutes.Where(rt => rt.VehicleTractor != null).Sum(rt => (rt.Length < rt.VehicleTractor.VehicleMaxRouteLengthForFlatCost ? rt.VehicleTractor.VehicleFlatCostForShortRouteLength : rt.VehicleTractor.VehicleCostPerDistanceUnit * rt.Length));
+            Cost += LengthCost;
+            TimeCost = newRoutes.Sum(rt => (rt.TravelTime * rt.Vehicle.VehicleCostPerTimeUnit));
+            TimeCost += newRoutes.Where(rt => rt.VehicleTractor != null).Sum(rt => (rt.TravelTime * rt.VehicleTractor.VehicleCostPerTimeUnit));
+            Cost += TimeCost;
+            RoutesCost = newRoutes.Sum(rt => (rt.Vehicle.VehicleCostPerRoute));
+            RoutesCost += newRoutes.Where(rt => rt.VehicleTractor != null).Sum(rt => (rt.VehicleTractor.VehicleCostPerRoute));
+            Cost += RoutesCost;
+            CostWithoutUsage = Math.Round(Cost);
             Cost += newRoutes.Select(rt => rt.Vehicle).Distinct().Sum(v => v.VehicleCostPerUsage);
             Cost += newRoutes.Where(rt => rt.VehicleTractor != null).Select(rt => rt.VehicleTractor).Distinct().Sum(v => v.VehicleCostPerUsage);
             Cost = Math.Round(Cost);
@@ -87,10 +118,11 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
             CountFillInHalf = fillInRatios.Count(ratio => ratio < 0.5);
             LengthFillInHalf = Math.Round(newRoutes.Where(rt => VRPCostFunction.ComputeFillInFactor(rt) < 0.5).Sum(rt => rt.Length / 1000));
             PackgeCountAtInitialLoad = newRoutes.Any() ? (int)newRoutes.Average(rt => rt.LoadedRequests[0].Sum(rq => rq.PackageCount)) : 0;
-            EPSizeSumAtInitialLoad = newRoutes.Any() ? Math.Round(newRoutes.Average(rt => rt.LoadedRequests[0].Sum(rq => rq.Size[0])),2) : 0.0;
+            EPSizeSumAtInitialLoad = newRoutes.Any() ? Math.Round(newRoutes.Average(rt => rt.LoadedRequests[0].Sum(rq => rq.Size[0])), 2) : 0.0;
             MaxDelayStr = $"{MaxDelayTime.Days * 24 + MaxDelayTime.Hours}:{MaxDelayTime.Minutes:00}";
             MaxServiceDelayStr = $"{MaxServiceDelayTime.Days * 24 + MaxServiceDelayTime.Hours}:{MaxServiceDelayTime.Minutes:00}";
             TotalDelayStr = $"{TotalDelay.Days * 24 + TotalDelay.Hours}:{TotalDelay.Minutes:00}";
+            TotalImportantDelayStr = $"{TotalImportantDelay.Days * 24 + TotalImportantDelay.Hours}:{TotalImportantDelay.Minutes:00}";
             MaxEarlyStr = $"{MaxEarlyArrival.Days * 24 + MaxEarlyArrival.Hours}:{MaxEarlyArrival.Minutes:00}";
             MaxLateStartStr = $"{MaxLateStart.Days * 24 + MaxLateStart.Hours}:{MaxLateStart.Minutes:00}";
             MaxSpreadTimeStr = $"{MaxSpreadTime.Days * 24 + MaxSpreadTime.Hours}:{MaxSpreadTime.Minutes:00}";
@@ -102,6 +134,7 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
             UniqueTractorCount = newResult.Routes.Where(rt => rt.VehicleTractor != null).Select(rt => rt.VehicleTractor.Id).Distinct().Count();
             UniqueDriversCount = newResult.Routes.Where(rt => rt.VehicleDriver != null).Select(rt => rt.VehicleDriver.Id).Distinct().Count();
             NecessaryDriversCount = VRPCostFunction.ComputeDriversCount(newResult.Routes);
+            ConvexHullCount = VRPCostFunction.FairlyCountIntersectingConvexHulls(newResult.Routes);
         }
 
         /// <summary>
@@ -127,193 +160,17 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                     {
                         dtoWithSolution.CostFunctionFactors.CarrierShareRatio = new Dictionary<int, double>();
                     }
-                    FunctionCost = Math.Round(dtoWithSolution.CostFunctionFactors.Value(routes, leftRequests),2);
                 }
-                var newRoutes = dtoWithSolution.Solutions[0].Transports.OrderBy(t => t.Schedule[0].ArrivalTime);
-                LeftRequests = dtoWithSolution.Solutions[0].LeftRequestsIds.Count;
-                var requestsDict = new Dictionary<int, RequestDTO>();
-                var vehiclesDict = new Dictionary<int, VehicleDTO>();
-                var driversDict = new Dictionary<int, DriverDTO>();
-                var locationsDict = new Dictionary<string, CommonGIS.Location>();
-                foreach (var request in dtoWithSolution.Requests)
+                else
                 {
-                    requestsDict.Add(request.Id, request);
-                    if (!locationsDict.ContainsKey(request.PickupLocation.Id))
-                    {
-                        locationsDict.Add(request.PickupLocation.Id, request.PickupLocation);
-                    }
-                    if (!locationsDict.ContainsKey(request.DeliveryLocation.Id))
-                    {
-                        locationsDict.Add(request.DeliveryLocation.Id, request.DeliveryLocation);
-                    }
+                    dtoWithSolution.CostFunctionFactors = VRPCostFunction.GetDefaultParametersFunction();
                 }
-                foreach (var vehicle in dtoWithSolution.Vehicles)
-                {
-                    if (!vehiclesDict.ContainsKey(vehicle.Id))
-                    {
-                        vehiclesDict.Add(vehicle.Id, vehicle);
-                    }
-                }
-                if (dtoWithSolution.Drivers != null)
-                {
-                    foreach (var driver in dtoWithSolution.Drivers)
-                    {
-                        if (!driversDict.ContainsKey(driver.Id))
-                        {
-                            driversDict.Add(driver.Id, driver);
-                        }
-                    }
-                }
-                TotalTravelTime = new TimeSpan(0);
-                Length = 0.0;
-                MaxDelayTime = new TimeSpan(0);
-                MaxServiceDelayTime = new TimeSpan(0);
-                MaxEarlyArrival = new TimeSpan(0);
-                TotalDelay = new TimeSpan(0);
-                TotalEarlyArrival = new TimeSpan(0);
-
-                Cost = 0.0;
-                FillRatio = 0.0;
-                CountFillInHalf = 0;
-                LengthFillInHalf = 0.0;
-
-                List<double> fillRatios = new List<double>();
-                List<double> epSums = new List<double>();
-                List<int> packageCounts = new List<int>();
-                foreach (var route in newRoutes)
-                {
-                    Vehicle vehicle = vehiclesDict[route.TrailerTruckId];
-                    Driver driver = null;
-                    if (route.DriverId > 0)
-                    {
-                        driver = driversDict[route.DriverId];
-                    }
-                    double routeLength = 0.0;
-                    double routeTime = 0.0;
-                    double fillRatio = 0.0;
-                    int initPackageCount = route.Schedule[0].LoadedRequestsIds.Sum(id => requestsDict[id].PackageCount);
-                    packageCounts.Add(initPackageCount);
-                    double initEPSum = route.Schedule[0].LoadedRequestsIds.Sum(id => requestsDict[id].Size[0]);
-                    epSums.Add(initEPSum);
-                    for (int c = 0; c < vehicle.Capacity.Length; c++)
-                    {
-                        if (vehicle.CapacityAggregationType[c] == Enums.Aggregation.Sum)
-                        {
-                            fillRatio = Math.Max(fillRatio, route.Schedule[0].LoadedRequestsIds.Sum(id => requestsDict[id].Size[c]) / vehicle.Capacity[c]);
-                        }
-                        else if (vehicle.CapacityAggregationType[c] == Enums.Aggregation.Max)
-                        {
-                            fillRatio = Math.Max(fillRatio, route.Schedule[0].LoadedRequestsIds.Max(id => requestsDict[id].Size[c]) / vehicle.Capacity[c]);
-                        }
-                    }
-                    fillRatios.Add(fillRatio);
-                    for (int i = 0; i < route.Schedule.Count; i++)
-                    {
-                        if (i < route.Schedule.Count - 1)
-                        {
-                            CommonGIS.Distance distance = distanceProvider.GetDistance(
-                                                        locationsDict[route.Schedule[i].LocationId],
-                                                        locationsDict[route.Schedule[i + 1].LocationId],
-                                                        vehiclesDict[route.TrailerTruckId].RoadProperties);
-                            TotalTravelTime += TimeSpan.FromSeconds(distance.Time);
-                            Length += distance.Length / 1000;
-                            routeLength += distance.Length;
-                            routeTime += distance.Time;
-                        }
-                        if (vehicle != null)
-                        {
-                            MaxDelayTime = TimeSpan.FromSeconds(Math.Max(
-                                MaxDelayTime.TotalSeconds,
-                                route.Schedule[i].ArrivalTime - vehicle.AvailabilityEnd));
-                        }
-                        if (driver != null)
-                        {
-                            MaxDelayTime = TimeSpan.FromSeconds(Math.Max(
-                                MaxDelayTime.TotalSeconds,
-                                route.Schedule[i].ArrivalTime - driver.AvailabilityEnd));
-                        }
-                        foreach (var id in route.Schedule[i].UnloadedRequestsIds)
-                        {
-                            double early = requestsDict[id].DeliveryPreferedTimeWindowStart - route.Schedule[i].ArrivalTime;
-                            MaxEarlyArrival = TimeSpan.FromSeconds(Math.Max(
-                                MaxEarlyArrival.TotalSeconds,
-                                early));
-                            TotalEarlyArrival += TimeSpan.FromSeconds(Math.Max(0, early));
-                            double late = route.Schedule[i].ArrivalTime - requestsDict[id].DeliveryPreferedTimeWindowEnd;
-                            MaxDelayTime = TimeSpan.FromSeconds(Math.Max(
-                                MaxDelayTime.TotalSeconds,
-                                late));
-                            MaxServiceDelayTime = TimeSpan.FromSeconds(Math.Max(
-                                MaxDelayTime.TotalSeconds,
-                                late));
-
-                            TotalDelay += TimeSpan.FromSeconds(Math.Max(0, late));
-                        }
-                        foreach (var id in route.Schedule[i].LoadedRequestsIds)
-                        {
-                            double early = requestsDict[id].PickupAvailableTimeWindowStart - route.Schedule[i].ArrivalTime;
-                            MaxEarlyArrival = TimeSpan.FromSeconds(Math.Max(
-                                MaxEarlyArrival.TotalSeconds,
-                                early));
-                            TotalEarlyArrival += TimeSpan.FromSeconds(Math.Max(0, early));
-                            double late = route.Schedule[i].ArrivalTime - requestsDict[id].PickupPreferedTimeWindowEnd;
-                            MaxDelayTime = TimeSpan.FromSeconds(Math.Max(
-                                MaxDelayTime.TotalSeconds,
-                                late));
-                            MaxServiceDelayTime = TimeSpan.FromSeconds(Math.Max(
-                                MaxDelayTime.TotalSeconds,
-                                late));
-                            TotalDelay += TimeSpan.FromSeconds(Math.Max(0, late));
-                        }
-                    }
-                    if (fillRatio < 0.5)
-                    {
-                        CountFillInHalf += 1;
-                        LengthFillInHalf += routeLength;
-                    }
-
-                    EPSizeSumAtInitialLoad = epSums.Any() ? Math.Round(epSums.Average(), 2) : 0.0;
-                    PackgeCountAtInitialLoad = packageCounts.Any() ? (int)packageCounts.Average() : 0;
-
-
-                    Cost += Length < vehicle.VehicleMaxRouteLengthForFlatCost ? vehicle.VehicleFlatCostForShortRouteLength : (routeLength * vehicle.VehicleCostPerDistanceUnit);
-                    Cost += (routeTime * vehicle.VehicleCostPerTimeUnit);
-                    Cost += vehicle.VehicleCostPerRoute;
-                    if (route.TractorId > 0)
-                    {
-                        vehicle = vehiclesDict[route.TractorId];
-                        Cost += Length < vehicle.VehicleMaxRouteLengthForFlatCost ? vehicle.VehicleFlatCostForShortRouteLength : (routeLength * vehicle.VehicleCostPerDistanceUnit);
-                        Cost += (routeTime * vehicle.VehicleCostPerTimeUnit);
-                        Cost += vehicle.VehicleCostPerRoute;
-                    }
-                }
-                LengthFillInHalf = Math.Round(LengthFillInHalf / 1000);
-                if (fillRatios.Any())
-                {
-                    FillRatio = Math.Round(fillRatios.Average(), 2);
-                }
-                Length = Math.Round(Length);
-                Routes = newRoutes.Count();
-                TravelTimeStr = $"{TotalTravelTime.Days * 24 + TotalTravelTime.Hours}:{TotalTravelTime.Minutes:00}";
-                MaxDelayStr = $"{MaxDelayTime.Days * 24 + MaxDelayTime.Hours}:{MaxDelayTime.Minutes:00}";
-                MaxServiceDelayStr = $"{MaxServiceDelayTime.Days * 24 + MaxServiceDelayTime.Hours}:{MaxServiceDelayTime.Minutes:00}";
-                TotalDelayStr = $"{TotalDelay.Days * 24 + TotalDelay.Hours}:{TotalDelay.Minutes:00}";
-                MaxEarlyStr = $"{MaxEarlyArrival.Days * 24 + MaxEarlyArrival.Hours}:{MaxEarlyArrival.Minutes:00}";
-                TotalEarlyStr = $"{TotalEarlyArrival.Days * 24 + TotalEarlyArrival.Hours}:{TotalEarlyArrival.Minutes:00}";
-                Visits = newRoutes.Sum(rt => rt.Schedule.Count - 2);
-                LeftEP = dtoWithSolution.Requests.Where(rq => dtoWithSolution.Solutions[0].LeftRequestsIds.Contains(rq.Id)).Sum(rq => rq.PackageCount);
-                UniqueTrailersCount = newRoutes.Where(rt => rt.TractorId > 0).Select(rt => rt.TrailerTruckId).Distinct().Count();
-                UniqueTrucksCount = newRoutes.Where(rt => rt.TractorId <= 0).Select(rt => rt.TrailerTruckId).Distinct().Count();
-                UniqueTractorCount = newRoutes.Where(rt => rt.TractorId > 0).Select(rt => rt.TractorId).Distinct().Count();
-                UniqueDriversCount= newRoutes.Where(rt => rt.DriverId > 0).Select(rt => rt.DriverId).Distinct().Count();
-                NecessaryDriversCount = VRPCostFunction.ComputeDriversCount(routes);
-                Cost += newRoutes.Select(rt => rt.TrailerTruckId).Distinct().Sum(id => vehiclesDict[id].VehicleCostPerUsage);
-                Cost += newRoutes.Where(rt => rt.TractorId > 0).Select(rt => rt.TractorId).Distinct().Sum(id => vehiclesDict[id].VehicleCostPerUsage);
-                Cost = Math.Round(Cost);
+                FillInStatistics(new VRPOptimizerResult()
+                { LeftRequests = leftRequests, Routes = routes }, dtoWithSolution.CostFunctionFactors);
             }
         }
 
-        public static void LogResultInCSV(string csvFileName, string inputFileName, string experimentName, string depotId, DateTime date, VRPResultStatistics stats, VRPCostFunction costFunction)
+        public static void LogResultInCSV(string csvFileName, string inputFileName, string experimentName, string depotId, DateTime date, VRPResultStatistics stats, VRPCostFunction costFunction, long evaluationsCount, Dictionary<string, object> config)
         {
             if (!File.Exists(csvFileName))
             {
@@ -322,27 +179,38 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                 File.AppendAllText(csvFileName, "Timestamp;");
                 File.AppendAllText(csvFileName, "Depot;");
                 File.AppendAllText(csvFileName, "Date;");
+                File.AppendAllText(csvFileName, "Evaluations;");
                 File.AppendAllText(csvFileName, "CostFunction;");
                 File.AppendAllText(csvFileName, "Length;");
+                File.AppendAllText(csvFileName, "CHCount;");
+                File.AppendAllText(csvFileName, "Visits;");
                 File.AppendAllText(csvFileName, "Routes;");
                 File.AppendAllText(csvFileName, "Trucks;");
                 File.AppendAllText(csvFileName, "Tractors;");
                 File.AppendAllText(csvFileName, "Trailers;");
                 File.AppendAllText(csvFileName, "Drivers;");
                 File.AppendAllText(csvFileName, "NecessaryDrivers;");
+                File.AppendAllText(csvFileName, "MaxDepartures;");
+                File.AppendAllText(csvFileName, "MaxDeparturesPackages;");
                 File.AppendAllText(csvFileName, "LeftRequests;");
                 File.AppendAllText(csvFileName, "LeftEP;");
                 File.AppendAllText(csvFileName, "FillRatio;");
                 File.AppendAllText(csvFileName, "PackageCount;");
                 File.AppendAllText(csvFileName, "Costs;");
+                File.AppendAllText(csvFileName, "CostsWithoutUsage;");
+                File.AppendAllText(csvFileName, "CostsLength;");
+                File.AppendAllText(csvFileName, "CostsTime;");
+                File.AppendAllText(csvFileName, "CostsRoutes;");
                 File.AppendAllText(csvFileName, "MaxEarly;");
                 File.AppendAllText(csvFileName, "TotalEarly;");
                 File.AppendAllText(csvFileName, "MaxDelay;");
                 File.AppendAllText(csvFileName, "MaxServiceDelay;");
                 File.AppendAllText(csvFileName, "TotalDelay;");
+                File.AppendAllText(csvFileName, "TotalImportantDelay;");
                 File.AppendAllText(csvFileName, "MaxSpread;");
                 File.AppendAllText(csvFileName, "MaxLateStart;");
-                File.AppendAllText(csvFileName, "FunctionParams");
+                File.AppendAllText(csvFileName, "FunctionParams;");
+                File.AppendAllText(csvFileName, "AlgorithmParams");
                 File.AppendAllText(csvFileName, Environment.NewLine);
             }
 
@@ -350,29 +218,43 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
             StringWriter swCostFunctionEstimator = new StringWriter();
             JsonSerializer.Create().Serialize(swCostFunctionEstimator, costFunction);
             string costFunctionParams = swCostFunctionEstimator.ToString();
+            StringWriter swAlgorithmConfig = new StringWriter();
+            JsonSerializer.Create().Serialize(swAlgorithmConfig, config);
+            string algorithmConfig = swAlgorithmConfig.ToString();
 
             var newEntryStringBuilder = new StringBuilder();
+            newEntryStringBuilder.Append($"{evaluationsCount};");
             newEntryStringBuilder.Append($"{Math.Round(stats.FunctionCost, 2)};");
             newEntryStringBuilder.Append($"{stats.Length};");
+            newEntryStringBuilder.Append($"{stats.ConvexHullCount};");
+            newEntryStringBuilder.Append($"{stats.Visits};");
             newEntryStringBuilder.Append($"{stats.Routes};");
             newEntryStringBuilder.Append($"{stats.UniqueTrucksCount};");
             newEntryStringBuilder.Append($"{stats.UniqueTractorCount};");
             newEntryStringBuilder.Append($"{stats.UniqueTrailersCount};");
             newEntryStringBuilder.Append($"{stats.UniqueDriversCount};");
             newEntryStringBuilder.Append($"{stats.NecessaryDriversCount};");
+            newEntryStringBuilder.Append($"{stats.MaxDCDeparturesCount};");
+            newEntryStringBuilder.Append($"{stats.MaxDCDeparturesPackageCount};");
             newEntryStringBuilder.Append($"{stats.LeftRequests};");
             newEntryStringBuilder.Append($"{stats.LeftEP};");
             newEntryStringBuilder.Append($"{stats.FillRatio};");
             newEntryStringBuilder.Append($"{stats.PackgeCountAtInitialLoad};");
             newEntryStringBuilder.Append($"{stats.Cost};");
+            newEntryStringBuilder.Append($"{stats.CostWithoutUsage};");
+            newEntryStringBuilder.Append($"{stats.LengthCost};");
+            newEntryStringBuilder.Append($"{stats.TimeCost};");
+            newEntryStringBuilder.Append($"{stats.RoutesCost};");
             newEntryStringBuilder.Append($"{stats.MaxEarlyStr};");
             newEntryStringBuilder.Append($"{stats.TotalEarlyStr};");
             newEntryStringBuilder.Append($"{stats.MaxDelayStr};");
             newEntryStringBuilder.Append($"{stats.MaxServiceDelayStr};");
             newEntryStringBuilder.Append($"{stats.TotalDelayStr};");
+            newEntryStringBuilder.Append($"{stats.TotalImportantDelayStr};");
             newEntryStringBuilder.Append($"{stats.MaxSpreadTimeStr};");
             newEntryStringBuilder.Append($"{stats.MaxLateStartStr};");
-            newEntryStringBuilder.Append($"{costFunctionParams}");
+            newEntryStringBuilder.Append($"{costFunctionParams};");
+            newEntryStringBuilder.Append($"{algorithmConfig}");
             string newEntry = newEntryStringBuilder.ToString();
             File.AppendAllText(csvFileName, experimentDescription);
             File.AppendAllText(csvFileName, newEntry);

@@ -7,21 +7,21 @@ namespace VRPTWOptimizer
     /// </summary>
     public class Resource
     {
-        private const string FINITE_AVAILABILITY_ERROR = "Vehicle must have finite availability";
+        private const string FINITE_AVAILABILITY_ERROR = "Resource must have finite availability";
         /// <summary>
         /// Upper bound of Resource time availability (suggestion)
         /// </summary>
-        public double AvailabilityEnd { get; protected set; }
+        public double AvailabilityEnd { get; set; }
 
         /// <summary>
         /// Lower bound of Resource time availability (strict)
         /// </summary>
-        public double AvailabilityStart { get; protected set; }
+        public double AvailabilityStart { get; set; }
 
         /// <summary>
         /// Identifier of the Resource
         /// </summary>
-        public int Id { get; protected set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Creates generic Resource object

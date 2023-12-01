@@ -48,6 +48,6 @@ namespace VRPTWOptimizer.Dto
         /// Identifier of transport (single route/loop)
         /// </summary>
         [JsonProperty("transportId")]
-        public int TransportId { get; set; }
+        public long TransportId { get; set; }
     }
 }

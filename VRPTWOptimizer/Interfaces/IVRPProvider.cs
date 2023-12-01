@@ -12,23 +12,23 @@ namespace VRPTWOptimizer.Interfaces
         /// <summary>
         /// List of available Driver objects
         /// </summary>
-        List<Driver> Drivers { get; }
+        List<Driver> Drivers { get; set; }
         /// <summary>
         /// Location of the main warehouse or main depot
         /// </summary>
-        Location HomeDepot { get; }
+        Location HomeDepot { get; set; }
         /// <summary>
         /// List of TransportRequest objects to be served
         /// </summary>
-        List<TransportRequest> Requests { get; }
+        List<TransportRequest> Requests { get; set; }
         /// <summary>
         /// List of available Vehicle objects
         /// </summary>
-        List<Vehicle> Vehicles { get; }
+        List<Vehicle> Vehicles { get; set; }
         /// <summary>
         /// Real world timestamp used to turn relative time of the problem to real world time
         /// </summary>
-        DateTime ZeroHour { get; }
+        DateTime ZeroHour { get; set; }
 
         /// <summary>
         /// Gets the data from underlying source

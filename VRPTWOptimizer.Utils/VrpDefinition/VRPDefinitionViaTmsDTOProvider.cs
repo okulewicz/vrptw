@@ -12,19 +12,21 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
 {
     public class VRPDefinitionViaTmsDTOProvider : IVRPJSONProvider
     {
-        public string Client { get; }
-        public string DepotId { get; }
-        public List<CommonGIS.Distance> Distances { get; }
-        public List<Driver> Drivers { get; }
-        public CommonGIS.Location HomeDepot { get; }
-        public Dictionary<string, CommonGIS.Location> LocationsDictionary { get; }
-        public DateTime ProblemDate { get; }
-        public List<VRPTWOptimizer.TransportRequest> Requests { get; }
+        private const int MaxDriverSecondsOver8Hours = 12600;
 
-        public ITimeEstimator ServiceTimeEstimator { get; }
-        public List<VRPTWOptimizer.Vehicle> Vehicles { get; }
+        public string Client { get; set; }
+        public string DepotId { get; set; }
+        public List<CommonGIS.Distance> Distances { get; set; }
+        public List<Driver> Drivers { get; set; }
+        public CommonGIS.Location HomeDepot { get; set; }
+        public Dictionary<string, CommonGIS.Location> LocationsDictionary { get; set; }
+        public DateTime ProblemDate { get; set; }
+        public List<VRPTWOptimizer.TransportRequest> Requests { get; set; }
 
-        public DateTime ZeroHour { get; }
+        public ITimeEstimator ServiceTimeEstimator { get; set; }
+        public List<VRPTWOptimizer.Vehicle> Vehicles { get; set; }
+
+        public DateTime ZeroHour { get; set; }
 
         public VRPDefinitionViaTmsDTOProvider(VRPDefinitionViaTmsDTO definition)
         {
@@ -61,7 +63,8 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                         compatibileVehiclesIds: definition.Vehicles
                             .Where(v => v.OwnerType == VehicleOwnership.Internal)
                             .Select(v => v.Id)
-                            .ToArray()
+                            .ToArray(),
+                        new int[] { VehicleOwnership.Internal }
                         ))    
                     );
                 /*
@@ -77,6 +80,13 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                 }
                 */
             }
+
+            double maxInternalVehicleAvaialbility = double.MinValue;
+            if (Drivers.Any())
+            {
+                maxInternalVehicleAvaialbility = Drivers.Max(dr => dr.AvailabilityEnd + MaxDriverSecondsOver8Hours);
+            }
+
             Vehicles = new List<VRPTWOptimizer.Vehicle>();
             Vehicles.AddRange(definition.Vehicles.Select(v => new VehicleDTO(
                 id: v.Id,
@@ -86,18 +96,19 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                 initialLocation: homeDepot,
                 availabilityStart: (v.AvailabilityStart - ZeroHour).TotalSeconds,
                 finalLocation: homeDepot,
-                availabilityEnd: (v.AvailabilityEnd - ZeroHour).TotalSeconds,
+                availabilityEnd: (v.OwnerType == (int)VehicleOwnership.Internal) ? Math.Max((v.AvailabilityEnd - ZeroHour).TotalSeconds, maxInternalVehicleAvaialbility) : (v.AvailabilityEnd - ZeroHour).TotalSeconds,
                 maxRideTime: double.MaxValue,
                 roadProperties: new VehicleRoadRestrictionProperties(
                     grossVehicleWeight: v.GrossVehicleWeight,
                     height: 0,
                     width: 0,
-                    epCount: v.EpCapacity,
+                    //HACK: use old field value for older JSON formats
+                    epCount: v.DrivewayEpSize ?? v.EpCapacity,
                     vehicleType: CommonGIS.Enums.VehicleTypeRouting.StraightTruck),
                 type: CommonGIS.Enums.VehicleType.StraightTruck,
                 vehicleCostPerDistanceUnit: v.CostPerDistance / 1000.0,
                 vehicleCostPerTimeUnit: v.CostPerTime / 3600.0,
-                vehicleCostPerUsage: 0.0,
+                vehicleCostPerUsage: v.ExistenceCost,
                 ownerID: v.OwnerType,
                 vehicleFlatCostForShortRouteLength: v.CostPerUsage,
                 vehicleMaxRouteLengthForFlatCost: v.CostPerUsage > 0 ? 100000.0 : 0.0,
@@ -121,6 +132,9 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                 //HACK removing Barbora and others
                 if (!unwantedLocation.Contains(location.Id))
                 {
+                    double processedPickupAvailableTimeWindowEnd = request.PickupTimeWindowEnd != null ? (request.PickupTimeWindowEnd.Value - ZeroHour).TotalSeconds : double.MaxValue;
+                    double processedDeliveryAvailableTimeWindowStart = request.DeliveryTimeWindowStart != null ? (request.DeliveryTimeWindowStart.Value - ZeroHour).TotalSeconds : double.MinValue;
+                    double processedDeliveryAvailableTimeWindowEnd = request.DeliveryTimeWindowEnd != null ? Math.Max((request.DeliveryTimeWindowEnd.Value - ZeroHour).TotalSeconds, (request.TimeWindowEnd - ZeroHour).TotalSeconds) : Math.Max(72000, (request.TimeWindowEnd - ZeroHour).TotalSeconds);
                     VRPTWOptimizer.TransportRequest transportRequest = new RequestDTO(
                         id: request.Ids[0],
                         size: new double[] { request.Ep, request.Mass },
@@ -131,13 +145,13 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
                         pickupAvailableTimeWindowStart: double.MinValue,
                         pickupPreferedTimeWindowStart: double.MinValue,
                         pickupPreferedTimeWindowEnd: double.MaxValue,
-                        pickupAvailableTimeWindowEnd: request.PickupTimeWindowEnd != null ? (request.PickupTimeWindowEnd.Value - ZeroHour).TotalSeconds : double.MaxValue,
+                        pickupAvailableTimeWindowEnd: processedPickupAvailableTimeWindowEnd,
                         deliveryLocation: location,
-                        deliveryAvailableTimeWindowStart: request.DeliveryTimeWindowStart != null ? (request.DeliveryTimeWindowStart.Value - ZeroHour).TotalSeconds : double.MinValue,
+                        deliveryAvailableTimeWindowStart: processedDeliveryAvailableTimeWindowStart,
                         deliveryPreferedTimeWindowStart: (request.TimeWindowStart - ZeroHour).TotalSeconds,
                         deliveryPreferedTimeWindowEnd: (request.TimeWindowEnd - ZeroHour).TotalSeconds,
-                        deliveryAvailableTimeWindowEnd: double.MaxValue,
-                        type: Enums.RequestType.GoodsDistribution,
+                        deliveryAvailableTimeWindowEnd: processedDeliveryAvailableTimeWindowEnd,
+                        type: RequestType.GoodsDistribution,
                         cargoTypes: new int[] { 1 },
                         maxVehicleSize: new VehicleRoadRestrictionProperties(
                             grossVehicleWeight: VehicleRoadRestrictionProperties.MaxGrossVehicleWeight,

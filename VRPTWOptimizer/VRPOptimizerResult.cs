@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using VRPTWOptimizer.Interfaces;
+using VRPTWOptimizer.Logging;
 
 namespace VRPTWOptimizer
 {
@@ -17,5 +18,11 @@ namespace VRPTWOptimizer
         /// Visits schedule for the Vehicle objects
         /// </summary>
         public List<IRoute> Routes { get; set; }
+
+        /// <summary>
+        /// Number of fitness function evaluations to obtain the result
+        /// </summary>
+        public long EvaluationsCount { get; set; }
+        public List<ValidationInfo> Validation { get; set; }
     }
 }

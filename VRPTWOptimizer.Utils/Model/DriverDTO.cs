@@ -13,10 +13,12 @@ namespace VRPTWOptimizer.Utils.Model
         public DriverDTO(int id,
                          double availabilityStart,
                          double availabilityEnd,
-                         int[] compatibileVehiclesIds) : base(id,
+                         int[] compatibileVehiclesIds,
+                         int[] carrierId) : base(id,
                                                               availabilityStart,
                                                               availabilityEnd,
-                                                              compatibileVehiclesIds)
+                                                              compatibileVehiclesIds,
+                                                              carrierId)
         {
         }
     }

@@ -208,7 +208,7 @@ namespace VRPTWOptimizer
             return Vehicle.CanFitCapacity(this.Capacity, this.CapacityAggregationType, requestGroup.Select(rq => rq.Size));
         }
 
-        internal double ComputeDistanceCost(double length)
+        public double ComputeDistanceCost(double length)
         {
             if (length < this.VehicleMaxRouteLengthForFlatCost)
             {
@@ -220,7 +220,7 @@ namespace VRPTWOptimizer
             }
         }
 
-        internal double ComputeTimeCost(double travelTime)
+        public double ComputeTimeCost(double travelTime)
         {
             return this.VehicleCostPerTimeUnit * travelTime;
         }

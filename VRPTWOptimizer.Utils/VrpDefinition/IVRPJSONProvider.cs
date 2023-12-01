@@ -7,12 +7,12 @@ namespace VRPTWOptimizer.Utils.VrpDefinition
 {
     public interface IVRPJSONProvider : IVRPProvider
     {
-        string Client { get; }
-        string DepotId { get; }
-        List<Distance> Distances { get; }
-        Dictionary<string, Location> LocationsDictionary { get; }
-        DateTime ProblemDate { get; }
+        string Client { get; set; }
+        string DepotId { get; set; }
+        List<Distance> Distances { get; set; }
+        Dictionary<string, Location> LocationsDictionary { get; set; }
+        DateTime ProblemDate { get; set; }
 
-        ITimeEstimator ServiceTimeEstimator { get; }
+        ITimeEstimator ServiceTimeEstimator { get; set; }
     }
 }

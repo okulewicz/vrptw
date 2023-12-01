@@ -159,5 +159,14 @@ namespace CommonGIS
                 other.Width == this.Width && other.EpCount == this.EpCount && other.VehicleType == this.VehicleType &&
 		this.ForbiddenTunnelCategory == other.ForbiddenTunnelCategory;
         }
+        public static VehicleRoadRestrictionProperties GetMaxProfile()
+        {
+            return new VehicleRoadRestrictionProperties(
+                MaxGrossVehicleWeight,
+                MaxHeight,
+                MaxWidth,
+                MaxEPCount,
+                VehicleTypeRouting.TractorWithTrailer);
+        }
     }
 }

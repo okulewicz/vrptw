@@ -79,7 +79,6 @@ namespace VRPTWOptimizer.Logging
             vrpSolution.Version = Assembly.GetAssembly(_optimizer.GetType()).GetName().Version;
             var orderedTrailerAssignment = routes
                 .OrderBy(rt => rt.ArrivalTimes[0]);
-            int transportId = 1;
             vrpSolution.DelaysCount = routes.Count(rt => rt.TotalDelay > 0);
             vrpSolution.MaxDelay = routes.Max(rt => rt.MaxDelay);
             vrpSolution.TotalDelay = routes.Sum(rt => rt.TotalDelay);
@@ -90,10 +89,24 @@ namespace VRPTWOptimizer.Logging
             {
                 double fillInRatio = assignment.Vehicle.Capacity
                         .Select((capacity, index) => index)
-                        .Max(index => assignment.LoadedRequests[0].Sum(rq => rq.Size[index]) / assignment.Vehicle.Capacity[index])
+                        .Max(index =>
+                            {
+                                if (assignment.Vehicle.CapacityAggregationType[index] == Enums.Aggregation.Sum)
+                                {
+                                    return assignment.LoadedRequests[0].Sum(rq => rq.Size[index]) / assignment.Vehicle.Capacity[index];
+                                }
+                                else
+                                {
+                                    if (assignment.LoadedRequests[0].Count > 0)
+                                    {
+                                        return assignment.LoadedRequests[0].Max(rq => rq.Size[index]) / assignment.Vehicle.Capacity[index];
+                                    }
+                                    return 0;
+                                }
+                            })
                         ;
                 var transport = new VRPSolution.TransportItem();
-                transport.TransportId = transportId;
+                transport.TransportId = assignment.Id;
                 transport.TractorId = -1;
                 transport.TrailerTruckId = assignment.Vehicle.Id;
                 transport.Length = assignment.Length;
@@ -113,7 +126,6 @@ namespace VRPTWOptimizer.Logging
                     transport.Schedule.Add(scheduleItem);
                 }
                 vrpSolution.Transports.Add(transport);
-                transportId++;
             }
 
             File.WriteAllText(_filename, vrpDefinition.ToPrettyJSONString());

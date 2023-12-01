@@ -5,5 +5,6 @@
         None = 0,
         To3Hours = 1,
         ToMorningAndEvening = 2,
+        ToAllDay = 3,
     }
 }

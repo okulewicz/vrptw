@@ -1,4 +1,5 @@
-﻿using g3;
+﻿using CommonGIS;
+using g3;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -136,7 +137,26 @@ namespace VRPTWOptimizer
         /// Weight of route cost in the cost function
         /// </summary>
         public double RouteCostFactor { get; set; }
+        /// <summary>
+        /// Weight of number of drivers
+        /// </summary>
         public double DriversCountFactor { get; set; }
+        /// <summary>
+        /// Factor added to cost function if route is overloaded at any rate 
+        /// </summary>
+        public double OverloadedRouteFactor { get; set; }
+        /// <summary>
+        /// Factor added to cost function if route is overloaded over  ExtensiveRouteOverloadThreshold
+        /// </summary>
+        public double ExtensivelyOverloadedRouteFactor { get; set; }
+        /// <summary>
+        /// Ratio of overload considered to be excessive
+        /// </summary>
+        public double ExtensiveRouteOverloadThreshold { get; set; }
+        /// <summary>
+        /// Cost of every part of drivers work time imbalance
+        /// </summary>
+        public double DriversWorkImbalanceFactor { get; set; }
 
         /// <summary>
         /// Constructor for deserializer
@@ -211,7 +231,8 @@ namespace VRPTWOptimizer
             double lowFillInThreshold = 0.0,
             double visualAttractivenessFactor = 0,
             double routeCostFactor = 0,
-            double driversCountFactor = 0)
+            double driversCountFactor = 0,
+            double driversWorkImbalanceFactor = 0)
         {
             DistanceFactor = distanceFactor;
             UsageFactor = usageFactor;
@@ -242,6 +263,7 @@ namespace VRPTWOptimizer
             VisualAttractivenessFactor = visualAttractivenessFactor;
             RouteCostFactor = routeCostFactor;
             DriversCountFactor = driversCountFactor;
+            DriversWorkImbalanceFactor = driversWorkImbalanceFactor;
         }
 
         public VRPCostFunction Clone()
@@ -607,7 +629,7 @@ namespace VRPTWOptimizer
             double lateArrivalsCost = TotalDelayFactor * routeTotalDelay + TotalDelaySquaredFactor * routeTotalDelay * routeTotalDelay;
             double fillInFactor = ComputeFillInFactor(route);
             return
-                DistanceFactor * vehicleDistanceCost * (1 + LowFillInFactor * Math.Max(0, 0.8 - fillInFactor)) +
+                DistanceFactor * vehicleDistanceCost * (1 + LowFillInFactor * Math.Max(0, LowFillInThreshold - fillInFactor)) +
                 //cost of cargo cooling
                 DriveTimeFactor * vehicleTimeCost +
                 //cost of using vehicle at all
@@ -719,6 +741,61 @@ namespace VRPTWOptimizer
             return countPointsInForeignHulls;
         }
 
+        public static int FairlyCountIntersectingConvexHulls(List<IRoute> routes)
+        {
+            int countPointsInForeignHulls = 0;
+            List<Polygon2d> routePolygons = new List<Polygon2d>();
+            List<Vehicle> vehicleFilters = new List<Vehicle>();
+            List<List<Vector2d>> routePointsSet = new List<List<Vector2d>>();
+            List<List<List<TransportRequest>>> roadRestrictionPropertiesFilters = new List<List<List<TransportRequest>>>();
+            foreach (var route in routes)
+            {
+                List<Vector2d> vectors = route.VisitedLocations.Skip(1).Select(vl => new Vector2d(vl.Lat, vl.Lng)).ToList();
+                ConvexHull2 convexHull2 = new ConvexHull2(vectors, 1e-8, QueryNumberType.QT_DOUBLE);
+                routePolygons.Add(convexHull2.GetHullPolygon());
+                vehicleFilters.Add(route.Vehicle);
+                routePointsSet.Add(vectors.SkipLast(1).ToList());
+                List<List<TransportRequest>> unifiedLoadedAndUnloaded = new List<List<TransportRequest>>();
+                for (int i = 1; i < route.UnloadedRequests.Count - 1; i++)
+                {
+                    unifiedLoadedAndUnloaded.Add(new List<TransportRequest>());
+                    unifiedLoadedAndUnloaded[^1].AddRange(route.UnloadedRequests[i]);
+                    unifiedLoadedAndUnloaded[^1].AddRange(route.LoadedRequests[i]);
+                }
+                roadRestrictionPropertiesFilters.Add(unifiedLoadedAndUnloaded);
+            }
+            for (int j = 0; j < routePointsSet.Count; j++)
+            {
+                bool isContained = false;
+                for (int i = 0; i < routePolygons.Count; i++)
+                { 
+                    if (i != j && routePolygons[i] != null)
+                    {
+                        for (int visitIdx = 0; visitIdx < roadRestrictionPropertiesFilters[j].Count; visitIdx++)
+                        {
+                            //licz tylko te punkty, które mogłyby być obsłużone przez pojazd
+                            if (!roadRestrictionPropertiesFilters[j][visitIdx].Any(rq => !vehicleFilters[i].CanHandleRequest(rq))
+                                && routePolygons[i].Contains(routePointsSet[j][visitIdx]))
+                            {
+                                isContained = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (isContained)
+                    {
+                        break;
+                    }
+                }
+                if (isContained)
+                {
+                    countPointsInForeignHulls += 1;
+                }
+
+            }
+            return countPointsInForeignHulls;
+        }
+
         private double ComputeResouceSwitchingCost(List<IRoute> routes)
         {
             int driverSwitches = routes.Where(rt => rt.VehicleDriver != null)
@@ -734,6 +811,28 @@ namespace VRPTWOptimizer
         {
             var routesGroup = newRoutes.GroupBy(rt => rt.VehicleTractor != null ? rt.VehicleTractor.Id : rt.Vehicle.Id);
             return routesGroup.Any() ? routesGroup.Max(rtg => rtg.Min(rt => rt.ArrivalTimes[0])) : 0.0;
+        }
+
+        public static double ComputeImportantDelays(IRoute route)
+        {
+            double delay = 0.0;
+            double[] arrivalTimes = route.ArrivalTimes
+                .Select(art => art).ToArray();
+            double[] timeWindowsEnd = new double[arrivalTimes.Length];
+            for (int i = 0; i < route.VisitedLocations.Count; i++)
+            {
+                timeWindowsEnd[i] = double.MaxValue;
+                if (route.LoadedRequests[i].Any())
+                {
+                    timeWindowsEnd[i] = Math.Min(timeWindowsEnd[i], route.LoadedRequests[i].Min(rq => rq.PickupAvailableTimeWindowEnd));
+                }
+                if (route.UnloadedRequests[i].Any())
+                {
+                    timeWindowsEnd[i] = Math.Min(timeWindowsEnd[i], route.UnloadedRequests[i].Min(rq => rq.DeliveryAvailableTimeWindowEnd));
+                }
+                delay += Math.Max(0, arrivalTimes[i] - timeWindowsEnd[i]);
+            }
+            return delay;
         }
     }
 }

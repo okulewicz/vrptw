@@ -68,5 +68,9 @@ namespace VRPTWOptimizer.Interfaces
         /// List of subsequent Location objects in route
         /// </summary>
         List<Location> VisitedLocations { get; }
+        /// <summary>
+        /// Identifier of route
+        /// </summary>
+        long Id { get; }
     }
 }

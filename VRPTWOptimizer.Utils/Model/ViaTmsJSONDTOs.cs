@@ -112,6 +112,8 @@ namespace VRPTWOptimizer.Utils.Model
             public DateTime? DeliveryTimeWindowStart { get; set; }
             [JsonProperty("pickup_time_window_end")]
             public DateTime? PickupTimeWindowEnd { get; set; }
+            [JsonProperty("delivery_time_window_end")]
+            public DateTime? DeliveryTimeWindowEnd { get; internal set; }
         }
 
         public class Driver
@@ -158,6 +160,9 @@ namespace VRPTWOptimizer.Utils.Model
             public double CostPerUsage { get; set; }
             [JsonProperty("ep_capacity")]
             public int EpCapacity { get; set; }
+            [JsonProperty("driveway_size_in_ep")]
+            public int? DrivewayEpSize { get; set; }           
+
             [JsonProperty("gross_vehicle_weight")]
             public int GrossVehicleWeight { get; set; }
             [JsonProperty("id")]
@@ -167,9 +172,11 @@ namespace VRPTWOptimizer.Utils.Model
             public string IdHomeDepot { get; set; }
 
             [JsonProperty("owner_type")]
-            public int OwnerType { get; internal set; }
+            public int OwnerType { get; set; }
             [JsonProperty("weight_capacity")]
             public int WeightCapacity { get; set; }
+            [JsonProperty("existence_cost")]
+            public double ExistenceCost { get; set; }
         }
 
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);

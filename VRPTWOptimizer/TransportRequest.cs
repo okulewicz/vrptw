@@ -12,7 +12,7 @@ namespace VRPTWOptimizer
     /// <summary>
     /// Description of the request to move cargo from pickup to delivery Location
     /// </summary>
-    public abstract class TransportRequest
+    public class TransportRequest
     {
         /// <summary>
         /// Main cargo type
@@ -21,106 +21,106 @@ namespace VRPTWOptimizer
         /// <summary>
         /// All cargo types within request
         /// </summary>
-        public int[] CargoTypes { get; protected set; }
+        public int[] CargoTypes { get; set; }
         /// <summary>
         /// Time window end while request can still be delivered
         /// </summary>
-        public double DeliveryAvailableTimeWindowEnd { get; protected set; }
+        public double DeliveryAvailableTimeWindowEnd { get; set; }
         /// <summary>
         /// Earlies time window start when request can be delivered
         /// </summary>
-        public double DeliveryAvailableTimeWindowStart { get; protected set; }
+        public double DeliveryAvailableTimeWindowStart { get; set; }
         /// <summary>
         /// Cargo destination
         /// </summary>
-        public Location DeliveryLocation { get; protected set; }
+        public Location DeliveryLocation { get; set; }
 
         /// <summary>
         /// Delivery time window end
         /// </summary>
-        public double DeliveryPreferedTimeWindowEnd { get; protected set; }
+        public double DeliveryPreferedTimeWindowEnd { get; set; }
 
         /// <summary>
         /// Delivery time window start
         /// </summary>
-        public double DeliveryPreferedTimeWindowStart { get; protected set; }
+        public double DeliveryPreferedTimeWindowStart { get; set; }
         /// <summary>
         /// Numeric request identifier
         /// </summary>
-        public int Id { get; protected set; }
+        public int Id { get; set; }
         /// <summary>
         /// Upper bound restrictions of vehicle parameters
         /// </summary>
-        public VehicleRoadRestrictionProperties MaxVehicleSize { get; protected set; }
+        public VehicleRoadRestrictionProperties MaxVehicleSize { get; set; }
         /// <summary>
         /// Dictionary of requests that can be visited only after certain time of departure from end location
         /// or must be served certain time before arrival to end location
         /// </summary>
-        public Dictionary<int, double> MutuallyExclusiveRequestsIdTimeBufferDict { get; protected set; }
+        public Dictionary<int, double> MutuallyExclusiveRequestsIdTimeBufferDict { get; set; }
         /// <summary>
         /// Custom request identifier
         /// </summary>
-        public string Name { get; protected set; }
+        public string Name { get; set; }
         /// <summary>
         /// List of domain specific features that the vehicle needs to have to serve this request (e.g. freezer, lift)
         /// vector needs to conform to Vehicle.SpecialProperties
         /// </summary>
-        public int[] NecessaryVehicleSpecialProperties { get; protected set; }
+        public int[] NecessaryVehicleSpecialProperties { get; set; }
         /// <summary>
         /// Total count of items to be delivered
         /// (e.g. Euro Pallet and DHP pallet are both a single item)
         /// </summary>
-        public int PackageCount { get; protected set; }
+        public int PackageCount { get; set; }
 
         /// <summary>
         /// Subgroup of PackageCount property which are to be retrieved just after delivery
         /// </summary>
-        public int PackageCountForImediateRetrieval { get; protected set; }
+        public int PackageCountForImediateRetrieval { get; set; }
 
         /// <summary>
         /// Time window end while request can still be picked up
         /// </summary>
-        public double PickupAvailableTimeWindowEnd { get; protected set; }
+        public double PickupAvailableTimeWindowEnd { get; set; }
 
         /// <summary>
         /// Earlies time window start when request can be picked up
         /// </summary>
-        public double PickupAvailableTimeWindowStart { get; protected set; }
+        public double PickupAvailableTimeWindowStart { get; set; }
 
         /// <summary>
         /// Location where the cargo is picked up
         /// </summary>
-        public Location PickupLocation { get; protected set; }
+        public Location PickupLocation { get; set; }
 
         /// <summary>
         /// Time window end when request should be picked up
         /// </summary>
-        public double PickupPreferedTimeWindowEnd { get; protected set; }
+        public double PickupPreferedTimeWindowEnd { get; set; }
 
         /// <summary>
         /// Time window start when request should be picked up
         /// </summary>
-        public double PickupPreferedTimeWindowStart { get; protected set; }
+        public double PickupPreferedTimeWindowStart { get; set; }
 
         /// <summary>
         /// Cargo types identifiers that could not be transported together with this request
         /// </summary>
-        public int[] RestrictedCargoTypes { get; protected set; }
+        public int[] RestrictedCargoTypes { get; set; }
 
         /// <summary>
         /// Additional value gained if request is completed
         /// </summary>
-        public double RevenueValue { get; protected set; }
+        public double RevenueValue { get; set; }
 
         /// <summary>
         /// Total cargo size (Euro pallets count, mass, cubic meters etc.)
         /// Must conform to Vehicle capacity definition
         /// </summary>
-        public double[] Size { get; protected set; }
+        public double[] Size { get; set; }
         /// <summary>
         /// Type of request: distribution, backhauling etc.
         /// </summary>
-        public RequestType Type { get; protected set; }
+        public RequestType Type { get; set; }
 
         /// <summary>
         /// Creates generic TransportRequest when class is inherited from it will have to use this to define problem

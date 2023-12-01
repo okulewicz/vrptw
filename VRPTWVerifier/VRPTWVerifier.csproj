@@ -1,13 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-	  <VersionPrefix>1.3.0</VersionPrefix>
+	  <VersionPrefix>1.4.0</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\VRPTWOptimizer.Utils\VRPTWOptimizer.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="input\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="output\placeholder">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
