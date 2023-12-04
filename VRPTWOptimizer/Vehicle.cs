@@ -16,65 +16,65 @@ namespace VRPTWOptimizer
         /// Array of capacity dimensions (e.g. mass, length, volume, euro pallets count)
         /// Freezer availability can also be treated as dimension
         /// </summary>
-        public double[] Capacity { get; protected set; }
+        public double[] Capacity { get; set; }
         /// <summary>
         /// Array of how the packages sizes are aggregated in various dimensions (e.g. sum for mass, max for length )
         /// </summary>
-        public Aggregation[] CapacityAggregationType { get; protected set; }
+        public Aggregation[] CapacityAggregationType { get; set; }
         /// <summary>
         /// Location where vehicle needs to finish its operations
         /// </summary>
-        public Location FinalLocation { get; protected set; }
+        public Location FinalLocation { get; set; }
         /// <summary>
         /// Location where vehicle will be available at AvailabilityStart
         /// </summary>
-        public Location InitialLocation { get; protected set; }
+        public Location InitialLocation { get; set; }
         /// <summary>
         /// Max time span when vehicle can be on road
         /// </summary>
-        public double MaxRideTime { get; protected set; }
+        public double MaxRideTime { get; set; }
         /// <summary>
         /// Identifier of the company owning the vehicle
         /// </summary>
-        public int OwnerID { get; protected set; }
+        public int OwnerID { get; set; }
         /// <summary>
         /// Size of the vehicle that affects possibility of traversing given route or accessing a certain Location
         /// </summary>
-        public VehicleRoadRestrictionProperties RoadProperties { get; protected set; }
+        public VehicleRoadRestrictionProperties RoadProperties { get; set; }
         /// <summary>
         /// Describes properties of vehicles within a given domain (e.g. lift, freezer)
         /// </summary>
-        public int[] SpecialProperties { get; protected set; }
+        public int[] SpecialProperties { get; set; }
         /// <summary>
         /// Type of vehicle necessary to decide if needs to be combined with a unit with engine (semi-trailer) or not (truck)
         /// </summary>
-        public VehicleType Type { get; protected set; }
+        public VehicleType Type { get; set; }
         /// <summary>
         /// Cost of using vehicle per distance unit
         /// </summary>
-        public double VehicleCostPerDistanceUnit { get; protected set; }
+        public double VehicleCostPerDistanceUnit { get; set; }
         /// <summary>
         /// Cost of using vehicle per time unit (while moving from Location to Location)
         /// </summary>
-        public double VehicleCostPerTimeUnit { get; protected set; }
+        public double VehicleCostPerTimeUnit { get; set; }
 
         /// <summary>
         /// Cost of utilizing vehicle fore each of its routes
         /// </summary>
-        public double VehicleCostPerRoute { get; protected set; }
+        public double VehicleCostPerRoute { get; set; }
         /// <summary>
         /// Cost of using vehicle at all in a given problem
         /// </summary>
-        public double VehicleCostPerUsage { get; protected set; }
+        public double VehicleCostPerUsage { get; set; }
         /// <summary>
         /// Cost of using vehicle if route length is shorter than VehicleMaxRouteLengthForFlatCost (in meters)
         /// </summary>
-        public double VehicleFlatCostForShortRouteLength { get; }
+        public double VehicleFlatCostForShortRouteLength { get; set; }
         /// <summary>
         /// Distance (by default in meters) for which VehicleFlatCostForShortRouteLength flat rate is applied,
         /// otherwise VehicleCostPerDistanceUnit * Distance is applieds
         /// </summary>
-        public double VehicleMaxRouteLengthForFlatCost { get; }
+        public double VehicleMaxRouteLengthForFlatCost { get; set; }
 
         /// <summary>
         /// Creates vehicle object for backward compatibility

@@ -2,12 +2,15 @@
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		<VersionPrefix>4.19.2</VersionPrefix>
+		<VersionPrefix>4.20.0</VersionPrefix>
 		<RepositoryUrl>https://bitbucket.org/control-system/autonomicznyspedytor.git</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<Description>Library with basic Vehicle Routing Problem data types and interfaces</Description>
 		<PackageReleaseNotes>
+			4.20.0
+			* Extended driver definition for continuous work
+
 			4.19.2
 			* Added severity to validation info
 
